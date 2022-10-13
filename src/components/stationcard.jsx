@@ -10,11 +10,21 @@ import Pause from '@mui/icons-material/Pause';
 
 export default function StationCard({callsign, image, college, audioURL, handleClick, stationObject, playing}) {
 
+  function streamLoaded() {
+    console.log("loaded " + callsign)
+  }
+
+  function handleStall() {
+    console.log(callsign + " stalled")
+  }
+
   const playPause = () => {
 
-    // select audio stream elements
-    let allStations = document.getElementsByClassName("audio-element")
+    // select all audio stream elements + selected stream
+    const allStations = document.getElementsByClassName("audio-element")
     const selectedStation = allStations.namedItem(callsign)
+
+    selectedStation.addEventListener('readystatechange', (e) => { console.log(selectedStation.readyState) })
 
     // if a station is already playing, pause the stream
     if (playing === callsign) {
@@ -23,6 +33,7 @@ export default function StationCard({callsign, image, college, audioURL, handleC
     }
     // if a different station is selected, pause the existing stream and play the new station + change the playing state
     else {
+      console.log(selectedStation, selectedStation.readyState)
       for (let stream of allStations) {
         stream.pause();
       }
@@ -56,7 +67,7 @@ export default function StationCard({callsign, image, college, audioURL, handleC
           {playing === callsign && <Pause sx={{ height: 38, width: 38 }} />}
         </IconButton>
       </Box>
-      <audio className="audio-element" name={callsign} src={audioURL}/>
+      <audio className="audio-element" onCanPlay={streamLoaded} onStalled={handleStall} name={callsign} src={audioURL}/>
     </Card>
   );
 }

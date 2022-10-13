@@ -58,9 +58,8 @@ function App() {
         <Grid container rowSpacing={2} columnSpacing={{ xs: 1, md: 3 }}>
           {stations.map((station) => {
             return (
-              <Grid item xs={12} md={4}>
+              <Grid item xs={12} md={4} key={station.id}>
                 <StationCard
-                  key={station.id}
                   callsign={station.call_sign}
                   image={station.image}
                   college={station.college_name}
@@ -78,7 +77,7 @@ function App() {
         className="staticAudio"
         loop
         src="https://www.soundjay.com/mechanical/sounds/tv-static-05.mp3"
-      ></audio>
+      />
     </div>
   );
 }
