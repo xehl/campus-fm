@@ -2,6 +2,7 @@ import "./App.css";
 import { Box, Grid, Container } from "@mui/material";
 import StationCard from "./components/stationcard";
 import stations from "./mockStations";
+import Bulb from "react-bulb";
 import WebFont from "webfontloader";
 import { useEffect, useState } from "react";
 import NowPlaying from "./components/nowplaying";
@@ -11,15 +12,23 @@ function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Monoton", "Turret Road"],
+        families: ["Monoton", "Turret Road", "Share Tech Mono"],
       },
     });
   }, []);
 
   // stores which station is currently playing
   const [playing, setPlaying] = useState(null);
+  const [playStatic, setPlayStatic] = useState(false);
 
-  // handles when a radio station is played
+  // plays static when playStatic state changes
+  useEffect(() => {
+    const staticSound = document.getElementsByClassName("staticAudio")[0];
+    if (playStatic === true) staticSound.play();
+    if (playStatic === false) staticSound.pause();
+  }, [playStatic]);
+
+  // basically just sets the playing state, passed into card (maybe not optimal)
   function handleClick(station) {
     setPlaying(station?.call_sign);
   }
@@ -32,9 +41,18 @@ function App() {
           margin: "auto",
         }}
       >
-        <div className="title">campus.fm</div>
+        <div
+          className="title"
+          onClick={() => {
+            playStatic ? setPlayStatic(false) : setPlayStatic(true);
+          }}
+        >
+          campus.fm
+        </div>
         <div className="detail">listen to campus radio stations</div>
         <NowPlaying playing={playing} />
+        {playStatic && <Bulb size={20} color="green" />}
+        {!playStatic && <Bulb size={20} color="black" />}
       </Box>
       <Container>
         <Grid container rowSpacing={2} columnSpacing={{ xs: 1, md: 3 }}>
@@ -56,6 +74,11 @@ function App() {
           })}
         </Grid>
       </Container>
+      <audio
+        className="staticAudio"
+        loop
+        src="https://www.soundjay.com/mechanical/sounds/tv-static-05.mp3"
+      ></audio>
     </div>
   );
 }

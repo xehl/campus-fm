@@ -14,6 +14,7 @@
     "@testing-library/user-event": "^13.5.0",
     "material-ui-audio-player": "^1.7.1",
     "react": "^18.2.0",
+    "react-bulb": "^0.0.2",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",

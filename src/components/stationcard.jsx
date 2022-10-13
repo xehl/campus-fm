@@ -33,14 +33,7 @@ export default function StationCard({callsign, image, college, audioURL, handleC
 
   return (
     <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-      <CardMedia
-        component="img"
-        sx={{ width: 150 }}
-        image={image}
-        alt={callsign}
-        margin="auto"
-      />
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', width: "100%"}}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5">
             {callsign}
@@ -49,16 +42,21 @@ export default function StationCard({callsign, image, college, audioURL, handleC
             {college}
           </Typography>
         </CardContent>
-        <Box sx={{ display: 'flex', alignContent: 'flex-start', pl: 1, pb: 1 }}>
-          <IconButton aria-label="play/pause" onClick={playPause}>
-            {playing !== callsign && <PlayArrowIcon sx={{ height: 38, width: 38 }} />}
-            {playing === callsign && <Pause sx={{ height: 38, width: 38 }} />}
-          </IconButton>
-        </Box>
       </Box>
-      <audio className="audio-element" name={callsign}>
-        <source src={audioURL}/>
-      </audio>
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: "100%"}}>
+        <CardMedia
+          component="img"
+          sx={{ width: 150 }}
+          image={image}
+          alt={callsign}
+          margin="auto"
+        />
+        <IconButton aria-label="play/pause" onClick={playPause}>
+          {playing !== callsign && <PlayArrowIcon sx={{ height: 38, width: 38 }} />}
+          {playing === callsign && <Pause sx={{ height: 38, width: 38 }} />}
+        </IconButton>
+      </Box>
+      <audio className="audio-element" name={callsign} src={audioURL}/>
     </Card>
   );
 }

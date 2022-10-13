@@ -1,7 +1,9 @@
-export default function NowPlaying({playing}) {
+import {Typography} from '@mui/material'
+
+export default function NowPlaying({ playing }) {
   return (
-    <div>
+    <Typography>
       Now playing: {playing ? playing : "none"}
-    </div>
+    </Typography>
   )
 }
