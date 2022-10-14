@@ -8,21 +8,9 @@
     rgba(121, 121, 121, 1) 68%,
     rgba(172, 172, 172, 1) 94%
   );
-
   font-family: Share Tech Mono;
   padding-bottom: 20px;
 }
-.title {
-  font-family: Monoton;
-  font-size: 55px;
-}
 .playing-station {
   font-size: 30px;
-}
-.detail {
-  font-size: 20px;
-  font-family: Turret Road;
-  font-weight: bold;
-  margin-top: -15px;
-  margin-bottom: 20px;
 }

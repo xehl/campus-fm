@@ -1,14 +1,29 @@
 import "./App.css";
-import { AppBar, Box, Grid, Container, Link, Typography } from "@mui/material";
+import { AppBar, Box, Grid, Container, Typography } from "@mui/material";
 import StationCard from "./components/stationcard";
+import Footer from "./components/footer";
+import Logo from "./components/logo";
 import stations from "./stations";
 import Bulb from "react-bulb";
 import WebFont from "webfontloader";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import NowPlaying from "./components/nowplaying";
 
 function App() {
-  // load fonts
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 800,
+        lg: 1200,
+        xl: 1350,
+      },
+    },
+  });
+
+  // load fonts on initial page load
   useEffect(() => {
     WebFont.load({
       google: {
@@ -31,54 +46,53 @@ function App() {
 
   // basically just sets the playing state, passed into card (maybe not optimal)
   function handleClick(station) {
-    // console.log("setting playing to ", station);
     setPlaying(station);
   }
 
   return (
     <div className="App">
-      <AppBar
-        position="absolute"
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          borderBottom: 2,
-          position: "fixed",
-          width: "100%",
-          background: "#2e2e2e",
-        }}
-      >
-        <Box
+      <ThemeProvider theme={theme}>
+        <AppBar
+          position="absolute"
           sx={{
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
-            margin: "auto",
-            width: "80%",
+            borderBottom: 2,
+            position: "fixed",
+            width: "100%",
+            background: "#2e2e2e",
           }}
         >
-          <Box>
-            <div
-              className="title"
-              onClick={() => {
-                playStatic ? setPlayStatic(false) : setPlayStatic(true);
-              }}
-            >
-              campus.fm
-            </div>
-            <div className="detail">listen to campus radio stations</div>
-          </Box>
-          <NowPlaying playing={playing} />
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Box sx={{ mr: "10px" }}>ON/OFF</Box>
-            <Box>
-              {playing && <Bulb size={20} color="green" />}
-              {!playing && <Bulb size={20} color="black" />}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", xl: "row" },
+              justifyContent: "space-between",
+              alignItems: "center",
+              margin: "auto",
+              width: "80%",
+            }}
+          >
+            <Logo />
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <NowPlaying playing={playing} />
+              <Box
+                sx={{
+                  display: { xs: "none", sm: "none", md: "flex" },
+                  alignItems: "center",
+                }}
+              >
+                <Box sx={{ mr: "10px" }}>ON/OFF</Box>
+                <Box>
+                  {playing && <Bulb size={20} color="green" />}
+                  {!playing && <Bulb size={20} color="black" />}
+                </Box>
+              </Box>
             </Box>
           </Box>
-        </Box>
-      </AppBar>
-      <Box sx={{ height: "180px" }} />
+        </AppBar>
+        <Box sx={{ height: { xs: "240px", xl: "180px" } }} />
+      </ThemeProvider>
       <Container sx={{ width: "85%" }}>
         <Grid
           container
@@ -88,7 +102,7 @@ function App() {
         >
           {stations.map((station) => {
             return (
-              <Grid item xs={12} md={6} key={station.id}>
+              <Grid item md={12} lg={6} sx={{ width: "100%" }} key={station.id}>
                 <StationCard
                   callsign={station.call_sign}
                   frequency={station.broadcast_frequency}
@@ -105,26 +119,7 @@ function App() {
           })}
         </Grid>
       </Container>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "40px",
-          color: "white",
-          mt: 2,
-        }}
-      >
-        <Typography
-          sx={{ color: "white", fontSize: 20, fontWeight: "bold", mr: 1 }}
-          fontFamily={"Turret Road"}
-        >
-          made with love by
-        </Typography>
-        <Link sx={{ fontSize: 20 }} href="https://github.com/xehl/campus-fm">
-          @xehl
-        </Link>
-      </Box>
+      <Footer />
       <audio
         className="staticAudio"
         preload="auto"
