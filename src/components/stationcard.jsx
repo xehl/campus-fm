@@ -19,14 +19,9 @@ export default function StationCard({callsign, frequency, college, audioURL, col
   }
 
   const playPause = () => {
-
-    console.log(playing)
-    console.log(collegeimage)
     // select all audio stream elements + selected stream
     const allStations = document.getElementsByClassName("audio-element")
     const selectedStation = allStations.namedItem(callsign)
-
-    selectedStation.addEventListener('readystatechange', (e) => { console.log(selectedStation.readyState) })
 
     // if a station is already playing, pause the stream and break the buffer
     if (playing?.call_sign === callsign) {
@@ -54,7 +49,6 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           stream.pause();
         }
         selectedStation.play();
-        console.log("reach")
         handleClick(stationObject);
       }
       else handleStall();
@@ -62,7 +56,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
   }
 
   return (
-    <Card sx={{ display: 'flex', alignItems: 'center', justifyContent: "space-between", height: 200}}>
+    <Card sx={{ display: 'flex', alignItems: 'center', justifyContent: "space-between", height: 200, borderRadius:2}}>
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: "100%"}}>
         <IconButton aria-label="play/pause" onClick={playPause}>
           {playing?.call_sign !== callsign && <PlayArrowIcon sx={{ height: 60, width: 60 }} />}
@@ -70,7 +64,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
         </IconButton>
       </Box>
       <Box sx={{ display: 'flex', flexDirection: 'column', width: "100%" }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
+        <CardContent sx={{ width: "200px", flex: '1 0 auto' }}>
           <Typography component="div" variant="h5" fontFamily={"Share Tech Mono"}>
             {callsign} {frequency}
           </Typography>
@@ -81,7 +75,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
       </Box>
       <CardMedia
           component="img"
-          sx={{ width: 100, m:"20px", borderRadius: "10px"}}
+          sx={{ width: 100, m:"20px"}}
           image={collegeimage}
           alt={callsign}
         margin="auto"

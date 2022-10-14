@@ -30,7 +30,7 @@ function App() {
 
   // basically just sets the playing state, passed into card (maybe not optimal)
   function handleClick(station) {
-    console.log("setting playing to ", station);
+    // console.log("setting playing to ", station);
     setPlaying(station);
   }
 

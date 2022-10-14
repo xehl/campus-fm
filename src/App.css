@@ -10,7 +10,7 @@
 }
 .playing-station {
   font-size: 30px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .detail {
   font-size: 20px;
@@ -18,4 +18,9 @@
   font-weight: bold;
   margin-top: -15px;
   margin-bottom: 20px;
+}
+.play-img-container {
+  margin-left: 10px;
+  width: 140px;
+  height: 140px;
 }
