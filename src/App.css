@@ -1,13 +1,17 @@
 .App {
+  min-height: 100vh;
   background-color: #eeeeee;
-  height: 100vh;
   font-family: Share Tech Mono;
+  padding-bottom: 20px;
 }
 .title {
   font-family: Monoton;
-  font-size: 60px;
+  font-size: 65px;
 }
-
+.playing-station {
+  font-size: 30px;
+  margin-left: 20px;
+}
 .detail {
   font-size: 20px;
   font-family: Turret Road;

@@ -30,43 +30,61 @@ function App() {
 
   // basically just sets the playing state, passed into card (maybe not optimal)
   function handleClick(station) {
-    setPlaying(station?.call_sign);
+    console.log("setting playing to ", station);
+    setPlaying(station);
   }
 
   return (
     <div className="App">
       <Box
         sx={{
-          width: "85%",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
           margin: "auto",
+          width: "80%",
         }}
       >
-        <div
-          className="title"
-          onClick={() => {
-            playStatic ? setPlayStatic(false) : setPlayStatic(true);
-          }}
-        >
-          campus.fm
-        </div>
-        <div className="detail">listen to campus radio stations</div>
-        <NowPlaying playing={playing} />
-        {playStatic && <Bulb size={20} color="green" />}
-        {!playStatic && <Bulb size={20} color="black" />}
+        <Box>
+          <div
+            className="title"
+            onClick={() => {
+              playStatic ? setPlayStatic(false) : setPlayStatic(true);
+            }}
+          >
+            campus.fm
+          </div>
+          <div className="detail">listen to campus radio stations</div>
+        </Box>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Box sx={{ mr: "10px" }}>ON/OFF</Box>
+          <Box>
+            {playing && <Bulb size={20} color="green" />}
+            {!playing && <Bulb size={20} color="black" />}
+          </Box>
+        </Box>
       </Box>
-      <Container>
-        <Grid container rowSpacing={2} columnSpacing={{ xs: 1, md: 3 }}>
+      <Container sx={{ width: "85%" }}>
+        <NowPlaying playing={playing} />
+        <Grid
+          container
+          justifyContent="space-between"
+          rowSpacing={2}
+          columnSpacing={{ lg: 4, md: 3 }}
+        >
           {stations.map((station) => {
             return (
-              <Grid item xs={12} md={4} key={station.id}>
+              <Grid item xs={12} md={6} key={station.id}>
                 <StationCard
                   callsign={station.call_sign}
-                  image={station.image}
+                  frequency={station.broadcast_frequency}
                   college={station.college_name}
                   audioURL={station.audio_url}
+                  collegeimage={station.college_image}
                   handleClick={handleClick}
                   stationObject={station}
                   playing={playing}
+                  // setPlayStatic={setPlayStatic}
                 />
               </Grid>
             );
