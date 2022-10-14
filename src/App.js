@@ -74,7 +74,14 @@ function App() {
             }}
           >
             <Logo />
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                mb: { xs: 0, md: 3 },
+              }}
+            >
               <NowPlaying playing={playing} />
               <Box
                 sx={{
@@ -82,7 +89,7 @@ function App() {
                   alignItems: "center",
                 }}
               >
-                <Box sx={{ mr: "10px" }}>ON/OFF</Box>
+                <Box sx={{ ml: { xs: 3, s: 0, xl: 0 }, mr: 1 }}>ON/OFF</Box>
                 <Box>
                   {playing && <Bulb size={20} color="green" />}
                   {!playing && <Bulb size={20} color="black" />}

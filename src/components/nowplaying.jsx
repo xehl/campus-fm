@@ -5,7 +5,7 @@ export default function NowPlaying({ playing }) {
 
   return (
     <Box sx={{ width: { xs: "100%", md: 580, xl: 660}, mt: 2}} >
-      <Paper elevation={3} sx={{ display: {xs:"none", md: "flex"}, ml: { xs: 0, xl: 6}, mr: { xs: 0, xl:4 }, mb: 3, mt:{xs: -2.5, xl: 0}, alignItems: "center", justifyContent: "flex-start", borderRadius: '12px', height: {xs: 80, xl: 120}}}>
+      <Paper elevation={3} sx={{ display: {xs:"none", md: "flex"}, ml: { xs: 0, xl: 6}, mr: { xs: 0, xl:4 }, mt:{xs: -2.5, xl: 0}, alignItems: "center", justifyContent: "flex-start", borderRadius: '12px', height: {xs: 80, xl: 120}}}>
       <Box sx={{width:120, p:"15px", borderRadius: "10px"}}>
       {playing && <CardMedia
           component="img"
@@ -20,7 +20,7 @@ export default function NowPlaying({ playing }) {
         </Typography>
         {playing ? <Link target="_blank" href={playing.station_url} sx={{ display: { xs: "none", md:"block" } }} ><OpenInNewIcon sx={{ ml: 2, mr: 3, height: 30, width: 30, color: "#212121"}} /></Link> : ""}
       </Paper>
-      <Paper elevation={3} sx={{ display: { xs: "flex", md: "none" }, width:"77vw", mb: 3, mt: -2.5, alignItems: "center", justifyContent: "flex-start", borderRadius: '12px', height: { xs: 80, xl: 120 } }}>
+      <Paper elevation={3} sx={{ display: { xs: "flex", md: "none" }, width:"77vw", mb: {xs: 3}, mt: -2.5, alignItems: "center", justifyContent: "flex-start", borderRadius: '12px', height: { xs: 80, xl: 120 } }}>
         <Box sx={{ height: 80, width: 80 }}>
         {playing && <CardMedia
           component="img"

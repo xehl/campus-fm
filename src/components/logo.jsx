@@ -6,7 +6,7 @@ export default function Logo() {
       <Typography
         fontFamily={"Monoton"}
         sx={{
-          fontSize: {xs:"45px", sm:"55px"}
+          fontSize: {xs:"45px", sm:"80px", xl:"55px"}
         }}
         // click on logo to toggle static (debugging)
         // onClick={() => {
@@ -18,9 +18,9 @@ export default function Logo() {
       <Typography
         fontFamily={"Turret Road"}
         sx={{
-          marginTop: -1.7,
+          marginTop: {xs:-1.7, sm:-3, xl:-1.7},
           marginBottom: 2.5,
-          fontSize: {xs:"20px", sm:"22px"},
+          fontSize: {xs:"20px", sm:"35px", xl:"20px"},
           fontWeight: "bold",
         }}
       >

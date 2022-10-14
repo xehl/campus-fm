@@ -114,18 +114,19 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           alt={callsign}
           margin="auto"
           />
-          <IconButton disableRipple="true" aria-label="play/pause" sx={{ mt: {xs: -2}, display: {xs: "block", md:"none"} }}>
-            {playing?.call_sign !== callsign && <PlayArrowIcon sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
-            {playing?.call_sign === callsign && <Pause sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
-          </IconButton>
+        <IconButton disableRipple="true" aria-label="play/pause" sx={{ mt: {xs: -2}, display: {xs: "block", md:"none"} }}>
+          {playing?.call_sign !== callsign && <PlayArrowIcon sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
+          {playing?.call_sign === callsign && <Pause sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
+        </IconButton>
         </Box>
-        <Box sx={{display:'flex', flexDirection: { xs: 'column', s:'row', md: 'row'}}}>
+
+        <Box sx={{display:'flex', justifyContent: "space-between", flexDirection: { xs: 'column', s:'row', md: 'row'}}}>
           <Box sx={{ display: 'flex', flexDirection: 'column', width: "100%" }}>
-            <CardContent sx={{ flex: '1 0 auto' }}>
-              <Typography component="div" variant="h4" fontFamily={"Share Tech Mono"}>
+            <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end"}}>
+              <Typography component="div" textAlign="right" variant="h4" fontFamily={"Share Tech Mono"}>
                 {callsign} {frequency}
               </Typography>
-              <Typography variant="subtitle1" color="text.secondary" component="div" fontFamily={"Share Tech Mono"}>
+              <Typography variant="subtitle1" textAlign="right" color="text.secondary" component="div" fontFamily={"Share Tech Mono"}>
                 {college}
               </Typography>
             </CardContent>
@@ -135,6 +136,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
             {playing?.call_sign === callsign && <Pause sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
           </IconButton>
         </Box>
+
         <audio className="audio-element" onCanPlay={streamLoaded} onStalled={handleStall} name={callsign} src={audioURL}/>
       </Card>
     </ThemeProvider>
