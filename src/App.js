@@ -1,5 +1,5 @@
 import "./App.css";
-import { AppBar, Box, Grid, Container, Typography } from "@mui/material";
+import { AppBar, Box, Grid, Container } from "@mui/material";
 import StationCard from "./components/stationcard";
 import Footer from "./components/footer";
 import Logo from "./components/logo";
