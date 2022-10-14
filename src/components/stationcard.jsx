@@ -9,7 +9,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import Pause from '@mui/icons-material/Pause';
 import { useState } from 'react';
 
-export default function StationCard({callsign, frequency, college, audioURL, collegeimage, handleClick, stationObject, playing}) {
+export default function StationCard({callsign, frequency, college, audioURL, collegeimage, handleClick, stationObject, playing, setPlayStatic}) {
 
   const [loaded, setLoaded] = useState(false)
 
@@ -18,12 +18,12 @@ export default function StationCard({callsign, frequency, college, audioURL, col
   }
 
   function streamLoaded() {
-    console.log("loaded " + callsign)
     setLoaded(true)
   }
 
   function handleStall() {
-    console.log(callsign + " stalled")
+    // remove and reload stalled station audio stream
+    console.log(callsign + " stalled, reloading now")
     setLoaded(false)
     const thisStation = document.getElementsByClassName("audio-element").namedItem(callsign)
     thisStation.setAttribute("src", "")
@@ -32,8 +32,17 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     }, 100);
     thisStation.setAttribute("src", audioURL)
     thisStation.load()
+
+    // if the currently playing station is stalled, change the playing state to null + play static
     if (playing?.call_sign === callsign) {
-      handleClick(null)
+      setPlayStatic(true)
+      let retry = setInterval(() => {
+        if (thisStation.readyState >= 3) {
+          thisStation.play()
+          setPlayStatic(false)
+          clearInterval(retry)
+        }
+      }, 2000);
     }
   }
 
@@ -44,10 +53,6 @@ export default function StationCard({callsign, frequency, college, audioURL, col
 
     if (playing?.call_sign === callsign) {
       selectedStation.pause()
-      // selectedStation.setAttribute("src", "")
-      // setTimeout(function () { 
-      //   selectedStation.load(); // This stops the stream from downloading
-      // });
       handleClick(null);
     }
     // if a different station is selected, pause the existing stream and play the new station + change the playing state
@@ -57,6 +62,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
         for (let stream of allStations) {
           stream.pause();
         }
+        setPlayStatic(false)
         selectedStation.play();
         handleClick(stationObject);
       }
@@ -66,13 +72,16 @@ export default function StationCard({callsign, frequency, college, audioURL, col
 
   return (
     <Card onClick={playPause} sx={{ display: 'flex', alignItems: 'center', justifyContent: "space-between", height: 200, borderRadius:2, opacity: undimIfLoaded()}}>
-        <IconButton aria-label="play/pause">
-          {playing?.call_sign !== callsign && <PlayArrowIcon sx={{ height: 60, width: 60 }} />}
-          {playing?.call_sign === callsign && <Pause sx={{ height: 60, width: 60}} />}
-        </IconButton>
+      <CardMedia
+        component="img"
+        sx={{ width: 130, m:"25px"}}
+        image={collegeimage}
+        alt={callsign}
+        margin="auto"
+      />
       <Box sx={{ display: 'flex', flexDirection: 'column', width: "100%" }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h5" fontFamily={"Share Tech Mono"}>
+          <Typography component="div" variant="h4" fontFamily={"Share Tech Mono"}>
             {callsign} {frequency}
           </Typography>
           <Typography variant="subtitle1" color="text.secondary" component="div" fontFamily={"Share Tech Mono"}>
@@ -80,13 +89,10 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           </Typography>
         </CardContent>
       </Box>
-      <CardMedia
-          component="img"
-          sx={{ width: 100, m:"20px"}}
-          image={collegeimage}
-          alt={callsign}
-        margin="auto"
-        />
+      <IconButton aria-label="play/pause" sx={{ mr:3 }}>
+        {playing?.call_sign !== callsign && <PlayArrowIcon sx={{ height: 70, width: 70}} />}
+        {playing?.call_sign === callsign && <Pause sx={{ height: 70, width: 70}} />}
+      </IconButton>
       <audio className="audio-element" onCanPlay={streamLoaded} onStalled={handleStall} name={callsign} src={audioURL}/>
     </Card>
   );

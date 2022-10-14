@@ -1,5 +1,5 @@
 import "./App.css";
-import { AppBar, Box, Grid, Container } from "@mui/material";
+import { AppBar, Box, Grid, Container, Link, Typography } from "@mui/material";
 import StationCard from "./components/stationcard";
 import stations from "./stations";
 import Bulb from "react-bulb";
@@ -23,8 +23,8 @@ function App() {
 
   // plays static when playStatic state changes
   useEffect(() => {
-    console.log("playstatic changed");
     const staticSound = document.getElementsByClassName("staticAudio")[0];
+    staticSound.volume = 0.3;
     if (playStatic === true) staticSound.play();
     if (playStatic === false) staticSound.pause();
   }, [playStatic]);
@@ -98,13 +98,33 @@ function App() {
                   handleClick={handleClick}
                   stationObject={station}
                   playing={playing}
-                  // setPlayStatic={setPlayStatic}
+                  setPlayStatic={setPlayStatic}
                 />
               </Grid>
             );
           })}
         </Grid>
       </Container>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "40px",
+          color: "white",
+          mt: 2,
+        }}
+      >
+        <Typography
+          sx={{ color: "white", fontSize: 20, fontWeight: "bold", mr: 1 }}
+          fontFamily={"Turret Road"}
+        >
+          made with love by
+        </Typography>
+        <Link sx={{ fontSize: 20 }} href="https://github.com/xehl/campus-fm">
+          @xehl
+        </Link>
+      </Box>
       <audio
         className="staticAudio"
         preload="auto"

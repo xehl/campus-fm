@@ -1,4 +1,4 @@
-import { Paper, CardMedia, Box, Link } from '@mui/material'
+import { Paper, CardMedia, Box, Link, Typography } from '@mui/material'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 export default function NowPlaying({ playing }) {
@@ -14,10 +14,12 @@ export default function NowPlaying({ playing }) {
         margin="auto"
         />}
       </Box>
-        <div className="playing-station">
-          Now playing: {playing ? `${playing.call_sign} ${playing.broadcast_frequency}` : ""}
-        </div>
-        {playing ? <Link target="_blank" href={playing.station_url}><OpenInNewIcon sx={{ ml: 1, mr: 2, height: 32, width: 32, color: "black"}} /></Link> : ""}
+        <Typography noWrap className="playing-station" sx={{display:"flex", fontSize:"30px", fontFamily:"Share Tech Mono"}}>
+          Now playing: {playing ? <>{playing.call_sign} {playing.broadcast_frequency}</> : "None"}
+        </Typography>
+
+        {playing ? <Link target="_blank" href={playing.station_url}><OpenInNewIcon sx={{ ml: 2, mr: 3, height: 30, width: 30, color: "#212121"}} /></Link> : ""}
+
       </Paper>
     </Box>
   )
