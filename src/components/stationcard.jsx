@@ -7,15 +7,34 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import Pause from '@mui/icons-material/Pause';
+import { useState } from 'react';
 
 export default function StationCard({callsign, frequency, college, audioURL, collegeimage, handleClick, stationObject, playing}) {
 
+  const [loaded, setLoaded] = useState(false)
+
+  const undimIfLoaded = () => {
+    return loaded? 1: 0.15;
+  }
+
   function streamLoaded() {
     console.log("loaded " + callsign)
+    setLoaded(true)
   }
 
   function handleStall() {
     console.log(callsign + " stalled")
+    setLoaded(false)
+    const thisStation = document.getElementsByClassName("audio-element").namedItem(callsign)
+    thisStation.setAttribute("src", "")
+    setTimeout(function () { 
+        thisStation.load(); // This stops the stream from downloading
+    }, 100);
+    thisStation.setAttribute("src", audioURL)
+    thisStation.load()
+    if (playing?.call_sign === callsign) {
+      handleClick(null)
+    }
   }
 
   const playPause = () => {
@@ -23,7 +42,6 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     const allStations = document.getElementsByClassName("audio-element")
     const selectedStation = allStations.namedItem(callsign)
 
-    // if a station is already playing, pause the stream and break the buffer
     if (playing?.call_sign === callsign) {
       selectedStation.pause()
       // selectedStation.setAttribute("src", "")
@@ -33,18 +51,9 @@ export default function StationCard({callsign, frequency, college, audioURL, col
       handleClick(null);
     }
     // if a different station is selected, pause the existing stream and play the new station + change the playing state
-    else {
-      // console.log(stationObject, selectedStation, selectedStation.readyState)
-      
+    else {      
       // execute if the new station is ready to play
       if (selectedStation.readyState >= 3) {
-        
-        // if a new station is selected
-        // if (!selectedStation.getAttribute("src")) {
-        //   selectedStation.setAttribute("src", audioURL)
-        //   selectedStation.load()
-        // }
-
         for (let stream of allStations) {
           stream.pause();
         }
@@ -56,8 +65,8 @@ export default function StationCard({callsign, frequency, college, audioURL, col
   }
 
   return (
-    <Card sx={{ display: 'flex', alignItems: 'center', justifyContent: "space-between", height: 200, borderRadius:2}}>
-        <IconButton aria-label="play/pause" onClick={playPause}>
+    <Card onClick={playPause} sx={{ display: 'flex', alignItems: 'center', justifyContent: "space-between", height: 200, borderRadius:2, opacity: undimIfLoaded()}}>
+        <IconButton aria-label="play/pause">
           {playing?.call_sign !== callsign && <PlayArrowIcon sx={{ height: 60, width: 60 }} />}
           {playing?.call_sign === callsign && <Pause sx={{ height: 60, width: 60}} />}
         </IconButton>

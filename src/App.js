@@ -42,7 +42,7 @@ function App() {
         sx={{
           display: "flex",
           alignItems: "center",
-          borderBottom: 1,
+          borderBottom: 2,
           position: "fixed",
           width: "100%",
           background: "#2e2e2e",
