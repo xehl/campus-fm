@@ -34,7 +34,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     }
     // if a different station is selected, pause the existing stream and play the new station + change the playing state
     else {
-      console.log(stationObject, selectedStation, selectedStation.readyState)
+      // console.log(stationObject, selectedStation, selectedStation.readyState)
       
       // execute if the new station is ready to play
       if (selectedStation.readyState >= 3) {
