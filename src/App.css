@@ -1,16 +1,23 @@
 .App {
   min-height: 100vh;
-  background-color: #eeeeee;
+  background: rgb(37, 37, 37);
+  background: linear-gradient(
+    0deg,
+    rgba(37, 37, 37, 1) 18%,
+    rgba(88, 88, 88, 1) 43%,
+    rgba(121, 121, 121, 1) 68%,
+    rgba(172, 172, 172, 1) 94%
+  );
+
   font-family: Share Tech Mono;
   padding-bottom: 20px;
 }
 .title {
   font-family: Monoton;
-  font-size: 65px;
+  font-size: 55px;
 }
 .playing-station {
   font-size: 30px;
-  margin-left: 10px;
 }
 .detail {
   font-size: 20px;
@@ -18,9 +25,4 @@
   font-weight: bold;
   margin-top: -15px;
   margin-bottom: 20px;
-}
-.play-img-container {
-  margin-left: 10px;
-  width: 140px;
-  height: 140px;
 }

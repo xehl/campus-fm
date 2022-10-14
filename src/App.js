@@ -1,7 +1,7 @@
 import "./App.css";
-import { Box, Grid, Container } from "@mui/material";
+import { AppBar, Box, Grid, Container } from "@mui/material";
 import StationCard from "./components/stationcard";
-import stations from "./mockStations";
+import stations from "./stations";
 import Bulb from "react-bulb";
 import WebFont from "webfontloader";
 import { useEffect, useState } from "react";
@@ -23,6 +23,7 @@ function App() {
 
   // plays static when playStatic state changes
   useEffect(() => {
+    console.log("playstatic changed");
     const staticSound = document.getElementsByClassName("staticAudio")[0];
     if (playStatic === true) staticSound.play();
     if (playStatic === false) staticSound.pause();
@@ -36,36 +37,49 @@ function App() {
 
   return (
     <div className="App">
-      <Box
+      <AppBar
+        position="absolute"
         sx={{
           display: "flex",
-          justifyContent: "space-between",
           alignItems: "center",
-          margin: "auto",
-          width: "80%",
+          borderBottom: 1,
+          position: "fixed",
+          width: "100%",
+          background: "#2e2e2e",
         }}
       >
-        <Box>
-          <div
-            className="title"
-            onClick={() => {
-              playStatic ? setPlayStatic(false) : setPlayStatic(true);
-            }}
-          >
-            campus.fm
-          </div>
-          <div className="detail">listen to campus radio stations</div>
-        </Box>
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Box sx={{ mr: "10px" }}>ON/OFF</Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            margin: "auto",
+            width: "80%",
+          }}
+        >
           <Box>
-            {playing && <Bulb size={20} color="green" />}
-            {!playing && <Bulb size={20} color="black" />}
+            <div
+              className="title"
+              onClick={() => {
+                playStatic ? setPlayStatic(false) : setPlayStatic(true);
+              }}
+            >
+              campus.fm
+            </div>
+            <div className="detail">listen to campus radio stations</div>
+          </Box>
+          <NowPlaying playing={playing} />
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box sx={{ mr: "10px" }}>ON/OFF</Box>
+            <Box>
+              {playing && <Bulb size={20} color="green" />}
+              {!playing && <Bulb size={20} color="black" />}
+            </Box>
           </Box>
         </Box>
-      </Box>
+      </AppBar>
+      <Box sx={{ height: "180px" }} />
       <Container sx={{ width: "85%" }}>
-        <NowPlaying playing={playing} />
         <Grid
           container
           justifyContent="space-between"
@@ -93,6 +107,7 @@ function App() {
       </Container>
       <audio
         className="staticAudio"
+        preload="auto"
         loop
         src="https://www.soundjay.com/mechanical/sounds/tv-static-05.mp3"
       />

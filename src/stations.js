@@ -58,6 +58,20 @@ const stations = [
   },
   {
     id: 5,
+    call_sign: "WUTK",
+    broadcast_frequency: "90.3",
+    audio_url: "http://streamer.cci.utk.edu:8000/wutk",
+    station_url: "https://wutkradio.com/",
+    college_name: "University of Tennessee, Knoxville",
+    public_private: "Public",
+    city: "Knoxville",
+    state: "TN",
+    station_image: "https://cdn-radiotime-logos.tunein.com/s23442g.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Tennessee_Volunteers_logo.svg/1200px-Tennessee_Volunteers_logo.svg.png",
+  },
+  {
+    id: 6,
     call_sign: "WSUM",
     broadcast_frequency: "91.7",
     audio_url: "https://ice23.securenetsystems.net/WSUMFM",
@@ -72,7 +86,7 @@ const stations = [
       "https://www.badgerselect.com/assets/images/FAVIcon/android-chrome-256x256.png",
   },
   {
-    id: 6,
+    id: 7,
     call_sign: "KCOU",
     broadcast_frequency: "88.1",
     audio_url: "https://ssl.shoutcaststreaming.us:8088/stream",
@@ -87,7 +101,22 @@ const stations = [
       "https://assets-sports.thescore.com/basketball/team/684/logo.png",
   },
   {
-    id: 7,
+    id: 8,
+    call_sign: "WKNC",
+    broadcast_frequency: "88.1",
+    audio_url: "http://173.193.205.96:7430/stream",
+    station_url: "https://wknc.org/",
+    college_name: "North Carolina State University",
+    public_private: "Public",
+    city: "Raleigh",
+    state: "NC",
+    station_image:
+      "https://storage.googleapis.com/stateless-wknc-org/sites/1/2020/10/wknc881-bow.png",
+    college_image:
+      "https://trademarks.ncsu.edu/wp-content/uploads/2016/04/cropped-brick-s-1.png",
+  },
+  {
+    id: 9,
     call_sign: "WLUR",
     broadcast_frequency: "91.5",
     audio_url: "https://wlur.radioca.st/stream",
@@ -102,7 +131,7 @@ const stations = [
       "https://upload.wikimedia.org/wikipedia/en/a/a8/W%26L_Generals.png",
   },
   {
-    id: 8,
+    id: 10,
     call_sign: "WTBU",
     broadcast_frequency: "89.3",
     audio_url: "http://wtbu.bu.edu:1800/",
@@ -114,7 +143,37 @@ const stations = [
     station_image:
       "https://i1.sndcdn.com/avatars-000070779841-52d5la-t500x500.jpg",
     college_image:
-      "https://assets.stickpng.com/images/609fbe210433b20004f80fb8.png",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Boston_University_Terriers_logo.svg/800px-Boston_University_Terriers_logo.svg.png",
+  },
+  {
+    id: 11,
+    call_sign: "WKDU",
+    broadcast_frequency: "91.7",
+    audio_url: "https://streams.wkdu.org/listen.mp3",
+    station_url: "https://wkdu.org/",
+    college_name: "Drexel University",
+    public_private: "Private",
+    city: "Philadelphia",
+    state: "PA",
+    station_image:
+      "https://static.tuneyou.com/images/logos/500_500/81/10581/WKDUFM91.7.png",
+    college_image:
+      "https://drexel.edu/~/media/Images/identity/pageLogos/Drexel_Vertical-stacked_gold.ashx?la=en",
+  },
+  {
+    id: 12,
+    call_sign: "WIUX",
+    broadcast_frequency: "99.1",
+    audio_url: "https://bl-vi-143.uits.indiana.edu:8444/wiuxhigh",
+    station_url: "https://www.wiux.org/",
+    college_name: "Indiana University Bloomington",
+    public_private: "Public",
+    city: "Bloomington",
+    state: "IN",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/0/04/WIUX_Logo%2C_Square.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Indiana_Hoosiers_logo.svg/1200px-Indiana_Hoosiers_logo.svg.png",
   },
 ];
 

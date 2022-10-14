@@ -57,14 +57,12 @@ export default function StationCard({callsign, frequency, college, audioURL, col
 
   return (
     <Card sx={{ display: 'flex', alignItems: 'center', justifyContent: "space-between", height: 200, borderRadius:2}}>
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: "100%"}}>
         <IconButton aria-label="play/pause" onClick={playPause}>
           {playing?.call_sign !== callsign && <PlayArrowIcon sx={{ height: 60, width: 60 }} />}
           {playing?.call_sign === callsign && <Pause sx={{ height: 60, width: 60}} />}
         </IconButton>
-      </Box>
       <Box sx={{ display: 'flex', flexDirection: 'column', width: "100%" }}>
-        <CardContent sx={{ width: "200px", flex: '1 0 auto' }}>
+        <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5" fontFamily={"Share Tech Mono"}>
             {callsign} {frequency}
           </Typography>
