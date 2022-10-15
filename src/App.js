@@ -98,7 +98,7 @@ function App() {
             </Box>
           </Box>
         </AppBar>
-        <Box sx={{ height: { xs: "240px", xl: "180px" } }} />
+        <Box sx={{ height: { xs: "230px", sm: "290px", xl: "180px" } }} />
       </ThemeProvider>
       <Container sx={{ width: "85%" }}>
         <Grid

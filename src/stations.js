@@ -2,7 +2,7 @@ const stations = [
   {
     id: 1,
     call_sign: "WXYC",
-    broadcast_frequency: "89.3 FM",
+    broadcast_frequency: "89.3",
     audio_url: "https://audio-mp3.ibiblio.org/wxyc.mp3",
     station_url: "https://wxyc.org/",
     college_name: "University of North Carolina at Chapel Hill",
@@ -16,7 +16,7 @@ const stations = [
   {
     id: 2,
     call_sign: "KALX",
-    broadcast_frequency: "90.7 FM",
+    broadcast_frequency: "90.7",
     audio_url: "https://stream.kalx.berkeley.edu:8443/kalx-128.mp3",
     station_url: "https://www.kalx.berkeley.edu/",
     college_name: "University of California, Berkeley",
@@ -30,7 +30,7 @@ const stations = [
   {
     id: 3,
     call_sign: "KVRX",
-    broadcast_frequency: "91.7 FM",
+    broadcast_frequency: "91.7",
     audio_url: "https://www.kvrx.org/now_playing/stream",
     station_url: "https://kvrx.org/app/",
     college_name: "University of Texas at Austin",
@@ -45,7 +45,7 @@ const stations = [
   {
     id: 6,
     call_sign: "WSUM",
-    broadcast_frequency: "91.7 FM",
+    broadcast_frequency: "91.7",
     audio_url: "https://ice23.securenetsystems.net/WSUMFM",
     station_url: "https://wsum.org/",
     college_name: "University of Wisconsin—Madison",
@@ -60,7 +60,7 @@ const stations = [
   {
     id: 7,
     call_sign: "KCOU",
-    broadcast_frequency: "88.1 FM",
+    broadcast_frequency: "88.1",
     audio_url: "https://ssl.shoutcaststreaming.us:8088/stream",
     station_url: "https://kcou.fm/",
     college_name: "University of Missouri",
@@ -75,7 +75,7 @@ const stations = [
   {
     id: 8,
     call_sign: "WXTJ",
-    broadcast_frequency: "100.1 FM",
+    broadcast_frequency: "100.1",
     audio_url: "https://streams.wtju.net:8443/wtjx-opus-256.ogg",
     station_url: "https://www.wxtj.fm/",
     college_name: "University of Virginia",
@@ -90,7 +90,7 @@ const stations = [
   // {
   //   id: 9,
   //   call_sign: "WLUR",
-  //   broadcast_frequency: "91.5 FM",
+  //   broadcast_frequency: "91.5",
   //   audio_url: "https://wlur.radioca.st/stream",
   //   station_url: "https://my.wlu.edu/wlur",
   //   college_name: "Washington and Lee University",
@@ -105,7 +105,7 @@ const stations = [
   // {
   //   id: 10,
   //   call_sign: "WTBU",
-  //   broadcast_frequency: "89.3 FM",
+  //   broadcast_frequency: "89.3",
   //   audio_url: "http://wtbu.bu.edu:1800/",
   //   station_url: "https://sites.bu.edu/wtbu/",
   //   college_name: "Boston University",
@@ -120,7 +120,7 @@ const stations = [
   // {
   //   id: 11,
   //   call_sign: "WKDU",
-  //   broadcast_frequency: "91.7 FM",
+  //   broadcast_frequency: "91.7",
   //   audio_url: "https://streams.wkdu.org/listen.mp3",
   //   station_url: "https://wkdu.org/",
   //   college_name: "Drexel University",
@@ -135,7 +135,7 @@ const stations = [
   // {
   //   id: 4,
   //   call_sign: "WCBN",
-  //   broadcast_frequency: "88.3 FM",
+  //   broadcast_frequency: "88.3",
   //   audio_url: "http://floyd.wcbn.org:8000/wcbn-hd.mp3",
   //   station_url: "http://www.wcbn.org/",
   //   college_name: "University of Michigan",
@@ -149,7 +149,7 @@ const stations = [
   // {
   //   id: 5,
   //   call_sign: "WUTK",
-  //   broadcast_frequency: "90.3 FM",
+  //   broadcast_frequency: "90.3",
   //   audio_url: "http://streamer.cci.utk.edu:8000/wutk",
   //   station_url: "https://wutkradio.com/",
   //   college_name: "University of Tennessee, Knoxville",
@@ -163,7 +163,7 @@ const stations = [
   // {
   //   id: 12,
   //   call_sign: "WKNC",
-  //   broadcast_frequency: "88.1 FM",
+  //   broadcast_frequency: "88.1",
   //   audio_url: "http://173.193.205.96:7430/stream",
   //   station_url: "https://wknc.org/",
   //   college_name: "North Carolina State University",
@@ -178,7 +178,7 @@ const stations = [
   // {
   //   id: 13,
   //   call_sign: "WRUV",
-  //   broadcast_frequency: "90.1 FM",
+  //   broadcast_frequency: "90.1",
   //   audio_url: "http://icecast.uvm.edu:8005/wruv_fm_128",
   //   station_url: "http://wruv.org/",
   //   college_name: "University of Vermont",
@@ -193,7 +193,7 @@ const stations = [
   {
     id: 14,
     call_sign: "WPGU",
-    broadcast_frequency: "107.1 FM",
+    broadcast_frequency: "107.1",
     audio_url: "http://ice64.securenetsystems.net/WPGUFM",
     station_url: "http://illinimedia.org/",
     college_name: "University of Illinois-Urbana-Champaign",
@@ -208,7 +208,7 @@ const stations = [
   // {
   //   id: 15,
   //   call_sign: "KWVA",
-  //   broadcast_frequency: "88.1 FM",
+  //   broadcast_frequency: "88.1",
   //   audio_url: "http://kwvaradio.uoregon.edu:8000/stream/2/",
   //   station_url: "https://kwva.uoregon.edu/",
   //   college_name: "University of Oregon",
@@ -223,7 +223,7 @@ const stations = [
   {
     id: 15,
     call_sign: "KUNM",
-    broadcast_frequency: "89.9 FM",
+    broadcast_frequency: "89.9",
     audio_url: "https://19273.live.streamtheworld.com/KUNMFM_128.mp3",
     station_url: "https://www.kunm.org/",
     college_name: "University of New Mexico",
@@ -236,9 +236,9 @@ const stations = [
       "https://coursera-university-assets.s3.amazonaws.com/8b/80ffc01f5011e5bac7a71557814a9f/UNM_Logo_Vert_Coursera.png",
   },
   {
-    id: 15,
+    id: 16,
     call_sign: "WWVU",
-    broadcast_frequency: "91.7 FM",
+    broadcast_frequency: "91.7",
     audio_url:
       "http://n0a.radiojar.com/56p3rt9eytzuv?1665850857=&rj-tok=AAABg9x8ZxMAGQavy8qgdTpyMQ&rj-ttl=5",
     station_url: "https://u92themoose.com/",
@@ -252,9 +252,9 @@ const stations = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/West_Virginia_Mountaineers_logo.svg/175px-West_Virginia_Mountaineers_logo.svg.png",
   },
   {
-    id: 16,
+    id: 17,
     call_sign: "KAMP",
-    broadcast_frequency: "1570 AM",
+    broadcast_frequency: "1570",
     audio_url: "https://ice42.securenetsystems.net/KAMP",
     station_url: "https://www.kampstudentradio.com/",
     college_name: "University of Arizona",
