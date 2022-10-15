@@ -24,7 +24,7 @@ export default function Logo() {
           fontWeight: "bold",
         }}
       >
-        listen to campus radio stations
+        listen to college radio stations
       </Typography>
     </Box>
   )
