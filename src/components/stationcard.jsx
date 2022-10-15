@@ -109,7 +109,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
         <Box sx={{display: "flex", flexDirection:"column", justifyContent:"center"}}>
         <CardMedia
           component="img"
-            sx={{ width: { xs: 80, md: 130, lg: 150 }, m: { xs: "15px", md: "25px", lg: "25px" } }}
+            sx={{ height: { xs: 80, md: 130, lg: 150 }, width: { xs: 80, md: 130, lg: 150 }, m: { xs: "15px", md: "25px", lg: "25px" } }}
           image={collegeimage}
           alt={callsign}
           margin="auto"
@@ -137,7 +137,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           </IconButton>
         </Box>
 
-        <audio className="audio-element" onCanPlay={streamLoaded} onStalled={handleStall} name={callsign} src={audioURL}/>
+        <audio className="audio-element" onCanPlay={streamLoaded} onStalled={handleStall} name={callsign} src={audioURL} type="audio/mp3"/>
       </Card>
     </ThemeProvider>
   );
