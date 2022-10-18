@@ -85,6 +85,8 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     const allStations = document.getElementsByClassName("audio-element")
     const selectedStation = allStations.namedItem(callsign)
 
+    if (!loaded) selectedStation.load();
+
     if (playing?.call_sign === callsign) {
       selectedStation.pause()
       handleClick(null);
@@ -106,9 +108,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
 
   return (
     <ThemeProvider theme={theme}>
-      {/* <Card onClick={playPause} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row'}, alignItems: 'center', justifyContent: "space-between", height: 200, borderRadius:2, opacity: undimIfLoaded()}}> */}
       <Card onClick={playPause} sx={{ display: 'flex', alignItems: 'center', justifyContent: "space-between", height: { xs:150, md:200, lg:200}, borderRadius:2, opacity: undimIfLoaded(), background: greenIfPlaying() }}>
-        <Box sx={{display: "flex", flexDirection:"column", justifyContent:"center"}}>
         <CardMedia
           component="img"
             sx={{ height: { xs: 90, md: 130, lg: 150 }, width: { xs: 90, md: 130, lg: 150 }, m: { xs: "15px", md: "25px", lg: "25px" } }}
@@ -116,28 +116,20 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           alt={callsign}
           margin="auto"
           />
-        {/* <IconButton disableRipple="true" aria-label="play/pause" sx={{ mt: {xs: -2}, display: {xs: "block", md:"none"} }}>
-          {playing?.call_sign !== callsign && <PlayArrowIcon sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
-          {playing?.call_sign === callsign && <Pause sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
-        </IconButton> */}
+        <Box sx={{ display: 'flex', flexDirection: 'column', width: "100%" }}>
+          <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end", mr:1.5}}>
+            <Typography component="div" textAlign="right" variant="h4" fontFamily={"Share Tech Mono"}>
+              {callsign} {frequency}
+            </Typography>
+            <Typography variant="subtitle1" textAlign="right" color="text.secondary" component="div" fontFamily={"Share Tech Mono"}>
+              {college}
+            </Typography>
+          </CardContent>
         </Box>
-
-        <Box sx={{display:'flex', justifyContent: "space-between", flexDirection: { xs: 'column', s:'row', md: 'row'}}}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', width: "100%" }}>
-            <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end", mr:1.5}}>
-              <Typography component="div" textAlign="right" variant="h4" fontFamily={"Share Tech Mono"}>
-                {callsign} {frequency}
-              </Typography>
-              <Typography variant="subtitle1" textAlign="right" color="text.secondary" component="div" fontFamily={"Share Tech Mono"}>
-                {college}
-              </Typography>
-            </CardContent>
-          </Box>
           {/* <IconButton disableRipple="true" aria-label="play/pause" sx={{ display: {xs:"none", md:"block"}, mr:3 }}>
             {playing?.call_sign !== callsign && <PlayArrowIcon sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
             {playing?.call_sign === callsign && <Pause sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
           </IconButton> */}
-        </Box>
 
         <audio className="audio-element" onCanPlay={streamLoaded} onStalled={handleStall} name={callsign} src={audioURL} type="audio/mp3"/>
       </Card>

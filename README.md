@@ -1,23 +1,4 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
-
 <a name="readme-top"></a>
-
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -45,6 +26,7 @@ Live stream college radio stations around the country. Check it out [here](https
 
 ## Built With
 
+- [![Javascript][javascript]][javascript-url]
 - [![React][react.js]][react-url]
 - [![Material UI][material-ui]][material-ui-url]
 - [![NodeJS][node.js]][node-url]
@@ -76,12 +58,6 @@ npm install npm@latest -g
    npm run start
    ```
 
-<!-- CONTACT -->
-
-## Contact
-
-Project Link: [https://github.com/xehl/campus-fm](https://github.com/xehl/campus-fm)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
@@ -102,5 +78,7 @@ Project Link: [https://github.com/xehl/campus-fm](https://github.com/xehl/campus
 [material-ui-url]: https://mui.com/
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
+[javascript]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[javascript-url]: https://www.javascript.com/
 [node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
 [node-url]: https://nodejs.org/en/
