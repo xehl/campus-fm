@@ -42,6 +42,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
 
   const [loaded, setLoaded] = useState(false)
 
+  // opacity is 1 if loaded, 0.15 if still buffering
   const undimIfLoaded = () => {
     return loaded? 1: 0.15;
   }
@@ -108,7 +109,15 @@ export default function StationCard({callsign, frequency, college, audioURL, col
 
   return (
     <ThemeProvider theme={theme}>
-      <Card onClick={playPause} sx={{ display: 'flex', alignItems: 'center', justifyContent: "space-between", height: { xs:150, md:200, lg:200}, borderRadius:2, opacity: undimIfLoaded(), background: greenIfPlaying() }}>
+      <Card onClick={playPause} sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: "space-between",
+        height: { xs: 150, md: 200, lg: 200 },
+        borderRadius: 2,
+        opacity: undimIfLoaded(),
+        background: greenIfPlaying()
+      }}>
         <CardMedia
           component="img"
             sx={{ height: { xs: 90, md: 130, lg: 150 }, width: { xs: 90, md: 130, lg: 150 }, m: { xs: "15px", md: "25px", lg: "25px" } }}
