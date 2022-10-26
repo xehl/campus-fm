@@ -1,4 +1,4 @@
-const stations = [
+const teststations = [
   {
     id: 26,
     call_sign: "WVFS",
@@ -90,4 +90,4 @@ const stations = [
   },
 ];
 
-export default stations;
+export default teststations;

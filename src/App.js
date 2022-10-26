@@ -9,7 +9,8 @@ import Bulb from "react-bulb";
 import WebFont from "webfontloader";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useEffect, useState } from "react";
-import NowPlaying from "./components/nowplaying";
+import NowPlayingSmall from "./components/nowplayingsm";
+import NowPlayingLarge from "./components/nowplayinglg";
 
 function App() {
   // MUI theme breakpoints
@@ -92,10 +93,15 @@ function App() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                mb: { xs: 0, md: 3 },
+                mb: { xs: -3, md: 3 },
               }}
             >
-              <NowPlaying playing={playing} />
+              <NowPlayingLarge
+                playing={playing}
+                sx={{
+                  display: { xs: "none", sm: "none", md: "flex" },
+                }}
+              />
               <Box
                 onClick={offButton}
                 sx={{
@@ -112,35 +118,73 @@ function App() {
             </Box>
           </Box>
         </AppBar>
-        <Box sx={{ height: { xs: "230px", sm: "290px", xl: "180px" } }} />
-      </ThemeProvider>
-      <Container sx={{ width: "100%" }}>
-        <Grid
-          container
-          justifyContent="space-between"
-          rowSpacing={2}
-          columnSpacing={{ lg: 4, md: 3 }}
+        <Box
+          sx={{
+            height: { xs: "120px", sm: "185px", md: "295px", xl: "180px" },
+          }}
+        />
+        <Container sx={{ width: "100%" }}>
+          <Grid
+            container
+            justifyContent="space-between"
+            rowSpacing={2}
+            columnSpacing={{ lg: 4, md: 3 }}
+          >
+            {stations.map((station) => {
+              return (
+                <Grid
+                  item
+                  md={12}
+                  lg={6}
+                  sx={{ width: "100%" }}
+                  key={station.id}
+                >
+                  <StationCard
+                    callsign={station.call_sign}
+                    frequency={station.broadcast_frequency}
+                    college={station.college_name}
+                    audioURL={station.audio_url}
+                    collegeimage={station.college_image}
+                    handleClick={handleClick}
+                    stationObject={station}
+                    playing={playing}
+                    setPlayStatic={setPlayStatic}
+                  />
+                </Grid>
+              );
+            })}
+          </Grid>
+        </Container>
+        <Footer />
+        <AppBar
+          position="sticky"
+          sx={{
+            display: {
+              xs: "flex",
+              sm: "flex",
+              md: "none",
+              lg: "none",
+              xl: "none",
+            },
+            borderTop: 2,
+            bottom: 0,
+            mb: "-20px",
+            mt: "10px",
+            width: "100%",
+            background: "#2e2e2e",
+            height: "130px",
+          }}
         >
-          {stations.map((station) => {
-            return (
-              <Grid item md={12} lg={6} sx={{ width: "100%" }} key={station.id}>
-                <StationCard
-                  callsign={station.call_sign}
-                  frequency={station.broadcast_frequency}
-                  college={station.college_name}
-                  audioURL={station.audio_url}
-                  collegeimage={station.college_image}
-                  handleClick={handleClick}
-                  stationObject={station}
-                  playing={playing}
-                  setPlayStatic={setPlayStatic}
-                />
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Container>
-      <Footer />
+          <NowPlayingSmall
+            playing={playing}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          />
+        </AppBar>
+      </ThemeProvider>
       <audio
         className="staticAudio"
         preload="auto"

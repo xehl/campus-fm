@@ -21,7 +21,7 @@
 [![Campus FM Screen Shot][product-screenshot]](screengrabs/cfm-v1.3.png)
 
 <div align="center">
-    <img src="screengrabs/mobile-v1.3.jpg" alt="mobile-screen" width="350px"></a>
+  <img src="screengrabs/mobile-v1.3.jpg" alt="mobile-screengrab" width="350px"></a>
 </div>
 
 ## About The Project
