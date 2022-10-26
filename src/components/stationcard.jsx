@@ -8,12 +8,11 @@ export default function StationCard({callsign, frequency, college, audioURL, col
 
   const sendOutbound = (e) => {    
     e.preventDefault();
-    console.log(e.target.classList)
     // get callsign off class list
     let sign = null
     e.target.classList.forEach(cla => {
-      console.log(cla)
-      console.log(cla.length)
+      // console.log(cla)
+      // console.log(cla.length)
       if (cla.length === 4) sign = cla 
     })
     console.log(sign)
