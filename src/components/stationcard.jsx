@@ -74,7 +74,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     console.log(callsign + " stalled, reloading now")
     setLoaded(false)
     const thisStation = document.getElementsByClassName("audio-element").namedItem(callsign)
-    // console.log(thisStation.networkState)
+    // console.log(thisStation.src)
     thisStation.setAttribute("src", "")
     setTimeout(function () { 
         thisStation.load(); // This stops the stream from downloading

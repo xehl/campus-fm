@@ -146,7 +146,7 @@ const stations = [
     station_image:
       "https://kfjc.org/static/images/logos/classic.color.gifs/classic.color.600x470.gif",
     college_image:
-      "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/ako6mtcdkftdjgkpvcq6",
+      "https://www.wemakescholars.com/admin/uploads/providers/fiG-Xq69emSoKM8DaEpfSu42f90Mo11c.png",
   },
   {
     id: 26,
