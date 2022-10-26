@@ -11,11 +11,8 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     // get callsign off class list
     let sign = null
     e.target.classList.forEach(cla => {
-      // console.log(cla)
-      // console.log(cla.length)
       if (cla.length === 4) sign = cla 
     })
-    console.log(sign)
     ReactGA.event({
       category: 'Play',
       action: 'User played ' + sign,
@@ -77,6 +74,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     console.log(callsign + " stalled, reloading now")
     setLoaded(false)
     const thisStation = document.getElementsByClassName("audio-element").namedItem(callsign)
+    // console.log(thisStation.networkState)
     thisStation.setAttribute("src", "")
     setTimeout(function () { 
         thisStation.load(); // This stops the stream from downloading

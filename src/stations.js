@@ -72,6 +72,112 @@ const stations = [
     college_image:
       "https://assets-sports.thescore.com/basketball/team/684/logo.png",
   },
+  {
+    id: 17,
+    call_sign: "KAMP",
+    broadcast_frequency: "1570",
+    audio_url: "https://ice42.securenetsystems.net/KAMP",
+    station_url: "https://www.kampstudentradio.com/",
+    college_name: "University of Arizona",
+    public_private: "Public",
+    city: "Tucson",
+    state: "AZ",
+    station_image:
+      "https://static.mytuner.mobi/media/tvos_radios/uzkpp2kqse7c.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arizona_Wildcats_logo.svg/200px-Arizona_Wildcats_logo.svg.png",
+  },
+  {
+    id: 19,
+    call_sign: "WDBM",
+    broadcast_frequency: "88.9",
+    audio_url: "http://play.impact89fm.org:8000/impact89fm",
+    station_url: "https://impact89fm.org/",
+    college_name: "Michigan State University",
+    public_private: "Public",
+    city: "East Lansing",
+    state: "MI",
+    station_image:
+      "https://impact89fm.org/wp-content/uploads/2015/03/MainLogo-300x3001.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Michigan_State_Athletics_logo.svg/1200px-Michigan_State_Athletics_logo.svg.png",
+  },
+  {
+    id: 14,
+    call_sign: "WPGU",
+    broadcast_frequency: "107.1",
+    audio_url: "http://ice64.securenetsystems.net/WPGUFM",
+    station_url: "http://illinimedia.org/",
+    college_name: "University of Illinois-Urbana-Champaign",
+    public_private: "Public",
+    city: "Champaign",
+    state: "IL",
+    station_image:
+      "https://media-exp1.licdn.com/dms/image/C4E0BAQGlh_vDeKpWIQ/company-logo_200_200/0/1521359015698?e=2147483647&v=beta&t=NDMNDJlDJXyrHEYyzJsVvSkGbmbveL-WBukDv-NqGx8",
+    college_image:
+      "https://b.fssta.com/uploads/application/college/team-logos/Illinois.png",
+  },
+  {
+    id: 16,
+    call_sign: "WWVU",
+    broadcast_frequency: "91.7",
+    audio_url:
+      "http://n0a.radiojar.com/56p3rt9eytzuv?1665850857=&rj-tok=AAABg9x8ZxMAGQavy8qgdTpyMQ&rj-ttl=5",
+    station_url: "https://u92themoose.com/",
+    college_name: "West Virginia University",
+    public_private: "Public",
+    city: "Morgantown",
+    state: "WV",
+    station_image:
+      "https://cdn-profiles.tunein.com/s23884/images/logog.png?t=159614",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/West_Virginia_Mountaineers_logo.svg/175px-West_Virginia_Mountaineers_logo.svg.png",
+  },
+  {
+    id: 18,
+    call_sign: "KFJC",
+    broadcast_frequency: "89.7",
+    audio_url: "http://netcast.kfjc.org/kfjc-128k-mp3",
+    station_url: "https://kfjc.org/",
+    college_name: "Foothill College",
+    public_private: "Public",
+    city: "Los Altos Hills",
+    state: "CA",
+    station_image:
+      "https://kfjc.org/static/images/logos/classic.color.gifs/classic.color.600x470.gif",
+    college_image:
+      "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/ako6mtcdkftdjgkpvcq6",
+  },
+  {
+    id: 26,
+    call_sign: "WVFS",
+    broadcast_frequency: "89.7",
+    audio_url: "http://voice.wvfs.fsu.edu:8000/stream",
+    station_url: "https://wvfs.fsu.edu/",
+    college_name: "Florida State University",
+    public_private: "Public",
+    city: "Tallahassee",
+    state: "FL",
+    station_image:
+      "https://naccchart.com/wp-content/uploads/2022/03/wvfs-hi-res_350.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/Florida_State_Seminoles_logo.svg/1200px-Florida_State_Seminoles_logo.svg.png",
+  },
+  {
+    id: 28,
+    call_sign: "WUOG",
+    broadcast_frequency: "90.5",
+    audio_url: "http://stream.wuog.org:8000/stream",
+    station_url: "http://wuog.org/",
+    college_name: "University of Georgia",
+    public_private: "Public",
+    city: "Athens",
+    state: "GA",
+    station_image:
+      "https://bloximages.newyork1.vip.townnews.com/redandblack.com/content/tncms/assets/v3/editorial/6/23/623c3abe-acc1-11e4-ace3-3f1d40ac2f84/54d2a4c19933a.image.jpg?resize=400%2C400",
+    college_image:
+      "https://content.sportslogos.net/logos/31/687/full/georgia_bulldogs_logo_secondary_2015_sportslogosnet-7979.png",
+  },
   // {
   //   id: 8,
   //   call_sign: "WXTJ",
@@ -117,21 +223,21 @@ const stations = [
   //   college_image:
   //     "https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Boston_University_Terriers_logo.svg/800px-Boston_University_Terriers_logo.svg.png",
   // },
-  {
-    id: 11,
-    call_sign: "WKDU",
-    broadcast_frequency: "91.7",
-    audio_url: "https://streams.wkdu.org/listen.mp3",
-    station_url: "https://wkdu.org/",
-    college_name: "Drexel University",
-    public_private: "Private",
-    city: "Philadelphia",
-    state: "PA",
-    station_image:
-      "https://static.tuneyou.com/images/logos/500_500/81/10581/WKDUFM91.7.png",
-    college_image:
-      "https://drexel.edu/~/media/Images/identity/pageLogos/Drexel_Vertical-stacked_gold.ashx?la=en",
-  },
+  // {
+  //   id: 11,
+  //   call_sign: "WKDU",
+  //   broadcast_frequency: "91.7",
+  //   audio_url: "https://streams.wkdu.org/listen.mp3",
+  //   station_url: "https://wkdu.org/",
+  //   college_name: "Drexel University",
+  //   public_private: "Private",
+  //   city: "Philadelphia",
+  //   state: "PA",
+  //   station_image:
+  //     "https://static.tuneyou.com/images/logos/500_500/81/10581/WKDUFM91.7.png",
+  //   college_image:
+  //     "https://drexel.edu/~/media/Images/identity/pageLogos/Drexel_Vertical-stacked_gold.ashx?la=en",
+  // },
   {
     id: 4,
     call_sign: "WCBN",
@@ -143,7 +249,7 @@ const stations = [
     city: "Ann Arbor",
     state: "MI",
     station_image:
-      "http://www.wcbn.org/sites/default/files/wcbn%20logo%20color.jpg?1613678266",
+      "https://pbs.twimg.com/profile_images/1362092476375310338/ApUeoD54_400x400.jpg",
     college_image: "https://cdn.d1baseball.com/logos/teams/256/michigan.png",
   },
   // {
@@ -191,37 +297,22 @@ const stations = [
   //     "https://upload.wikimedia.org/wikipedia/en/thumb/3/34/Vermont_Catamounts_logo.svg/1200px-Vermont_Catamounts_logo.svg.png",
   // },
   {
-    id: 14,
-    call_sign: "WPGU",
-    broadcast_frequency: "107.1",
-    audio_url: "http://ice64.securenetsystems.net/WPGUFM",
-    station_url: "http://illinimedia.org/",
-    college_name: "University of Illinois-Urbana-Champaign",
+    id: 15,
+    call_sign: "KWVA",
+    broadcast_frequency: "88.1",
+    audio_url: "http://kwvaradio.uoregon.edu:8000/stream/2/",
+    station_url: "https://kwva.uoregon.edu/",
+    college_name: "University of Oregon",
     public_private: "Public",
-    city: "Champaign",
-    state: "IL",
+    city: "Eugene",
+    state: "OR",
     station_image:
-      "https://media-exp1.licdn.com/dms/image/C4E0BAQGlh_vDeKpWIQ/company-logo_200_200/0/1521359015698?e=2147483647&v=beta&t=NDMNDJlDJXyrHEYyzJsVvSkGbmbveL-WBukDv-NqGx8",
+      "https://i3.radionomy.com/radios/400/c9d7f1d5-24ed-45e7-b0dd-8fbdd20528e0.jpg",
     college_image:
-      "https://b.fssta.com/uploads/application/college/team-logos/Illinois.png",
+      "https://assets-sports.thescore.com/football/team/514/logo.png",
   },
   // {
-  //   id: 15,
-  //   call_sign: "KWVA",
-  //   broadcast_frequency: "88.1",
-  //   audio_url: "http://kwvaradio.uoregon.edu:8000/stream/2/",
-  //   station_url: "https://kwva.uoregon.edu/",
-  //   college_name: "University of Oregon",
-  //   public_private: "Public",
-  //   city: "Eugene",
-  //   state: "OR",
-  //   station_image:
-  //     "https://i3.radionomy.com/radios/400/c9d7f1d5-24ed-45e7-b0dd-8fbdd20528e0.jpg",
-  //   college_image:
-  //     "https://assets-sports.thescore.com/football/team/514/logo.png",
-  // },
-  // {
-  //   id: 15,
+  //   id: 27,
   //   call_sign: "KUNM",
   //   broadcast_frequency: "89.9",
   //   audio_url: "https://19273.live.streamtheworld.com/KUNMFM_128.mp3",
@@ -235,67 +326,6 @@ const stations = [
   //   college_image:
   //     "https://coursera-university-assets.s3.amazonaws.com/8b/80ffc01f5011e5bac7a71557814a9f/UNM_Logo_Vert_Coursera.png",
   // },
-  {
-    id: 16,
-    call_sign: "WWVU",
-    broadcast_frequency: "91.7",
-    audio_url:
-      "http://n0a.radiojar.com/56p3rt9eytzuv?1665850857=&rj-tok=AAABg9x8ZxMAGQavy8qgdTpyMQ&rj-ttl=5",
-    station_url: "https://u92themoose.com/",
-    college_name: "West Virginia University",
-    public_private: "Public",
-    city: "Morgantown",
-    state: "WV",
-    station_image:
-      "https://cdn-profiles.tunein.com/s23884/images/logog.png?t=159614",
-    college_image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/West_Virginia_Mountaineers_logo.svg/175px-West_Virginia_Mountaineers_logo.svg.png",
-  },
-  {
-    id: 17,
-    call_sign: "KAMP",
-    broadcast_frequency: "1570",
-    audio_url: "https://ice42.securenetsystems.net/KAMP",
-    station_url: "https://www.kampstudentradio.com/",
-    college_name: "University of Arizona",
-    public_private: "Public",
-    city: "Tucson",
-    state: "AZ",
-    station_image:
-      "https://static.mytuner.mobi/media/tvos_radios/uzkpp2kqse7c.jpg",
-    college_image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arizona_Wildcats_logo.svg/200px-Arizona_Wildcats_logo.svg.png",
-  },
-  {
-    id: 18,
-    call_sign: "KFJC",
-    broadcast_frequency: "89.7",
-    audio_url: "http://netcast.kfjc.org/kfjc-128k-mp3",
-    station_url: "https://kfjc.org/",
-    college_name: "Foothill College",
-    public_private: "Public",
-    city: "Los Altos Hills",
-    state: "CA",
-    station_image:
-      "https://kfjc.org/static/images/logos/classic.color.gifs/classic.color.600x470.gif",
-    college_image:
-      "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/ako6mtcdkftdjgkpvcq6",
-  },
-  {
-    id: 19,
-    call_sign: "WDBM",
-    broadcast_frequency: "88.9",
-    audio_url: "http://play.impact89fm.org:8000/impact89fm",
-    station_url: "https://impact89fm.org/",
-    college_name: "Michigan State University",
-    public_private: "Public",
-    city: "East Lansing",
-    state: "MI",
-    station_image:
-      "https://impact89fm.org/wp-content/uploads/2015/03/MainLogo-300x3001.png",
-    college_image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Michigan_State_Athletics_logo.svg/1200px-Michigan_State_Athletics_logo.svg.png",
-  },
   {
     id: 20,
     call_sign: "WUVT",
