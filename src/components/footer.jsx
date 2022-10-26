@@ -1,6 +1,14 @@
 import { Box, Typography, Link } from "@mui/material"
+import ReactGA from "react-ga4"
 
 export default function Footer() {
+  const githubClick = (e) => {    
+    e.preventDefault();
+    ReactGA.event({
+      category: 'Click',
+      action: 'User clicked on github link',
+    });
+  }
   return (
     <Box
         sx={{
@@ -19,6 +27,7 @@ export default function Footer() {
           created by
         </Typography>
         <Link
+          onClick={githubClick}
           target="_blank"
           sx={{ fontSize: 20 }}
           href="https://github.com/xehl/campus-fm"

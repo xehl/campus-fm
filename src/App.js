@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import NowPlaying from "./components/nowplaying";
 
 function App() {
+  // MUI theme breakpoints
   const theme = createTheme({
     breakpoints: {
       values: {
@@ -49,6 +50,17 @@ function App() {
     setPlaying(station);
   }
 
+  // turns off radio when user presses on/off button
+  function offButton() {
+    if (playing) {
+      const allStations = document.getElementsByClassName("audio-element");
+      for (let stream of allStations) {
+        stream.pause();
+      }
+      setPlaying(null);
+    }
+  }
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
@@ -84,6 +96,7 @@ function App() {
             >
               <NowPlaying playing={playing} />
               <Box
+                onClick={offButton}
                 sx={{
                   display: { xs: "none", sm: "none", md: "flex" },
                   alignItems: "center",
@@ -100,7 +113,7 @@ function App() {
         </AppBar>
         <Box sx={{ height: { xs: "230px", sm: "290px", xl: "180px" } }} />
       </ThemeProvider>
-      <Container sx={{ width: "85%" }}>
+      <Container sx={{ width: "100%" }}>
         <Grid
           container
           justifyContent="space-between"

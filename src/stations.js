@@ -72,21 +72,21 @@ const stations = [
     college_image:
       "https://assets-sports.thescore.com/basketball/team/684/logo.png",
   },
-  {
-    id: 8,
-    call_sign: "WXTJ",
-    broadcast_frequency: "100.1",
-    audio_url: "https://streams.wtju.net:8443/wtjx-opus-256.ogg",
-    station_url: "https://www.wxtj.fm/",
-    college_name: "University of Virginia",
-    public_private: "Public",
-    city: "Charlottesville",
-    state: "VA",
-    station_image:
-      "https://upload.wikimedia.org/wikipedia/en/5/50/WXTJ-LP_2015.png",
-    college_image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Virginia_Cavaliers_logo.svg/800px-Virginia_Cavaliers_logo.svg.png",
-  },
+  // {
+  //   id: 8,
+  //   call_sign: "WXTJ",
+  //   broadcast_frequency: "100.1",
+  //   audio_url: "https://streams.wtju.net:8443/wtjx-opus-256.ogg",
+  //   station_url: "https://www.wxtj.fm/",
+  //   college_name: "University of Virginia",
+  //   public_private: "Public",
+  //   city: "Charlottesville",
+  //   state: "VA",
+  //   station_image:
+  //     "https://upload.wikimedia.org/wikipedia/en/5/50/WXTJ-LP_2015.png",
+  //   college_image:
+  //     "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Virginia_Cavaliers_logo.svg/800px-Virginia_Cavaliers_logo.svg.png",
+  // },
   // {
   //   id: 9,
   //   call_sign: "WLUR",
@@ -117,35 +117,35 @@ const stations = [
   //   college_image:
   //     "https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Boston_University_Terriers_logo.svg/800px-Boston_University_Terriers_logo.svg.png",
   // },
-  // {
-  //   id: 11,
-  //   call_sign: "WKDU",
-  //   broadcast_frequency: "91.7",
-  //   audio_url: "https://streams.wkdu.org/listen.mp3",
-  //   station_url: "https://wkdu.org/",
-  //   college_name: "Drexel University",
-  //   public_private: "Private",
-  //   city: "Philadelphia",
-  //   state: "PA",
-  //   station_image:
-  //     "https://static.tuneyou.com/images/logos/500_500/81/10581/WKDUFM91.7.png",
-  //   college_image:
-  //     "https://drexel.edu/~/media/Images/identity/pageLogos/Drexel_Vertical-stacked_gold.ashx?la=en",
-  // },
-  // {
-  //   id: 4,
-  //   call_sign: "WCBN",
-  //   broadcast_frequency: "88.3",
-  //   audio_url: "http://floyd.wcbn.org:8000/wcbn-hd.mp3",
-  //   station_url: "http://www.wcbn.org/",
-  //   college_name: "University of Michigan",
-  //   public_private: "public",
-  //   city: "Ann Arbor",
-  //   state: "MI",
-  //   station_image:
-  //     "http://www.wcbn.org/sites/default/files/wcbn%20logo%20color.jpg?1613678266",
-  //   college_image: "https://cdn.d1baseball.com/logos/teams/256/michigan.png",
-  // },
+  {
+    id: 11,
+    call_sign: "WKDU",
+    broadcast_frequency: "91.7",
+    audio_url: "https://streams.wkdu.org/listen.mp3",
+    station_url: "https://wkdu.org/",
+    college_name: "Drexel University",
+    public_private: "Private",
+    city: "Philadelphia",
+    state: "PA",
+    station_image:
+      "https://static.tuneyou.com/images/logos/500_500/81/10581/WKDUFM91.7.png",
+    college_image:
+      "https://drexel.edu/~/media/Images/identity/pageLogos/Drexel_Vertical-stacked_gold.ashx?la=en",
+  },
+  {
+    id: 4,
+    call_sign: "WCBN",
+    broadcast_frequency: "88.3",
+    audio_url: "http://floyd.wcbn.org:8000/wcbn-hd.mp3",
+    station_url: "http://www.wcbn.org/",
+    college_name: "University of Michigan",
+    public_private: "public",
+    city: "Ann Arbor",
+    state: "MI",
+    station_image:
+      "http://www.wcbn.org/sites/default/files/wcbn%20logo%20color.jpg?1613678266",
+    college_image: "https://cdn.d1baseball.com/logos/teams/256/michigan.png",
+  },
   // {
   //   id: 5,
   //   call_sign: "WUTK",
@@ -220,21 +220,21 @@ const stations = [
   //   college_image:
   //     "https://assets-sports.thescore.com/football/team/514/logo.png",
   // },
-  {
-    id: 15,
-    call_sign: "KUNM",
-    broadcast_frequency: "89.9",
-    audio_url: "https://19273.live.streamtheworld.com/KUNMFM_128.mp3",
-    station_url: "https://www.kunm.org/",
-    college_name: "University of New Mexico",
-    public_private: "Public",
-    city: "Albuquerque",
-    state: "NM",
-    station_image:
-      "https://dbs.radioline.fr/pictures/radio_f9e336e70016db25b63ef34b980b8f59/logo200.jpg?size=200",
-    college_image:
-      "https://coursera-university-assets.s3.amazonaws.com/8b/80ffc01f5011e5bac7a71557814a9f/UNM_Logo_Vert_Coursera.png",
-  },
+  // {
+  //   id: 15,
+  //   call_sign: "KUNM",
+  //   broadcast_frequency: "89.9",
+  //   audio_url: "https://19273.live.streamtheworld.com/KUNMFM_128.mp3",
+  //   station_url: "https://www.kunm.org/",
+  //   college_name: "University of New Mexico",
+  //   public_private: "Public",
+  //   city: "Albuquerque",
+  //   state: "NM",
+  //   station_image:
+  //     "https://dbs.radioline.fr/pictures/radio_f9e336e70016db25b63ef34b980b8f59/logo200.jpg?size=200",
+  //   college_image:
+  //     "https://coursera-university-assets.s3.amazonaws.com/8b/80ffc01f5011e5bac7a71557814a9f/UNM_Logo_Vert_Coursera.png",
+  // },
   {
     id: 16,
     call_sign: "WWVU",
@@ -242,7 +242,7 @@ const stations = [
     audio_url:
       "http://n0a.radiojar.com/56p3rt9eytzuv?1665850857=&rj-tok=AAABg9x8ZxMAGQavy8qgdTpyMQ&rj-ttl=5",
     station_url: "https://u92themoose.com/",
-    college_name: "University of West Virginia",
+    college_name: "West Virginia University",
     public_private: "Public",
     city: "Morgantown",
     state: "WV",
@@ -265,6 +265,124 @@ const stations = [
       "https://static.mytuner.mobi/media/tvos_radios/uzkpp2kqse7c.jpg",
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arizona_Wildcats_logo.svg/200px-Arizona_Wildcats_logo.svg.png",
+  },
+  {
+    id: 18,
+    call_sign: "KFJC",
+    broadcast_frequency: "89.7",
+    audio_url: "http://netcast.kfjc.org/kfjc-128k-mp3",
+    station_url: "https://kfjc.org/",
+    college_name: "Foothill College",
+    public_private: "Public",
+    city: "Los Altos Hills",
+    state: "CA",
+    station_image:
+      "https://kfjc.org/static/images/logos/classic.color.gifs/classic.color.600x470.gif",
+    college_image:
+      "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/ako6mtcdkftdjgkpvcq6",
+  },
+  {
+    id: 19,
+    call_sign: "WDBM",
+    broadcast_frequency: "88.9",
+    audio_url: "http://play.impact89fm.org:8000/impact89fm",
+    station_url: "https://impact89fm.org/",
+    college_name: "Michigan State University",
+    public_private: "Public",
+    city: "East Lansing",
+    state: "MI",
+    station_image:
+      "https://impact89fm.org/wp-content/uploads/2015/03/MainLogo-300x3001.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Michigan_State_Athletics_logo.svg/1200px-Michigan_State_Athletics_logo.svg.png",
+  },
+  {
+    id: 20,
+    call_sign: "WUVT",
+    broadcast_frequency: "90.7",
+    audio_url: "https://stream.wuvt.vt.edu/wuvt-hq.aac",
+    station_url: "https://www.wuvt.vt.edu/",
+    college_name: "Virginia Tech",
+    public_private: "Public",
+    city: "Blacksburg",
+    state: "VA",
+    station_image: "https://cdn-radiotime-logos.tunein.com/s23449g.png",
+    college_image:
+      "https://play-lh.googleusercontent.com/NUZcBH8TGuqTuP_zsaEzXC747k8IXyTUQ83nkP0voWgCFbVBItRuv0XwymzHuGZakZM",
+  },
+  {
+    id: 21,
+    call_sign: "WHUS",
+    broadcast_frequency: "91.7",
+    audio_url: "http://stream.whus.org:8000/whusfm",
+    station_url: "https://whus.org/",
+    college_name: "University of Connecticut",
+    public_private: "Public",
+    city: "Mansfield",
+    state: "CT",
+    station_image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHP4z0afknHEtpmHaK5x7mjIm8QNwPSXOo0v1uOfZ0PxX-ex5TBEqGBGP3byvnvwhEUKM&usqp=CAU",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Connecticut_Huskies_logo.svg/1200px-Connecticut_Huskies_logo.svg.png",
+  },
+  {
+    id: 22,
+    call_sign: "KMNR",
+    broadcast_frequency: "89.7",
+    audio_url: "https://boombox.kmnr.org/webstream.mp3",
+    station_url: "https://kmnr.org/",
+    college_name: "Missouri University of Science and Technology",
+    public_private: "",
+    city: "Rolla",
+    state: "MO",
+    station_image:
+      "https://www.radio.net/images/broadcasts/a5/7b/31601/c300.png",
+    college_image:
+      "https://www.pinclipart.com/picdir/big/76-766936_mascot-marks-missouri-s-t-athletics-logo-clipart.png",
+  },
+  {
+    id: 23,
+    call_sign: "WRPI",
+    broadcast_frequency: "91.5",
+    audio_url: "http://icecast1.wrpi.org:8000/mp3-256.mp3",
+    station_url: "https://www.wrpi.org/",
+    college_name: "Rensselaer Polytechnic Institute",
+    public_private: "Private",
+    city: "Troy",
+    state: "NY",
+    station_image:
+      "http://images.radio.orange.com/radios/large_wrpi_915_fm_troy_ny.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/RPI_Engineers.svg/1200px-RPI_Engineers.svg.png",
+  },
+  {
+    id: 24,
+    call_sign: "KZUU",
+    broadcast_frequency: "90.7",
+    audio_url: "https://ice8.securenetsystems.net/KZUU",
+    station_url: "https://kzuu.org/",
+    college_name: "Washington State University",
+    public_private: "Public",
+    city: "Pullman",
+    state: "WA",
+    station_image:
+      "https://kzuuorg.files.wordpress.com/2019/03/cropped-full-logo-final-2018.png?w=300",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Washington_State_Cougars_logo.svg/800px-Washington_State_Cougars_logo.svg.png",
+  },
+  {
+    id: 25,
+    call_sign: "KSPC",
+    broadcast_frequency: "88.7",
+    audio_url: "https://kspc.radioca.st/stream",
+    station_url: "https://kspc.org/",
+    college_name: "Claremont Colleges",
+    public_private: "Private",
+    city: "Claremont",
+    state: "CA",
+    station_image: "https://kspc.org/wp-content/uploads/2019/10/brand-2.jpg",
+    college_image:
+      "https://discoverclaremont.com/wp-content/themes/discover-2020/img/claremont-ca-logo.png",
   },
 ];
 
