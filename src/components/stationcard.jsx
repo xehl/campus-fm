@@ -2,9 +2,27 @@ import * as React from 'react';
 import {Box, Card, CardContent, CardMedia, Typography} from '@mui/material/';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
+import ReactGA from "react-ga4"
 
 export default function StationCard({callsign, frequency, college, audioURL, collegeimage, handleClick, stationObject, playing, setPlayStatic}) {
 
+  const sendOutbound = (e) => {    
+    e.preventDefault();
+    console.log(e.target.classList)
+    // get callsign off class list
+    let sign = null
+    e.target.classList.forEach(cla => {
+      console.log(cla)
+      console.log(cla.length)
+      if (cla.length === 4) sign = cla 
+    })
+    console.log(sign)
+    ReactGA.event({
+      category: 'Play',
+      action: 'User played ' + sign,
+    });
+  }
+  
   const theme = createTheme({
     breakpoints: {
       values: {
@@ -81,7 +99,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     }
   }
 
-  const playPause = () => {
+  const playPause = (e) => {
     // select all audio stream elements + selected stream
     const allStations = document.getElementsByClassName("audio-element")
     const selectedStation = allStations.namedItem(callsign)
@@ -102,6 +120,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
         setPlayStatic(false)
         selectedStation.play();
         handleClick(stationObject);
+        sendOutbound(e);
       }
       else handleStall();
     }
@@ -109,28 +128,36 @@ export default function StationCard({callsign, frequency, college, audioURL, col
 
   return (
     <ThemeProvider theme={theme}>
-      <Card onClick={playPause} sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: "space-between",
-        height: { xs: 150, md: 200, lg: 200 },
-        borderRadius: 2,
-        opacity: undimIfLoaded(),
-        background: greenIfPlaying()
-      }}>
+      <Card
+        className={callsign}
+        onClick={(e) => playPause(e)}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: "space-between",
+          height: { xs: 150, md: 200, lg: 200 },
+          borderRadius: 2,
+          opacity: undimIfLoaded(),
+          background: greenIfPlaying()
+        }}>
         <CardMedia
+          className={callsign}
           component="img"
-            sx={{ height: { xs: 90, md: 130, lg: 150 }, width: { xs: 90, md: 130, lg: 150 }, m: { xs: "15px", md: "25px", lg: "25px" } }}
+          sx={{
+            height: { xs: 90, md: 130, lg: 150 },
+            width: { xs: 90, md: 130, lg: 150 },
+            m: { xs: "15px", md: "25px", lg: "25px" }
+          }}
           image={collegeimage}
           alt={callsign}
           margin="auto"
           />
-        <Box sx={{ display: 'flex', flexDirection: 'column', width: "100%" }}>
-          <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end", mr:1.5}}>
-            <Typography component="div" textAlign="right" variant="h4" fontFamily={"Share Tech Mono"}>
+        <Box className={callsign} sx={{ display: 'flex', flexDirection: 'column', width: "100%" }}>
+          <CardContent className={callsign} sx={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end", mr:1.5}}>
+            <Typography className={callsign} component="div" textAlign="right" variant="h4" fontFamily={"Share Tech Mono"}>
               {callsign} {frequency}
             </Typography>
-            <Typography variant="subtitle1" textAlign="right" color="text.secondary" component="div" fontFamily={"Share Tech Mono"}>
+            <Typography className={callsign} variant="subtitle1" textAlign="right" color="text.secondary" component="div" fontFamily={"Share Tech Mono"}>
               {college}
             </Typography>
           </CardContent>
@@ -139,7 +166,6 @@ export default function StationCard({callsign, frequency, college, audioURL, col
             {playing?.call_sign !== callsign && <PlayArrowIcon sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
             {playing?.call_sign === callsign && <Pause sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
           </IconButton> */}
-
         <audio className="audio-element" onCanPlay={streamLoaded} onStalled={handleStall} name={callsign} src={audioURL} type="audio/mp3"/>
       </Card>
     </ThemeProvider>
