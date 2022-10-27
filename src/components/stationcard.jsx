@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import ReactGA from "react-ga4"
 
-export default function StationCard({callsign, frequency, college, audioURL, collegeimage, setPlaying, stationObject, playing, setPlayStatic}) {
+export default function StationCard({callsign, frequency, college, audioURL, collegeimage, handleClick, stationObject, playing, setPlayStatic}) {
 
   const sendOutbound = (e) => {    
     e.preventDefault();
@@ -19,7 +19,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     });
   }
   
-  const cardtheme = createTheme({
+  const theme = createTheme({
     breakpoints: {
       values: {
         xs: 0,
@@ -31,25 +31,25 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     },
   });
 
-  cardtheme.typography.h4 = {
+  theme.typography.h4 = {
     fontSize: '1.5rem',
-    [cardtheme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('sm')]: {
       fontSize: '2rem',
     },
-    [cardtheme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('md')]: {
       fontSize: '2.4rem',
     },
-    [cardtheme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('lg')]: {
       fontSize: "1.9rem",
     },
   };
 
-  cardtheme.typography.subtitle1 = {
+  theme.typography.subtitle1 = {
     fontSize: '1rem',
-    [cardtheme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('sm')]: {
       fontSize: '1.6rem',
     },
-    [cardtheme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('lg')]: {
       fontSize: "1.4rem",
     },
   }
@@ -105,7 +105,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
 
     if (playing?.call_sign === callsign) {
       selectedStation.pause()
-      setPlaying(null);
+      handleClick(null);
     }
     // if a different station is selected, pause the existing stream and play the new station + change the playing state
     else {      
@@ -116,7 +116,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
         }
         setPlayStatic(false)
         selectedStation.play();
-        setPlaying(stationObject);
+        handleClick(stationObject);
         sendOutbound(e);
       }
       else handleStall();
@@ -124,7 +124,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
   }
 
   return (
-    <ThemeProvider theme={cardtheme}>
+    <ThemeProvider theme={theme}>
       <Card
         className={callsign}
         onClick={(e) => playPause(e)}
