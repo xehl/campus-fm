@@ -3,21 +3,19 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 export default function NowPlayingLarge({ playing }) {
   return (
-    <Box sx={{ width: { xs: "100%", md: 580, xl: 660 }, mt: 2.5 }} >
+    <Box sx={{ width: {md: "95vw", lg: "50vw", xl:"45vw"}, margin: "auto" }}>
       <Paper elevation={3} sx={{
         display: { xs: "none", md: "flex" },
-        ml: { xs: 0, xl: 6 },
-        mr: { xs: 0, xl: 4 },
-        mt: { xs: -2.5, xl: 0 },
+        mt: -2,
         alignItems: "center",
         justifyContent: "flex-start",
         borderRadius: '12px',
-        height: { xs: 80, xl: 120 }
+        height: { xs: 80, xl: 80 }
       }}>
         <Box sx={{ width: 120, p: "15px", borderRadius: "10px" }}>
           {playing && <CardMedia
             component="img"
-            sx={{ width: { xs: 60, xl: 90 }, borderRadius: "10px" }}
+            sx={{ width: 60, borderRadius: "10px" }}
             image={playing.station_image}
             alt={playing.call_sign}
             margin=" uto"

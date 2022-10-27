@@ -9,10 +9,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <a href="https://campus-fm.netlify.app/"><img src="public/logo.png" alt="Logo" width="300px"></a>
+    <a href="https://www.campus-fm.com/"><img src="public/logo.png" alt="Logo" width="300px"></a>
   <p align="center">
     <br />
-        <a href="https://campus-fm.netlify.app/"><strong>Use the app</strong></a> ·
+        <a href="https://www.campus-fm.com/"><strong>Use the app</strong></a> ·
         <a href="https://github.com/xehl/campus-fm/tree/main/src"><strong>Explore the repo</strong></a>
     <br />
   </p>
@@ -26,7 +26,7 @@
 
 ## About The Project
 
-Live stream college radio stations around the country. Check it out [here](https://campus-fm.netlify.app/).
+Live stream college radio stations around the country. Check it out [here](https://www.campus-fm.com/).
 
 ## Built With
 
