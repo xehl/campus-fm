@@ -37,6 +37,7 @@ function App() {
 
   // stores which station is currently playing
   const [playing, setPlaying] = useState(null);
+  const [volume, setVolume] = useState(100);
   const [selectedStations, setSelectedStations] = useState(teststations);
 
   // plays static when playStatic state changes
@@ -100,6 +101,8 @@ function App() {
                 playing={playing}
                 setPlaying={setPlaying}
                 displayedStations={teststations}
+                volume={volume}
+                setVolume={setVolume}
                 // openModal={openModal}
               />
               {/* <Box
@@ -152,6 +155,7 @@ function App() {
                     setPlaying={setPlaying}
                     stationObject={station}
                     playing={playing}
+                    volume={volume}
                     setPlayStatic={setPlayStatic}
                   />
                 </Grid>

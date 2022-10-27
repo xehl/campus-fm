@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import ReactGA from "react-ga4"
 
-export default function StationCard({callsign, frequency, college, audioURL, collegeimage, setPlaying, stationObject, playing, setPlayStatic}) {
+export default function StationCard({callsign, frequency, college, audioURL, collegeimage, setPlaying, stationObject, playing, volume, setPlayStatic}) {
 
   const sendOutbound = (e) => {    
     e.preventDefault();
@@ -83,6 +83,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
       let retry = setInterval(() => {
         if (thisStation.readyState >= 3) {
           thisStation.play()
+          thisStation.volume = volume / 100
           setPlayStatic(false)
           clearInterval(retry)
         }
@@ -108,6 +109,8 @@ export default function StationCard({callsign, frequency, college, audioURL, col
         }
         setPlayStatic(false)
         selectedStation.play();
+        console.log(volume)
+        selectedStation.volume = volume / 100
         setPlaying(stationObject);
         sendOutbound(e);
       }
