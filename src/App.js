@@ -4,13 +4,14 @@ import StationCard from "./components/stationcard";
 import Footer from "./components/footer";
 import Logo from "./components/logo";
 import stations from "./stations";
-// import teststations from "./teststations";
-import Bulb from "react-bulb";
+import teststations from "./teststations";
+// import Bulb from "react-bulb";
 import WebFont from "webfontloader";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import NowPlayingSmall from "./components/nowplayingsm";
 import NowPlayingLarge from "./components/nowplayinglg";
+import Toolbar from "./components/toolbar";
 
 function App() {
   // MUI theme breakpoints
@@ -37,9 +38,10 @@ function App() {
 
   // stores which station is currently playing
   const [playing, setPlaying] = useState(null);
-  const [playStatic, setPlayStatic] = useState(false);
+  const [selectedStations, setSelectedStations] = useState(teststations);
 
   // plays static when playStatic state changes
+  const [playStatic, setPlayStatic] = useState(false);
   useEffect(() => {
     const staticSound = document.getElementsByClassName("staticAudio")[0];
     staticSound.volume = 0.3;
@@ -47,24 +49,23 @@ function App() {
     if (playStatic === false) staticSound.pause();
   }, [playStatic]);
 
-  // basically just sets the playing state, passed into card (maybe not optimal)
-  function handleClick(station) {
-    setPlaying(station);
-  }
-
-  // turns off radio when user presses on/off button
-  function offButton() {
-    if (playing) {
-      const allStations = document.getElementsByClassName("audio-element");
-      for (let stream of allStations) {
-        stream.pause();
-      }
-      setPlaying(null);
-    }
-  }
+  // // turns off radio when user presses on/off button
+  // function offButton() {
+  //   if (playing) {
+  //     const allStations = document.getElementsByClassName("audio-element");
+  //     for (let stream of allStations) {
+  //       stream.pause();
+  //     }
+  //     setPlaying(null);
+  //   }
+  // }
 
   return (
     <div className="App">
+      {/* <div>Select Stations:</div>
+      {stations.map((station) => {
+        return <div>{station.call_sign}</div>;
+      })} */}
       <ThemeProvider theme={theme}>
         <AppBar
           position="absolute"
@@ -96,17 +97,18 @@ function App() {
                 mb: { xs: -3, md: 3 },
               }}
             >
-              <NowPlayingLarge
+              <Toolbar
                 playing={playing}
-                sx={{
-                  display: { xs: "none", sm: "none", md: "flex" },
-                }}
+                setPlaying={setPlaying}
+                displayedStations={teststations}
+                // openModal={openModal}
               />
-              <Box
+              {/* <Box
                 onClick={offButton}
                 sx={{
-                  display: { xs: "none", sm: "none", md: "flex" },
+                  display: "flex",
                   alignItems: "center",
+                  mt: 3,
                 }}
               >
                 <Box sx={{ ml: { xs: 3, s: 0, xl: 0 }, mr: 1 }}>ON/OFF</Box>
@@ -114,15 +116,18 @@ function App() {
                   {playing && <Bulb size={20} color="green" />}
                   {!playing && <Bulb size={20} color="black" />}
                 </Box>
-              </Box>
+              </Box> */}
             </Box>
           </Box>
         </AppBar>
+
+        {/* SPACER BELOW */}
         <Box
           sx={{
-            height: { xs: "120px", sm: "185px", md: "295px", xl: "180px" },
+            height: { xs: "320px", sm: "285px", md: "295px", xl: "180px" },
           }}
         />
+
         <Container sx={{ width: "100%" }}>
           <Grid
             container
@@ -130,7 +135,7 @@ function App() {
             rowSpacing={2}
             columnSpacing={{ lg: 4, md: 3 }}
           >
-            {stations.map((station) => {
+            {teststations.map((station) => {
               return (
                 <Grid
                   item
@@ -145,7 +150,7 @@ function App() {
                     college={station.college_name}
                     audioURL={station.audio_url}
                     collegeimage={station.college_image}
-                    handleClick={handleClick}
+                    setPlaying={setPlaying}
                     stationObject={station}
                     playing={playing}
                     setPlayStatic={setPlayStatic}
@@ -159,13 +164,7 @@ function App() {
         <AppBar
           position="sticky"
           sx={{
-            display: {
-              xs: "flex",
-              sm: "flex",
-              md: "none",
-              lg: "none",
-              xl: "none",
-            },
+            display: "flex",
             borderTop: 2,
             bottom: 0,
             mb: "-20px",
@@ -178,9 +177,15 @@ function App() {
           <NowPlayingSmall
             playing={playing}
             sx={{
-              display: "flex",
+              display: { xs: "flex", sm: "flex", md: "none" },
               alignItems: "center",
               justifyContent: "center",
+            }}
+          />
+          <NowPlayingLarge
+            playing={playing}
+            sx={{
+              display: { xs: "none", sm: "none", md: "flex" },
             }}
           />
         </AppBar>
