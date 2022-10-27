@@ -24,7 +24,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
       values: {
         xs: 0,
         sm: 600,
-        md: 800,
+        md: 821,
         lg: 1200,
         xl: 1536,
       },
@@ -129,6 +129,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
         className={callsign}
         onClick={(e) => playPause(e)}
         sx={{
+          cursor: "pointer",
           display: 'flex',
           alignItems: 'center',
           justifyContent: "space-between",

@@ -4,6 +4,8 @@ import ReactGA from "react-ga4"
 export default function Footer() {
   const githubClick = (e) => {    
     e.preventDefault();
+    window.open(
+    "https://github.com/xehl/campus-fm", "_blank");
     ReactGA.event({
       category: 'Click',
       action: 'User clicked on github link',
@@ -28,7 +30,6 @@ export default function Footer() {
         </Typography>
         <Link
           onClick={githubClick}
-          target="_blank"
           sx={{ fontSize: 20 }}
           href="https://github.com/xehl/campus-fm"
         >
