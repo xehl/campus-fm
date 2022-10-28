@@ -1,23 +1,25 @@
 import { Box, Card, CardMedia, Typography } from '@mui/material/';
 
-
-export default function ModalCard({ station, stationQueue, setStationQueue }) {
+export default function ModalCard({ station, stationQueue, setStationQueue, setSnackBarMessage, openSnackBar }) {
   
   function handleQueue() {
-    // if station is already selected, unselect it
-    if (stationQueue.includes(station)) {
-      setStationQueue(stationQueue.filter(queuedStation => queuedStation !== station))
+
+    // if station is already selected, remove it from queue
+    if (JSON.stringify(stationQueue).includes(JSON.stringify(station))) {
+      setStationQueue(stationQueue.filter(queuedStation => JSON.stringify(queuedStation) !== JSON.stringify(station)))
       return
     }
-    // if 10 stations are already picked, do nothing
+    // if 10 stations are already selected, do nothing
     if (stationQueue.length === 10) {
+      setSnackBarMessage("Can't load more than 10 stations simultaneously!")
+      openSnackBar()
       return
     }
     setStationQueue([...stationQueue, station])
   }
 
-  function highlightSelected() {
-    return (stationQueue.includes(station) ? "#ccecff" : "")
+  function highlightSelect() {
+    return JSON.stringify(stationQueue).includes(JSON.stringify(station)) ? "#ccecff" : "#e3e3e3"
   }
 
   return (
@@ -26,7 +28,8 @@ export default function ModalCard({ station, stationQueue, setStationQueue }) {
       sx={{
       width: { md: "100%", lg: 170 },
       mb: 1,
-      background: highlightSelected()
+      background: highlightSelect(),
+      cursor: "pointer",
     }}>
       <Box sx={{
         display: "flex",
@@ -39,16 +42,18 @@ export default function ModalCard({ station, stationQueue, setStationQueue }) {
             sx={{
               height: { xs: 80, md: 80, lg: 80 },
               width: { xs: 80, md: 80, lg: 80 },
-              m: { xs: "5px", md: "5px", lg: "5px" }
+              m: { xs: "5px", md: "5px", lg: "5px" },
+              borderRadius: 2,
+              border: 1,
             }}
             image={station.station_image}
             alt={station.callsign}
             margin="auto"
         />
-        <Typography>
+        <Typography fontFamily="Share Tech Mono" fontSize={16} color="black">
           {station.callsign} {station.college_name}
         </Typography>
-        <Typography>
+        <Typography fontFamily="Share Tech Mono" fontSize={16} color="black">
           {station.city} {station.state}
         </Typography>
       </Box>

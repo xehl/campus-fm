@@ -62,12 +62,9 @@ export default function StationCard({callsign, frequency, college, audioURL, col
   const greenIfPlaying = () => {
     return (playing?.call_sign === callsign) ? "#cefac8" : "";
   }
-  function streamLoaded() {
-    setLoaded(true)
-  }
+
   function handleStall() {
     // remove and reload stalled station audio stream
-    console.log(callsign + " stalled, reloading now")
     setLoaded(false)
     const thisStation = document.getElementsByClassName("audio-element").namedItem(callsign)
     thisStation.setAttribute("src", "")
@@ -168,7 +165,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
             {playing?.call_sign !== callsign && <PlayArrowIcon sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
             {playing?.call_sign === callsign && <Pause sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
           </IconButton> */}
-        <audio className="audio-element" onCanPlay={streamLoaded} onStalled={handleStall} name={callsign} src={audioURL} type="audio/mp3"/>
+        <audio className="audio-element" onLoadStart={() => setLoaded(false)} onCanPlay={() => setLoaded(true)} onStalled={handleStall} name={callsign} src={audioURL} type="audio/mp3"/>
       </Card>
     </ThemeProvider>
   );

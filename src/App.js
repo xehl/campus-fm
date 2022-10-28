@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import StationCard from "./components/stationcard";
 import Footer from "./components/footer";
 import Logo from "./components/logo";
-import teststations from "./teststations";
+import stations from "./stations";
 import WebFont from "webfontloader";
 import Toolbar from "./components/toolbar";
 import SelectorModal from "./components/selectormodal";
@@ -24,23 +24,46 @@ export default function App() {
       },
     },
   });
-  // load fonts on initial page load
+
+  // fire on initial page load
   useEffect(() => {
+    // load custom fonts
     WebFont.load({
       google: {
         families: ["Monoton", "Turret Road", "Share Tech Mono"],
       },
     });
+    // load cached stations for returning users
+    let cache = JSON.parse(localStorage.getItem("recentStations"));
+    if (cache) setSelectedStations(cache);
+    else {
+      // otherwise, load default stations
+      let defaultCallsigns = [
+        "WXYC",
+        "KALX",
+        "KVRX",
+        "WVFS",
+        "WUOG",
+        "KUNM",
+        "WCBN",
+        "WUTK",
+      ];
+      let defaultStations = [];
+      defaultStations = stations.filter((station) =>
+        defaultCallsigns.includes(station.call_sign)
+      );
+      setSelectedStations(defaultStations);
+    }
   }, []);
 
   // stores which station is currently playing
   const [playing, setPlaying] = useState(null);
   const [volume, setVolume] = useState(100);
   const [userPause, setUserPause] = useState(false);
-  const [selectedStations, setSelectedStations] = useState(teststations);
+  const [selectedStations, setSelectedStations] = useState([]);
   const [open, setOpen] = useState(false);
-  const handleModalOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const handleModalOpen = () => setOpen(true);
 
   // plays static when playStatic state changes
   const [playStatic, setPlayStatic] = useState(false);
@@ -104,7 +127,9 @@ export default function App() {
         <SelectorModal
           open={open}
           handleClose={handleClose}
+          selectedStations={selectedStations}
           setSelectedStations={setSelectedStations}
+          setPlaying={setPlaying}
         />
         <Container sx={{ width: "100%" }}>
           <Grid

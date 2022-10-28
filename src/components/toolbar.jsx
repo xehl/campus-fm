@@ -1,18 +1,31 @@
 import { useEffect } from "react"
-import { Box, Stack, Slider } from '@mui/material';
+import { Box, Stack, Slider, Typography } from '@mui/material';
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 import ShuffleSharpIcon from '@mui/icons-material/ShuffleSharp';
 import VolumeDown from '@mui/icons-material/VolumeDown';
 import VolumeUp from '@mui/icons-material/VolumeUp';
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
+import { styled } from '@mui/material/styles';
 
-export default function Toolbar({ playing, setPlaying, openModal, displayedStations, volume, setVolume, userPause, setUserPause, handleModalOpen }) {
+const LightTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: 'rgba(0, 0, 0, 0.87)',
+    boxShadow: theme.shadows[1],
+    fontSize: 15,
+    fontFamily: "Helvetica",
+  },
+}));
+
+export default function Toolbar({ playing, setPlaying, displayedStations, volume, setVolume, userPause, setUserPause, handleModalOpen }) {
 
   let stationElements = document.getElementsByClassName("audio-element")
 
   const handleVolumeChange = (e, newValue) => {
-    console.log(newValue)
     setVolume(newValue);
   };
 
@@ -84,8 +97,12 @@ export default function Toolbar({ playing, setPlaying, openModal, displayedStati
       width: { xs: 330, sm: 550, md: 600, xl: 700 },
       backgroundColor: "#2e2e2e"
     }}>
-      <DashboardCustomizeIcon onClick={handleModalOpen} sx={{ fontSize: {sm: 47}, color: "white", cursor: "pointer" }} />
-      <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { sm: 50 }, color: "white", cursor: "pointer" }} />
+      <LightTooltip enterDelay={350} title={<Typography fontFamily="Share Tech Mono" fontSize={16}>load new stations</Typography>} sx={{fontFamily: "Share Tech Mono"}}>
+        <DashboardCustomizeIcon onClick={handleModalOpen} sx={{ fontSize: { sm: 47 }, color: "white", cursor: "pointer" }} />
+      </LightTooltip>
+      <LightTooltip enterDelay={350} title={<Typography fontFamily="Share Tech Mono" fontSize={16}>play random station</Typography>}>
+        <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { sm: 50 }, color: "white", cursor: "pointer" }} />
+      </LightTooltip>
       <PlayArrowIcon onClick={playMusic} sx={{ display: showPlay(), fontSize: { sm: 65 }, color: "white", cursor: "pointer" }}/>
       <PauseIcon onClick={pauseMusic} sx={{ display: showPause(), fontSize: { sm: 65 }, color: "white", cursor: "pointer" }}/>
       <Stack spacing={2} direction="row" alignItems="center" sx={{ display: { xs: "none", sm: "flex"}, cursor: "pointer" }}>
