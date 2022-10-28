@@ -23,15 +23,14 @@
 Campus FM allows you to live stream college radio stations around the country. Take a look at the first launch on Reddit [here](https://www.reddit.com/r/InternetIsBeautiful/comments/ydfvj9/campusfm_i_made_this_site_to_listen_to_college/), or check out the app [here](https://www.campus-fm.com/).
 
 <div align="center">
-  <img src="screengrabs/reddit-comment-1.png" alt="reddit-1" />
-  <img src="screengrabs/reddit-comment-2.png" alt="reddit-2" />
-
   <img src="screengrabs/cfm-v1.5.png" alt="desktop-screengrab" />
   <img src="screengrabs/cfm-v1.5-select.png" alt="desktop-screengrab" />
   <div style="display:flex;">
     <img src="screengrabs/mobile-v1.5.png" alt="mobile-screengrab" width="350px" />
     <img src="screengrabs/mobile-v1.5-select.png" alt="mobile-screengrab" width="350px" />
   </div>
+  <img src="screengrabs/reddit-comment-1.png" alt="reddit-1" />
+  <img src="screengrabs/reddit-comment-2.png" alt="reddit-2" />
 </div>
 
 ## Built With
