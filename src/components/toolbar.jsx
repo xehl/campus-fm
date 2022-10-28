@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react"
-import { Box } from '@mui/material';
-import Stack from '@mui/material/Stack';
-import Slider from '@mui/material/Slider';
+import { useEffect } from "react"
+import { Box, Stack, Slider } from '@mui/material';
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
@@ -9,7 +7,7 @@ import ShuffleSharpIcon from '@mui/icons-material/ShuffleSharp';
 import VolumeDown from '@mui/icons-material/VolumeDown';
 import VolumeUp from '@mui/icons-material/VolumeUp';
 
-export default function Toolbar({ playing, setPlaying, openModal, displayedStations, volume, setVolume }) {
+export default function Toolbar({ playing, setPlaying, openModal, displayedStations, volume, setVolume, userPause, setUserPause, handleModalOpen }) {
 
   let stationElements = document.getElementsByClassName("audio-element")
 
@@ -30,12 +28,17 @@ export default function Toolbar({ playing, setPlaying, openModal, displayedStati
     for (let station of stationElements) {
       if(station.getAttribute("name") === playing?.call_sign) station.play()
     }
+    setUserPause(false)
   }
+
+  function showPlay() {return userPause ? "block" : "none"}
+  function showPause() {return userPause ? "none" : "block"}
 
   function pauseMusic() {
     for(let station of stationElements) {
       station.pause()
     }
+    setUserPause(true)
   }
 
   function playRandom() {
@@ -65,27 +68,30 @@ export default function Toolbar({ playing, setPlaying, openModal, displayedStati
     }
     randomStation.play()
     randomStation.volume = volume / 100
-    console.log(randomStation.volume)
+    setUserPause(false)
   }
 
+// if userPause is true (user has clicked pause), display play button, otherwise display the pause button
+
   return (
-    <Box elevation={3} sx={{
+    <Box elevation={-4} sx={{
       display: "flex",
       alignItems: "center",
-      justifyContent: "space-between",
-      borderRadius: '12px',
-      height: { xs: 80, xl: 80 },
-      width: "30vw",
+      justifyContent: "space-around",
+      height: { xs: 40, sm: 80 },
+      mt: { xs: -2, sm: -2, lg: -2, xl: 0},
+      mb: { xs: 1, sm: 1, md: 1, xl: 0},
+      width: { xs: 330, sm: 550, md: 600, xl: 700 },
       backgroundColor: "#2e2e2e"
     }}>
-      <DashboardCustomizeIcon onClick={openModal} sx={{ fontSize: 47, color: "white" }} />
-      <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: 50, color: "white" }} />
-      <PlayArrowIcon onClick={playMusic} sx={{ fontSize: 65, color: "white" }}/>
-      <PauseIcon onClick={pauseMusic} sx={{ fontSize: 65, color: "white" }}/>
-      <Stack spacing={2} direction="row" sx={{ ml: 9, width: 300 }} alignItems="center">
-        <VolumeDown sx={{ fontSize: 55 }}/>
-        <Slider aria-label="Volume" value={volume} onChange={handleVolumeChange} />
-        <VolumeUp sx={{ fontSize: 50 }}/>
+      <DashboardCustomizeIcon onClick={handleModalOpen} sx={{ fontSize: {sm: 47}, color: "white", cursor: "pointer" }} />
+      <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { sm: 50 }, color: "white", cursor: "pointer" }} />
+      <PlayArrowIcon onClick={playMusic} sx={{ display: showPlay(), fontSize: { sm: 65 }, color: "white", cursor: "pointer" }}/>
+      <PauseIcon onClick={pauseMusic} sx={{ display: showPause(), fontSize: { sm: 65 }, color: "white", cursor: "pointer" }}/>
+      <Stack spacing={2} direction="row" alignItems="center" sx={{ display: { xs: "none", sm: "flex"}, cursor: "pointer" }}>
+        <VolumeDown sx={{ fontSize: { sm: 55 } }}/>
+        <Slider sx={{ width: { xs: 80, sm: 100, md: 120, xl: 200 } }} aria-label="Volume" value={volume} onChange={handleVolumeChange} />
+        <VolumeUp sx={{ fontSize: { sm: 50 } }}/>
       </Stack>
     </Box>
   )

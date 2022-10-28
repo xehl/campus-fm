@@ -14,9 +14,9 @@
     "@testing-library/user-event": "^13.5.0",
     "node-image-downloader": "^1.0.7",
     "react": "^18.2.0",
-    "react-bulb": "^0.0.2",
     "react-dom": "^18.2.0",
     "react-ga4": "^1.4.1",
+    "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
     "webfontloader": "^1.6.28"

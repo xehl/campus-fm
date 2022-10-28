@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import ReactGA from "react-ga4"
 
-export default function StationCard({callsign, frequency, college, audioURL, collegeimage, setPlaying, stationObject, playing, volume, setPlayStatic}) {
+export default function StationCard({callsign, frequency, college, audioURL, collegeimage, setPlaying, stationObject, playing, volume, setPlayStatic, userPause, setUserPause}) {
 
   const sendOutbound = (e) => {    
     e.preventDefault();
@@ -54,6 +54,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     },
   }
   const [loaded, setLoaded] = useState(false)
+
   // opacity is 1 if loaded, 0.15 if still buffering
   const undimIfLoaded = () => {
     return loaded? 1: 0.15;
@@ -69,17 +70,22 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     console.log(callsign + " stalled, reloading now")
     setLoaded(false)
     const thisStation = document.getElementsByClassName("audio-element").namedItem(callsign)
-    // console.log(thisStation.src)
     thisStation.setAttribute("src", "")
     setTimeout(function () { 
-        thisStation.load(); // This stops the stream from downloading
-    }, 100);
+        thisStation.load() // This stops the stream from downloading; basically forces it to load an empty file
+    }, 100)
     thisStation.setAttribute("src", audioURL)
     thisStation.load()
-    // if the currently playing station is stalled, change the playing state to null + play static
+    // if the currently playing station is stalled
     if (playing?.call_sign === callsign) {
+      // unload the station if user has paused manually
+      if (userPause) {
+        setPlaying(null)
+        setUserPause(false)
+        return
+      }
+      // play static and retry the station every second until it reloads
       setPlayStatic(true)
-      // retry the station every second until it reloads
       let retry = setInterval(() => {
         if (thisStation.readyState >= 3) {
           thisStation.play()
@@ -96,10 +102,13 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     const selectedStation = allStations.namedItem(callsign)
     if (!loaded) selectedStation.load();
 
+    // if clicked on current station, eject the station from the player
     if (playing?.call_sign === callsign) {
       selectedStation.pause()
       setPlaying(null);
+      setUserPause(false);
     }
+
     // if a different station is selected, pause the existing stream and play the new station + change the playing state
     else {      
       // execute if the new station is ready to play
@@ -109,9 +118,9 @@ export default function StationCard({callsign, frequency, college, audioURL, col
         }
         setPlayStatic(false)
         selectedStation.play();
-        console.log(volume)
         selectedStation.volume = volume / 100
         setPlaying(stationObject);
+        setUserPause(false)
         sendOutbound(e);
       }
       else handleStall();
