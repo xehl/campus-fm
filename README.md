@@ -18,10 +18,13 @@
   </p>
 </div>
 
-[![Campus FM Screen Shot][product-screenshot]](screengrabs/cfm-v1.3.png)
-
 <div align="center">
-  <img src="screengrabs/mobile-v1.3.jpg" alt="mobile-screengrab" width="350px"></a>
+  <img src="screengrabs/cfm-v1.5.png" alt="desktop-screengrab" />
+  <img src="screengrabs/cfm-v1.5-select.png" alt="desktop-screengrab" />
+  <div style="display:flex;">
+    <img src="screengrabs/mobile-v1.5.png" alt="mobile-screengrab" width="350px" />
+    <img src="screengrabs/mobile-v1.5-select.png" alt="mobile-screengrab" width="350px" />
+  </div>
 </div>
 
 ## About The Project
@@ -77,7 +80,10 @@ npm install npm@latest -g
 [issues-url]: https://github.com/xehl/campus-fm/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/eric-h-lee
-[product-screenshot]: screengrabs/cfm-v1.3.png
+[desktop-screenshot]: screengrabs/cfm-v1.5.png
+[desktop-s-screenshot]: screengrabs/cfm-v1.5-select.png
+[mobile-screenshot]: screengrabs/mobile-v1.5.png
+[mobile-s-screenshot]: screengrabs/mobile-v1.5-select.png
 [material-ui]: https://res.cloudinary.com/practicaldev/image/fetch/s--yayk2pWn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://img.shields.io/badge/Material--UI-0081CB%3Fstyle%3Dfor-the-badge%26logo%3Dmaterial-ui%26logoColor%3Dwhite
 [material-ui-url]: https://mui.com/
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
