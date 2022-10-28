@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import ReactGA from "react-ga4"
 
-export default function StationCard({callsign, frequency, college, audioURL, collegeimage, handleClick, stationObject, playing, setPlayStatic}) {
+export default function StationCard({callsign, frequency, college, audioURL, collegeimage, setPlaying, stationObject, playing, volume, setPlayStatic, userPause, setUserPause}) {
 
   const sendOutbound = (e) => {    
     e.preventDefault();
@@ -18,8 +18,8 @@ export default function StationCard({callsign, frequency, college, audioURL, col
       action: 'User played ' + sign,
     });
   }
-  
-  const theme = createTheme({
+
+  const cardtheme = createTheme({
     breakpoints: {
       values: {
         xs: 0,
@@ -31,82 +31,83 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     },
   });
 
-  theme.typography.h4 = {
+  cardtheme.typography.h4 = {
     fontSize: '1.5rem',
-    [theme.breakpoints.up('sm')]: {
+    [cardtheme.breakpoints.up('sm')]: {
       fontSize: '2rem',
     },
-    [theme.breakpoints.up('md')]: {
+    [cardtheme.breakpoints.up('md')]: {
       fontSize: '2.4rem',
     },
-    [theme.breakpoints.up('lg')]: {
+    [cardtheme.breakpoints.up('lg')]: {
       fontSize: "1.9rem",
     },
   };
 
-  theme.typography.subtitle1 = {
+  cardtheme.typography.subtitle1 = {
     fontSize: '1rem',
-    [theme.breakpoints.up('sm')]: {
+    [cardtheme.breakpoints.up('sm')]: {
       fontSize: '1.6rem',
     },
-    [theme.breakpoints.up('lg')]: {
+    [cardtheme.breakpoints.up('lg')]: {
       fontSize: "1.4rem",
     },
   }
-
   const [loaded, setLoaded] = useState(false)
 
   // opacity is 1 if loaded, 0.15 if still buffering
   const undimIfLoaded = () => {
     return loaded? 1: 0.15;
   }
-
   const greenIfPlaying = () => {
     return (playing?.call_sign === callsign) ? "#cefac8" : "";
   }
 
-  function streamLoaded() {
-    setLoaded(true)
-  }
-
   function handleStall() {
+
+    console.log(callsign + " stalled, retrying")
     // remove and reload stalled station audio stream
-    console.log(callsign + " stalled, reloading now")
     setLoaded(false)
     const thisStation = document.getElementsByClassName("audio-element").namedItem(callsign)
-    // console.log(thisStation.src)
     thisStation.setAttribute("src", "")
     setTimeout(function () { 
-        thisStation.load(); // This stops the stream from downloading
-    }, 100);
+        thisStation.load() // This stops the stream from downloading; basically forces it to load an empty file
+    }, 100)
     thisStation.setAttribute("src", audioURL)
     thisStation.load()
-
-    // if the currently playing station is stalled, change the playing state to null + play static
+    // if the currently playing station is stalled
     if (playing?.call_sign === callsign) {
+      // unload the station if user has paused manually
+      if (userPause) {
+        setPlaying(null)
+        setUserPause(false)
+        return
+      }
+      // play static and retry the station every second until it reloads
       setPlayStatic(true)
-      // retry the station every second until it reloads
       let retry = setInterval(() => {
         if (thisStation.readyState >= 3) {
           thisStation.play()
+          thisStation.volume = volume / 100
           setPlayStatic(false)
           clearInterval(retry)
         }
       }, 1000);
     }
   }
-
   const playPause = (e) => {
     // select all audio stream elements + selected stream
     const allStations = document.getElementsByClassName("audio-element")
     const selectedStation = allStations.namedItem(callsign)
-
     if (!loaded) selectedStation.load();
 
+    // if clicked on current station, eject the station from the player
     if (playing?.call_sign === callsign) {
       selectedStation.pause()
-      handleClick(null);
+      setPlaying(null);
+      setUserPause(false);
     }
+
     // if a different station is selected, pause the existing stream and play the new station + change the playing state
     else {      
       // execute if the new station is ready to play
@@ -116,7 +117,9 @@ export default function StationCard({callsign, frequency, college, audioURL, col
         }
         setPlayStatic(false)
         selectedStation.play();
-        handleClick(stationObject);
+        selectedStation.volume = volume / 100
+        setPlaying(stationObject);
+        setUserPause(false)
         sendOutbound(e);
       }
       else handleStall();
@@ -124,7 +127,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
   }
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={cardtheme}>
       <Card
         className={callsign}
         onClick={(e) => playPause(e)}
@@ -164,7 +167,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
             {playing?.call_sign !== callsign && <PlayArrowIcon sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
             {playing?.call_sign === callsign && <Pause sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
           </IconButton> */}
-        <audio className="audio-element" onCanPlay={streamLoaded} onStalled={handleStall} name={callsign} src={audioURL} type="audio/mp3"/>
+        <audio className="audio-element" onLoadStart={() => setLoaded(false)} onCanPlay={() => setLoaded(true)} onStalled={handleStall} name={callsign} src={audioURL} type="audio/mp3"/>
       </Card>
     </ThemeProvider>
   );

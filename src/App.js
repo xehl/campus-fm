@@ -1,18 +1,17 @@
 import "./App.css";
 import { AppBar, Box, Grid, Container } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useEffect, useState } from "react";
 import StationCard from "./components/stationcard";
 import Footer from "./components/footer";
 import Logo from "./components/logo";
 import stations from "./stations";
-// import teststations from "./teststations";
-import Bulb from "react-bulb";
 import WebFont from "webfontloader";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useEffect, useState } from "react";
-import NowPlayingSmall from "./components/nowplayingsm";
-import NowPlayingLarge from "./components/nowplayinglg";
+import Toolbar from "./components/toolbar";
+import SelectorModal from "./components/selectormodal";
+import StickyBar from "./components/stickybar";
 
-function App() {
+export default function App() {
   // MUI theme breakpoints
   const theme = createTheme({
     breakpoints: {
@@ -26,42 +25,54 @@ function App() {
     },
   });
 
-  // load fonts on initial page load
+  // fire on initial page load
   useEffect(() => {
+    // load custom fonts
     WebFont.load({
       google: {
         families: ["Monoton", "Turret Road", "Share Tech Mono"],
       },
     });
+    // load cached stations for returning users
+    let cache = JSON.parse(localStorage.getItem("recentStations"));
+    if (cache) setSelectedStations(cache);
+    else {
+      // otherwise, load default stations
+      let defaultCallsigns = [
+        "WXYC",
+        "KALX",
+        "KVRX",
+        "WVFS",
+        "WUOG",
+        "KUNM",
+        "WCBN",
+        "WUTK",
+      ];
+      let defaultStations = [];
+      defaultStations = stations.filter((station) =>
+        defaultCallsigns.includes(station.call_sign)
+      );
+      setSelectedStations(defaultStations);
+    }
   }, []);
 
   // stores which station is currently playing
   const [playing, setPlaying] = useState(null);
-  const [playStatic, setPlayStatic] = useState(false);
+  const [volume, setVolume] = useState(100);
+  const [userPause, setUserPause] = useState(false);
+  const [selectedStations, setSelectedStations] = useState([]);
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
+  const handleModalOpen = () => setOpen(true);
 
   // plays static when playStatic state changes
+  const [playStatic, setPlayStatic] = useState(false);
   useEffect(() => {
     const staticSound = document.getElementsByClassName("staticAudio")[0];
     staticSound.volume = 0.3;
     if (playStatic === true) staticSound.play();
     if (playStatic === false) staticSound.pause();
   }, [playStatic]);
-
-  // basically just sets the playing state, passed into card (maybe not optimal)
-  function handleClick(station) {
-    setPlaying(station);
-  }
-
-  // turns off radio when user presses on/off button
-  function offButton() {
-    if (playing) {
-      const allStations = document.getElementsByClassName("audio-element");
-      for (let stream of allStations) {
-        stream.pause();
-      }
-      setPlaying(null);
-    }
-  }
 
   return (
     <div className="App">
@@ -93,35 +104,32 @@ function App() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                mb: { xs: -3, md: 3 },
               }}
             >
-              <NowPlayingLarge
+              <Toolbar
                 playing={playing}
-                sx={{
-                  display: { xs: "none", sm: "none", md: "flex" },
-                }}
+                setPlaying={setPlaying}
+                displayedStations={selectedStations}
+                volume={volume}
+                setVolume={setVolume}
+                userPause={userPause}
+                setUserPause={setUserPause}
+                handleModalOpen={handleModalOpen}
               />
-              <Box
-                onClick={offButton}
-                sx={{
-                  display: { xs: "none", sm: "none", md: "flex" },
-                  alignItems: "center",
-                }}
-              >
-                <Box sx={{ ml: { xs: 3, s: 0, xl: 0 }, mr: 1 }}>ON/OFF</Box>
-                <Box>
-                  {playing && <Bulb size={20} color="green" />}
-                  {!playing && <Bulb size={20} color="black" />}
-                </Box>
-              </Box>
             </Box>
           </Box>
         </AppBar>
         <Box
           sx={{
-            height: { xs: "120px", sm: "185px", md: "295px", xl: "180px" },
+            height: { xs: 150, sm: 255, md: 255, xl: 140 },
           }}
+        />
+        <SelectorModal
+          open={open}
+          handleClose={handleClose}
+          selectedStations={selectedStations}
+          setSelectedStations={setSelectedStations}
+          setPlaying={setPlaying}
         />
         <Container sx={{ width: "100%" }}>
           <Grid
@@ -130,7 +138,7 @@ function App() {
             rowSpacing={2}
             columnSpacing={{ lg: 4, md: 3 }}
           >
-            {stations.map((station) => {
+            {selectedStations.map((station) => {
               return (
                 <Grid
                   item
@@ -145,10 +153,13 @@ function App() {
                     college={station.college_name}
                     audioURL={station.audio_url}
                     collegeimage={station.college_image}
-                    handleClick={handleClick}
+                    setPlaying={setPlaying}
                     stationObject={station}
                     playing={playing}
+                    volume={volume}
                     setPlayStatic={setPlayStatic}
+                    userPause={userPause}
+                    setUserPause={setUserPause}
                   />
                 </Grid>
               );
@@ -156,34 +167,6 @@ function App() {
           </Grid>
         </Container>
         <Footer />
-        <AppBar
-          position="sticky"
-          sx={{
-            display: {
-              xs: "flex",
-              sm: "flex",
-              md: "none",
-              lg: "none",
-              xl: "none",
-            },
-            borderTop: 2,
-            bottom: 0,
-            mb: "-20px",
-            mt: "10px",
-            width: "100%",
-            background: "#2e2e2e",
-            height: "130px",
-          }}
-        >
-          <NowPlayingSmall
-            playing={playing}
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          />
-        </AppBar>
       </ThemeProvider>
       <audio
         className="staticAudio"
@@ -191,8 +174,7 @@ function App() {
         loop
         src="https://www.soundjay.com/mechanical/sounds/tv-static-05.mp3"
       />
+      <StickyBar playing={playing} />
     </div>
   );
 }
-
-export default App;

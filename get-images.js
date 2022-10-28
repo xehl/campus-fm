@@ -1,3 +1,5 @@
+const imageDownloader = require("node-image-downloader");
+
 const stations = [
   {
     id: 1,
@@ -416,4 +418,75 @@ const stations = [
   },
 ];
 
-export default stations;
+let stationImgArray = [];
+let collegeImgArray = [];
+let callsigns = [
+  "KALX",
+  "KAMP",
+  "KCOU",
+  "KFJC",
+  "KMNR",
+  "KSPC",
+  "KUNM",
+  "KVRX",
+  "KWVA",
+  "KZUU",
+  "WCBN",
+  "WDBM",
+  "WHUS",
+  "WKDU",
+  "WKNC",
+  "WLUR",
+  "WPGU",
+  "WRPI",
+  "WRUV",
+  "WSUM",
+  "WTBU",
+  "WUOG",
+  "WUTK",
+  "WUVT",
+  "WVFS",
+  "WWVU",
+  "WXTJ",
+  "WXYC",
+];
+
+stations.forEach((station) => {
+  stationImgArray.push({
+    uri: station.station_image,
+    filename: `${station.call_sign}-stationimg`,
+  });
+  collegeImgArray.push({
+    uri: station.college_image,
+    filename: `${station.call_sign}-schoolimg`,
+  });
+});
+
+callsigns.sort();
+console.log(callsigns);
+
+console.log(stationImgArray.length, collegeImgArray.length);
+
+// imageDownloader({
+//   imgs: stationImgArray,
+//   dest: "./public/images/",
+// })
+//   .then((info) => {
+//     console.log("stations all done", info);
+//   })
+//   .catch((error, response, body) => {
+//     console.log("stations error");
+//     console.log(error);
+//   });
+
+// imageDownloader({
+//   imgs: collegeImgArray,
+//   dest: "./public/images/",
+// })
+//   .then((info) => {
+//     console.log("colleges all done", info);
+//   })
+//   .catch((error, response, body) => {
+//     console.log("college error");
+//     console.log(error);
+//   });
