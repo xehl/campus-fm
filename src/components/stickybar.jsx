@@ -2,11 +2,11 @@ import { AppBar } from "@mui/material";
 import NowPlayingSmall from "./nowplayingsm";
 import NowPlayingLarge from "./nowplayinglg";
 
-export default function StickyBar({playing}) {
+export default function StickyBar({playing, mobileLoaded, setMobileLoaded}) {
   return (
     <AppBar
-    position="sticky"
     sx={{
+      position: "sticky",
       display: "flex",
       borderTop: 2,
       bottom: 0,
@@ -19,6 +19,8 @@ export default function StickyBar({playing}) {
   >
     <NowPlayingSmall
       playing={playing}
+      mobileLoaded={mobileLoaded}
+      setMobileLoaded={setMobileLoaded}
       sx={{
         display: { xs: "flex", sm: "flex", md: "none" },
         alignItems: "center",

@@ -98,13 +98,13 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
       backgroundColor: "#2e2e2e"
     }}>
       <LightTooltip enterDelay={350} title={<Typography fontFamily="Share Tech Mono" fontSize={16}>load new stations</Typography>} sx={{fontFamily: "Share Tech Mono"}}>
-        <DashboardCustomizeIcon onClick={handleModalOpen} sx={{ fontSize: { sm: 47 }, color: "white", cursor: "pointer" }} />
+        <DashboardCustomizeIcon onClick={handleModalOpen} sx={{ fontSize: { xs: 36, sm: 47 }, color: "white", cursor: "pointer" }} />
       </LightTooltip>
       <LightTooltip enterDelay={350} title={<Typography fontFamily="Share Tech Mono" fontSize={16}>play random station</Typography>}>
-        <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { sm: 50 }, color: "white", cursor: "pointer" }} />
+        <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { xs: 38, sm: 50 }, color: "white", cursor: "pointer" }} />
       </LightTooltip>
-      <PlayArrowIcon onClick={playMusic} sx={{ display: showPlay(), fontSize: { sm: 65 }, color: "white", cursor: "pointer" }}/>
-      <PauseIcon onClick={pauseMusic} sx={{ display: showPause(), fontSize: { sm: 65 }, color: "white", cursor: "pointer" }}/>
+      <PlayArrowIcon onClick={playMusic} sx={{ display: showPlay(), fontSize: { xs: 50, m: 65 }, color: "white", cursor: "pointer" }}/>
+      <PauseIcon onClick={pauseMusic} sx={{ display: showPause(), fontSize: { xs: 50, sm: 65 }, color: "white", cursor: "pointer" }}/>
       <Stack spacing={2} direction="row" alignItems="center" sx={{ display: { xs: "none", sm: "flex"}, cursor: "pointer" }}>
         <VolumeDown sx={{ fontSize: { sm: 55 } }}/>
         <Slider sx={{ width: { xs: 80, sm: 100, md: 120, xl: 200 } }} aria-label="Volume" value={volume} onChange={handleVolumeChange} />

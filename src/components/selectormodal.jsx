@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
-import { Box, Typography, Modal, Grid, TextField, AppBar, Button, Snackbar } from "@mui/material";
-import CloseIcon from '@mui/icons-material/Close';
+import { Box, Typography, Modal, Grid, TextField, AppBar, Button, Snackbar, Stack } from "@mui/material";
 import stations from "../stations";
 import ModalCard from "./modalcard";
 
@@ -28,7 +27,10 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
 
   function replaceStations() {
     // don't do anything if user hasn't made changes
-    if (selectedStations === stationQueue) handleClose()
+    if (selectedStations === stationQueue) {
+      handleClose()
+      return
+    }
 
     // don't let user load fewer than 6 stations
     if (stationQueue.length < 6) {
@@ -63,11 +65,6 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
     setStationQueue(randArr)
   }
 
-  function currentSelect() {
-    const current = selectedStations
-    setStationQueue(current)
-  }
-
   function handleSearch(e) {
     let searchStr = e.target.value
     setSearchDisplayed(stations.filter(station => {
@@ -84,8 +81,6 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
     <Modal
     open={open}
     onClose={handleClose}
-    aria-labelledby="modal-modal-title"
-    aria-describedby="modal-modal-description"
     >
       <Box 
         sx={{
@@ -98,13 +93,28 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
           bgcolor: "#2e2e2e",
           border: "2px solid #000",
           outline: 0,
-          overflow: "auto",
+          overflowX: 'hidden',
           overflowY: "auto",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
+        <AppBar
+          position="absolute"
+          sx={{
+            display: "flex",
+            flexDirection: {xs: "column",sm: "row"},
+            alignItems: "center",
+            textAlign: "center",
+            position: "sticky",
+            width: "100%",
+            height: "auto",
+            justifyContent: "space-between",
+            backgroundColor: "black",
+            p: 1.5,
+          }}
+        >
         <Snackbar
           open={snackBarOpen}
           autoHideDuration={1200}
@@ -114,57 +124,65 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
             vertical: "top",
             horizontal: "left"
           }}
-        />
-        <AppBar
-          position="absolute"
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            borderBottom: 2,
-            position: "sticky",
-            width: "100%",
-            background: "#2e2e2e",
-          }}
-        >
-          <Box sx={{ display: "flex" }}>
-          <Typography id="modal-modal-title" fontFamily="Share Tech Mono" fontSize={16} color="white">
-            Select up to 10 stations: <b>{stationQueue.length} selected</b>
-          </Typography>
+          />
+          <Stack direction="row" spacing={1} alignItems="center" sx={{mr: 2}}>
+            <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 14, sm: 16 }} sx={{width: 130}} color="white">
+              Select up to 10 stations:
+            </Typography>
+            <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 20, sm: 30 }} sx={{ m: 2, width: 36, p: .7, borderRadius: 1, background: "white" }} color="black">
+              <b>{stationQueue.length}</b>
+            </Typography>
+          </Stack>
           <TextField
             id="outlined-basic"
-            label="Search"
             variant="outlined"
+            placeholder="search"
             autoComplete="off"
             onChange={e => handleSearch(e)}
+            InputProps={{ style: { fontSize: 15, fontFamily:"Share Tech Mono", background: "white", } }}
             sx={{
-              background: "white",
+              width: {xs: "70vw", sm: 350, md: 350, lg: 350},
+              borderRadius: 1,
+              mb: 1,
+              mt: 1,
             }} />
-        </Box>
-          <Button variant="contained" disableElevation onClick={clearStations}>clear stations</Button>
-          <Button variant="contained" disableElevation onClick={pickTenRandom}>choose 10 random stations</Button>
-          <Button variant="contained" disableElevation onClick={replaceStations}>reload app with new stations</Button>
-          {/* <Button variant="contained" disableElevation onClick={currentSelect}>current selection</Button> */}
-          <CloseIcon onClick={handleClose}/>
-
-        </AppBar>
+          <Stack direction={{ xs: "column", sm: "row" }} sx={{ m: 0.5, width: { xs: "70vw", sm: "auto" }, height: {xs: "auto", sm: 55}}} spacing={1}>
+              <Button variant="outlined" disableElevation onClick={clearStations} sx={{ borderColor:"white"}}>
+                <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="white">
+                  clear stations
+                </Typography>
+              </Button>
+              <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ borderColor: "white" }}>
+                <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="white">
+                  choose random
+                </Typography>
+              </Button>
+              <Button variant="contained" disableElevation onClick={replaceStations} sx={{ backgroundColor:"white", borderColor: "white" }}>
+                <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="#2e2e2e">
+                  load new stations
+                </Typography>
+              </Button>
+            </Stack>
+          </AppBar>
         <Grid
           container
-          justifyContent="space-between"
           rowSpacing={2}
-          columnSpacing={{ lg: 6, md: 3 }}
+          columnSpacing={2}
           sx={{
-            m: 3,
+            p: 2,
+            display: "flex",
+            justifyContent: "center",
+            backgroundColor: "#2e2e2e",
           }}
           >
         {searchDisplayed.map((station) => {
           return (
             <Grid
               item
-              sm={12}
-              md={6}
-              lg={4}
-              sx={{ width: "100%" }}
+              xs={12}
+              sm={6}
+              md={4}
+              lg={3}
               key={station.id}
             >
               <ModalCard station={station} stationQueue={stationQueue} setStationQueue={setStationQueue} setSnackBarMessage={setSnackBarMessage} openSnackBar={openSnackBar}/>

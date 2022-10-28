@@ -64,6 +64,8 @@ export default function StationCard({callsign, frequency, college, audioURL, col
   }
 
   function handleStall() {
+
+    console.log(callsign + " stalled, retrying")
     // remove and reload stalled station audio stream
     setLoaded(false)
     const thisStation = document.getElementsByClassName("audio-element").namedItem(callsign)

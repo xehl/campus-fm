@@ -19,42 +19,51 @@ export default function ModalCard({ station, stationQueue, setStationQueue, setS
   }
 
   function highlightSelect() {
-    return JSON.stringify(stationQueue).includes(JSON.stringify(station)) ? "#ccecff" : "#e3e3e3"
+    return JSON.stringify(stationQueue).includes(JSON.stringify(station)) ? "#cefac8" : "#f0f0f0"
   }
 
   return (
     <Card
       onClick={handleQueue}
       sx={{
-      width: { md: "100%", lg: 170 },
-      mb: 1,
-      background: highlightSelect(),
-      cursor: "pointer",
-    }}>
+        width: "100%",
+        height: {xs: 200, sm: 253, lg: 320},
+        margin: "auto",
+        background: highlightSelect(),
+        cursor: "pointer",
+        border: 2,
+        borderRadius: 2
+      }}
+    >
       <Box sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        textAlign: "center"
+        textAlign: "center",
+        p: 2
       }}>
         <CardMedia
             component="img"
             sx={{
-              height: { xs: 80, md: 80, lg: 80 },
-              width: { xs: 80, md: 80, lg: 80 },
+              height: { xs: 80, sm: 110, lg: 160 },
+              width: { xs: 80, sm: 110, lg: 160 },
               m: { xs: "5px", md: "5px", lg: "5px" },
               borderRadius: 2,
-              border: 1,
+              border: 2,
+              backgroundColor: "white"
             }}
             image={station.station_image}
             alt={station.callsign}
             margin="auto"
         />
-        <Typography fontFamily="Share Tech Mono" fontSize={16} color="black">
-          {station.callsign} {station.college_name}
+        <Typography fontFamily="Share Tech Mono" sx={{ fontSize: 24 }} color="black">
+          {station.call_sign} {station.broadcast_frequency}
         </Typography>
-        <Typography fontFamily="Share Tech Mono" fontSize={16} color="black">
-          {station.city} {station.state}
+        <Typography fontFamily="Share Tech Mono" fontSize={16} color="#575757">
+          {station.college_name}
+        </Typography>
+        <Typography fontFamily="Share Tech Mono" fontSize={16} color="#575757">
+          {station.city}, {station.state}
         </Typography>
       </Box>
     </Card >

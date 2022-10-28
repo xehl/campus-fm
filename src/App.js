@@ -167,7 +167,6 @@ export default function App() {
           </Grid>
         </Container>
         <Footer />
-        <StickyBar playing={playing} />
       </ThemeProvider>
       <audio
         className="staticAudio"
@@ -175,6 +174,7 @@ export default function App() {
         loop
         src="https://www.soundjay.com/mechanical/sounds/tv-static-05.mp3"
       />
+      <StickyBar playing={playing} />
     </div>
   );
 }
