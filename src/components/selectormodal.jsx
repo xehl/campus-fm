@@ -91,7 +91,7 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
           height: "80vh",
           width: "80vw",
           bgcolor: "#2e2e2e",
-          border: "2px solid #000",
+          border: "5px solid #b0b0b0",
           outline: 0,
           overflowX: 'hidden',
           overflowY: "auto",
@@ -154,7 +154,7 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
               </Button>
               <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ borderColor: "white" }}>
                 <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="white">
-                  choose random
+                  choose 10 random
                 </Typography>
               </Button>
               <Button variant="contained" disableElevation onClick={replaceStations} sx={{ backgroundColor:"white", borderColor: "white" }}>

@@ -8,7 +8,7 @@ export default function NowPlayingSmall({ playing }) {
         <Box sx={{ height: 80, width: 80 }}>
         {playing && <CardMedia
           component="img"
-          sx={{ width: 60, borderRadius: "10px", margin:"10px" }}
+          sx={{ width: 60, borderRadius: "10px", margin:"10px", objectFit:"contain" }}
           image={playing.station_image}
           alt={playing.call_sign}
           margin="auto"

@@ -30,14 +30,19 @@ Campus FM allows you to live stream college radio stations around the country. T
 - [![NodeJS][node.js]][node-url]
 
 <div align="center">
+  <div>Desktop Views</div>
   <img src="screengrabs/cfm-v1.5.png" alt="desktop-screengrab" />
   <img src="screengrabs/cfm-v1.5-select.png" alt="desktop-screengrab" />
+  <div>Mobile Views</div>
   <div style="display:flex;">
     <img src="screengrabs/mobile-v1.5.png" alt="mobile-screengrab" width="350px" />
     <img src="screengrabs/mobile-v1.5-select.png" alt="mobile-screengrab" width="350px" />
   </div>
+  <div>Reddit Comments</div>
   <img src="screengrabs/reddit-comment-1.png" alt="reddit-1" />
   <img src="screengrabs/reddit-comment-2.png" alt="reddit-2" />
+  <img src="screengrabs/reddit-comment-3.png" alt="reddit-3" />
+  <img src="screengrabs/reddit-comment-4.png" alt="reddit-4" />
 </div>
 
 <!-- GETTING STARTED -->

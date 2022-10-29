@@ -15,7 +15,7 @@ export default function NowPlayingLarge({ playing }) {
         <Box sx={{ width: 120, p: "15px", borderRadius: "10px" }}>
           {playing && <CardMedia
             component="img"
-            sx={{ width: 60, borderRadius: "10px" }}
+            sx={{ width: 60, borderRadius: "10px", objectFit: "contain" }}
             image={playing.station_image}
             alt={playing.call_sign}
             margin=" uto"
