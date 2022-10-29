@@ -18,10 +18,12 @@
     "react-ga4": "^1.4.1",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
+    "source-map-explorer": "^2.5.3",
     "web-vitals": "^2.1.4",
     "webfontloader": "^1.6.28"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
