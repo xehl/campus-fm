@@ -12,8 +12,8 @@ export default function NowPlayingSmall({ playing }) {
           alt={playing.call_sign}
           margin="auto"
           />}
-        <Typography fontFamily={"Share Tech Mono"} fontSize={"1.2rem"} sx={{ ml:1, color: "black" }}>
-          Playing: {playing ? <>{playing.call_sign} {playing.broadcast_frequency}</> : "None"}
+        <Typography fontFamily={"Share Tech Mono"} textAlign="center" fontSize={"1.2rem"} sx={{ ml:1, color: "black" }}>
+          {playing ? <>Playing: {playing.call_sign} {playing.broadcast_frequency}</> : <>Choose a station to start listening!</>}
         </Typography>
       </Box>
     </Box>
