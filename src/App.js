@@ -9,6 +9,7 @@ import stations from "./stations";
 import WebFont from "webfontloader";
 import Toolbar from "./components/toolbar";
 import SelectorModal from "./components/selectormodal";
+import FaqModal from "./components/faqmodal";
 import StickyBar from "./components/stickybar";
 
 export default function App() {
@@ -61,9 +62,16 @@ export default function App() {
   const [volume, setVolume] = useState(100);
   const [userPause, setUserPause] = useState(false);
   const [selectedStations, setSelectedStations] = useState([]);
-  const [open, setOpen] = useState(false);
-  const handleClose = () => setOpen(false);
-  const handleModalOpen = () => setOpen(true);
+
+  // selector modal controls
+  const [selectorOpen, setSelectorOpen] = useState(false);
+  const handleSelectorClose = () => setSelectorOpen(false);
+  const handleSelectorModalOpen = () => setSelectorOpen(true);
+
+  // faq modal controls
+  const [faqOpen, setFaqOpen] = useState(false);
+  const handleFaqClose = () => setFaqOpen(false);
+  const handleFaqModalOpen = () => setFaqOpen(true);
 
   // plays static when playStatic state changes
   const [playStatic, setPlayStatic] = useState(false);
@@ -120,7 +128,8 @@ export default function App() {
                   setVolume={setVolume}
                   userPause={userPause}
                   setUserPause={setUserPause}
-                  handleModalOpen={handleModalOpen}
+                  handleSelectorModalOpen={handleSelectorModalOpen}
+                  handleFaqModalOpen={handleFaqModalOpen}
                 />
               </Box>
             </Box>
@@ -131,12 +140,13 @@ export default function App() {
             }}
           />
           <SelectorModal
-            open={open}
-            handleClose={handleClose}
+            selectorOpen={selectorOpen}
+            handleSelectorClose={handleSelectorClose}
             selectedStations={selectedStations}
             setSelectedStations={setSelectedStations}
             setPlaying={setPlaying}
           />
+          <FaqModal faqOpen={faqOpen} handleFaqClose={handleFaqClose} />
           <Container sx={{ width: "100%" }}>
             <Grid
               container

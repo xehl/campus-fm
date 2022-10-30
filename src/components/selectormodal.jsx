@@ -3,7 +3,7 @@ import { Box, Typography, Modal, Grid, TextField, AppBar, Button, Snackbar, Stac
 import stations from "../stations";
 import ModalCard from "./modalcard";
 
-export default function SelectorModal({ open, handleClose, selectedStations, setSelectedStations, setPlaying }) {
+export default function SelectorModal({ selectorOpen, handleSelectorClose, selectedStations, setSelectedStations, setPlaying }) {
   
   // on first render, pass the current array of stations into queue
   const [stationQueue, setStationQueue] = useState([])
@@ -28,7 +28,7 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
   function replaceStations() {
     // don't do anything if user hasn't made changes
     if (selectedStations === stationQueue) {
-      handleClose()
+      handleSelectorClose()
       return
     }
 
@@ -46,7 +46,7 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
     setPlaying(null)
     
     // close modal
-    handleClose()
+    handleSelectorClose()
   }
 
   function clearStations() {
@@ -106,8 +106,8 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
 
   return (
     <Modal
-    open={open}
-    onClose={handleClose}
+    open={selectorOpen}
+    onClose={handleSelectorClose}
     >
       <Box 
         sx={{
@@ -153,7 +153,7 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
             horizontal: "left"
           }}
           />
-          <Stack direction="row" spacing={1} sx={{mr: {xs: 0, sm: 2}, width: { xs: "70vw", sm: 170}, alignItems: "center", justifyContent:"center" }}>
+          <Stack direction="row" spacing={1} sx={{mr: {xs: 0, sm: 2}, width: { xs: "70vw", sm: 180}, alignItems: "center", justifyContent:"center" }}>
             <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 14, sm: 16 }} sx={{ width: { xs: "auto", md: 130}}} color="white">
               Select up to 10 stations:
             </Typography>
@@ -161,7 +161,7 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
               <b>{stationQueue.length}</b>
             </Typography>
           </Stack>
-          {/* can't figure out how to make size prop conditional;  */}
+          {/* can't figure out how to make size prop conditional; just gonna display/hide two textfields */}
           <TextField
             id="outlined-basic"
             variant="outlined"
@@ -189,13 +189,12 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
             sx={{
               display: {xs: "block", sm: "none"}, 
               width: {xs: "70vw", md: 350},
-              borderRadius: 1,
               mb: .5,
               mt: 1,
             }} />
-            <Stack direction={{ xs: "column", md: "row" }} sx={{ ml: {md: 2, xl: 3}, m: 0.5, width: { xs: "70vw", sm: "auto" }}} spacing={1}>
+            <Stack direction={{ xs: "column", md: "row" }} sx={{ ml: {md: 2, xl: 3}, m: 0.5, width: { xs: "70vw", sm: "auto" }, height: {xs: "auto", xl: 54}}} spacing={1}>
               <Stack spacing={1} direction="row" sx={{ width: {xs: "70vw", md: "auto"}, justifyContent:"center" }}>
-                <Button variant="outlined" disableElevation onClick={addOneRandom} sx={{ width: {xs: "50%", md: "auto"}, borderColor: "white" }}>
+              <Button variant="outlined" disableElevation onClick={addOneRandom} sx={{ width: {xs: "50%", md: "auto"}, borderColor: "white" }}>
                   <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="white">
                     add 1 random
                   </Typography>

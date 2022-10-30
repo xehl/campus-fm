@@ -4,7 +4,7 @@ import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 import ShuffleSharpIcon from '@mui/icons-material/ShuffleSharp';
-import ShareIcon from '@mui/icons-material/Share';
+import HelpIcon from '@mui/icons-material/Help';
 import VolumeDown from '@mui/icons-material/VolumeDown';
 import VolumeUp from '@mui/icons-material/VolumeUp';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
@@ -22,7 +22,7 @@ const LightTooltip = styled(({ className, ...props }) => (
   },
 }));
 
-export default function Toolbar({ playing, setPlaying, displayedStations, volume, setVolume, userPause, setUserPause, handleModalOpen }) {
+export default function Toolbar({ playing, setPlaying, displayedStations, volume, setVolume, userPause, setUserPause, handleSelectorModalOpen, handleFaqModalOpen }) {
 
   let stationElements = document.getElementsByClassName("audio-element")
 
@@ -100,19 +100,19 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
       backgroundColor: "#2e2e2e"
     }}>
       <LightTooltip enterDelay={350} title={<Typography fontFamily="Share Tech Mono" fontSize={16}>load new stations</Typography>} sx={{fontFamily: "Share Tech Mono"}}>
-        <DashboardCustomizeIcon onClick={handleModalOpen} sx={{ fontSize: { xs: 36, sm: 47 }, color: "white", cursor: "pointer" }} />
+        <DashboardCustomizeIcon onClick={handleSelectorModalOpen} sx={{ fontSize: { xs: 36, sm: 47 }, color: "white", cursor: "pointer" }} />
       </LightTooltip>
       <LightTooltip enterDelay={350} title={<Typography fontFamily="Share Tech Mono" fontSize={16}>play random station</Typography>}>
         <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { xs: 38, sm: 50 }, color: "white", cursor: "pointer" }} />
       </LightTooltip>
-      <Box sx={{ width: 50 }}>
+      <LightTooltip enterDelay={350} title={<Typography fontFamily="Share Tech Mono" fontSize={16}>faq</Typography>}>
+        <HelpIcon onClick={handleFaqModalOpen} sx={{ fontSize: { xs: 38, sm: 43 }, ml:{xs: 0, lg: 1}, color: "white", cursor: "pointer" }} />
+      </LightTooltip>
+      <Box sx={{ width: 58 }}>
         <PlayArrowIcon onClick={playMusic} sx={{ display: showPlay(), fontSize: { xs: 53, m: 68 }, color: "white", cursor: "pointer" }}/>
         <PauseIcon onClick={pauseMusic} sx={{ display: showPause(), fontSize: { xs: 46, sm: 57 }, color: "white", cursor: "pointer" }}/>
       </Box>
-      <LightTooltip enterDelay={350} title={<Typography fontFamily="Share Tech Mono" fontSize={16}>share</Typography>}>
-        <ShareIcon onClick={()=>console.log("shared")} sx={{ fontSize: { xs: 38, sm: 42 }, mr:{xs: 0, lg: 2}, color: "white", cursor: "pointer" }} />
-      </LightTooltip>
-      <Stack spacing={2} direction="row" alignItems="center" sx={{ display: { xs: "none", lg: "flex" }, cursor: "pointer" }}>
+      <Stack spacing={2} direction="row" alignItems="center" sx={{ ml:{xs: 0, lg: 2}, display: { xs: "none", lg: "flex" }, cursor: "pointer" }}>
         <VolumeDown onClick={() => {setVolume(0)}} sx={{ fontSize: 55 }}/>
         <Slider sx={{ width: { lg: 140, xl: 200} }} aria-label="Volume" value={volume} onChange={handleVolumeChange} />
         <VolumeUp onClick={() => {setVolume(100)}} sx={{ fontSize: 50 }}/>
