@@ -70,7 +70,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                  Absolutely! It’s pretty easy for me to add new stations, and I’m always looking for new radio stations to listen to. Feel free to suggest stations via this form!
+                  Absolutely! It’s pretty easy for me to add new stations, and I’m always looking for new radio stations to listen to. Feel free to suggest stations via <Link target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfZGNdhSsSnp9P2UqlhO8E1j0gMHxXavHea-rHIQjFPdCCbMw/viewform">this form</Link>!
                 </Typography>
               </Typography>
             </ListItem>
@@ -130,7 +130,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                  That’s awesome (or I’m sorry)! I’m still learning how to build web apps and I love getting feedback! If you have a Github account, you can open an issue directly on the <Link target="_blank" href="https://github.com/xehl/campus-fm">Campus FM repo</Link>, or you can get in touch with me at <Link href={`mailto:hello.campusfm@gmail.com`}>hello.campusfm@gmail.com</Link>.
+                  That’s awesome (or I’m sorry)! I’m still learning how to build web apps and I love getting feedback! If you have a Github account, you can open an issue directly on the <Link target="_blank" href="https://github.com/xehl/campus-fm">Campus FM repo</Link>, or you can get in touch with me at <Link href={`mailto:hello.campusfm@gmail.com`}>hello.campusfm@gmail.com</Link>
                 </Typography>
               </Typography>
             </ListItem>
