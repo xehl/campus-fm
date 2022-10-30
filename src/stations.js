@@ -187,7 +187,8 @@ const stations = [
     id: 8,
     call_sign: "WXTJ",
     broadcast_frequency: "100.1",
-    audio_url: "https://streams.wtju.net:8443/wtjx-opus-256.ogg",
+    audio_url:
+      "https://cors-proxy.elfsight.com/https://streams.wtju.net:8443/wtjx-opus-256.ogg",
     station_url: "https://www.wxtj.fm/",
     college_name: "University of Virginia",
     public_private: "Public",
@@ -838,7 +839,7 @@ const stations = [
     call_sign: "WVPH",
     broadcast_frequency: "90.3",
     audio_url:
-      "https://cors-proxy.elfsight.com/http://165.230.36.189:80/;stream.mp3",
+      "https://cors-proxy.elfsight.com/http://rsc417c1.rutgers.edu:8000/WRSU-FM",
     station_url: "https://www.thecore.fm/",
     college_name: "Rutgers University",
     public_private: "Public",

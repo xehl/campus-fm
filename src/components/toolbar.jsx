@@ -4,6 +4,7 @@ import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 import ShuffleSharpIcon from '@mui/icons-material/ShuffleSharp';
+import ShareIcon from '@mui/icons-material/Share';
 import VolumeDown from '@mui/icons-material/VolumeDown';
 import VolumeUp from '@mui/icons-material/VolumeUp';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
@@ -92,6 +93,7 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
       alignItems: "center",
       justifyContent: "space-around",
       height: { xs: 40, sm: 80 },
+      ml: {xs: 0, xl: 5},
       mt: { xs: -2, sm: -2, lg: -2, xl: 0},
       mb: { xs: 1, sm: 1, md: 1, xl: 0},
       width: { xs: 330, sm: 550, md: 600, xl: 700 },
@@ -103,14 +105,17 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
       <LightTooltip enterDelay={350} title={<Typography fontFamily="Share Tech Mono" fontSize={16}>play random station</Typography>}>
         <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { xs: 38, sm: 50 }, color: "white", cursor: "pointer" }} />
       </LightTooltip>
-      <Box sx={{ width: { xs: 46, sm: 70 } }}>
+      <Box sx={{ width: 50 }}>
         <PlayArrowIcon onClick={playMusic} sx={{ display: showPlay(), fontSize: { xs: 53, m: 68 }, color: "white", cursor: "pointer" }}/>
         <PauseIcon onClick={pauseMusic} sx={{ display: showPause(), fontSize: { xs: 46, sm: 57 }, color: "white", cursor: "pointer" }}/>
       </Box>
-      <Stack spacing={2} direction="row" alignItems="center" sx={{ display: { xs: "none", sm: "flex" }, cursor: "pointer" }}>
-        <VolumeDown sx={{ fontSize: { sm: 55 } }}/>
-        <Slider sx={{ width: { xs: 80, sm: 100, md: 120, xl: 200 } }} aria-label="Volume" value={volume} onChange={handleVolumeChange} />
-        <VolumeUp sx={{ fontSize: { sm: 50 } }}/>
+      <LightTooltip enterDelay={350} title={<Typography fontFamily="Share Tech Mono" fontSize={16}>share</Typography>}>
+        <ShareIcon onClick={()=>console.log("shared")} sx={{ fontSize: { xs: 38, sm: 42 }, mr:{xs: 0, lg: 2}, color: "white", cursor: "pointer" }} />
+      </LightTooltip>
+      <Stack spacing={2} direction="row" alignItems="center" sx={{ display: { xs: "none", lg: "flex" }, cursor: "pointer" }}>
+        <VolumeDown onClick={() => {setVolume(0)}} sx={{ fontSize: 55 }}/>
+        <Slider sx={{ width: { lg: 140, xl: 200} }} aria-label="Volume" value={volume} onChange={handleVolumeChange} />
+        <VolumeUp onClick={() => {setVolume(100)}} sx={{ fontSize: 50 }}/>
       </Stack>
     </Box>
   )

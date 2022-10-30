@@ -5,16 +5,15 @@ import NowPlayingLarge from "./nowplayinglg";
 export default function StickyBar({playing, mobileLoaded, setMobileLoaded}) {
   return (
     <AppBar
+    elevation={4}
     sx={{
       position: "sticky",
       display: "flex",
-      borderTop: 2,
       bottom: 0,
-      mb: "-20px",
-      mt: "10px",
       width: "100%",
-      background: "#2e2e2e",
-      height: "130px",
+      background: "white",
+      height: "90px",
+      boxShadow: 5,
     }}
   >
     <NowPlayingSmall

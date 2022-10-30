@@ -50,7 +50,8 @@ export default function ModalCard({ station, stationQueue, setStationQueue, setS
               m: { xs: "5px", md: "5px", lg: "5px" },
               borderRadius: 2,
               border: 2,
-              backgroundColor: "white"
+              backgroundColor: "white",
+              objectFit: "contain"
             }}
             image={station.station_image}
             alt={station.callsign}

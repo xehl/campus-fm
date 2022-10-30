@@ -76,104 +76,111 @@ export default function App() {
 
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
-        <AppBar
-          position="absolute"
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            borderBottom: 2,
-            position: "fixed",
-            width: "100%",
-            background: "#2e2e2e",
-          }}
-        >
-          <Box
+      <Box
+        sx={{
+          minHeight: "calc(100vh - 90px)",
+          height: "100%",
+        }}
+      >
+        <ThemeProvider theme={theme}>
+          <AppBar
+            position="absolute"
             sx={{
               display: "flex",
-              flexDirection: { xs: "column", xl: "row" },
-              justifyContent: "space-between",
               alignItems: "center",
-              margin: "auto",
-              width: "80%",
+              borderBottom: 2,
+              position: "fixed",
+              width: "100%",
+              background: "#2e2e2e",
             }}
           >
-            <Logo />
             <Box
               sx={{
                 display: "flex",
+                flexDirection: { xs: "column", xl: "row" },
+                justifyContent: "space-between",
                 alignItems: "center",
-                justifyContent: "center",
+                margin: "auto",
+                width: "80%",
               }}
             >
-              <Toolbar
-                playing={playing}
-                setPlaying={setPlaying}
-                displayedStations={selectedStations}
-                volume={volume}
-                setVolume={setVolume}
-                userPause={userPause}
-                setUserPause={setUserPause}
-                handleModalOpen={handleModalOpen}
-              />
+              <Logo />
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Toolbar
+                  playing={playing}
+                  setPlaying={setPlaying}
+                  displayedStations={selectedStations}
+                  volume={volume}
+                  setVolume={setVolume}
+                  userPause={userPause}
+                  setUserPause={setUserPause}
+                  handleModalOpen={handleModalOpen}
+                />
+              </Box>
             </Box>
-          </Box>
-        </AppBar>
-        <Box
-          sx={{
-            height: { xs: 150, sm: 255, md: 255, xl: 140 },
-          }}
+          </AppBar>
+          <Box
+            sx={{
+              height: { xs: 150, sm: 255, md: 255, xl: 140 },
+            }}
+          />
+          <SelectorModal
+            open={open}
+            handleClose={handleClose}
+            selectedStations={selectedStations}
+            setSelectedStations={setSelectedStations}
+            setPlaying={setPlaying}
+          />
+          <Container sx={{ width: "100%" }}>
+            <Grid
+              container
+              justifyContent="space-between"
+              rowSpacing={2}
+              columnSpacing={{ lg: 4, md: 3 }}
+            >
+              {selectedStations.map((station) => {
+                return (
+                  <Grid
+                    item
+                    md={12}
+                    lg={6}
+                    sx={{ width: "100%" }}
+                    key={station.id}
+                  >
+                    <StationCard
+                      callsign={station.call_sign}
+                      frequency={station.broadcast_frequency}
+                      college={station.college_name}
+                      audioURL={station.audio_url}
+                      collegeimage={station.college_image}
+                      setPlaying={setPlaying}
+                      stationObject={station}
+                      playing={playing}
+                      volume={volume}
+                      setPlayStatic={setPlayStatic}
+                      userPause={userPause}
+                      setUserPause={setUserPause}
+                    />
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </Container>
+          <Footer />
+        </ThemeProvider>
+        <audio
+          className="staticAudio"
+          preload="auto"
+          loop
+          src="https://www.soundjay.com/mechanical/sounds/tv-static-05.mp3"
         />
-        <SelectorModal
-          open={open}
-          handleClose={handleClose}
-          selectedStations={selectedStations}
-          setSelectedStations={setSelectedStations}
-          setPlaying={setPlaying}
-        />
-        <Container sx={{ width: "100%" }}>
-          <Grid
-            container
-            justifyContent="space-between"
-            rowSpacing={2}
-            columnSpacing={{ lg: 4, md: 3 }}
-          >
-            {selectedStations.map((station) => {
-              return (
-                <Grid
-                  item
-                  md={12}
-                  lg={6}
-                  sx={{ width: "100%" }}
-                  key={station.id}
-                >
-                  <StationCard
-                    callsign={station.call_sign}
-                    frequency={station.broadcast_frequency}
-                    college={station.college_name}
-                    audioURL={station.audio_url}
-                    collegeimage={station.college_image}
-                    setPlaying={setPlaying}
-                    stationObject={station}
-                    playing={playing}
-                    volume={volume}
-                    setPlayStatic={setPlayStatic}
-                    userPause={userPause}
-                    setUserPause={setUserPause}
-                  />
-                </Grid>
-              );
-            })}
-          </Grid>
-        </Container>
-        <Footer />
-      </ThemeProvider>
-      <audio
-        className="staticAudio"
-        preload="auto"
-        loop
-        src="https://www.soundjay.com/mechanical/sounds/tv-static-05.mp3"
-      />
+      </Box>
       <StickyBar playing={playing} />
     </div>
   );

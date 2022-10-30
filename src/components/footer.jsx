@@ -20,6 +20,7 @@ export default function Footer() {
           height: "40px",
           color: "white",
           mt: 2,
+          pb:2
         }}
       >
         <Typography

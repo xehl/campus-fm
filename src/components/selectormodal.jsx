@@ -32,9 +32,9 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
       return
     }
 
-    // don't let user load fewer than 6 stations
-    if (stationQueue.length < 6) {
-      setSnackBarMessage("Please choose at least 6 stations!")
+    // don't let user load fewer than 2 stations
+    if (stationQueue.length < 2) {
+      setSnackBarMessage("Please choose at least 2 stations!")
       openSnackBar()
       return
     }
@@ -53,12 +53,39 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
     setStationQueue([])
   }
 
+  function pickRandomStation() {
+    return stations[Math.floor(Math.random() * stations.length)]
+  }
+
+  function addOneRandom() {
+
+    // throw error if already 10 selected
+    if (stationQueue.length === 10) {
+      setSnackBarMessage("Can't load more than 10 stations simultaneously!")
+      openSnackBar()
+      return
+    }
+
+    // choose random station
+    let randStation = pickRandomStation()
+
+    // retry if random station is already selected
+    if(stationQueue.includes(randStation)) {
+      while (stationQueue.includes(randStation)) {
+        randStation = pickRandomStation()
+        console.log("already selected, now picking")
+        console.log(randStation)
+      }
+    }
+    setStationQueue([...stationQueue, randStation])
+  }
+
   function pickTenRandom() {
     // make array of ten unique random #s from 0 to stations.length
     // build array of ten stations at those indices    
     let randArr = []
     while (randArr.length < 10) {
-      let randStation = stations[Math.floor(Math.random() * stations.length)]
+      let randStation = pickRandomStation()
       if(!randArr.includes(randStation))
         randArr.push(randStation)
     }
@@ -92,6 +119,7 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
           width: "80vw",
           bgcolor: "#2e2e2e",
           border: "5px solid #b0b0b0",
+          boxShadow: 2,
           outline: 0,
           overflowX: 'hidden',
           overflowY: "auto",
@@ -104,7 +132,7 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
           position="absolute"
           sx={{
             display: "flex",
-            flexDirection: {xs: "column",sm: "row"},
+            flexDirection: {xs: "column", md: "row"},
             alignItems: "center",
             textAlign: "center",
             position: "sticky",
@@ -125,43 +153,71 @@ export default function SelectorModal({ open, handleClose, selectedStations, set
             horizontal: "left"
           }}
           />
-          <Stack direction="row" spacing={1} alignItems="center" sx={{mr: 2}}>
-            <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 14, sm: 16 }} sx={{width: 130}} color="white">
+          <Stack direction="row" spacing={1} sx={{mr: {xs: 0, sm: 2}, width: { xs: "70vw", sm: 170}, alignItems: "center", justifyContent:"center" }}>
+            <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 14, sm: 16 }} sx={{ width: { xs: "auto", md: 130}}} color="white">
               Select up to 10 stations:
             </Typography>
-            <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 20, sm: 30 }} sx={{ m: 2, width: 36, p: .7, borderRadius: 1, background: "white" }} color="black">
+            <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 20, sm: 30 }} sx={{ m: 2, width: 36, p: {xs: .4, sm: .7}, borderRadius: 1, background: "white" }} color="black">
               <b>{stationQueue.length}</b>
             </Typography>
           </Stack>
+          {/* can't figure out how to make size prop conditional;  */}
           <TextField
             id="outlined-basic"
             variant="outlined"
             placeholder="search"
             autoComplete="off"
             onChange={e => handleSearch(e)}
-            InputProps={{ style: { fontSize: 15, fontFamily:"Share Tech Mono", background: "white", } }}
+            InputProps={{ style: { fontSize: 15, fontFamily: "Share Tech Mono", background: "white", } }}
+            fullWidth
             sx={{
-              width: {xs: "70vw", sm: 350, md: 350, lg: 350},
+              display: {xs: "none", sm: "block"}, 
+              width: {xs: "70vw", sm:"70vw", md: 350},
               borderRadius: 1,
               mb: 1,
               mt: 1,
             }} />
-          <Stack direction={{ xs: "column", sm: "row" }} sx={{ m: 0.5, width: { xs: "70vw", sm: "auto" }, height: {xs: "auto", sm: 55}}} spacing={1}>
-              <Button variant="outlined" disableElevation onClick={clearStations} sx={{ borderColor:"white"}}>
-                <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="white">
-                  clear stations
-                </Typography>
-              </Button>
-              <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ borderColor: "white" }}>
-                <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="white">
-                  choose 10 random
-                </Typography>
-              </Button>
-              <Button variant="contained" disableElevation onClick={replaceStations} sx={{ backgroundColor:"white", borderColor: "white" }}>
-                <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="#2e2e2e">
-                  load new stations
-                </Typography>
-              </Button>
+          <TextField
+            id="outlined-basic"
+            variant="outlined"
+            placeholder="search"
+            autoComplete="off"
+            size= "small"
+            onChange={e => handleSearch(e)}
+            fullWidth
+            InputProps={{ style: { fontSize: 15, fontFamily:"Share Tech Mono", background: "white"} }}
+            sx={{
+              display: {xs: "block", sm: "none"}, 
+              width: {xs: "70vw", md: 350},
+              borderRadius: 1,
+              mb: .5,
+              mt: 1,
+            }} />
+            <Stack direction={{ xs: "column", md: "row" }} sx={{ ml: {md: 2, xl: 3}, m: 0.5, width: { xs: "70vw", sm: "auto" }}} spacing={1}>
+              <Stack spacing={1} direction="row" sx={{ width: {xs: "70vw", md: "auto"}, justifyContent:"center" }}>
+                <Button variant="outlined" disableElevation onClick={addOneRandom} sx={{ width: {xs: "50%", md: "auto"}, borderColor: "white" }}>
+                  <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="white">
+                    add 1 random
+                  </Typography>
+                </Button>
+                <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ width: {xs: "50%", md: "auto"}, borderColor: "white" }}>
+                  <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="white">
+                    surprise me
+                  </Typography>
+                </Button>
+              </Stack>
+              <Stack spacing={1} direction="row" sx={{ width: {xs: "70vw", md: "auto"}, justifyContent:"center" }}>
+                <Button variant="outlined" disableElevation onClick={clearStations} sx={{ width: {xs: "50%", md: "auto"}, borderColor:"white"}}>
+                  <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="white">
+                    clear all
+                  </Typography>
+                </Button>
+                <Button variant="contained" disableElevation onClick={replaceStations} sx={{ width: {xs: "50%", md: "auto"}, backgroundColor:"white", borderColor: "white" }}>
+                  <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="#2e2e2e">
+                    reload stations
+                  </Typography>
+                </Button>
+              </Stack>
             </Stack>
           </AppBar>
         <Grid
