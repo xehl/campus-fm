@@ -150,7 +150,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                  I’m working on creating customized sharing links that allow users to send the app around with their chosen stations preloaded (coming soon!).
+                  I’m working on creating customized sharing links that allow you to share the app with your chosen stations preloaded (coming soon!).
                 </Typography>
               </Typography>
             </ListItem>
