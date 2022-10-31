@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { Box, Stack, Slider, Typography } from '@mui/material';
+import { Box, Stack, Slider } from '@mui/material';
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
@@ -17,8 +17,8 @@ const LightTooltip = styled(({ className, ...props }) => (
     backgroundColor: theme.palette.common.white,
     color: 'rgba(0, 0, 0, 0.87)',
     boxShadow: theme.shadows[1],
-    fontSize: 15,
-    fontFamily: "Helvetica",
+    fontSize: 16,
+    fontFamily: "Share Tech Mono",
   },
 }));
 
@@ -88,35 +88,42 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
 // if userPause is true (user has clicked pause), display play button, otherwise display the pause button
 
   return (
-    <Box elevation={-4} sx={{
+    <Box sx={{
+      width: {
+        xs: "100vw",
+        lg: "auto"
+      },
       display: "flex",
-      alignItems: "center",
-      justifyContent: "space-around",
-      height: { xs: 40, sm: 80 },
-      ml: {xs: 0, xl: 5},
-      mt: { xs: -2, sm: -2, lg: -2, xl: 0},
-      mb: { xs: 1, sm: 1, md: 1, xl: 0},
-      width: { xs: 330, sm: 550, md: 600, xl: 700 },
-      backgroundColor: "#2e2e2e"
+      justifyContent: "center",
+      backgroundColor: "#2e2e2e",
     }}>
-      <LightTooltip enterDelay={350} title={<Typography fontFamily="Share Tech Mono" fontSize={16}>load new stations</Typography>} sx={{fontFamily: "Share Tech Mono"}}>
-        <DashboardCustomizeIcon onClick={handleSelectorModalOpen} sx={{ fontSize: { xs: 36, sm: 47 }, color: "white", cursor: "pointer" }} />
+      <Box sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        height: { xs: 50, sm: 80 },
+        mt: {xs: 1, sm: 0},
+        ml: {xs: 0, xl: 5},
+        mb: { xs: 1, sm: 1, md: 1, xl: 0 },
+        width: { xs: "70%", sm: 550, md: 600, xl: 700 },
+      }}>
+        <LightTooltip enterDelay={350} title="load new stations" sx={{fontFamily: "Share Tech Mono"}}>
+          <DashboardCustomizeIcon onClick={handleSelectorModalOpen} sx={{ width: 50, fontSize: { xs: 36, sm: 47 }, color: "white", cursor: "pointer" }} />
+        </LightTooltip>
+        <LightTooltip enterDelay={350} title="play random station">
+          <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { xs: 38, sm: 50 }, width: 50, color: "white", cursor: "pointer" }} />
       </LightTooltip>
-      <LightTooltip enterDelay={350} title={<Typography fontFamily="Share Tech Mono" fontSize={16}>play random station</Typography>}>
-        <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { xs: 38, sm: 50 }, color: "white", cursor: "pointer" }} />
-      </LightTooltip>
-      <LightTooltip enterDelay={350} title={<Typography fontFamily="Share Tech Mono" fontSize={16}>faq</Typography>}>
-        <HelpIcon onClick={handleFaqModalOpen} sx={{ fontSize: { xs: 38, sm: 43 }, ml:{xs: 0, lg: 1}, color: "white", cursor: "pointer" }} />
-      </LightTooltip>
-      <Box sx={{ width: 58 }}>
-        <PlayArrowIcon onClick={playMusic} sx={{ display: showPlay(), fontSize: { xs: 53, m: 68 }, color: "white", cursor: "pointer" }}/>
-        <PauseIcon onClick={pauseMusic} sx={{ display: showPause(), fontSize: { xs: 46, sm: 57 }, color: "white", cursor: "pointer" }}/>
+        <LightTooltip enterDelay={350} title="faq">
+          <HelpIcon onClick={handleFaqModalOpen} sx={{ fontSize: { xs: 38, sm: 43 }, ml:{xs: 0, lg: 1}, width: 50, color: "white", cursor: "pointer" }} />
+        </LightTooltip>
+        <PlayArrowIcon onClick={playMusic} sx={{ display: showPlay(), fontSize: { xs: 53, md: 68 }, width: 50, color: "white", cursor: "pointer" }}/>
+        <PauseIcon onClick={pauseMusic} sx={{ display: showPause(), fontSize: { xs: 46, sm: 57 }, width: 50, color: "white", cursor: "pointer" }}/>
+        <Stack spacing={2} direction="row" alignItems="center" sx={{ ml:{xs: 0, lg: 2}, display: { xs: "none", lg: "flex" }, cursor: "pointer" }}>
+          <VolumeDown onClick={() => {setVolume(0)}} sx={{ color: "white", fontSize: 55 }}/>
+          <Slider sx={{ width: 150 }} aria-label="Volume" value={volume} onChange={handleVolumeChange} />
+          <VolumeUp onClick={() => {setVolume(100)}} sx={{ color: "white", fontSize: 50 }}/>
+        </Stack>
       </Box>
-      <Stack spacing={2} direction="row" alignItems="center" sx={{ ml:{xs: 0, lg: 2}, display: { xs: "none", lg: "flex" }, cursor: "pointer" }}>
-        <VolumeDown onClick={() => {setVolume(0)}} sx={{ fontSize: 55 }}/>
-        <Slider sx={{ width: { lg: 140, xl: 200} }} aria-label="Volume" value={volume} onChange={handleVolumeChange} />
-        <VolumeUp onClick={() => {setVolume(100)}} sx={{ fontSize: 50 }}/>
-      </Stack>
     </Box>
   )
 }

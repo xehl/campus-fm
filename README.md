@@ -4,7 +4,6 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -85,8 +84,6 @@ npm install npm@latest -g
 [stars-url]: https://github.com/xehl/campus-fm/stargazers
 [issues-shield]: https://img.shields.io/github/issues/xehl/campus-fm.svg?style=for-the-badge
 [issues-url]: https://github.com/xehl/campus-fm/issues
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/eric-h-lee
 [desktop-screenshot]: screengrabs/cfm-v1.5.png
 [desktop-s-screenshot]: screengrabs/cfm-v1.5-select.png
 [mobile-screenshot]: screengrabs/mobile-v1.5.png

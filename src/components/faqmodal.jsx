@@ -5,25 +5,26 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const faqTheme = createTheme({
   typography: {
     fontFamily: "Share Tech Mono",
-    fontSize: { xs: 16, sm: 18 }
+    fontSize: 16
   }
 })
 
 export default function FaqModal({ faqOpen, handleFaqClose }) {
   return (
-      <Modal
-      open={faqOpen}
-      onClose={handleFaqClose}
+    <Modal
+    open={faqOpen}
+    onClose={handleFaqClose}
     >
+      <>
       <ThemeProvider theme={faqTheme}>
         <Box 
           sx={{
             position: "absolute",
-            top: '50%',
+            top: '45%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            height: "80vh",
-            width: "80vw",
+            height: "70vh",
+            width: "90vw",
             bgcolor: "#2e2e2e",
             border: "5px solid #b0b0b0",
             boxShadow: 2,
@@ -40,21 +41,27 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
             boxSizing: "border-box",
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between"
+            justifyContent: "space-between",
+            position: "sticky",
+            top: 0,
+            bgcolor: "#2e2e2e",
+            zIndex: 20,
+            borderBottom: 1,
+            borderColor: "#b0b0b0"
           }}>
             <Typography sx={{
               pl: 3,
               pt: {xs: 2, sm: 1},
               pb: 1,
-              fontSize: {xs: 24, sm: 38},
+              fontSize: 45,
               color: "white",
             }}>
-              Frequently Asked Questions
+              FAQ
             </Typography>
-            <CloseIcon onClick={handleFaqClose} sx={{ display: {xs: "none", sm:"block"}, fontSize: 40, cursor:"pointer", color: "white", pr: 2}}/>
+            <CloseIcon onClick={handleFaqClose} sx={{ fontSize: 40, cursor:"pointer", color: "white", pr: 2}}/>
           </Box>
           <List>
-            <Divider variant="inset" color="#b0b0b0" />
+            {/* <Divider variant="inset" color="#b0b0b0" /> */}
             <ListItem sx={{p: 0}}>
               <Typography sx={{
                 width: "100%",
@@ -113,6 +120,26 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   In order to smoothly switch between streams, Campus FM keeps a small cache of audio data available for each station. After some time has passed, the cached audio gets stale and the app requests more recent content. The station is grayed out during this loading period.
                 </Typography>
               </Typography>
+              </ListItem>
+            <Divider variant="inset" color="#b0b0b0" />
+            <ListItem sx={{p: 0}}>
+              <Typography sx={{
+                width: "100%",
+                boxSizing: "border-box",
+                p: 3,
+                fontWeight: "bold",
+                color: "white",
+                fontStyle: "italic"
+              }}>
+                I've been waiting for a while now, why isn't my station loading?
+                <Typography sx={{
+                  mt: 2,
+                  color: "#e8e8e8",
+                  fontStyle: "normal"
+                }}>
+                  IT practices aren't consistent across all college radio stations. Sometimes they have security restrictions that prevent their audio streams from loading on certain apps and devices. And sometimes the audio streams just go offline for a while.
+                </Typography>
+              </Typography>
             </ListItem>
             <Divider variant="inset" color="#b0b0b0" />
             <ListItem sx={{p: 0}}>
@@ -130,7 +157,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                  That’s awesome (or I’m sorry)! I’m still learning how to build web apps and I love getting feedback! If you have a Github account, you can open an issue directly on the <Link target="_blank" href="https://github.com/xehl/campus-fm">Campus FM repo</Link>, or you can get in touch with me at <Link href={`mailto:hello.campusfm@gmail.com`}>hello.campusfm@gmail.com</Link>
+                  That’s awesome (or I’m sorry)! I’m still learning how to build web apps and I would love your feedback! If you have a Github account, you can open an issue directly on the <Link target="_blank" href="https://github.com/xehl/campus-fm">Campus FM repo</Link>, or you can get in touch with me at <Link href={`mailto:hello.campusfm@gmail.com`}>hello.campusfm@gmail.com</Link>
                 </Typography>
               </Typography>
             </ListItem>
@@ -157,6 +184,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
           </List>
         </Box>
       </ThemeProvider>
+      </>
     </Modal>
   )
 }

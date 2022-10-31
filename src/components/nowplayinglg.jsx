@@ -18,7 +18,7 @@ export default function NowPlayingLarge({ playing }) {
             alt={playing.call_sign}
           />}
         </Box>
-        <Typography noWrap variant="nowplaying" className="playing-station" sx={{ display: "flex", fontSize: "30px", color: "black", fontFamily: "Share Tech Mono" }}>
+        <Typography noWrap variant="nowplaying" className="playing-station" sx={{ display: "flex", fontSize: 30, color: "black", fontFamily: "Share Tech Mono" }}>
           {playing ? <>Now playing: {playing.call_sign} {playing.broadcast_frequency}</> : <>Choose a station to start listening!</>}
         </Typography>
         {playing ? <Link target="_blank" href={playing.station_url} sx={{ display: { xs: "none", md: "block" } }} ><OpenInNewIcon sx={{ ml: 2, mr: 3, height: 30, width: 30, color: "#212121" }} /></Link> : ""}

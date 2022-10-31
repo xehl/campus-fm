@@ -14,7 +14,7 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
     // load all new stations when selected stations change (important on mobile)
     const allStations = document.getElementsByClassName("audio-element")
     for (let station of allStations) {
-      station.load();
+      station.load()
     }
   }, [selectedStations])
 
@@ -32,9 +32,9 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
       return
     }
 
-    // don't let user load fewer than 2 stations
-    if (stationQueue.length < 2) {
-      setSnackBarMessage("Please choose at least 2 stations!")
+    // don't let user load if no stations selected
+    if (stationQueue.length < 1) {
+      setSnackBarMessage("Please choose at least 1 station!")
       openSnackBar()
       return
     }
@@ -116,7 +116,7 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
           left: '50%',
           transform: 'translate(-50%, -50%)',
           height: "80vh",
-          width: "80vw",
+          width: "85vw",
           bgcolor: "#2e2e2e",
           border: "5px solid #b0b0b0",
           boxShadow: 2,
@@ -126,6 +126,7 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          zIndex: 5001
         }}
       >
         <AppBar
@@ -195,24 +196,24 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
             <Stack direction={{ xs: "column", md: "row" }} sx={{ ml: {md: 2, xl: 3}, m: 0.5, width: { xs: "70vw", sm: "auto" }, height: {xs: "auto", xl: 54}}} spacing={1}>
               <Stack spacing={1} direction="row" sx={{ width: {xs: "70vw", md: "auto"}, justifyContent:"center" }}>
               <Button variant="outlined" disableElevation onClick={addOneRandom} sx={{ width: {xs: "50%", md: "auto"}, borderColor: "white" }}>
-                  <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="white">
+                  <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
                     add 1 random
                   </Typography>
                 </Button>
                 <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ width: {xs: "50%", md: "auto"}, borderColor: "white" }}>
-                  <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="white">
+                  <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
                     surprise me
                   </Typography>
                 </Button>
               </Stack>
               <Stack spacing={1} direction="row" sx={{ width: {xs: "70vw", md: "auto"}, justifyContent:"center" }}>
                 <Button variant="outlined" disableElevation onClick={clearStations} sx={{ width: {xs: "50%", md: "auto"}, borderColor:"white"}}>
-                  <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="white">
+                  <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
                     clear all
                   </Typography>
                 </Button>
                 <Button variant="contained" disableElevation onClick={replaceStations} sx={{ width: {xs: "50%", md: "auto"}, backgroundColor:"white", borderColor: "white" }}>
-                  <Typography fontFamily="Share Tech Mono" fontSize={{xs: 12, sm: 15}} color="#2e2e2e">
+                  <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="#2e2e2e">
                     reload stations
                   </Typography>
                 </Button>

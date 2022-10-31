@@ -1,5 +1,5 @@
 import "./App.css";
-import { AppBar, Box, Grid, Container } from "@mui/material";
+import { Box, Grid, Container } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import StationCard from "./components/stationcard";
@@ -34,6 +34,7 @@ export default function App() {
         families: ["Monoton", "Turret Road", "Share Tech Mono"],
       },
     });
+
     // load cached stations for returning users
     let cache = JSON.parse(localStorage.getItem("recentStations"));
     if (cache) setSelectedStations(cache);
@@ -55,6 +56,26 @@ export default function App() {
       );
       setSelectedStations(defaultStations);
     }
+
+    // check and try to load 525/404 error stations every 10s (handleStall should catch stations that are loaded but stalled)
+    setInterval(() => {
+      const loadedStations = document.getElementsByClassName("audio-element");
+      for (let station of loadedStations) {
+        if (station.readyState === 0) {
+          const url = station.getAttribute("src");
+          // console.log("saved " + url);
+          station.setAttribute("src", "");
+          setTimeout(function () {
+            station.load(); // This stops the stream from downloading; basically forces it to load an empty file
+          }, 100);
+          station.setAttribute("src", url);
+          station.load();
+          console.log(
+            "loading " + station.getAttribute("name") + station.readyState
+          );
+        }
+      }
+    }, 10000);
   }, []);
 
   // stores which station is currently playing
@@ -84,59 +105,78 @@ export default function App() {
 
   return (
     <div className="App">
+      {/* INVISIBLE SPACER BOX KEEPS FOOTER ON BOTTOM, EVEN ON XL SCREENS,
+          OR WHEN NOT ENOUGH CONTENT TO VERTICALLY FILL THE VIEWPORT */}
       <Box
         sx={{
           minHeight: "calc(100vh - 90px)",
           height: "100%",
+          zIndex: 10,
         }}
       >
         <ThemeProvider theme={theme}>
-          <AppBar
-            position="absolute"
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              borderBottom: 2,
-              position: "fixed",
-              width: "100%",
-              background: "#2e2e2e",
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: { xs: "column", xl: "row" },
-                justifyContent: "space-between",
-                alignItems: "center",
-                margin: "auto",
-                width: "80%",
-              }}
-            >
-              <Logo />
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Toolbar
-                  playing={playing}
-                  setPlaying={setPlaying}
-                  displayedStations={selectedStations}
-                  volume={volume}
-                  setVolume={setVolume}
-                  userPause={userPause}
-                  setUserPause={setUserPause}
-                  handleSelectorModalOpen={handleSelectorModalOpen}
-                  handleFaqModalOpen={handleFaqModalOpen}
-                />
-              </Box>
-            </Box>
-          </AppBar>
           <Box
             sx={{
-              height: { xs: 150, sm: 255, md: 255, xl: 140 },
+              display: { xs: "none", lg: "flex" },
+              width: "100vw",
+              flexDirection: { xs: "column", lg: "row" },
+              alignItems: "center",
+              justifyContent: "space-around",
+              background: "#2e2e2e",
+              position: "sticky",
+              top: 0,
+              zIndex: 12,
+            }}
+          >
+            <Logo />
+            <Toolbar
+              playing={playing}
+              setPlaying={setPlaying}
+              displayedStations={selectedStations}
+              volume={volume}
+              setVolume={setVolume}
+              userPause={userPause}
+              setUserPause={setUserPause}
+              handleSelectorModalOpen={handleSelectorModalOpen}
+              handleFaqModalOpen={handleFaqModalOpen}
+            />
+          </Box>
+          <Box
+            sx={{
+              width: { xs: "100vw", lg: "auto" },
+              display: { xs: "flex", lg: "none" },
+              justifyContent: "center",
+              backgroundColor: "#2e2e2e",
+            }}
+          >
+            <Logo />
+          </Box>
+          <Box
+            sx={{
+              display: { xs: "flex", lg: "none" },
+              position: "sticky",
+              top: 0,
+              borderTop: 1,
+              borderColor: "#404040",
+              zIndex: 12,
+              boxShadow: 4,
+            }}
+          >
+            <Toolbar
+              playing={playing}
+              setPlaying={setPlaying}
+              displayedStations={selectedStations}
+              volume={volume}
+              setVolume={setVolume}
+              userPause={userPause}
+              setUserPause={setUserPause}
+              handleSelectorModalOpen={handleSelectorModalOpen}
+              handleFaqModalOpen={handleFaqModalOpen}
+            />
+          </Box>
+          <Box
+            sx={{
+              height: 15,
             }}
           />
           <SelectorModal

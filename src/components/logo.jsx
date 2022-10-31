@@ -2,11 +2,11 @@ import { Box, Typography } from '@mui/material/';
 
 export default function Logo() {
   return (
-    <Box sx={{ width: {xs: "80vw", lg: "auto"}, display: "flex", flexDirection: "column", alignItems: "center"}}>
+    <Box>
       <Typography
         fontFamily={"Monoton"}
         sx={{
-          fontSize: {xs:"45px", sm:"80px", xl:"55px"}
+          fontSize: {xs:40, sm:70, xl:55}, color:"white"
         }}
       >
         campus.fm
@@ -15,14 +15,17 @@ export default function Logo() {
         noWrap
         fontFamily={"Turret Road"}
         sx={{
-          marginTop: {xs:-1.7, sm:-3, xl:-1.7},
-          marginBottom: 2.5,
-          fontSize: {xs:"20px", sm:"35px", xl:"20px"},
+          ml: 0.5,
+          mt: {xs: -1.7, sm: -2.5, lg: -1.7},
+          mb: {xs: 0, sm: 2.5},
+          fontSize: {xs: 17, sm: 26, lg: 20},
           fontWeight: "bold",
+          color:"white"
         }}
       >
         listen to college radio stations
-      </Typography>
+      </Typography> 
     </Box>
+  
   )
 }
