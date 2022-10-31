@@ -63,16 +63,15 @@ export default function App() {
       for (let station of loadedStations) {
         if (station.readyState === 0) {
           const url = station.getAttribute("src");
-          // console.log("saved " + url);
           station.setAttribute("src", "");
           setTimeout(function () {
             station.load(); // This stops the stream from downloading; basically forces it to load an empty file
           }, 100);
           station.setAttribute("src", url);
           station.load();
-          console.log(
-            "loading " + station.getAttribute("name") + station.readyState
-          );
+          // console.log(
+          //   "loading " + station.getAttribute("name") + station.readyState
+          // );
         }
       }
     }, 10000);
