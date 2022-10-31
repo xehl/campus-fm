@@ -1,7 +1,17 @@
 import { CardMedia, Box, Link, Typography } from '@mui/material';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import ReactGA from "react-ga4";
 
 export default function NowPlayingLarge({ playing }) {
+
+  function recordEvent() {
+    console.log(playing)
+    ReactGA.event({
+      category: "External Link",
+      action: "User clicked station link for " + playing.call_sign,
+    });
+  }
+
   return (
     <Box sx={{ width: {md: "95vw", lg: "50vw", xl:"45vw"}, margin: "auto" }}>
       <Box sx={{
@@ -21,7 +31,9 @@ export default function NowPlayingLarge({ playing }) {
         <Typography noWrap variant="nowplaying" className="playing-station" sx={{ display: "flex", fontSize: 30, color: "black", fontFamily: "Share Tech Mono" }}>
           {playing ? <>Now playing: {playing.call_sign} {playing.broadcast_frequency}</> : <>Choose a station to start listening!</>}
         </Typography>
-        {playing ? <Link target="_blank" href={playing.station_url} sx={{ display: { xs: "none", md: "block" } }} ><OpenInNewIcon sx={{ ml: 2, mr: 3, height: 30, width: 30, color: "#212121" }} /></Link> : ""}
+        {playing ? <Link target="_blank" href={playing.station_url} sx={{ display: { xs: "none", md: "block" } }} >
+          <OpenInNewIcon onClick={recordEvent} sx={{ ml: 2, mr: 3, height: 30, width: 30, color: "#212121" }} />
+        </Link> : ""}
       </Box>
     </Box>
   )

@@ -9,6 +9,7 @@ import VolumeDown from '@mui/icons-material/VolumeDown';
 import VolumeUp from '@mui/icons-material/VolumeUp';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
+import ReactGA from "react-ga4"
 
 const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -38,21 +39,29 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
     }
   }, [stationElements, volume])
 
+  function showPlay() {return userPause ? "block" : "none"}
+  function showPause() {return userPause ? "none" : "block"}
+
   function playMusic() {
     for (let station of stationElements) {
       if(station.getAttribute("name") === playing?.call_sign) station.play()
     }
     setUserPause(false)
+    ReactGA.event({
+      category: "Toolbar",
+      action: "User clicked toolbar play button",
+    });
   }
-
-  function showPlay() {return userPause ? "block" : "none"}
-  function showPause() {return userPause ? "none" : "block"}
 
   function pauseMusic() {
     for(let station of stationElements) {
       station.pause()
     }
     setUserPause(true)
+    ReactGA.event({
+      category: "Toolbar",
+      action: "User clicked toolbar pause button",
+    });
   }
 
   function playRandom() {
@@ -83,6 +92,11 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
     randomStation.play()
     randomStation.volume = volume / 100
     setUserPause(false)
+
+    ReactGA.event({
+      category: "Toolbar",
+      action: "User clicked toolbar random station button",
+    });
   }
 
 // if userPause is true (user has clicked pause), display play button, otherwise display the pause button

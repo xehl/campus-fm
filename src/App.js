@@ -11,6 +11,7 @@ import Toolbar from "./components/toolbar";
 import SelectorModal from "./components/selectormodal";
 import FaqModal from "./components/faqmodal";
 import StickyBar from "./components/stickybar";
+import ReactGA from "react-ga4";
 
 export default function App() {
   // MUI theme breakpoints
@@ -86,12 +87,24 @@ export default function App() {
   // selector modal controls
   const [selectorOpen, setSelectorOpen] = useState(false);
   const handleSelectorClose = () => setSelectorOpen(false);
-  const handleSelectorModalOpen = () => setSelectorOpen(true);
+  const handleSelectorModalOpen = () => {
+    setSelectorOpen(true);
+    ReactGA.event({
+      category: "Modal",
+      action: "User opened selector modal",
+    });
+  };
 
   // faq modal controls
   const [faqOpen, setFaqOpen] = useState(false);
   const handleFaqClose = () => setFaqOpen(false);
-  const handleFaqModalOpen = () => setFaqOpen(true);
+  const handleFaqModalOpen = () => {
+    setFaqOpen(true);
+    ReactGA.event({
+      category: "Modal",
+      action: "User opened FAQ modal",
+    });
+  };
 
   // plays static when playStatic state changes
   const [playStatic, setPlayStatic] = useState(false);

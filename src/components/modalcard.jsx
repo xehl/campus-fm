@@ -1,4 +1,5 @@
 import { Box, Card, CardMedia, Typography } from '@mui/material/';
+import ReactGA from "react-ga4"
 
 export default function ModalCard({ station, stationQueue, setStationQueue, setSnackBarMessage, openSnackBar }) {
   
@@ -7,14 +8,27 @@ export default function ModalCard({ station, stationQueue, setStationQueue, setS
     // if station is already selected, remove it from queue
     if (JSON.stringify(stationQueue).includes(JSON.stringify(station))) {
       setStationQueue(stationQueue.filter(queuedStation => JSON.stringify(queuedStation) !== JSON.stringify(station)))
+      ReactGA.event({
+        category: "Selector",
+        action: "User removed " + station.call_sign + " from queue",
+      });
       return
     }
     // if 10 stations are already selected, do nothing
     if (stationQueue.length === 10) {
       setSnackBarMessage("Can't load more than 10 stations simultaneously!")
       openSnackBar()
+      ReactGA.event({
+        category: "Selector",
+        action: "User tried to add " + station.call_sign + " to queue, but already had 10 selected",
+      });
       return
     }
+
+    ReactGA.event({
+      category: "Selector",
+      action: "User added " + station.call_sign + " to queue",
+    });
     setStationQueue([...stationQueue, station])
   }
 

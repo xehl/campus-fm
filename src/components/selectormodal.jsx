@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Box, Typography, Modal, Grid, TextField, AppBar, Button, Snackbar, Stack } from "@mui/material";
 import stations from "../stations";
 import ModalCard from "./modalcard";
+import ReactGA from "react-ga4";
 
 export default function SelectorModal({ selectorOpen, handleSelectorClose, selectedStations, setSelectedStations, setPlaying }) {
   
@@ -39,18 +40,30 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
       return
     }
 
-    // change selected stations and store user choices in localstorage
+    // change selected stations, stop playing audio, and store user choices in localstorage
     setSelectedStations(stationQueue)
     localStorage.setItem("recentStations", JSON.stringify(stationQueue))
-
     setPlaying(null)
-    
+
+    let stationStr = ""
+    stationQueue.forEach(station => stationStr += (station.call_sign + " "))
+
+    ReactGA.event({
+      category: "Selector",
+      action: "User reloaded stations: " + stationStr,
+      value: stationQueue.length
+    });
+
     // close modal
     handleSelectorClose()
   }
 
   function clearStations() {
     setStationQueue([])
+    ReactGA.event({
+      category: "Selector",
+      action: "User cleared stations from the queue"
+    });
   }
 
   function pickRandomStation() {
@@ -77,19 +90,32 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
         // console.log(randStation)
       }
     }
+
+    ReactGA.event({
+      category: "Selector",
+      action: "User added random station to queue: " + randStation.call_sign,
+    });
+
     setStationQueue([...stationQueue, randStation])
   }
 
   function pickTenRandom() {
     // make array of ten unique random #s from 0 to stations.length
     // build array of ten stations at those indices    
-    let randArr = []
+    let randArr = [], stationString = ""
     while (randArr.length < 10) {
       let randStation = pickRandomStation()
       if(!randArr.includes(randStation))
         randArr.push(randStation)
     }
     setStationQueue(randArr)
+
+    randArr.forEach(station => stationString += (station.call_sign + " "))
+
+    ReactGA.event({
+      category: "Selector",
+      action: "User clicked 'Surprise Me', algorithm loaded: " + stationString,
+    });
   }
 
   function handleSearch(e) {

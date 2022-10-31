@@ -1,6 +1,7 @@
 import { Box, Typography, Modal, Divider, List, ListItem, Link } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import ReactGA from "react-ga4";
 
 const faqTheme = createTheme({
   typography: {
@@ -10,6 +11,28 @@ const faqTheme = createTheme({
 })
 
 export default function FaqModal({ faqOpen, handleFaqClose }) {
+
+  function suggestionFormEvent() {
+    ReactGA.event({
+      category: "External Link",
+      action: "User clicked on suggestion form link"
+    });
+  }
+
+  function repoLinkEvent() {
+    ReactGA.event({
+      category: "External Link",
+      action: "User clicked on repo link in FAQ"
+    });
+  }
+
+  function emailLinkEvent() {
+    ReactGA.event({
+      category: "External Link",
+      action: "User clicked on email link in FAQ"
+    });
+  }
+
   return (
     <Modal
     open={faqOpen}
@@ -77,7 +100,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                  Absolutely! It’s pretty easy for me to add new stations, and I’m always looking for new radio stations to listen to. Feel free to suggest stations via <Link target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfZGNdhSsSnp9P2UqlhO8E1j0gMHxXavHea-rHIQjFPdCCbMw/viewform">this form</Link>!
+                    Absolutely! It’s pretty easy for me to add new stations, and I’m always looking for new radio stations to listen to. Feel free to suggest stations via <Link onClick={ suggestionFormEvent } target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfZGNdhSsSnp9P2UqlhO8E1j0gMHxXavHea-rHIQjFPdCCbMw/viewform">this form</Link>!
                 </Typography>
               </Typography>
             </ListItem>
@@ -157,7 +180,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                  That’s awesome (or I’m sorry)! I’m still learning how to build web apps and I would love your feedback! If you have a Github account, you can open an issue directly on the <Link target="_blank" href="https://github.com/xehl/campus-fm">Campus FM repo</Link>, or you can get in touch with me at <Link href={`mailto:hello.campusfm@gmail.com`}>hello.campusfm@gmail.com</Link>
+                    That’s awesome (or I’m sorry)! I’m still learning how to build web apps and I would love your feedback! If you have a Github account, you can open an issue directly on the <Link target="_blank" onClick={repoLinkEvent} href="https://github.com/xehl/campus-fm">Campus FM repo</Link>, or you can get in touch with me at <Link onClick={ emailLinkEvent } href={`mailto:hello.campusfm@gmail.com`}>hello.campusfm@gmail.com</Link>
                 </Typography>
               </Typography>
             </ListItem>
