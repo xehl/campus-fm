@@ -125,6 +125,7 @@ export default function App() {
               position: "sticky",
               top: 0,
               zIndex: 12,
+              boxShadow: 4,
             }}
           >
             <Logo />

@@ -73,8 +73,8 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
     if(stationQueue.includes(randStation)) {
       while (stationQueue.includes(randStation)) {
         randStation = pickRandomStation()
-        console.log("already selected, now picking")
-        console.log(randStation)
+        // console.log("already selected, now picking")
+        // console.log(randStation)
       }
     }
     setStationQueue([...stationQueue, randStation])
