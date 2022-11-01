@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Box, Card, CardContent, CardMedia, Typography} from '@mui/material/';
+import {Box, Card, CardContent, CardMedia, Typography, Divider} from '@mui/material/';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import ReactGA from "react-ga4"
@@ -129,27 +129,40 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           cursor: "pointer",
           display: 'flex',
           alignItems: 'center',
-          justifyContent: "space-between",
+          justifyContent: "flex-start",
           height: { xs: 150, md: 200, lg: 200 },
           borderRadius: 2,
           opacity: undimIfLoaded(),
           background: greenIfPlaying()
         }}>
+        <Box sx={{
+          height: { xs: 100, md: 155, lg: 175 },
+          width: { xs: 100, md: 155, lg: 175 },
+          minWidth: { xs: 100, md: 155, lg: 175 },
+          p: { xs: "20px", md: "25px", lg: "25px" },
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
+        }}>
         <CardMedia
           className={callsign}
           component="img"
           sx={{
-            height: { xs: 90, md: 130, lg: 150 },
-            width: { xs: 90, md: 130, lg: 150 },
-            m: { xs: "15px", md: "25px", lg: "25px" },
             objectFit: "contain"
           }}
           image={collegeimage}
           alt={callsign}
           margin="auto"
           />
-        <Box className={callsign} sx={{ display: 'flex', flexDirection: 'column', width: "100%" }}>
-          <CardContent className={callsign} sx={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end", mr:1.5}}>
+        </Box>
+        <Divider orientation="vertical" variant="middle" flexItem />
+        <Box className={callsign} sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: "100%",
+          mr: 1.5 
+        }}> 
+          <CardContent className={callsign} sx={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end"}}>
             <Typography className={callsign} component="div" textAlign="right" variant="h4" fontFamily={"Share Tech Mono"}>
               {callsign} {frequency}
             </Typography>
@@ -158,10 +171,6 @@ export default function StationCard({callsign, frequency, college, audioURL, col
             </Typography>
           </CardContent>
         </Box>
-          {/* <IconButton disableRipple="true" aria-label="play/pause" sx={{ display: {xs:"none", md:"block"}, mr:3 }}>
-            {playing?.call_sign !== callsign && <PlayArrowIcon sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
-            {playing?.call_sign === callsign && <Pause sx={{ height: { xs: 30, md: 50, lg: 70 }, width: { xs: 30, md: 50, lg: 70 }}} />}
-          </IconButton> */}
         <audio className="audio-element" onLoadStart={() => setLoaded(false)} onCanPlay={() => setLoaded(true)} onStalled={handleStall} name={callsign} src={audioURL} type="audio/mp3"/>
       </Card>
     </ThemeProvider>

@@ -76,17 +76,18 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
               pl: 3,
               pt: {xs: 2, sm: 1},
               pb: 1,
-              fontSize: 45,
+              fontSize: {xs: 30, sm: 45},
               color: "white",
             }}>
               FAQ
             </Typography>
-            <CloseIcon onClick={handleFaqClose} sx={{ fontSize: 40, cursor:"pointer", color: "white", pr: 2}}/>
+            <CloseIcon onClick={handleFaqClose} sx={{ fontSize: {xs: 25, sm: 40}, cursor:"pointer", color: "white", pr: 2}}/>
           </Box>
           <List>
             {/* <Divider variant="inset" color="#b0b0b0" /> */}
             <ListItem sx={{p: 0}}>
               <Typography sx={{
+                mt: {xs: -1.5, sm: 0},
                 width: "100%",
                 boxSizing: "border-box",
                 p: 3,
