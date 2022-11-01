@@ -6,19 +6,6 @@ import ReactGA from "react-ga4"
 
 export default function StationCard({callsign, frequency, college, audioURL, collegeimage, setPlaying, stationObject, playing, volume, setPlayStatic, userPause, setUserPause}) {
 
-  const sendOutbound = (e) => {    
-    e.preventDefault();
-    // get callsign off class list
-    let sign = null
-    e.target.classList.forEach(cla => {
-      if (cla.length === 4) sign = cla 
-    })
-    ReactGA.event({
-      category: 'Play',
-      action: 'User played ' + sign,
-    });
-  }
-
   const cardtheme = createTheme({
     breakpoints: {
       values: {
@@ -106,6 +93,10 @@ export default function StationCard({callsign, frequency, college, audioURL, col
       selectedStation.pause()
       setPlaying(null);
       setUserPause(false);
+      ReactGA.event({
+        category: 'Play',
+        action: 'User paused playback by unloading a station',
+      });
     }
 
     // if a different station is selected, pause the existing stream and play the new station + change the playing state
@@ -120,7 +111,10 @@ export default function StationCard({callsign, frequency, college, audioURL, col
         selectedStation.volume = volume / 100
         setPlaying(stationObject);
         setUserPause(false)
-        sendOutbound(e);
+        ReactGA.event({
+          category: 'Play',
+          action: 'User played ' + selectedStation.getAttribute("name"),
+        });
       }
       else handleStall();
     }

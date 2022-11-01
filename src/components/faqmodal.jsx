@@ -194,13 +194,13 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                 color: "white",
                 fontStyle: "italic"
               }}>
-                How can I share Campus FM?
+                Can I get Campus FM on my phone/tablet?
                 <Typography sx={{
                   mt: 2,
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                  I’m working on creating customized sharing links that allow you to share the app with your chosen stations preloaded (coming soon!).
+                  I’m working on native apps for iOS and Android!
                 </Typography>
               </Typography>
             </ListItem>

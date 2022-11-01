@@ -803,22 +803,23 @@ const stations = [
     college_image:
       "https://gomcpanthers.com/images/logos/wabash_valley_logo.png?width=200&height=200",
   },
-  {
-    id: 54,
-    call_sign: "WXDU",
-    broadcast_frequency: "88.7",
-    audio_url:
-      "https://cors-proxy.elfsight.com/http://weeping.wxdu.duke.edu:8000/wxdu128.mp3",
-    station_url: "https://www.wxdu.org/",
-    college_name: "Duke University",
-    public_private: "Private",
-    city: "Durham",
-    state: "NC",
-    station_image:
-      "https://pbs.twimg.com/profile_images/633378260416643072/lKReF_R3_400x400.png",
-    college_image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Duke_Athletics_logo.svg/1200px-Duke_Athletics_logo.svg.png",
-  },
+  // Stability issues with cors-anywhere, fix later
+  // {
+  //   id: 54,
+  //   call_sign: "WXDU",
+  //   broadcast_frequency: "88.7",
+  //   audio_url:
+  //     "https://cors-proxy.elfsight.com/http://weeping.wxdu.duke.edu:8000/wxdu128.mp3",
+  //   station_url: "https://www.wxdu.org/",
+  //   college_name: "Duke University",
+  //   public_private: "Private",
+  //   city: "Durham",
+  //   state: "NC",
+  //   station_image:
+  //     "https://pbs.twimg.com/profile_images/633378260416643072/lKReF_R3_400x400.png",
+  //   college_image:
+  //     "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Duke_Athletics_logo.svg/1200px-Duke_Athletics_logo.svg.png",
+  // },
   {
     id: 55,
     call_sign: "KCSU",
@@ -834,22 +835,23 @@ const stations = [
     college_image:
       "https://brand.colostate.edu/wp-content/uploads/sites/47/2019/01/CSU-Ram-357.png",
   },
-  {
-    id: 56,
-    call_sign: "WVPH",
-    broadcast_frequency: "90.3",
-    audio_url:
-      "https://cors-proxy.elfsight.com/http://rsc417c1.rutgers.edu:8000/WRSU-FM",
-    station_url: "https://www.thecore.fm/",
-    college_name: "Rutgers University",
-    public_private: "Public",
-    city: "New Brunswick",
-    state: "NJ",
-    station_image:
-      "https://cdn-profiles.tunein.com/s23615/images/logog.jpg?t=1",
-    college_image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1153px-Rutgers_Scarlet_Knights_logo.svg.png",
-  },
+  // Won't load on mobile or desktop (fix later)
+  // {
+  //   id: 56,
+  //   call_sign: "WVPH",
+  //   broadcast_frequency: "90.3",
+  //   audio_url:
+  //     "https://cors-proxy.elfsight.com/http://rsc417c1.rutgers.edu:8000/WRSU-FM",
+  //   station_url: "https://www.thecore.fm/",
+  //   college_name: "Rutgers University",
+  //   public_private: "Public",
+  //   city: "New Brunswick",
+  //   state: "NJ",
+  //   station_image:
+  //     "https://cdn-profiles.tunein.com/s23615/images/logog.jpg?t=1",
+  //   college_image:
+  //     "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1153px-Rutgers_Scarlet_Knights_logo.svg.png",
+  // },
   {
     id: 57,
     call_sign: "WMUC",
@@ -865,8 +867,317 @@ const stations = [
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Maryland_Terrapins_logo.svg/1200px-Maryland_Terrapins_logo.svg.png",
   },
+  {
+    id: 58,
+    call_sign: "KCPR",
+    broadcast_frequency: "91.3",
+    audio_url: "https://ice9.securenetsystems.net/KCPR1",
+    station_url: "https://kcpr.org/",
+    college_name: "Calfornia Polytechnic State University, San Luis Obispo",
+    public_private: "Public",
+    city: "San Luis Obispo",
+    state: "CA",
+    station_image:
+      "https://alexullrich.files.wordpress.com/2013/05/kcpr_logo_matthew_schwartz_bw.jpg?w=640",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/2/29/Calpolylogosports.png",
+  },
+  {
+    id: 59,
+    call_sign: "WVUD",
+    broadcast_frequency: "91.3",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://128.175.76.123:8000/stream/1/",
+    station_url: "https://www.wvud.org/",
+    college_name: "University of Delaware",
+    public_private: "Public",
+    city: "Newark",
+    state: "DE",
+    station_image: "https://www.wvud.org/files/2017/04/cropped-WVUD600600.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/0/0a/University_of_Delaware_Wordmark.png",
+  },
+  {
+    id: 60,
+    call_sign: "WNSB",
+    broadcast_frequency: "91.1",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://27033.live.streamtheworld.com:3690/WNSBFM.mp3",
+    station_url: "https://www.nsu.edu/WNSB",
+    college_name: "Norfolk State University",
+    public_private: "Public",
+    city: "Norfolk",
+    state: "VA",
+    station_image:
+      "http://cdn-profiles.tunein.com/s21544/images/logod.png?t=637800282700000000",
+    college_image:
+      "https://content.sportslogos.net/logos/33/774/full/norfolk_state_spartans_logo_secondary_19991057.png",
+  },
+  {
+    id: 61,
+    call_sign: "WRAS",
+    broadcast_frequency: "88.5",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://22113.live.streamtheworld.com/WRASFM_SC",
+    station_url: "https://wras.org/",
+    college_name: "Georgia State University",
+    public_private: "Public",
+    city: "Atlanta",
+    state: "GA",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/a/ae/WRAS_Logo.png",
+    college_image:
+      "https://commkit.gsu.edu/files/2021/05/GSU-Athletics-Primary-3C-RGB.png",
+  },
+  {
+    id: 62,
+    call_sign: "KXLU",
+    broadcast_frequency: "88.9",
+    audio_url: "https://kxlu.streamguys1.com/kxlu-hi",
+    station_url: "https://kxlu.com/",
+    college_name: "Loyola Marymount University",
+    public_private: "Private",
+    city: "Los Angeles",
+    state: "CA",
+    station_image:
+      "http://cdn-profiles.tunein.com/s26509/images/logod.jpg?t=637919750680000000",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Loyola_Marymount_Lions_logo.svg/1200px-Loyola_Marymount_Lions_logo.svg.png",
+  },
+  {
+    id: 63,
+    call_sign: "KTSW",
+    broadcast_frequency: "89.9",
+    audio_url: "https://ktswlive.txstate.edu:8102/listen",
+    station_url: "https://ktsw.txst.edu/",
+    college_name: "Texas State University",
+    public_private: "Public",
+    city: "San Marcos",
+    state: "TX",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/KTSW_89.9.jpeg/220px-KTSW_89.9.jpeg",
+    college_image:
+      "https://www.txstate.edu/cache5775023272c6b91d422e57ec36e9f40a/imagehandler/scaler/gato-docs.its.txstate.edu/jcr:c11449cd-1dbd-494e-a0c3-f04efc16a480/Secondary_RGB_MRN-GLD.png?mode=fit&width=750",
+  },
+  {
+    id: 64,
+    call_sign: "CJIQ",
+    broadcast_frequency: "88.3",
+    audio_url: "https://conestoga.leanstream.co/CJIQFM-MP3",
+    station_url: "https://www.cjiqfm.com/",
+    college_name: "Conestoga College",
+    public_private: "Public",
+    city: "Kitchener",
+    state: "ON",
+    station_image:
+      "https://cdn-profiles.tunein.com/s12240/images/logog.png?t=154158",
+    college_image:
+      "https://workforceplanningboard.org/wp-content/uploads/2020/03/Conestoga_College_logo.svg_-300x179-1.png",
+  },
+  // Stability problem, won't load on mobile or desktop with cors-anywhere (fix later)
   // {
-  //   id: 58,
+  //   id: 65,
+  //   call_sign: "WBWC",
+  //   broadcast_frequency: "88.3",
+  //   audio_url: "https://cors-proxy.elfsight.com/http://wbwcradio.bw.edu:8000/",
+  //   station_url: "https://www.wbwc.com/",
+  //   college_name: "Baldwin Wallace University",
+  //   public_private: "Private",
+  //   city: "Berea",
+  //   state: "OH",
+  //   station_image:
+  //     "https://cdn-profiles.tunein.com/s27671/images/logog.png?t=164311",
+  //   college_image:
+  //     "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Baldwin_Wallace_Yellow_Jackets_logo.svg/800px-Baldwin_Wallace_Yellow_Jackets_logo.svg.png",
+  // },
+  {
+    id: 66,
+    call_sign: "KRUI",
+    broadcast_frequency: "89.7",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://krui.student-services.uiowa.edu:8000/listen",
+    station_url: "https://krui.fm/",
+    college_name: "University of Iowa",
+    public_private: "Public",
+    city: "Iowa City",
+    state: "IA",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/8/87/KRUI-FM_logo.jpg",
+    college_image:
+      "https://1000logos.net/wp-content/uploads/2021/06/Iowa-Hawkeyes-logo.png",
+  },
+  {
+    id: 67,
+    call_sign: "KUOM",
+    broadcast_frequency: "100.7",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://radiokstreams.cce.umn.edu:8256/;?type=http",
+    station_url: "https://www.radiok.org/",
+    college_name: "University of Minnesota",
+    public_private: "Public",
+    city: "Minneapolis",
+    state: "MN",
+    station_image:
+      "https://play-lh.googleusercontent.com/um-Go6BcxvbWvnMsZGe5ygqBDugKu1Dl8iqPywY2cqC3ywRmF0eVRJuxbvDl8Rmdp2M",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/University_of_Minnesota_Logo.svg/2560px-University_of_Minnesota_Logo.svg.png",
+  },
+  {
+    id: 68,
+    call_sign: "WPTS",
+    broadcast_frequency: "92.1",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://audio.wpts.pitt.edu:8000/wpts_live_128s.mp3",
+    station_url: "https://wptsradio.org/",
+    college_name: "University of Pittsburgh",
+    public_private: "Public",
+    city: "Pittsburgh",
+    state: "PA",
+    station_image:
+      "https://wptsradio.org/wp-content/uploads/2015/12/WPTS-Square-Logo.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Pitt_Panthers_wordmark.svg/1200px-Pitt_Panthers_wordmark.svg.png",
+  },
+  {
+    id: 69,
+    call_sign: "WMFO",
+    broadcast_frequency: "91.5",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://webstream.wmfo.org/;?type=http",
+    station_url: "https://www.wmfo.org/",
+    college_name: "Tufts University",
+    public_private: "Private",
+    city: "Somerville",
+    state: "MA",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/commons/7/79/WMFO_91.5FM_Station_Logo.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/2/22/Tufts_Jumbos_logo.png",
+  },
+  {
+    id: 70,
+    call_sign: "KRLX",
+    broadcast_frequency: "88.1",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://137.22.31.174:8000/stream",
+    station_url: "https://content.krlx.org/",
+    college_name: "Carleton College",
+    public_private: "Private",
+    city: "Northfield",
+    state: "MN",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/6/62/KRLXLogo.png",
+    college_image:
+      "https://athletics.carleton.edu/images/logos/Carleton-College.png",
+  },
+  {
+    id: 71,
+    call_sign: "CKCU",
+    broadcast_frequency: "93.1",
+    audio_url: "https://stream2.statsradio.com:8124/stream",
+    station_url: "https://www.ckcufm.com/",
+    college_name: "Carleton University",
+    public_private: "Public",
+    city: "Ottawa",
+    state: "ON",
+    station_image: "https://cdn-radiotime-logos.tunein.com/s24763g.png",
+    college_image:
+      "https://imaginingfutures.world/wp-content/uploads/2021/02/carleton-university-boot-camp-logo.png",
+  },
+  {
+    id: 72,
+    call_sign: "WUNH",
+    broadcast_frequency: "91.3",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://s9.viastreaming.net:9000/;",
+    station_url: "https://www.unh.edu/wunh/",
+    college_name: "University of New Hampshire",
+    public_private: "Public",
+    city: "Durham",
+    state: "NH",
+    station_image:
+      "https://pbs.twimg.com/media/EmGqlP1XEAI7mjr?format=jpg&name=large",
+    college_image:
+      "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/160.png",
+  },
+  {
+    id: 73,
+    call_sign: "WMSR",
+    broadcast_frequency: "630",
+    audio_url: "https://s2.radio.co/s20123bfa0/listen",
+    station_url: "https://www.redhawkradio.com/",
+    college_name: "Miami University",
+    public_private: "Public",
+    city: "Oxford",
+    state: "OH",
+    station_image:
+      "https://se-images.campuslabs.com/clink/images/82dc7d8f-f40b-4487-b193-dec9779b3ecf95317a62-63ab-4d9b-8cc1-f2dadecf2b46.png?preset=med-sq",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Miami_Redhawks_logo.svg/1200px-Miami_Redhawks_logo.svg.png",
+  },
+  {
+    id: 74,
+    call_sign: "WBRU",
+    broadcast_frequency: "95.5",
+    audio_url: "https://s3.radio.co/s115121de1/listen",
+    station_url: "https://www.wbru.com/",
+    college_name: "Brown University",
+    public_private: "Private",
+    city: "Providence",
+    state: "RI",
+    station_image:
+      "https://freight.cargo.site/t/original/i/b86d671e692615bd0c7e33aeb217c4409de58622161d8f48523c5a4da7a9710b/logo-png.png",
+    college_image:
+      "https://rihebc.com/wp-content/uploads/2022/04/Brown_University.png",
+  },
+  {
+    id: 75,
+    call_sign: "WZBC",
+    broadcast_frequency: "90.3",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://amber.streamguys.com:4860/;stream/1",
+    station_url: "https://www.wzbc.org/",
+    college_name: "Boston College",
+    public_private: "Private",
+    city: "Newton",
+    state: "MA",
+    station_image: "https://upload.wikimedia.org/wikipedia/en/3/37/WZBC903.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Boston_College_Eagles_logo.svg/800px-Boston_College_Eagles_logo.svg.png",
+  },
+  {
+    id: 76,
+    call_sign: "WIUP",
+    broadcast_frequency: "90.1",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://144.80.16.164:8000/xstream",
+    station_url: "http://www.wiupfm.org/",
+    college_name: "Indiana University of Pennsylvania",
+    public_private: "Public",
+    city: "Indiana",
+    state: "PA",
+    station_image:
+      "https://www.radio.net/images/broadcasts/81/e2/28619/c300.png",
+    college_image:
+      "https://www.iup.edu/_assets/images/footer/iup-artmark-crimson.png",
+  },
+  {
+    id: 77,
+    call_sign: "WRUW",
+    broadcast_frequency: "91.1",
+    audio_url: "https://wruw-stream.wruw.org/hls/stream.m3u8",
+    station_url: "https://wruw.org/",
+    college_name: "Case Western Reserve University",
+    public_private: "Private",
+    city: "Cleveland",
+    state: "OH",
+    station_image:
+      "https://yt3.ggpht.com/ytc/AMLnZu9sBQKzhnyi-feCpAHK_LR8cxrkBPgA2OR3lVD3=s900-c-k-c0x00ffffff-no-rj",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/7/72/Case_Western_Reserve_University_Spartans_logo_mascot.png",
+  },
+  // {
+  //   id: 78,
   //   call_sign: "",
   //   broadcast_frequency: "",
   //   audio_url: "https://cors-proxy.elfsight.com/",
@@ -879,7 +1190,7 @@ const stations = [
   //   college_image: "",
   // },
   // {
-  //   id: 59,
+  //   id: 79,
   //   call_sign: "",
   //   broadcast_frequency: "",
   //   audio_url: "https://cors-proxy.elfsight.com/",
@@ -892,7 +1203,7 @@ const stations = [
   //   college_image: "",
   // },
   // {
-  //   id: 60,
+  //   id: 80,
   //   call_sign: "",
   //   broadcast_frequency: "",
   //   audio_url: "https://cors-proxy.elfsight.com/",

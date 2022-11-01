@@ -58,24 +58,34 @@ export default function App() {
       setSelectedStations(defaultStations);
     }
 
-    // check and try to load 525/404 error stations every 10s (handleStall should catch stations that are loaded but stalled)
+    // check and try to load 525/404 error stations every 5s (handleStall should catch stations that are loaded but stalled)
     setInterval(() => {
       const loadedStations = document.getElementsByClassName("audio-element");
       for (let station of loadedStations) {
         if (station.readyState === 0) {
           const url = station.getAttribute("src");
+          let altered = "";
+
+          // add/remove cors proxy and try again
+          if (url.startsWith("https://cors-proxy.elfsight.com/")) {
+            altered = url.substring(32);
+          } else {
+            altered = "https://cors-proxy.elfsight.com/" + url;
+          }
+
           station.setAttribute("src", "");
           setTimeout(function () {
             station.load(); // This stops the stream from downloading; basically forces it to load an empty file
           }, 100);
-          station.setAttribute("src", url);
+          station.setAttribute("src", altered);
           station.load();
+          // console.log(station.getAttribute("src"));
           // console.log(
           //   "loading " + station.getAttribute("name") + station.readyState
           // );
         }
       }
-    }, 10000);
+    }, 5000);
   }, []);
 
   // stores which station is currently playing
