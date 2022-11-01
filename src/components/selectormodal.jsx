@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Box, Typography, Modal, Grid, TextField, AppBar, Button, Snackbar, Stack } from "@mui/material";
+import { Box, Typography, Modal, Grid, TextField, AppBar, Button, Stack, Slide, Alert } from "@mui/material";
 import stations from "../stations";
 import ModalCard from "./modalcard";
 import ReactGA from "react-ga4";
@@ -9,6 +9,7 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
   // on first render, pass the current array of stations into queue
   const [stationQueue, setStationQueue] = useState([])
   const [searchDisplayed, setSearchDisplayed] = useState(stations)
+  const [alertOpen, setAlertOpen] = useState(false)
 
   useEffect(() => {
     setStationQueue(selectedStations)
@@ -19,13 +20,9 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
     }
   }, [selectedStations])
 
-  // snackbar settings
-  const [snackBarOpen, setSnackBarOpen] = useState(false);
-  const [snackBarMessage, setSnackBarMessage] = useState("test");
-  function openSnackBar() {
-    setSnackBarOpen(true);
-  };
-
+  // alert settings
+  const [alertMessage, setAlertMessage] = useState("test");
+  
   function replaceStations() {
     // don't do anything if user hasn't made changes
     if (selectedStations === stationQueue) {
@@ -35,8 +32,8 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
 
     // don't let user load if no stations selected
     if (stationQueue.length < 1) {
-      setSnackBarMessage("Please choose at least 1 station!")
-      openSnackBar()
+      setAlertMessage("Please choose at least 1 station!")
+      setAlertOpen(true)
       return
     }
 
@@ -74,8 +71,8 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
 
     // throw error if already 10 selected
     if (stationQueue.length === 10) {
-      setSnackBarMessage("Can't load more than 10 stations simultaneously!")
-      openSnackBar()
+      setAlertMessage("Can't load more than 10 stations!")
+      setAlertOpen(true)
       return
     }
 
@@ -127,8 +124,8 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
         station.city.toLowerCase().includes(searchStr.toLowerCase()) || 
         station.state.toLowerCase().includes(searchStr.toLowerCase()) ||
         station.college_name.toLowerCase().includes(searchStr.toLowerCase())
-    }))
-  }
+    }))    
+  } 
 
   return (
     <Modal
@@ -170,16 +167,18 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
             p: 1.5,
           }}
         >
-        <Snackbar
-          open={snackBarOpen}
-          autoHideDuration={1200}
-          onClose={() => setSnackBarOpen(false)}
-          message={<Typography fontFamily="Share Tech Mono" fontSize={16} color="white">{snackBarMessage}</Typography>}
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "left"
-          }}
-          />
+          <Slide
+            direction="right"
+            in={alertOpen}
+            timeout={{ enter: 300, exit: 300 }}
+            addEndListener={() => {
+            setTimeout(() => {
+              setAlertOpen(false)
+            }, 1200);
+            }}
+          >
+            <Alert severity="error" icon={false} sx={{position: "absolute", zIndex: 1000, fontFamily: "Share Tech Mono" }}>{alertMessage}</Alert>
+          </Slide>
           <Stack direction="row" spacing={1} sx={{mr: {xs: 0, sm: 2}, width: { xs: "70vw", sm: 180}, alignItems: "center", justifyContent:"center" }}>
             <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 14, sm: 16 }} sx={{ width: { xs: "auto", md: 130}}} color="white">
               Select up to 10 stations:
@@ -220,13 +219,13 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
               mt: 1,
             }} />
             <Stack direction={{ xs: "column", md: "row" }} sx={{ ml: {md: 2, xl: 3}, m: 0.5, width: { xs: "70vw", sm: "auto" }, height: {xs: "auto", xl: 54}}} spacing={1}>
-              <Stack spacing={1} direction="row" sx={{ width: {xs: "70vw", md: "auto"}, justifyContent:"center" }}>
-              <Button variant="outlined" disableElevation onClick={addOneRandom} sx={{ width: {xs: "50%", md: "auto"}, borderColor: "white" }}>
+              <Stack spacing={1} direction="row" sx={{ width: { xs: "70vw", md: "auto" }, justifyContent: "center" }}>
+                <Button variant="outlined" disableElevation onClick={addOneRandom} sx={{ height: "100%", width: {xs: "50%", md: "auto"}, borderColor: "white" }}>
                   <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
                     add 1 random
                   </Typography>
                 </Button>
-                <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ width: {xs: "50%", md: "auto"}, borderColor: "white" }}>
+                <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ width: { xs: "50%", md: "auto" }, borderColor: "white" }}>
                   <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
                     surprise me
                   </Typography>
@@ -267,7 +266,7 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
               lg={3}
               key={station.id}
             >
-              <ModalCard station={station} stationQueue={stationQueue} setStationQueue={setStationQueue} setSnackBarMessage={setSnackBarMessage} openSnackBar={openSnackBar}/>
+              <ModalCard station={station} stationQueue={stationQueue} setStationQueue={setStationQueue} setAlertMessage={setAlertMessage} setAlertOpen={setAlertOpen}/>
             </Grid>
           );
         })}

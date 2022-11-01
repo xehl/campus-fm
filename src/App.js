@@ -162,6 +162,7 @@ export default function App() {
               setUserPause={setUserPause}
               handleSelectorModalOpen={handleSelectorModalOpen}
               handleFaqModalOpen={handleFaqModalOpen}
+              setPlayStatic={setPlayStatic}
             />
           </Box>
           <Box
@@ -195,6 +196,7 @@ export default function App() {
               setUserPause={setUserPause}
               handleSelectorModalOpen={handleSelectorModalOpen}
               handleFaqModalOpen={handleFaqModalOpen}
+              setPlayStatic={setPlayStatic}
             />
           </Box>
           <Box

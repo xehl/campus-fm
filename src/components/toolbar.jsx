@@ -23,7 +23,7 @@ const LightTooltip = styled(({ className, ...props }) => (
   },
 }));
 
-export default function Toolbar({ playing, setPlaying, displayedStations, volume, setVolume, userPause, setUserPause, handleSelectorModalOpen, handleFaqModalOpen }) {
+export default function Toolbar({ playing, setPlaying, displayedStations, volume, setVolume, userPause, setUserPause, handleSelectorModalOpen, handleFaqModalOpen, setPlayStatic }) {
 
   let stationElements = document.getElementsByClassName("audio-element")
 
@@ -92,6 +92,7 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
     randomStation.play()
     randomStation.volume = volume / 100
     setUserPause(false)
+    setPlayStatic(false)
 
     ReactGA.event({
       category: "Toolbar",
@@ -121,13 +122,13 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
         mb: { xs: 1, sm: 1, md: 1, xl: 0 },
         width: { xs: "70%", sm: 550, md: 600, xl: 700 },
       }}>
-        <LightTooltip enterDelay={350} title="load new stations" sx={{fontFamily: "Share Tech Mono"}}>
+        <LightTooltip disableTouchListener enterDelay={350} title="load new stations" sx={{fontFamily: "Share Tech Mono"}}>
           <DashboardCustomizeIcon onClick={handleSelectorModalOpen} sx={{ width: 50, fontSize: { xs: 36, sm: 47 }, color: "white", cursor: "pointer" }} />
         </LightTooltip>
-        <LightTooltip enterDelay={350} title="play random station">
+        <LightTooltip disableTouchListener enterDelay={350} title="play random station">
           <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { xs: 38, sm: 50 }, width: 50, color: "white", cursor: "pointer" }} />
       </LightTooltip>
-        <LightTooltip enterDelay={350} title="faq">
+        <LightTooltip disableTouchListener enterDelay={350} title="faq">
           <HelpIcon onClick={handleFaqModalOpen} sx={{ fontSize: { xs: 38, sm: 43 }, ml:{xs: 0, lg: 1}, width: 50, color: "white", cursor: "pointer" }} />
         </LightTooltip>
         <PlayArrowIcon onClick={playMusic} sx={{ display: showPlay(), fontSize: { xs: 53, md: 68 }, width: 50, color: "white", cursor: "pointer" }}/>
