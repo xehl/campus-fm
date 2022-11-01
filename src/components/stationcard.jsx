@@ -139,7 +139,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           height: { xs: 100, md: 155, lg: 175 },
           width: { xs: 100, md: 155, lg: 175 },
           minWidth: { xs: 100, md: 155, lg: 175 },
-          p: { xs: "20px", md: "25px", lg: "25px" },
+          p: {xs: "20px", md: "25px"},
           display: "flex",
           alignItems: "center",
           justifyContent: "center"
@@ -148,7 +148,8 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           className={callsign}
           component="img"
           sx={{
-            objectFit: "contain"
+            objectFit: "contain",
+            height: "85%"
           }}
           image={collegeimage}
           alt={callsign}
