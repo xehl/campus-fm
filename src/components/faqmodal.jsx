@@ -47,9 +47,8 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
             left: '50%',
             transform: 'translate(-50%, -50%)',
             height: "70vh",
-            width: "90vw",
-            bgcolor: "#2e2e2e",
-            border: "5px solid #b0b0b0",
+            width: "85vw",
+            border: "1px solid #b0b0b0",
             boxShadow: 2,
             outline: 0,
             overflowX: 'hidden',
@@ -57,6 +56,8 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            backgroundColor: "rgba(46,46,46,0.9)",
+            backdropFilter: "blur(5px)"
           }}
         >
           <Box sx={{
@@ -65,9 +66,9 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            backgroundColor: "rgba(46,46,46,1)",
             position: "sticky",
             top: 0,
-            bgcolor: "#2e2e2e",
             zIndex: 20,
             borderBottom: 1,
             borderColor: "#b0b0b0"
@@ -84,7 +85,6 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
             <CloseIcon onClick={handleFaqClose} sx={{ fontSize: {xs: 25, sm: 40}, cursor:"pointer", color: "white", pr: 2}}/>
           </Box>
           <List>
-            {/* <Divider variant="inset" color="#b0b0b0" /> */}
             <ListItem sx={{p: 0}}>
               <Typography sx={{
                 mt: {xs: -1.5, sm: 0},

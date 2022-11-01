@@ -144,11 +144,12 @@ export default function App() {
               flexDirection: { xs: "column", lg: "row" },
               alignItems: "center",
               justifyContent: "space-around",
-              background: "#2e2e2e",
               position: "sticky",
               top: 0,
               zIndex: 12,
               boxShadow: 4,
+              backgroundColor: "rgba(46,46,46,0.9)",
+              backdropFilter: "blur(2px)",
             }}
           >
             <Logo />
@@ -170,7 +171,7 @@ export default function App() {
               width: { xs: "100vw", lg: "auto" },
               display: { xs: "flex", lg: "none" },
               justifyContent: "center",
-              backgroundColor: "#2e2e2e",
+              backgroundColor: "rgba(46,46,46,0.9)",
             }}
           >
             <Logo />
@@ -184,6 +185,7 @@ export default function App() {
               borderColor: "#404040",
               zIndex: 12,
               boxShadow: 4,
+              backgroundColor: "rgba(46,46,46,0.9)",
             }}
           >
             <Toolbar

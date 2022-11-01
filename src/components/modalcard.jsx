@@ -45,7 +45,7 @@ export default function ModalCard({ station, stationQueue, setStationQueue, setA
         margin: "auto",
         background: highlightSelect(),
         cursor: "pointer",
-        border: 2,
+        boxShadow: 3,
         borderRadius: 2
       }}
     >
@@ -63,7 +63,8 @@ export default function ModalCard({ station, stationQueue, setStationQueue, setA
               width: { xs: 80, sm: 110, lg: 160 },
               m: { xs: "5px", md: "5px", lg: "5px" },
               borderRadius: 2,
-              border: 2,
+              border: 1,
+              borderColor: "#2e2e2e",
               backgroundColor: "white",
               objectFit: "contain"
             }}

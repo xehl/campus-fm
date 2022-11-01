@@ -110,7 +110,6 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
       },
       display: "flex",
       justifyContent: "center",
-      backgroundColor: "#2e2e2e",
     }}>
       <Box sx={{
         display: "flex",
@@ -123,7 +122,7 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
         width: { xs: "70%", sm: 550, md: 600, xl: 700 },
       }}>
         <LightTooltip disableTouchListener enterDelay={350} title="load new stations" sx={{fontFamily: "Share Tech Mono"}}>
-          <DashboardCustomizeIcon onClick={handleSelectorModalOpen} sx={{ width: 50, fontSize: { xs: 36, sm: 47 }, color: "white", cursor: "pointer" }} />
+          <DashboardCustomizeIcon onClick={handleSelectorModalOpen} sx={{ width: 50, opacity: 1, fontSize: { xs: 36, sm: 47 }, color: "white", cursor: "pointer" }} />
         </LightTooltip>
         <LightTooltip disableTouchListener enterDelay={350} title="play random station">
           <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { xs: 38, sm: 50 }, width: 50, color: "white", cursor: "pointer" }} />

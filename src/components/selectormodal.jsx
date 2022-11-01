@@ -141,7 +141,7 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
           height: "80vh",
           width: "85vw",
           bgcolor: "#2e2e2e",
-          border: "5px solid #b0b0b0",
+          border: "1px solid #2e2e2e",
           boxShadow: 2,
           outline: 0,
           overflowX: 'hidden',
@@ -163,7 +163,8 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
             width: "100%",
             height: "auto",
             justifyContent: "space-between",
-            backgroundColor: "black",
+            backgroundColor: "rgba(46,46,46,0.9)",
+            backdropFilter: "blur(2px)",
             p: 1.5,
           }}
         >
@@ -218,7 +219,7 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
               mb: .5,
               mt: 1,
             }} />
-            <Stack direction={{ xs: "column", md: "row" }} sx={{ ml: {md: 2, xl: 3}, m: 0.5, width: { xs: "70vw", sm: "auto" }, height: {xs: "auto", xl: 54}}} spacing={1}>
+            <Stack direction={{ xs: "column", md: "row" }} sx={{ ml: {md: 2, xl: 3}, m: 0.5, width: { xs: "70vw", sm: "auto" }, height: {xs: "auto", lg: 54}}} spacing={1}>
               <Stack spacing={1} direction="row" sx={{ width: { xs: "70vw", md: "auto" }, justifyContent: "center" }}>
                 <Button variant="outlined" disableElevation onClick={addOneRandom} sx={{ height: "100%", width: {xs: "50%", md: "auto"}, borderColor: "white" }}>
                   <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
@@ -237,9 +238,9 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
                     clear all
                   </Typography>
                 </Button>
-                <Button variant="contained" disableElevation onClick={replaceStations} sx={{ width: {xs: "50%", md: "auto"}, backgroundColor:"white", borderColor: "white" }}>
+                <Button variant="contained" disableElevation onClick={replaceStations} sx={{ width: {xs: "50%", md: "auto", xl: 200}, backgroundColor:"white", borderColor: "white" }}>
                   <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="#2e2e2e">
-                    reload stations
+                    reload new
                   </Typography>
                 </Button>
               </Stack>
