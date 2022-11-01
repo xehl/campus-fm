@@ -45,11 +45,11 @@ export default function App() {
         "WXYC",
         "KALX",
         "KVRX",
-        "WVFS",
-        "WUOG",
+        "WUCF",
+        "WSUM",
         "KUNM",
-        "WCBN",
-        "WUTK",
+        "WSBF",
+        "WHRB",
       ];
       let defaultStations = [];
       defaultStations = stations.filter((station) =>
@@ -186,6 +186,7 @@ export default function App() {
               zIndex: 12,
               boxShadow: 4,
               backgroundColor: "rgba(46,46,46,0.9)",
+              backdropFilter: "blur(3px)",
             }}
           >
             <Toolbar

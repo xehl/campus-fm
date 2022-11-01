@@ -41,7 +41,7 @@ export default function ModalCard({ station, stationQueue, setStationQueue, setA
       onClick={handleQueue}
       sx={{
         width: "100%",
-        height: {xs: 200, sm: 253, lg: 320},
+        height: {xs: "auto", sm: 258, lg: 320},
         margin: "auto",
         background: highlightSelect(),
         cursor: "pointer",
