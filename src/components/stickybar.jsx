@@ -21,7 +21,7 @@ export default function StickyBar({playing, mobileLoaded, setMobileLoaded}) {
       mobileLoaded={mobileLoaded}
       setMobileLoaded={setMobileLoaded}
       sx={{
-        display: { xs: "flex", sm: "flex", md: "none" },
+        display: { xs: "flex", sm: "none", md: "none" },
         alignItems: "center",
         justifyContent: "center",
       }}
@@ -29,7 +29,7 @@ export default function StickyBar({playing, mobileLoaded, setMobileLoaded}) {
     <NowPlayingLarge
       playing={playing}
       sx={{
-        display: { xs: "none", sm: "none", md: "flex" },
+        display: { xs: "none", sm: "flex", md: "flex" },
       }}
     />
   </AppBar>

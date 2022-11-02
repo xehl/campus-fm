@@ -129,14 +129,14 @@ export default function App() {
     <div className="App">
       {/* INVISIBLE SPACER BOX KEEPS FOOTER ON BOTTOM, EVEN ON XL SCREENS,
           OR WHEN NOT ENOUGH CONTENT TO VERTICALLY FILL THE VIEWPORT */}
-      <Box
-        sx={{
-          minHeight: "calc(100vh - 90px)",
-          height: "100%",
-          zIndex: 10,
-        }}
-      >
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <Box
+          sx={{
+            minHeight: "calc(100vh - 90px)",
+            height: "100%",
+            zIndex: 10,
+          }}
+        >
           <Box
             sx={{
               display: { xs: "none", lg: "flex" },
@@ -251,15 +251,15 @@ export default function App() {
             </Grid>
           </Container>
           <Footer />
-        </ThemeProvider>
-        <audio
-          className="staticAudio"
-          preload="auto"
-          loop
-          src="https://www.soundjay.com/mechanical/sounds/tv-static-05.mp3"
-        />
-      </Box>
-      <StickyBar playing={playing} />
+          <audio
+            className="staticAudio"
+            preload="auto"
+            loop
+            src="https://www.soundjay.com/mechanical/sounds/tv-static-05.mp3"
+          />
+        </Box>
+        <StickyBar playing={playing} />
+      </ThemeProvider>
     </div>
   );
 }
