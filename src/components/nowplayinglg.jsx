@@ -5,7 +5,6 @@ import ReactGA from "react-ga4";
 export default function NowPlayingLarge({ playing }) {
 
   function recordEvent() {
-    console.log(playing)
     ReactGA.event({
       category: "External Link",
       action: "User clicked station link for " + playing.call_sign,

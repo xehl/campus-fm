@@ -1,4 +1,4 @@
-import { Box, Card, CardMedia, Typography } from '@mui/material/';
+import { Box, Card, CardMedia, Typography, ButtonBase } from '@mui/material/';
 import ReactGA from "react-ga4"
 
 export default function ModalCard({ station, stationQueue, setStationQueue, setAlertMessage, setAlertOpen }) {
@@ -49,6 +49,7 @@ export default function ModalCard({ station, stationQueue, setStationQueue, setA
         borderRadius: 2
       }}
     >
+      <ButtonBase sx={{height: "100%", width: "100%"}}>
       <Box sx={{
         display: "flex",
         flexDirection: "column",
@@ -81,7 +82,8 @@ export default function ModalCard({ station, stationQueue, setStationQueue, setA
         <Typography fontFamily="Share Tech Mono" fontSize={16} color="#575757">
           {station.city}, {station.state}
         </Typography>
-      </Box>
+        </Box>
+        </ButtonBase>
     </Card >
   )
 }

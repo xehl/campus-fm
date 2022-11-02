@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Box, Card, CardContent, CardMedia, Typography, Divider} from '@mui/material/';
+import {Box, Card, CardContent, CardMedia, Typography, Divider, ButtonBase} from '@mui/material/';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import ReactGA from "react-ga4"
@@ -135,6 +135,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           opacity: undimIfLoaded(),
           background: greenIfPlaying()
         }}>
+        <ButtonBase sx={{height: "100%", width: "100%"}}>
         <Box sx={{
           height: { xs: 100, md: 155, lg: 175 },
           width: { xs: 100, md: 155, lg: 175 },
@@ -172,8 +173,9 @@ export default function StationCard({callsign, frequency, college, audioURL, col
             </Typography>
           </CardContent>
         </Box>
-        <audio className="audio-element" onLoadStart={() => setLoaded(false)} onCanPlay={() => setLoaded(true)} onStalled={handleStall} name={callsign} src={audioURL} type="audio/mp3"/>
-      </Card>
+        </ButtonBase>
+        <audio className="audio-element" onLoadStart={() => setLoaded(false)} onCanPlay={() => setLoaded(true)} onStalled={handleStall} name={callsign} src={audioURL} type="audio/mp3" />
+        </Card>
     </ThemeProvider>
   );
 }

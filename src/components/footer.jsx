@@ -7,7 +7,7 @@ export default function Footer() {
     window.open(
     "https://github.com/xehl/campus-fm", "_blank");
     ReactGA.event({
-      category: 'Click',
+      category: 'External Link',
       action: 'User clicked on github link',
     });
   }
