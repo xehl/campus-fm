@@ -250,7 +250,7 @@ export default function App() {
               })}
             </Grid>
           </Container>
-          <Footer />
+          <Footer handleSelectorModalOpen={handleSelectorModalOpen} />
           <audio
             className="staticAudio"
             preload="auto"

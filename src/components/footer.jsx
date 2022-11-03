@@ -1,41 +1,43 @@
-import { Box, Typography, Link } from "@mui/material"
+import { Box, Typography, Button } from "@mui/material"
 import ReactGA from "react-ga4"
 
-export default function Footer() {
-  const githubClick = (e) => {    
-    e.preventDefault();
-    window.open(
-    "https://github.com/xehl/campus-fm", "_blank");
+export default function Footer({ handleSelectorModalOpen }) {
+
+  function footerEvent() {
+    handleSelectorModalOpen()
     ReactGA.event({
-      category: 'External Link',
-      action: 'User clicked on github link',
+      category: "Modal",
+      action: "User opened selector modal via footer",
     });
   }
+
   return (
-    <Box
+    <Box sx={{
+      display: "flex",
+      flexDirection: { xs: "column", sm: "row" },
+      alignItems: "center",
+      justifyContent: "center",
+      height: 40,
+      p:2,
+    }}>
+      <Button
+        onClick={footerEvent}
+        variant="outlined"
         sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "40px",
-          color: "white",
-          mt: 2,
-          pb:2
+          borderColor: '#2e2e2e',
+          ':hover': {
+            borderColor: '#b0b0b0',
+          }
         }}
       >
         <Typography
-          sx={{ color: "white", fontSize: 20, fontWeight: "bold", mr: 1 }}
+          sx={{ color: "white", fontSize: 20, fontWeight: "bold"}}
           fontFamily={"Turret Road"}
+          onClick={handleSelectorModalOpen}
         >
-          created by
+          add more stations
         </Typography>
-        <Link
-          onClick={githubClick}
-          sx={{ fontSize: 20 }}
-          href="https://github.com/xehl/campus-fm"
-        >
-          @xehl
-        </Link>
-      </Box>
+      </Button>
+    </Box>
   )
 }

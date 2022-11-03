@@ -221,24 +221,24 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
             }} />
             <Stack direction={{ xs: "column", md: "row" }} sx={{ ml: {md: 2, xl: 3}, m: 0.5, width: { xs: "70vw", sm: "auto" }, height: {xs: "auto", lg: 54}}} spacing={1}>
               <Stack spacing={1} direction="row" sx={{ width: { xs: "70vw", md: "auto" }, justifyContent: "center" }}>
-                <Button variant="outlined" disableElevation onClick={addOneRandom} sx={{ height: "100%", width: {xs: "50%", md: "auto"}, borderColor: "white" }}>
+                <Button variant="outlined" disableElevation onClick={addOneRandom} sx={{ height: "100%", width: {xs: "50%", md: "auto"}, borderColor: "white", ':hover': { borderColor: '#909090'} }}>
                   <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
                     add 1 random
                   </Typography>
                 </Button>
-                <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ width: { xs: "50%", md: "auto" }, borderColor: "white" }}>
+                <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ width: { xs: "50%", md: "auto" }, backgroundColor: "#2e2e2e", borderColor: "white", ':hover': { borderColor: '#909090'} }}>
                   <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
                     surprise me
                   </Typography>
                 </Button>
               </Stack>
               <Stack spacing={1} direction="row" sx={{ width: {xs: "70vw", md: "auto"}, justifyContent:"center" }}>
-                <Button variant="outlined" disableElevation onClick={clearStations} sx={{ width: {xs: "50%", md: "auto"}, borderColor:"white"}}>
+                <Button variant="outlined" disableElevation onClick={clearStations} sx={{ width: {xs: "50%", md: "auto"}, borderColor:"white", ':hover': { borderColor: '#909090'}}}>
                   <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
                     clear all
                   </Typography>
                 </Button>
-                <Button variant="contained" disableElevation onClick={replaceStations} sx={{ width: {xs: "50%", md: "auto", xl: 200}, backgroundColor:"white", borderColor: "white" }}>
+                <Button variant="contained" disableElevation onClick={replaceStations} sx={{ width: {xs: "50%", md: "auto", xl: 200}, backgroundColor:"white", borderColor: "white", ':hover': { background: "#909090"} }}>
                   <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="#2e2e2e">
                     reload new
                   </Typography>
