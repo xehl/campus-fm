@@ -111,7 +111,7 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
 
     ReactGA.event({
       category: "Selector",
-      action: "User clicked 'Surprise Me', algorithm loaded: " + stationString,
+      action: "User clicked 'Surprise Me'",
     });
   }
 
@@ -226,7 +226,7 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
                     add 1 random
                   </Typography>
                 </Button>
-                <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ width: { xs: "50%", md: "auto" }, backgroundColor: "#2e2e2e", borderColor: "white", ':hover': { borderColor: '#909090'} }}>
+                <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ width: { xs: "50%", md: "auto" }, borderColor: "white", ':hover': { borderColor: '#909090'} }}>
                   <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
                     surprise me
                   </Typography>
