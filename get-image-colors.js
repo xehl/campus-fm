@@ -1207,48 +1207,57 @@ const stations = [
   },
 ];
 
-const imageDownloader = require("node-image-downloader");
+var getColors = require("get-image-colors");
+var fs = require("fs");
+var files = fs.readdirSync("./public/images/");
+// controls # of colors in the palette; setting it to 3 for now
+const options = {
+  count: 3,
+};
 
-// copy/paste station object or import as module
+// get array of paths for school logo images
+let schoolPaths = [];
+files.forEach((file) => {
+  if (file.substring(5, 10) === "schoo") schoolPaths.push(file);
+});
+// console.log(schoolPaths, schoolPaths.length);
 
-let stationImgArray = [];
-let collegeImgArray = [];
+const path = require("path");
+const { platform } = require("os");
 
-// // add image links to array
-// stations.forEach((station) => {
-//   stationImgArray.push({
-//     uri: station.station_image,
-//     filename: `${station.call_sign}-stationimg`,
-//   });
-//   collegeImgArray.push({
-//     uri: station.college_image,
-//     filename: `${station.call_sign}-schoolimg`,
-//   });
-// });
+// make an array of objects, containing a callsign, a school name, and an array of colors
+let palettes = [];
 
-// var fs = require("fs");
-// var files = fs.readdirSync("./public/images/");
+// generate objects with just names and schools
+schoolPaths.forEach((filename) => {
+  let paletteObj = {};
 
-// imageDownloader({
-//   imgs: stationImgArray,
-//   dest: "./public/images/",
-// })
-//   .then((info) => {
-//     console.log("stations all done", info);
-//   })
-//   .catch((error, response, body) => {
-//     console.log("stations error");
-//     console.log(error);
-//   });
+  paletteObj["sign"] = filename.substring(0, 4);
 
-// imageDownloader({
-//   imgs: collegeImgArray,
-//   dest: "./public/images/",
-// })
-//   .then((info) => {
-//     console.log("colleges all done", info);
-//   })
-//   .catch((error, response, body) => {
-//     console.log("college error");
-//     console.log(error);
-//   });
+  let stat = stations.find(
+    (station) => station.call_sign === paletteObj["sign"]
+  );
+  paletteObj["school"] = stat.college_name;
+
+  let paletteArr = [];
+
+  // this function takes a while to complete
+  getColors(path.join("./public/images/", filename), options).then((colors) => {
+    colors.map((color) => {
+      paletteArr.push(color.hex());
+      return null;
+    });
+    paletteObj["palette"] = paletteArr;
+  });
+  palettes.push(paletteObj);
+});
+
+// wait for palettes to populate
+setTimeout(() => {
+  fs.writeFile("palettes.js", JSON.stringify(palettes), (err) => {
+    if (err) console.log(err);
+    else {
+      console.log("File written successfully\n");
+    }
+  });
+}, 10000);
