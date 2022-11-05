@@ -9,7 +9,7 @@ export default function Logo() {
           fontSize: {xs:40, sm:70, xl:55}, color:"white"
         }}
       >
-        campus.fm
+        campus fm
       </Typography>
       <Typography
         noWrap
@@ -18,7 +18,8 @@ export default function Logo() {
           ml: 0.5,
           mt: {xs: -1.7, sm: -2.5, lg: -1.7},
           mb: {xs: 0, sm: 2.5},
-          fontSize: {xs: 17, sm: 26, lg: 20},
+          fontSize: { xs: 17, sm: 26, lg: 20 },
+          textAlign: { xs: "center", lg: "left"},
           fontWeight: "bold",
           color:"white"
         }}
