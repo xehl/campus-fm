@@ -1240,7 +1240,8 @@ const stations = [
     public_private: "Private",
     city: "Philadelphia",
     state: "PA",
-    station_image: "https://cdn-profiles.tunein.com/s24040/images/logog.jpg",
+    station_image:
+      "https://backend.xpn.org/wp-content/uploads/2022/10/Screen-Shot-2022-10-28-at-3.58.45-PM-350x350.png",
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Penn_Quakers_logo.svg/840px-Penn_Quakers_logo.svg.png",
     palette: ["#fbfbfb", "#051d5c", "#9c0404", "#7384a4"],
