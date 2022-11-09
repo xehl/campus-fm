@@ -1,5 +1,7 @@
+// DESCRIPTION:
 // takes in a single image path and logs its 4 color palette in the console
 // requires the school image to be properly formatted and located in ./public/images folder
+
 const path = require("path");
 const fs = require("fs");
 const getColors = require("get-image-colors");
@@ -8,12 +10,13 @@ const options = {
   count: 4,
 };
 
+// input
 getPalette("WRFL");
 
 async function getPalette(callsign) {
   // find image path
   let imagepath = "";
-  var files = fs.readdirSync("./public/images/");
+  var files = fs.readdirSync("../public/images/");
   files.find((file) => {
     if (
       file.substring(5, 11) === "school" &&
@@ -27,7 +30,7 @@ async function getPalette(callsign) {
 
   let paletteArr = [];
   let colors = await getColors(
-    path.join("./public/images/", imagepath),
+    path.join("../public/images/", imagepath),
     options
   );
   colors.map((color) => {
