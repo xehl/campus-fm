@@ -1214,6 +1214,22 @@ const stations = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Texas_A%26M_University_logo.svg/1246px-Texas_A%26M_University_logo.svg.png",
     palette: ["#540404", "#fbfbfb", "#a47c7c", "#a47474"],
   },
+  {
+    id: 80,
+    call_sign: "WRFL",
+    broadcast_frequency: "88.1",
+    audio_url: "https://wrfl.fm:8002/stream/1",
+    station_url: "https://wrfl.fm/",
+    college_name: "University of Kentucky",
+    public_private: "Public",
+    city: "Lexington",
+    state: "KY",
+    station_image:
+      "https://wrfl.fm/wp-content/uploads/2022/05/wrfl-website-logo.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/b/b6/Kentucky_Wildcats_logo.svg",
+    palette: ["#f8f9fa", "#0434a4", "#738ccc", "#5276c0"],
+  },
   // Stability problem, won't load on mobile or desktop with cors-anywhere (fix later)
   // {
   //   id: 65,
