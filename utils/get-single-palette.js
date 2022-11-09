@@ -11,7 +11,11 @@ const options = {
 };
 
 // input
-getPalette("WRFL");
+// getPalette("WXPN");
+// getPalette("WIUX");
+// getPalette("WFUV");
+// getPalette("WECS");
+getPalette("KVSC");
 
 async function getPalette(callsign) {
   // find image path
@@ -22,17 +26,19 @@ async function getPalette(callsign) {
       file.substring(5, 11) === "school" &&
       file.substring(0, 4) === callsign.toUpperCase()
     ) {
-      console.log(file);
+      console.log("Palette for : " + file);
       imagepath = file;
     }
     return null;
   });
 
   let paletteArr = [];
+
   let colors = await getColors(
     path.join("../public/images/", imagepath),
     options
   );
+
   colors.map((color) => {
     paletteArr.push(color.hex());
     return null;
