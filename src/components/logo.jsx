@@ -9,7 +9,7 @@ export default function Logo() {
           fontSize: {xs:40, sm:70, xl:55}, color:"white"
         }}
       >
-        campus
+        campus fm
       </Typography>
       <Typography
         noWrap
