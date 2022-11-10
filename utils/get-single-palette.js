@@ -15,7 +15,7 @@ const options = {
 // getPalette("WIUX");
 // getPalette("WFUV");
 // getPalette("WECS");
-getPalette("KVSC");
+getPalette("WBER");
 
 async function getPalette(callsign) {
   // find image path
