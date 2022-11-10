@@ -1309,20 +1309,55 @@ const stations = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/St._Cloud_State_Huskies_logo.svg/1200px-St._Cloud_State_Huskies_logo.svg.png",
     palette: ["#fafafa", "#040404", "#a3050d", "#cc7c84"],
   },
-  // {
-  //   id: 86,
-  //   call_sign: "",
-  //   broadcast_frequency: "",
-  //   audio_url: "",
-  //   station_url: "",
-  //   college_name: "",
-  //   public_private: "",
-  //   city: "",
-  //   state: "",
-  //   station_image: "",
-  //   college_image: "",
-  //   palette: [""],
-  // },
+  {
+    id: 86,
+    call_sign: "WBER",
+    broadcast_frequency: "90.5",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://wber-ice-encoder.monroe.edu/wber-high.mp3",
+    station_url: "https://wber.org/",
+    college_name: "BOCES Monroe",
+    public_private: "Public",
+    city: "Rochester",
+    state: "NY",
+    station_image:
+      "https://www.brandtatorship.com/wp-content/uploads/2020/05/WBER-Logo-300x300-1.png",
+    college_image:
+      "https://pbs.twimg.com/profile_images/1171582400029253633/_yl4bfz1_400x400.jpg",
+    palette: ["#f8faf9", "#335f78", "#84c757", "#7c8490"],
+  },
+  {
+    id: 86,
+    call_sign: "WSTB",
+    broadcast_frequency: "88.9",
+    audio_url: "http://peridot.streamguys.com:5550/live",
+    station_url: "https://www.rock889.com/",
+    college_name: "Streetsboro City School District",
+    public_private: "Public",
+    city: "Streetsboro",
+    state: "OH",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c5/88.9_The_AlterNation_logo.png",
+    college_image:
+      "https://www.scsrockets.org/wp-content/uploads/2020/09/cropped-SCS-Rockets-Logo-2020.png",
+    palette: ["#fbd304", "#044c94", "#044c8c", "#04448c"],
+  },
+  {
+    id: 86,
+    call_sign: "WILY",
+    broadcast_frequency: "90.1",
+    audio_url: "https://azuracast.wileyradio.org/listen/wiley_radio/radio.mp3",
+    station_url: "https://wileyradio.org/",
+    college_name: "Purdue University",
+    public_private: "Public",
+    city: "West Lafayette",
+    state: "IN",
+    station_image:
+      "https://wileyradio.org/wp-content/uploads/2021/04/cropped-Logo-Icon-recolor.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Purdue_Boilermakers_logo.svg/1200px-Purdue_Boilermakers_logo.svg.png",
+    palette: ["#040404", "#c0b293", "#6b6564", "#645c5c"],
+  },
   // Stability problem, won't load on mobile or desktop with cors-anywhere (fix later)
   // {
   //   id: 65,
