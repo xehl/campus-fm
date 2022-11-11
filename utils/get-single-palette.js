@@ -11,11 +11,9 @@ const options = {
 };
 
 // input
-// getPalette("WXPN");
-// getPalette("WIUX");
-// getPalette("WFUV");
-// getPalette("WECS");
-getPalette("WBER");
+getPalette("WYBC");
+// getPalette("WVBR");
+// getPalette("WKCR");
 
 async function getPalette(callsign) {
   // find image path

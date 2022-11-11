@@ -1358,6 +1358,53 @@ const stations = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Purdue_Boilermakers_logo.svg/1200px-Purdue_Boilermakers_logo.svg.png",
     palette: ["#040404", "#c0b293", "#6b6564", "#645c5c"],
   },
+  {
+    id: 87,
+    call_sign: "WYBC",
+    broadcast_frequency: "94.3",
+    audio_url: "https://wybcx-stream.creek.org/stream",
+    station_url: "https://wybc.com/",
+    college_name: "Yale University",
+    public_private: "Private",
+    city: "New Haven",
+    state: "CT",
+    station_image: "https://cdn-radiotime-logos.tunein.com/s24122g.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Yale_Bulldogs_script.svg/1200px-Yale_Bulldogs_script.svg.png",
+    palette: ["#0c2444", "#f9f9f9", "#7f8c9c", "#8494a4"],
+  },
+  {
+    id: 88,
+    call_sign: "WVBR",
+    broadcast_frequency: "93.5",
+    audio_url: "https://ais-edge51-live365-dal02.cdnstream.com/a52371",
+    station_url: "https://www.cornellradio.com/",
+    college_name: "Cornell University",
+    public_private: "Private",
+    city: "Ithaca",
+    state: "NY",
+    station_image:
+      "https://chambermaster.blob.core.windows.net/images/customers/1313/members/12961/photos/GALLERY_MAIN/WVBR_record_6.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Cornell_Big_Red_logo.svg/1200px-Cornell_Big_Red_logo.svg.png",
+    palette: ["#923523", "#040404", "#fbfafa", "#d89b9b"],
+  },
+  {
+    id: 89,
+    call_sign: "WKCR",
+    broadcast_frequency: "89.9",
+    audio_url: "https://wkcr.streamguys1.com/live",
+    station_url: "https://www.cc-seas.columbia.edu/wkcr/",
+    college_name: "Columbia University",
+    public_private: "Private",
+    city: "New York",
+    state: "NY",
+    station_image:
+      "https://cdn-profiles.tunein.com/s30119/images/logog.jpg?t=1",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Columbia_Lions_logo.svg/1200px-Columbia_Lions_logo.svg.png",
+    palette: ["#a1ceec", "#1c3c64", "#82b1d2", "#6c95b9"],
+  },
   // Stability problem, won't load on mobile or desktop with cors-anywhere (fix later)
   // {
   //   id: 65,
