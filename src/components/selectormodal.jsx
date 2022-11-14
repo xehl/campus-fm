@@ -42,12 +42,9 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
     localStorage.setItem("recentStations", JSON.stringify(stationQueue))
     setPlaying(null)
 
-    let stationStr = ""
-    stationQueue.forEach(station => stationStr += (station.call_sign + " "))
-
     ReactGA.event({
       category: "Selector",
-      action: "User reloaded stations: " + stationStr,
+      action: "User reloaded stations from selector modal",
       value: stationQueue.length
     });
 
