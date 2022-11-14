@@ -1327,7 +1327,7 @@ const stations = [
     palette: ["#f8faf9", "#335f78", "#84c757", "#7c8490"],
   },
   {
-    id: 86,
+    id: 87,
     call_sign: "WSTB",
     broadcast_frequency: "88.9",
     audio_url: "http://peridot.streamguys.com:5550/live",
@@ -1343,7 +1343,7 @@ const stations = [
     palette: ["#fbd304", "#044c94", "#044c8c", "#04448c"],
   },
   {
-    id: 86,
+    id: 88,
     call_sign: "WILY",
     broadcast_frequency: "90.1",
     audio_url: "https://azuracast.wileyradio.org/listen/wiley_radio/radio.mp3",
@@ -1359,7 +1359,7 @@ const stations = [
     palette: ["#040404", "#c0b293", "#6b6564", "#645c5c"],
   },
   {
-    id: 87,
+    id: 89,
     call_sign: "WYBC",
     broadcast_frequency: "94.3",
     audio_url: "https://wybcx-stream.creek.org/stream",
@@ -1374,7 +1374,7 @@ const stations = [
     palette: ["#0c2444", "#f9f9f9", "#7f8c9c", "#8494a4"],
   },
   {
-    id: 88,
+    id: 90,
     call_sign: "WVBR",
     broadcast_frequency: "93.5",
     audio_url: "https://ais-edge51-live365-dal02.cdnstream.com/a52371",
@@ -1390,7 +1390,7 @@ const stations = [
     palette: ["#923523", "#040404", "#fbfafa", "#d89b9b"],
   },
   {
-    id: 89,
+    id: 91,
     call_sign: "WKCR",
     broadcast_frequency: "89.9",
     audio_url: "https://wkcr.streamguys1.com/live",

@@ -121,13 +121,19 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
         station.city.toLowerCase().includes(searchStr.toLowerCase()) || 
         station.state.toLowerCase().includes(searchStr.toLowerCase()) ||
         station.college_name.toLowerCase().includes(searchStr.toLowerCase())
-    }))    
-  } 
+    }))
+  }
+
+  function handleClose() {
+    setSearchDisplayed(stations)
+    setStationQueue(selectedStations)
+    handleSelectorClose()
+  }
 
   return (
     <Modal
     open={selectorOpen}
-    onClose={handleSelectorClose}
+    onClose={handleClose}
     >
       <Box 
         sx={{
