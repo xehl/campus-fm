@@ -1082,7 +1082,7 @@ const stations = [
     state: "ON",
     station_image: "https://cdn-radiotime-logos.tunein.com/s24763g.png",
     college_image:
-      "https://imaginingfutures.world/wp-content/uploads/2021/02/carleton-university-boot-camp-logo.png",
+      "https://first-studyabroad.com/wp-content/uploads/2021/06/1550776205468.png",
     palette: ["#f9f9f9", "#090a0a", "#e43c3c", "#ec7c74"],
   },
   {
@@ -1330,7 +1330,8 @@ const stations = [
     id: 87,
     call_sign: "WSTB",
     broadcast_frequency: "88.9",
-    audio_url: "http://peridot.streamguys.com:5550/live",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://peridot.streamguys.com:5550/live",
     station_url: "https://www.rock889.com/",
     college_name: "Streetsboro City School District",
     public_private: "Public",
@@ -1404,6 +1405,23 @@ const stations = [
     college_image:
       "https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Columbia_Lions_logo.svg/1200px-Columbia_Lions_logo.svg.png",
     palette: ["#a1ceec", "#1c3c64", "#82b1d2", "#6c95b9"],
+  },
+  {
+    id: 92,
+    call_sign: "KAOS",
+    broadcast_frequency: "89.3",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://www.golden-apple.com:8930/;",
+    station_url: "https://www.kaosradio.org/",
+    college_name: "The Evergreen State College",
+    public_private: "Public",
+    city: "Olympia",
+    state: "WA",
+    station_image:
+      "https://images.squarespace-cdn.com/content/v1/5858568ad1758e3ed9b61481/1516832569469-9P3G8KB1TQ8QCOO1TPIO/b+12+a+reverse+btransparent.png",
+    college_image:
+      "https://www.evergreen.edu/sites/default/files/primary-logo-sample.png",
+    palette: ["#f9faf9", "#286828", "#85a485", "#7ca47c"],
   },
   // Stability problem, won't load on mobile or desktop with cors-anywhere (fix later)
   // {
