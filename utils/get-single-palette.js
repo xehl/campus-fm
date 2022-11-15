@@ -11,7 +11,7 @@ const options = {
 };
 
 // input
-getPalette("KAOS");
+getPalette("WBGU");
 // getPalette("WVBR");
 // getPalette("WKCR");
 

@@ -1423,6 +1423,22 @@ const stations = [
       "https://www.evergreen.edu/sites/default/files/primary-logo-sample.png",
     palette: ["#f9faf9", "#286828", "#85a485", "#7ca47c"],
   },
+  {
+    id: 93,
+    call_sign: "WBGU",
+    broadcast_frequency: "88.1",
+    audio_url: "http://dvstream2.bgsu.edu:8000/wbgu",
+    station_url: "https://www.bgfalconmedia.com/wbgu-fm/",
+    college_name: "Bowling Green State University",
+    public_private: "Public",
+    city: "Bowling Green",
+    state: "OH",
+    station_image:
+      "https://bloximages.chicago2.vip.townnews.com/bgfalconmedia.com/content/tncms/assets/v3/editorial/d/9c/d9cf413e-b871-11e7-9238-3b66274f0e2b/59eebecc64bba.image.jpg",
+    college_image:
+      "https://content.sportslogos.net/logos/30/620/full/bowling_green_falcons_logo_secondary_20043807.png",
+    palette: ["#fbfbfa", "#4d2404", "#eb7b3b", "#e0b186"],
+  },
   // Stability problem, won't load on mobile or desktop with cors-anywhere (fix later)
   // {
   //   id: 65,
