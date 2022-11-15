@@ -19,7 +19,11 @@
 
 ## About The Project
 
-Campus FM allows you to live stream college radio stations around the country. Take a look at the first launch on Reddit [here](https://www.reddit.com/r/InternetIsBeautiful/comments/ydfvj9/campusfm_i_made_this_site_to_listen_to_college/), or check out the app [here](https://www.campus-fm.com/).
+Campus FM allows you to live stream college radio stations around the country.
+
+The app has been featured on [Reddit](https://www.reddit.com/r/InternetIsBeautiful/comments/ydfvj9/campusfm_i_made_this_site_to_listen_to_college/), [The Hustle](https://thehustle.co/%F0%9F%8C%8E-who-bought-miss-universe/), and [Hacker News](https://news.ycombinator.com/item?id=33608892), with over 10,000 users in its first month after launch.
+
+You can check out the app [here](https://www.campus-fm.com/).
 
 ## Built With
 

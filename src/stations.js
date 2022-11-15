@@ -1354,7 +1354,7 @@ const stations = [
     city: "West Lafayette",
     state: "IN",
     station_image:
-      "https://wileyradio.org/wp-content/uploads/2021/04/cropped-Logo-Icon-recolor.png",
+      "https://i1.sndcdn.com/avatars-000339989542-iypqtj-t500x500.jpg",
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Purdue_Boilermakers_logo.svg/1200px-Purdue_Boilermakers_logo.svg.png",
     palette: ["#040404", "#c0b293", "#6b6564", "#645c5c"],
