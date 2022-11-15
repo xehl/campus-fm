@@ -11,8 +11,8 @@ const options = {
 };
 
 // input
-getPalette("WBGU");
-// getPalette("WVBR");
+// getPalette("WRBB");
+getPalette("WITR");
 // getPalette("WKCR");
 
 async function getPalette(callsign) {

@@ -49,7 +49,7 @@ export default function App() {
         "WSUM",
         "KUNM",
         "WSBF",
-        "WHRB",
+        "WERS",
       ];
       let defaultStations = [];
       defaultStations = stations.filter((station) =>

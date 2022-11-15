@@ -1439,6 +1439,55 @@ const stations = [
       "https://content.sportslogos.net/logos/30/620/full/bowling_green_falcons_logo_secondary_20043807.png",
     palette: ["#fbfbfa", "#4d2404", "#eb7b3b", "#e0b186"],
   },
+  {
+    id: 94,
+    call_sign: "WMBR",
+    broadcast_frequency: "88.1",
+    audio_url: "https://wmbr.org:8002/hi",
+    station_url: "https://wmbr.org/",
+    college_name: "Massachusetts Institute of Technology",
+    public_private: "Private",
+    city: "Cambridge",
+    state: "MA",
+    station_image:
+      "https://pbs.twimg.com/profile_images/827684532/WMBR_round_400x400.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/2560px-MIT_logo.svg.png",
+    palette: ["#8c8c8c", "#a41c34", "#987490", "#983864"],
+  },
+  {
+    id: 95,
+    call_sign: "WRBB",
+    broadcast_frequency: "104.9",
+    audio_url:
+      "https://audio-edge-w4d68.yul.o.radiomast.io/dafd1179-5404-4939-9c1c-a014c6964254",
+    station_url: "https://wrbbradio.org/",
+    college_name: "Northeastern University",
+    public_private: "Private",
+    city: "Boston",
+    state: "MA",
+    station_image:
+      "https://wrbbradio.org/wp-content/uploads/2013/11/wrbb_retro-1024x999.jpeg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/0/01/Northeastern_Huskies_logo.png",
+    palette: ["#cb0404", "#040404", "#cfa4a5", "#5c5c5c"],
+  },
+  {
+    id: 96,
+    call_sign: "WITR",
+    broadcast_frequency: "89.7",
+    audio_url: "https://streaming.witr.rit.edu/high",
+    station_url: "https://witr.rit.edu/",
+    college_name: "Rochester Institute of Technology",
+    public_private: "Private",
+    city: "Rochester",
+    state: "NY",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/2/2a/WITR_logo_2022.jpg",
+    college_image:
+      "https://1000logos.net/wp-content/uploads/2019/10/RIT-Tigers-Logo-1976.png",
+    palette: ["#f26b1c", "#1d1a1a", "#54545c", "#f4f4f4"],
+  },
   // Stability problem, won't load on mobile or desktop with cors-anywhere (fix later)
   // {
   //   id: 65,
