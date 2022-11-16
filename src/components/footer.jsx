@@ -35,7 +35,7 @@ export default function Footer({ handleSelectorModalOpen }) {
           fontFamily={"Turret Road"}
           onClick={handleSelectorModalOpen}
         >
-          add more stations
+          select new stations
         </Typography>
       </Button>
     </Box>
