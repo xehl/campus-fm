@@ -11,17 +11,13 @@ const options = {
 };
 
 // input
-// getPalette("WFMU");
+getPalette("CFMU");
 // getPalette("WMSE");
 // getPalette("WSUW");
 // getPalette("WUSB");
 // getPalette("KJHK");
 // getPalette("KDUR");
 // getPalette("WTHS");
-// getPalette("UWSR");
-getPalette("RUA");
-getPalette("UFM");
-getPalette("UAL");
 
 async function getPalette(callsign) {
   // find image path
@@ -29,8 +25,8 @@ async function getPalette(callsign) {
   var files = fs.readdirSync("../public/images/");
   files.find((file) => {
     if (
-      file.substring(4, 10) === "school" &&
-      file.substring(0, 3) === callsign.toUpperCase()
+      file.substring(5, 11) === "school" &&
+      file.substring(0, 4) === callsign.toUpperCase()
     ) {
       imagepath = file;
     }
