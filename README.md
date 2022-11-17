@@ -39,6 +39,7 @@ You can check out the web app [here](https://www.campus-fm.com/).
   <img src="screengrabs/reddit-comment-2.png" alt="reddit-2" />
   <img src="screengrabs/reddit-comment-3.png" alt="reddit-3" />
   <img src="screengrabs/reddit-comment-4.png" alt="reddit-4" />
+  <img src="screengrabs/reddit-comment-5.png" alt="reddit-5" />
 </div>
 
 <!-- GETTING STARTED -->

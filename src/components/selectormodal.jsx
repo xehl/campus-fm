@@ -41,7 +41,7 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
   function replaceStations() {
     // don't do anything if user hasn't made changes
     if (selectedStations === stationQueue) {
-      handleSelectorClose()
+      handleClose()
       return
     }
 
@@ -239,14 +239,14 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
             }} />
             <Stack direction={{ xs: "column", md: "row" }} sx={{ ml: {md: 2, xl: 3}, m: 0.5, width: { xs: "70vw", sm: "auto" }, height: {xs: "auto", lg: 54}}} spacing={1}>
               <Stack spacing={1} direction="row" sx={{ width: { xs: "70vw", md: "auto" }, justifyContent: "center" }}>
-                <LightTooltip disableTouchListener enterDelay={350} title="add ten random stations to the queue">
+                <LightTooltip disableTouchListener enterDelay={350} title="select 10 random stations">
                   <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ width: { xs: "50%", md: "auto" }, borderColor: "white", ':hover': { borderColor: '#909090' } }}>
                     <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
                       surprise me
                     </Typography>
                   </Button>
                 </LightTooltip>
-                <LightTooltip disableTouchListener enterDelay={350} title="add a random station to the queue">
+                <LightTooltip disableTouchListener enterDelay={350} title="add 1 random station to the selected list">
                     <Button variant="outlined" disableElevation onClick={addOneRandom} sx={{ height: "100%", width: { xs: "50%", md: "auto" }, borderColor: "white", ':hover': { borderColor: '#909090' } }}>
                       <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 13, sm: 15 }} color="white">
                         add 1 random
@@ -255,7 +255,7 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
                   </LightTooltip>
               </Stack>
               <Stack spacing={1} direction="row" sx={{ width: {xs: "70vw", md: "auto"}, justifyContent:"center" }}>
-                <LightTooltip disableTouchListener enterDelay={350} title="clear all stations from the queue">
+                <LightTooltip disableTouchListener enterDelay={350} title="clear all selected stations">
                   <Button variant="outlined" disableElevation onClick={clearStations} sx={{ width: { xs: "50%", md: "auto" }, borderColor: "white", ':hover': { borderColor: '#909090' } }}>
                     <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
                       clear all
