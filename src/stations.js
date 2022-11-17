@@ -1488,6 +1488,243 @@ const stations = [
       "https://1000logos.net/wp-content/uploads/2019/10/RIT-Tigers-Logo-1976.png",
     palette: ["#f26b1c", "#1d1a1a", "#54545c", "#f4f4f4"],
   },
+  {
+    id: 97,
+    call_sign: "WFMU",
+    broadcast_frequency: "91.9",
+    audio_url: "https://stream0.wfmu.org/freeform-128k.mp3",
+    station_url: "https://wfmu.org/",
+    college_name: "Upsala College",
+    public_private: "Private",
+    city: "East Orange",
+    state: "NJ",
+    station_image:
+      "https://cdn-profiles.tunein.com/s28808/images/logod.jpg?t=1",
+    college_image:
+      "https://iconape.com/wp-content/files/kg/193341/png/193341.png",
+    palette: ["#566b9c", "#d7e9de", "#9eb8c4", "#809dcd"],
+  },
+  {
+    id: 98,
+    call_sign: "WMSE",
+    broadcast_frequency: "91.7",
+    audio_url: "https://wmse.streamguys1.com/wmselivemp3",
+    station_url: "https://www.wmse.org/",
+    college_name: "Milwaukee School of Engineering",
+    public_private: "Private",
+    city: "Milwaukee",
+    state: "WI",
+    station_image:
+      "https://www.kexp.org/media/filer_public_thumbnails/filer_public/81/10/8110b8e4-d642-468a-a992-281904e8ba38/wmse.gif__600x600_q85_crop_subsampling-2_upscale.png",
+    college_image:
+      "https://www.theharlemvalleynews.net/wp-content/uploads/2021/12/milw.png",
+    palette: ["#a40c04", "#a80c04", "#a80c04", "#a80c04"],
+  },
+  {
+    id: 99,
+    call_sign: "WSUW",
+    broadcast_frequency: "91.7",
+    audio_url: "http://wsuw-test.uww.edu:80/wsuwliveaac",
+    station_url: "https://917theedge.weebly.com/",
+    college_name: "University of Wisconsin-Whitewater",
+    public_private: "Public",
+    city: "Whitewater",
+    state: "WI",
+    station_image:
+      "https://naccchart.com/wp-content/uploads/2019/07/wsuwlogo4.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/a/ae/Wisconsin%E2%80%93Whitewater_Warhawks_Logo.png",
+    palette: ["#3a2656", "#e7e7e8", "#aba7b6", "#a090c4"],
+  },
+  {
+    id: 100,
+    call_sign: "WUSB",
+    broadcast_frequency: "90.1",
+    audio_url: "https://stream.wusb.stonybrook.edu:8092/listen.pl",
+    station_url: "https://www.wusb.fm/",
+    college_name: "Stony Brook University",
+    public_private: "Public",
+    city: "Stony Brook",
+    state: "NY",
+    station_image:
+      "https://alumniandfriends.stonybrook.edu/images/content/pagebuilder/WUSB-resized.jpg",
+    college_image:
+      "https://www.stonybrook.edu/far-beyond/img/branding/logo/sbu/primary/72/stony-brook-university-logo-vertical.png",
+    palette: ["#9c0505", "#040404", "#f4e6e6", "#c47474"],
+  },
+  {
+    id: 35,
+    call_sign: "KJHK",
+    broadcast_frequency: "90.7",
+    audio_url: "https://listen.mixlr.com/349480acbad142f8ea55e3725ae231a1",
+    station_url: "https://kjhk.org/",
+    college_name: "University of Kansas",
+    public_private: "Public",
+    city: "Lawrence",
+    state: "KS",
+    station_image:
+      "https://i0.wp.com/kjhk.org/web/wp-content/uploads/2020/10/cropped-BestLogoM04.png?fit=512%2C512&ssl=1",
+    college_image:
+      "https://content.sportslogos.net/logos/32/718/full/kansas_jayhawks_logo_primary_20059568.png",
+    palette: ["#ea9012", "#053ca3", "#f4f6f9", "#5c746c"],
+  },
+  // {
+  //   id: 101,
+  //   call_sign: "",
+  //   broadcast_frequency: "",
+  //   audio_url: "",
+  //   station_url: "",
+  //   college_name: "",
+  //   public_private: "",
+  //   city: "",
+  //   state: "",
+  //   station_image: "",
+  //   college_image: "",
+  //   palette: [],
+  // },
+  {
+    id: 102,
+    call_sign: "KDUR",
+    broadcast_frequency: "91.9",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://kdurradio.fortlewis.edu/stream",
+    station_url: "https://www.kdur.org/",
+    college_name: "Fort Lewis College",
+    public_private: "Public",
+    city: "Durango",
+    state: "CO",
+    station_image:
+      "https://www.kdur.org/Portals/12/skins/kdur/FileUploads/12/kdur-radio-logo-2_3.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Fort_Lewis_Skyhawks_logo.svg/1200px-Fort_Lewis_Skyhawks_logo.svg.png",
+    palette: ["#054c8b", "#fabb34", "#fafafb", "#047cc4"],
+  },
+  {
+    id: 103,
+    call_sign: "WTHS",
+    broadcast_frequency: "89.9",
+    audio_url: "https://s3.radio.co/scf79220ed/listen",
+    station_url: "https://wths.hope.edu/",
+    college_name: "Hope College",
+    public_private: "Private",
+    city: "Holland",
+    state: "MI",
+    station_image:
+      "https://cdn-profiles.tunein.com/s23126/images/logod.png?t=156139WT",
+    college_image:
+      "https://hope.edu/offices/public-affairs-marketing/resources/logos/athletics/block-h-spirit/HOPE_Block-H_Spirit-Mark_OrangeBlue.png",
+    palette: ["#f37b24", "#042c5c", "#a86345", "#685254"],
+  },
+  {
+    id: 104,
+    call_sign: "UWSR",
+    broadcast_frequency: "87.7",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://icecast.commedia.org.uk:8000/ucaradio.mp3",
+    station_url: "http://uwsradio.co.uk/",
+    college_name: "University of West Scotland",
+    public_private: "Public",
+    city: "Ayr",
+    state: "Scotland",
+    station_image:
+      "https://i0.wp.com/uwsradio.co.uk/wp-content/uploads/2021/09/UWS-pink-scaled.jpg?fit=370%2C370",
+    college_image:
+      "https://www.studyabroad.pk/images/companyLogo/UWS%20logo.png",
+    palette: ["#f24f38", "#fbe8e5", "#f4a49c", "#80291f"],
+  },
+  {
+    id: 105,
+    call_sign: "RUA",
+    broadcast_frequency: "103.7",
+    audio_url: "https://centova.radio.com.pt/proxy/536?mp=/stream",
+    station_url: "https://rua.pt/",
+    college_name: "University of Algarve",
+    public_private: "Public",
+    city: "Faro",
+    state: "Portugal",
+    station_image:
+      "https://rua.pt/wp-content/uploads/2021/10/cropped-favicon.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/b/bd/Uoalogo.png",
+    palette: ["#0794e2", "#1e1e16", "#aacddc", "#7e7c79"],
+  },
+  {
+    id: 106,
+    call_sign: "UFM",
+    broadcast_frequency: "104.3",
+    audio_url: "https://centova.radio.com.pt/proxy/405?mp=/stream",
+    station_url: "https://www.universidade.fm/",
+    college_name: "University of Trás-os-Montes and Alto Douro",
+    public_private: "Public",
+    city: "Vila Real",
+    state: "Portugal",
+    station_image:
+      "http://www.universidade.fm/wp-content/uploads/2018/10/UFM_quadrado.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/f/fc/Universidade_de_Tr%C3%A1s-os-Montes_e_Alto_Douro_%28logo%29.png",
+    palette: ["#052c82", "#8d0505", "#840404", "#7c6a8a"],
+  },
+  {
+    id: 107,
+    call_sign: "UAL",
+    broadcast_frequency: "91.7",
+    audio_url: "https://spaudio.servers.pt/8006/stream",
+    station_url: "https://ualmedia.pt/",
+    college_name: "Autonomous University of Lisbon",
+    public_private: "Private",
+    city: "Lisbon",
+    state: "Portugal",
+    station_image:
+      "https://static.mytuner.mobi/media/tvos_radios/gs8fzckgerrp.png",
+    college_image:
+      "https://grupoceu.pt/wp-content/uploads/2020/10/ual-logo.png",
+    palette: ["#0474a4", "#050505", "#3697b9", "#5c5c5c"],
+  },
+  // {
+  //   id: 108,
+  //   call_sign: "",
+  //   broadcast_frequency: "",
+  //   audio_url: "",
+  //   station_url: "",
+  //   college_name: "",
+  //   public_private: "",
+  //   city: "",
+  //   state: "",
+  //   station_image: "",
+  //   college_image: "",
+  //   palette: [],
+  // },
+  // {
+  //   id: 108,
+  //   call_sign: "",
+  //   broadcast_frequency: "",
+  //   audio_url: "",
+  //   station_url: "",
+  //   college_name: "",
+  //   public_private: "",
+  //   city: "",
+  //   state: "",
+  //   station_image: "",
+  //   college_image: "",
+  //   palette: [],
+  // },
+  // TEMPLATE
+  // {
+  //   id: 104,
+  //   call_sign: "",
+  //   broadcast_frequency: "",
+  //   audio_url: "",
+  //   station_url: "",
+  //   college_name: "",
+  //   public_private: "",
+  //   city: "",
+  //   state: "",
+  //   station_image:
+  //     "",
+  //   college_image:
+  //     "",
+  //   palette: [],
+  // },
   // Stability problem, won't load on mobile or desktop with cors-anywhere (fix later)
   // {
   //   id: 65,
@@ -1505,21 +1742,6 @@ const stations = [
   //     "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Baldwin_Wallace_Yellow_Jackets_logo.svg/800px-Baldwin_Wallace_Yellow_Jackets_logo.svg.png",
   // },
   // NOTE: KJHK doesn't seem to have a livestream link; the ones I found redirect you to an elevator music stream: http://streaming.radionomy.com/JamendoLounge
-  // {
-  //   id: 35,
-  //   call_sign: "KJHK",
-  //   broadcast_frequency: "90.7",
-  //   audio_url: "https://streamingv2.shoutcast.com/kjhk",
-  //   station_url: "https://kjhk.org/",
-  //   college_name: "University of Kansas",
-  //   public_private: "Public",
-  //   city: "Lawrence",
-  //   state: "KS",
-  //   station_image:
-  //     "https://i0.wp.com/kjhk.org/web/wp-content/uploads/2020/10/cropped-BestLogoM04.png?fit=512%2C512&ssl=1",
-  //   college_image:
-  //     "https://content.sportslogos.net/logos/32/718/full/kansas_jayhawks_logo_primary_20059568.png",
-  // },
   // Stability issues with cors-anywhere, fix later
   // {
   //   id: 54,
@@ -1543,7 +1765,7 @@ const stations = [
   //   call_sign: "WVPH",
   //   broadcast_frequency: "90.3",
   //   audio_url:
-  //     "https://cors-proxy.elfsight.com/http://rsc417c1.rutgers.edu:8000/WRSU-FM",
+  //     "http://rsc417c1.rutgers.edu:8000/WRSU-FM",
   //   station_url: "https://www.thecore.fm/",
   //   college_name: "Rutgers University",
   //   public_private: "Public",
@@ -1553,7 +1775,8 @@ const stations = [
   //     "https://cdn-profiles.tunein.com/s23615/images/logog.jpg?t=1",
   //   college_image:
   //     "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1153px-Rutgers_Scarlet_Knights_logo.svg.png",
-  // },
+  //   palette: [],
+  //  },
 ];
 
 export default stations;

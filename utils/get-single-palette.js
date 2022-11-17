@@ -11,9 +11,17 @@ const options = {
 };
 
 // input
-// getPalette("WRBB");
-getPalette("WITR");
-// getPalette("WKCR");
+// getPalette("WFMU");
+// getPalette("WMSE");
+// getPalette("WSUW");
+// getPalette("WUSB");
+// getPalette("KJHK");
+// getPalette("KDUR");
+// getPalette("WTHS");
+// getPalette("UWSR");
+getPalette("RUA");
+getPalette("UFM");
+getPalette("UAL");
 
 async function getPalette(callsign) {
   // find image path
@@ -21,10 +29,9 @@ async function getPalette(callsign) {
   var files = fs.readdirSync("../public/images/");
   files.find((file) => {
     if (
-      file.substring(5, 11) === "school" &&
-      file.substring(0, 4) === callsign.toUpperCase()
+      file.substring(4, 10) === "school" &&
+      file.substring(0, 3) === callsign.toUpperCase()
     ) {
-      console.log("Palette for : " + file);
       imagepath = file;
     }
     return null;
@@ -41,5 +48,6 @@ async function getPalette(callsign) {
     paletteArr.push(color.hex());
     return null;
   });
+  console.log("Palette for : " + imagepath);
   console.log(paletteArr);
 }
