@@ -11,9 +11,9 @@ const options = {
 };
 
 // input
-getPalette("CFMU");
-// getPalette("WMSE");
-// getPalette("WSUW");
+getPalette("WVCR");
+getPalette("WCFM");
+getPalette("WSOU");
 // getPalette("WUSB");
 // getPalette("KJHK");
 // getPalette("KDUR");
