@@ -1683,21 +1683,6 @@ const stations = [
     palette: ["#0474a4", "#050505", "#3697b9", "#5c5c5c"],
   },
   {
-    id: 108,
-    call_sign: "WVCR",
-    broadcast_frequency: "88.3",
-    audio_url: "https://stream.revma.ihrhls.com/zc6306/hls.m3u8",
-    station_url: "https://www.wvcr.com/",
-    college_name: "Siena College",
-    public_private: "Private",
-    city: "Loudonville",
-    state: "NY",
-    station_image: "https://cdn-radiotime-logos.tunein.com/s23485g.png",
-    college_image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/7/78/Siena_Saints_logo.svg/1200px-Siena_Saints_logo.svg.png",
-    palette: ["#f7eacb", "#1e2015", "#809f72", "#7b7c7c"],
-  },
-  {
     id: 109,
     call_sign: "WCFM",
     broadcast_frequency: "91.9",
@@ -1712,22 +1697,6 @@ const stations = [
       "https://static.mytuner.mobi/media/tvos_radios/X7VgKdWDCV.png",
     college_image: "https://ephsports.williams.edu/images/logos/site/site.png",
     palette: ["#f7bf30", "#560782", "#b76e39", "#9464b4"],
-  },
-  {
-    id: 110,
-    call_sign: "WSOU",
-    broadcast_frequency: "89.5",
-    audio_url: "http://stream.revma.ihrhls.com/zc5252/hls.m3u8",
-    station_url: "https://www.wsou.net/",
-    college_name: "Seton Hall University",
-    public_private: "Private",
-    city: "South Orange",
-    state: "NJ",
-    station_image:
-      "https://advancement.shu.edu/image/support/ElectricGuitar_WSOU_Logo.jpg",
-    college_image:
-      "https://content.sportslogos.net/logos/34/831/full/seton_hall_pirates_logo_secondary_19983416.png",
-    palette: ["#0464ac", "#f9fafa", "#acb4b4", "#7fb0d3"],
   },
   // TEMPLATE
   // {
@@ -1798,6 +1767,38 @@ const stations = [
   //     "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1153px-Rutgers_Scarlet_Knights_logo.svg.png",
   //   palette: [],
   //  },
+  //  found IHeartRadio links on fmstream, but they don't load on desktop and they're shaky on mobile
+  //  {
+  //   id: 108,
+  //   call_sign: "WVCR",
+  //   broadcast_frequency: "88.3",
+  //   audio_url: "https://stream.revma.ihrhls.com/zc6306/hls.m3u8",
+  //   station_url: "https://www.wvcr.com/",
+  //   college_name: "Siena College",
+  //   public_private: "Private",
+  //   city: "Loudonville",
+  //   state: "NY",
+  //   station_image: "https://cdn-radiotime-logos.tunein.com/s23485g.png",
+  //   college_image:
+  //     "https://upload.wikimedia.org/wikipedia/en/thumb/7/78/Siena_Saints_logo.svg/1200px-Siena_Saints_logo.svg.png",
+  //   palette: ["#f7eacb", "#1e2015", "#809f72", "#7b7c7c"],
+  // },
+  // {
+  //   id: 110,
+  //   call_sign: "WSOU",
+  //   broadcast_frequency: "89.5",
+  //   audio_url: "http://stream.revma.ihrhls.com/zc5252/hls.m3u8",
+  //   station_url: "https://www.wsou.net/",
+  //   college_name: "Seton Hall University",
+  //   public_private: "Private",
+  //   city: "South Orange",
+  //   state: "NJ",
+  //   station_image:
+  //     "https://advancement.shu.edu/image/support/ElectricGuitar_WSOU_Logo.jpg",
+  //   college_image:
+  //     "https://content.sportslogos.net/logos/34/831/full/seton_hall_pirates_logo_secondary_19983416.png",
+  //   palette: ["#0464ac", "#f9fafa", "#acb4b4", "#7fb0d3"],
+  // },
 ];
 
 export default stations;
