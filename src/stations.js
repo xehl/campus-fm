@@ -1323,7 +1323,7 @@ const stations = [
     station_image:
       "https://www.brandtatorship.com/wp-content/uploads/2020/05/WBER-Logo-300x300-1.png",
     college_image:
-      "https://pbs.twimg.com/profile_images/1171582400029253633/_yl4bfz1_400x400.jpg",
+      "https://www.monroe.edu/cms/lib/NY02216770/Centricity/Shared/Logos/monroe_symbol_fullcolor.png",
     palette: ["#f8faf9", "#335f78", "#84c757", "#7c8490"],
   },
   {
