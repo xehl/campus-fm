@@ -11,12 +11,12 @@ const options = {
 };
 
 // input
-getPalette("WVCR");
-getPalette("WCFM");
-getPalette("WSOU");
-// getPalette("WUSB");
-// getPalette("KJHK");
-// getPalette("KDUR");
+// getPalette("WRCP");
+// getPalette("WKOW");
+// getPalette("LR11");
+// getPalette("OXID");
+// getPalette("CAMF");
+// getPalette("XEUN");
 // getPalette("WTHS");
 
 async function getPalette(callsign) {

@@ -1698,6 +1698,102 @@ const stations = [
     college_image: "https://ephsports.williams.edu/images/logos/site/site.png",
     palette: ["#f7bf30", "#560782", "#b76e39", "#9464b4"],
   },
+  {
+    id: 110,
+    call_sign: "XEUN",
+    broadcast_frequency: "96.1",
+    audio_url: "https://tv.radiohosting.online:9484/stream",
+    station_url: "https://www.radio.unam.mx/",
+    college_name: "National Autonomous University of Mexico",
+    public_private: "Public",
+    city: "Mexico City",
+    state: "Mexico",
+    station_image: "https://cdn-radiotime-logos.tunein.com/s24539d.png",
+    college_image:
+      "http://www.sorbonne-universite.fr/sites/default/files/styles/345xauto/public/media/2021-03/UNAM-logo-272x300.png?itok=YafUZxky",
+    palette: ["#eaae0d", "#36380c", "#0581d9", "#4ba60e"],
+  },
+  {
+    id: 111,
+    call_sign: "CAMF",
+    broadcast_frequency: "97.2",
+    audio_url: "https://stream.camfm.co.uk/camfm",
+    station_url: "https://www.camfm.co.uk/",
+    college_name: "University of Cambridge",
+    public_private: "Public",
+    city: "Cambridge",
+    state: "United Kingdom",
+    station_image:
+      "https://www.radio.net/images/broadcasts/a4/9f/16997/c300.png",
+    college_image:
+      "https://callforcurators.com/wp-content/uploads/2022/01/university-of-cambridge-logo-3.png",
+    palette: ["#17150c", "#e8671f", "#fbfbfb", "#8c8c8c"],
+  },
+  {
+    id: 112,
+    call_sign: "OXID",
+    broadcast_frequency: "87.9",
+    audio_url: "https://uk3.internet-radio.com/proxy/oxideradio?mp=/stream",
+    station_url: "https://www.oxideradio.live/",
+    college_name: "University of Oxford",
+    public_private: "Public",
+    city: "Oxford",
+    state: "United Kingdom",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Oxide_2005_logo.jpg/220px-Oxide_2005_logo.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Oxford-University-Circlet.svg/1636px-Oxford-University-Circlet.svg.png",
+    palette: ["#0c223f", "#dab574", "#8494a4", "#848ca4"],
+  },
+  {
+    id: 113,
+    call_sign: "LR11",
+    broadcast_frequency: "107.5",
+    audio_url: "https://stream.radiouniversidad.unlp.edu.ar:8040/fm",
+    station_url: "https://www.radiouniversidad.unlp.edu.ar/",
+    college_name: "National University of La Plata",
+    public_private: "Public",
+    city: "La Plata",
+    state: "Argentina",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/commons/d/d9/Logo_Radio_Universidad.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/UNLP_Logo_%28cropped%29.svg/1200px-UNLP_Logo_%28cropped%29.svg.png",
+    palette: ["#f9f9f9", "#1d1515", "#757474", "#7d7c7c"],
+  },
+  {
+    id: 114,
+    call_sign: "WKOW",
+    broadcast_frequency: "91.3",
+    audio_url: "https://radioradieschen.stream.kapper.net/radioradieschen",
+    station_url: "https://www.radio-radieschen.at/",
+    college_name: "University of Applied Sciences Vienna",
+    public_private: "Public",
+    city: "Vienna",
+    state: "Austria",
+    station_image:
+      "https://cdn-profiles.tunein.com/s153013/images/logod.jpg?t=161642",
+    college_image:
+      "https://oeh-fhcw.at/wp-content/uploads/2021/12/cropped-oeh-fh-campus-wien.png",
+    palette: ["#d6d5cf", "#040404", "#f48cb4", "#40807c"],
+  },
+  {
+    id: 115,
+    call_sign: "WRCP",
+    broadcast_frequency: "93.9",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://www.radiocampusparis.org:8000/stream_rcp",
+    station_url: "https://www.radiocampusparis.org/",
+    college_name: "University of Paris",
+    public_private: "Public",
+    city: "Paris",
+    state: "France",
+    station_image:
+      "https://www.radio.net/images/broadcasts/08/e2/29192/c175.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Coat_of_arms_of_the_University_of_Paris.svg/640px-Coat_of_arms_of_the_University_of_Paris.svg.png",
+    palette: ["#f3d09e", "#436ce8", "#2b2925", "#acaca0"],
+  },
   // TEMPLATE
   // {
   //   id: 104,
