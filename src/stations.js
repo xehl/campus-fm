@@ -1794,6 +1794,23 @@ const stations = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Coat_of_arms_of_the_University_of_Paris.svg/640px-Coat_of_arms_of_the_University_of_Paris.svg.png",
     palette: ["#f3d09e", "#436ce8", "#2b2925", "#acaca0"],
   },
+  {
+    id: 116,
+    call_sign: "WRCT",
+    broadcast_frequency: "88.3",
+    audio_url:
+      "https://cors-proxy.elfsight.com/http://stream.wrct.org:8000/wrct-hi.mp3",
+    station_url: "http://www.wrct.org/",
+    college_name: "Carnegie Mellon University",
+    public_private: "Private",
+    city: "Pittsburgh",
+    state: "PA",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4f/WRCT_88.3_Logo.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Carnegie_Mellon_University_seal.svg/1200px-Carnegie_Mellon_University_seal.svg.png",
+    palette: ["#243647", "#e6a21a", "#fbfbf9", "#8b3142"],
+  },
   // TEMPLATE
   // {
   //   id: 104,
