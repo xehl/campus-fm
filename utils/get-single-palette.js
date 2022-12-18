@@ -11,7 +11,7 @@ const options = {
 };
 
 // input
-// getPalette("WRCP");
+getPalette("WRCT");
 // getPalette("WKOW");
 // getPalette("LR11");
 // getPalette("OXID");
