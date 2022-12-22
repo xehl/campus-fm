@@ -195,13 +195,13 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                 color: "white",
                 fontStyle: "italic"
               }}>
-                Can I get Campus FM on my phone/tablet?
+                Are you going to monetize Campus FM?
                 <Typography sx={{
                   mt: 2,
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                  I’m working on native apps for iOS and Android!
+                    I don't have plans to monetize right now, but you can buy me a coffee <Link target="_blank" href="https://www.buymeacoffee.com/ehlee">here</Link> if you're feeling generous!
                 </Typography>
               </Typography>
             </ListItem>
