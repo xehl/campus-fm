@@ -33,6 +33,13 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
     });
   }
 
+  function coffeeLinkEvent() {
+    ReactGA.event({
+      category: "External Link",
+      action: "User clicked on Buy Me a Coffee link in FAQ"
+    });
+  }
+
   return (
     <Modal
     open={faqOpen}
@@ -181,7 +188,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                    That’s awesome (or I’m sorry)! I’m still learning how to build web apps and I would love your feedback! If you have a Github account, you can open an issue directly on the <Link target="_blank" onClick={repoLinkEvent} href="https://github.com/xehl/campus-fm">Campus FM repo</Link>, or you can get in touch with me at <Link onClick={ emailLinkEvent } href={`mailto:hello.campusfm@gmail.com`}>hello.campusfm@gmail.com</Link>
+                    That’s awesome (or I’m sorry)! I would love your feedback; if you have a Github account, you can open an issue directly on the <Link target="_blank" onClick={repoLinkEvent} href="https://github.com/xehl/campus-fm">Campus FM repo</Link>, or you can get in touch with me at <Link onClick={ emailLinkEvent } href={`mailto:hello.campusfm@gmail.com`}>hello.campusfm@gmail.com</Link>
                 </Typography>
               </Typography>
             </ListItem>
@@ -201,7 +208,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                    I don't have plans to monetize right now, but you can buy me a coffee <Link target="_blank" href="https://www.buymeacoffee.com/ehlee">here</Link> if you're feeling generous!
+                    I don't have plans to monetize right now, but you can buy me a coffee <Link target="_blank" onClick={coffeeLinkEvent} href="https://www.buymeacoffee.com/ehlee">here</Link> if you're feeling generous!
                 </Typography>
               </Typography>
             </ListItem>
