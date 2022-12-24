@@ -108,7 +108,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                    Absolutely! It’s pretty easy for me to add new stations, and I’m always looking for new radio stations to listen to. Feel free to suggest stations via <Link onClick={ suggestionFormEvent } target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfZGNdhSsSnp9P2UqlhO8E1j0gMHxXavHea-rHIQjFPdCCbMw/viewform">this form</Link>!
+                    Absolutely! It’s pretty easy for me to add new stations, and I’m always looking for new college radio stations to listen to. Feel free to suggest stations via <Link onClick={ suggestionFormEvent } target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfZGNdhSsSnp9P2UqlhO8E1j0gMHxXavHea-rHIQjFPdCCbMw/viewform">this form</Link>!
                 </Typography>
               </Typography>
             </ListItem>
@@ -168,7 +168,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                  IT practices aren't consistent across all college radio stations. Sometimes they have security restrictions that prevent their audio streams from loading on certain apps and devices. And sometimes the audio streams just go offline for a while.
+                  IT practices aren't consistent across all college radio stations. Sometimes they have security restrictions that prevent their audio streams from loading on certain apps and devices. And sometimes the online audio streams just go offline for a while.
                 </Typography>
               </Typography>
             </ListItem>
