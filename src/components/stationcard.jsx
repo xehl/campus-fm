@@ -86,6 +86,8 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     // select all audio stream elements + selected stream
     const allStations = document.getElementsByClassName("audio-element")
     const selectedStation = allStations.namedItem(callsign)
+
+    // if station isn't loaded yet, try to request it again
     if (!loaded) selectedStation.load();
 
     // if clicked on current station, eject the station from the player
@@ -132,6 +134,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           justifyContent: "flex-start",
           height: { xs: 150, md: 200, lg: 200 },
           borderRadius: 2,
+          transition: "0.2s",
           opacity: undimIfLoaded(),
           background: greenIfPlaying()
         }}>
