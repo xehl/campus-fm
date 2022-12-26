@@ -122,20 +122,20 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
         width: { xs: "70%", sm: 550, md: 600, xl: 700 },
       }}>
         <LightTooltip disableTouchListener enterDelay={350} title="load new stations" sx={{fontFamily: "Share Tech Mono"}}>
-          <DashboardCustomizeIcon onClick={handleSelectorModalOpen} sx={{ width: 50, opacity: 1, fontSize: { xs: 36, sm: 47 }, color: "white", cursor: "pointer" }} />
+          <DashboardCustomizeIcon onClick={handleSelectorModalOpen} sx={{ width: 50, opacity: 1, fontSize: { xs: 36, sm: 47 }, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }} />
         </LightTooltip>
         <LightTooltip disableTouchListener enterDelay={350} title="play random station">
-          <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { xs: 38, sm: 50 }, width: 50, color: "white", cursor: "pointer" }} />
+          <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { xs: 38, sm: 50 }, width: 50, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }} />
       </LightTooltip>
         <LightTooltip disableTouchListener enterDelay={350} title="faq">
-          <HelpIcon onClick={handleFaqModalOpen} sx={{ fontSize: { xs: 38, sm: 43 }, ml:{xs: 0, lg: 1}, width: 50, color: "white", cursor: "pointer" }} />
+          <HelpIcon onClick={handleFaqModalOpen} sx={{ fontSize: { xs: 38, sm: 43 }, ml:{xs: 0, lg: 1}, width: 50, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }} />
         </LightTooltip>
-        <PlayArrowIcon onClick={playMusic} sx={{ display: showPlay(), fontSize: { xs: 53, md: 68 }, width: 50, color: "white", cursor: "pointer" }}/>
-        <PauseIcon onClick={pauseMusic} sx={{ display: showPause(), fontSize: { xs: 46, sm: 57 }, width: 50, color: "white", cursor: "pointer" }}/>
+        <PlayArrowIcon onClick={playMusic} sx={{ display: showPlay(), fontSize: { xs: 53, md: 68 }, width: 50, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }}/>
+        <PauseIcon onClick={pauseMusic} sx={{ display: showPause(), fontSize: { xs: 46, sm: 57 }, width: 50, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }}/>
         <Stack spacing={2} direction="row" alignItems="center" sx={{ ml:{xs: 0, lg: 2}, display: { xs: "none", lg: "flex" }, cursor: "pointer" }}>
-          <VolumeDown onClick={() => {setVolume(0)}} sx={{ color: "white", fontSize: 55 }}/>
+          <VolumeDown onClick={() => {setVolume(0)}} sx={{ color: "white", fontSize: 55, transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }}/>
           <Slider sx={{ width: 150 }} aria-label="Volume" value={volume} onChange={handleVolumeChange} />
-          <VolumeUp onClick={() => {setVolume(100)}} sx={{ color: "white", fontSize: 50 }}/>
+          <VolumeUp onClick={() => {setVolume(100)}} sx={{ color: "white", fontSize: 50, transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }}/>
         </Stack>
       </Box>
     </Box>

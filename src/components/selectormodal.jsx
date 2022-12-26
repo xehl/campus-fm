@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Box, Typography, Modal, Grid, TextField, AppBar, Button, Stack, Slide, Alert } from "@mui/material";
+import { Box, Typography, Modal, Grid, TextField, AppBar, Fade, Button, Stack, Slide, Alert } from "@mui/material";
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
 import stations from "../stations";
@@ -149,156 +149,160 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
     <Modal
     open={selectorOpen}
     onClose={handleClose}
+    closeAfterTransition  
     >
-      <Box 
-        sx={{
-          position: "absolute",
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          height: "80vh",
-          width: "85vw",
-          bgcolor: "#2e2e2e",
-          border: "1px solid #2e2e2e",
-          boxShadow: 2,
-          outline: 0,
-          overflowX: 'hidden',
-          overflowY: "auto",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          zIndex: 5001
-        }}
-      >
-        <AppBar
-          position="absolute"
+      <Fade in={selectorOpen}>
+        <Box 
           sx={{
+            position: "absolute",
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            height: "80vh",
+            width: "85vw",
+            bgcolor: "#2e2e2e",
+            border: "1px solid #2e2e2e",
+            boxShadow: 2,
+            outline: 0,
+            // transition: "0.3s",
+            overflowX: 'hidden',
+            overflowY: "auto",
             display: "flex",
-            flexDirection: {xs: "column", md: "row"},
+            flexDirection: "column",
             alignItems: "center",
-            textAlign: "center",
-            position: "sticky",
-            width: "100%",
-            height: "auto",
-            justifyContent: "space-between",
-            backgroundColor: "rgba(46,46,46,0.9)",
-            backdropFilter: "blur(2px)",
-            p: 1.5,
+            zIndex: 5001
           }}
         >
-          <Slide
-            direction="right"
-            in={alertOpen}
-            timeout={{ enter: 300, exit: 300 }}
-            addEndListener={() => {
-            setTimeout(() => {
-              setAlertOpen(false)
-            }, 1200);
+          <AppBar
+            position="absolute"
+            sx={{
+              display: "flex",
+              flexDirection: {xs: "column", md: "row"},
+              alignItems: "center",
+              textAlign: "center",
+              position: "sticky",
+              width: "100%",
+              height: "auto",
+              justifyContent: "space-between",
+              backgroundColor: "rgba(46,46,46,0.9)",
+              backdropFilter: "blur(2px)",
+              p: 1.5,
             }}
           >
-            <Alert severity="error" icon={false} sx={{position: "absolute", zIndex: 1000, fontFamily: "Share Tech Mono" }}>{alertMessage}</Alert>
-          </Slide>
-          <Stack direction="row" spacing={1} sx={{mr: {xs: 0, sm: 2}, width: { xs: "70vw", sm: 180}, alignItems: "center", justifyContent:"center" }}>
-            <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 14, sm: 16 }} sx={{ width: { xs: "auto", md: 130}}} color="white">
-              Select up to 10 stations:
-            </Typography>
-            <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 20, sm: 30 }} sx={{ m: 2, width: 36, p: {xs: .4, sm: .7}, borderRadius: 1, background: "white" }} color="black">
-              <b>{stationQueue.length}</b>
-            </Typography>
-          </Stack>
-          {/* can't figure out how to make size prop conditional; just gonna display/hide two textfields */}
-          <TextField
-            id="outlined-basic"
-            variant="outlined"
-            placeholder="search"
-            autoComplete="off"
-            onChange={e => handleSearch(e)}
-            InputProps={{ style: { fontSize: 15, fontFamily: "Share Tech Mono", background: "white", } }}
-            fullWidth
-            sx={{
-              display: {xs: "none", sm: "block"}, 
-              width: {xs: "70vw", sm:"70vw", md: 350},
-              borderRadius: 1,
-              mb: 1,
-              mt: 1,
-            }} />
-          <TextField
-            id="outlined-basic"
-            variant="outlined"
-            placeholder="search"
-            autoComplete="off"
-            size= "small"
-            onChange={e => handleSearch(e)}
-            fullWidth
-            InputProps={{ style: { fontSize: 15, fontFamily:"Share Tech Mono", background: "white"} }}
-            sx={{
-              display: {xs: "block", sm: "none"}, 
-              width: {xs: "70vw", md: 350},
-              mb: .5,
-              mt: 1,
-            }} />
-            <Stack direction={{ xs: "column", md: "row" }} sx={{ ml: {md: 2, xl: 3}, m: 0.5, width: { xs: "70vw", sm: "auto" }, height: {xs: "auto", lg: 54}}} spacing={1}>
-              <Stack spacing={1} direction="row" sx={{ width: { xs: "70vw", md: "auto" }, justifyContent: "center" }}>
-                <LightTooltip disableTouchListener enterDelay={350} title="select 10 random stations">
-                  <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ width: { xs: "50%", md: "auto" }, borderColor: "white", ':hover': { borderColor: '#909090' } }}>
-                    <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
-                      surprise me
-                    </Typography>
-                  </Button>
-                </LightTooltip>
-                <LightTooltip disableTouchListener enterDelay={350} title="add 1 random station to the selected list">
-                    <Button variant="outlined" disableElevation onClick={addOneRandom} sx={{ height: "100%", width: { xs: "50%", md: "auto" }, borderColor: "white", ':hover': { borderColor: '#909090' } }}>
-                      <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 13, sm: 15 }} color="white">
-                        add 1 random
+            <Slide
+              direction="right"
+              in={alertOpen}
+              timeout={{ enter: 300, exit: 300 }}
+              addEndListener={() => {
+              setTimeout(() => {
+                setAlertOpen(false)
+              }, 1200);
+              }}
+            >
+              <Alert severity="error" icon={false} sx={{position: "absolute", zIndex: 1000, fontFamily: "Share Tech Mono" }}>{alertMessage}</Alert>
+            </Slide>
+            <Stack direction="row" spacing={1} sx={{mr: {xs: 0, sm: 2}, width: { xs: "70vw", sm: 180}, alignItems: "center", justifyContent:"center" }}>
+              <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 14, sm: 16 }} sx={{ width: { xs: "auto", md: 130}}} color="white">
+                Select up to 10 stations:
+              </Typography>
+              <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 20, sm: 30 }} sx={{ m: 2, width: 36, p: {xs: .4, sm: .7}, borderRadius: 1, background: "white" }} color="black">
+                <b>{stationQueue.length}</b>
+              </Typography>
+            </Stack>
+            {/* can't figure out how to make size prop conditional; just gonna display/hide two textfields */}
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
+              placeholder="search"
+              autoComplete="off"
+              onChange={e => handleSearch(e)}
+              InputProps={{ style: { fontSize: 15, fontFamily: "Share Tech Mono", background: "white", } }}
+              fullWidth
+              sx={{
+                display: {xs: "none", sm: "block"}, 
+                width: {xs: "70vw", sm:"70vw", md: 350},
+                borderRadius: 1,
+                mb: 1,
+                mt: 1,
+              }} />
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
+              placeholder="search"
+              autoComplete="off"
+              size= "small"
+              onChange={e => handleSearch(e)}
+              fullWidth
+              InputProps={{ style: { fontSize: 15, fontFamily:"Share Tech Mono", background: "white"} }}
+              sx={{
+                display: {xs: "block", sm: "none"}, 
+                width: {xs: "70vw", md: 350},
+                mb: .5,
+                mt: 1,
+              }} />
+              <Stack direction={{ xs: "column", md: "row" }} sx={{ ml: {md: 2, xl: 3}, m: 0.5, width: { xs: "70vw", sm: "auto" }, height: {xs: "auto", lg: 54}}} spacing={1}>
+                <Stack spacing={1} direction="row" sx={{ width: { xs: "70vw", md: "auto" }, justifyContent: "center" }}>
+                  <LightTooltip disableTouchListener enterDelay={350} title="select 10 random stations">
+                    <Button variant="outlined" disableElevation onClick={pickTenRandom} sx={{ width: { xs: "50%", md: "auto" }, borderColor: "white", ':hover': { borderColor: '#909090' } }}>
+                      <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
+                        surprise me
                       </Typography>
                     </Button>
                   </LightTooltip>
+                  <LightTooltip disableTouchListener enterDelay={350} title="add 1 random station to the selected list">
+                      <Button variant="outlined" disableElevation onClick={addOneRandom} sx={{ height: "100%", width: { xs: "50%", md: "auto" }, borderColor: "white", ':hover': { borderColor: '#909090' } }}>
+                        <Typography fontFamily="Share Tech Mono" fontSize={{ xs: 13, sm: 15 }} color="white">
+                          add 1 random
+                        </Typography>
+                      </Button>
+                    </LightTooltip>
+                </Stack>
+                <Stack spacing={1} direction="row" sx={{ width: {xs: "70vw", md: "auto"}, justifyContent:"center" }}>
+                  <LightTooltip disableTouchListener enterDelay={350} title="clear all selected stations">
+                    <Button variant="outlined" disableElevation onClick={clearStations} sx={{ width: { xs: "50%", md: "auto" }, borderColor: "white", ':hover': { borderColor: '#909090' } }}>
+                      <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
+                        clear all
+                      </Typography>
+                    </Button>
+                  </LightTooltip>
+                  <LightTooltip disableTouchListener enterDelay={350} title="save and load selected stations">
+                    <Button variant="contained" disableElevation onClick={replaceStations} sx={{ width: {xs: "50%", md: "auto", xl: 200}, backgroundColor:"white", borderColor: "white", ':hover': { background: "#909090"} }}>
+                      <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="#2e2e2e">
+                        save new selection
+                      </Typography>
+                    </Button>
+                  </LightTooltip>
+                </Stack>
               </Stack>
-              <Stack spacing={1} direction="row" sx={{ width: {xs: "70vw", md: "auto"}, justifyContent:"center" }}>
-                <LightTooltip disableTouchListener enterDelay={350} title="clear all selected stations">
-                  <Button variant="outlined" disableElevation onClick={clearStations} sx={{ width: { xs: "50%", md: "auto" }, borderColor: "white", ':hover': { borderColor: '#909090' } }}>
-                    <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="white">
-                      clear all
-                    </Typography>
-                  </Button>
-                </LightTooltip>
-                <LightTooltip disableTouchListener enterDelay={350} title="save and load selected stations">
-                  <Button variant="contained" disableElevation onClick={replaceStations} sx={{ width: {xs: "50%", md: "auto", xl: 200}, backgroundColor:"white", borderColor: "white", ':hover': { background: "#909090"} }}>
-                    <Typography fontFamily="Share Tech Mono" fontSize={{xs: 13, sm: 15}} color="#2e2e2e">
-                      save new selection
-                    </Typography>
-                  </Button>
-                </LightTooltip>
-              </Stack>
-            </Stack>
-          </AppBar>
-        <Grid
-          container
-          rowSpacing={2}
-          columnSpacing={2}
-          sx={{
-            p: 2,
-            display: "flex",
-            justifyContent: "center",
-            backgroundColor: "#2e2e2e",
-          }}
-          >
-        {searchDisplayed.map((station) => {
-          return (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              lg={3}
-              key={station.id}
+            </AppBar>
+          <Grid
+            container
+            rowSpacing={2}
+            columnSpacing={2}
+            sx={{
+              p: 2,
+              display: "flex",
+              justifyContent: "center",
+              backgroundColor: "#2e2e2e",
+            }}
             >
-              <ModalCard station={station} stationQueue={stationQueue} setStationQueue={setStationQueue} setAlertMessage={setAlertMessage} setAlertOpen={setAlertOpen}/>
-            </Grid>
-          );
-        })}
-        </Grid>
-      </Box>
+          {searchDisplayed.map((station) => {
+            return (
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                lg={3}
+                key={station.id}
+              >
+                <ModalCard station={station} stationQueue={stationQueue} setStationQueue={setStationQueue} setAlertMessage={setAlertMessage} setAlertOpen={setAlertOpen}/>
+              </Grid>
+            );
+          })}
+          </Grid>
+        </Box>
+      </Fade>
     </Modal>
   )
 }
