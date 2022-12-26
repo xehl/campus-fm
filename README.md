@@ -21,7 +21,7 @@
 
 Campus FM allows you to live stream college radio stations. The player is designed to facilitate seamless switching between stations, and the interface encourages users to explore and discover new stations around the world.
 
-In its first month after going live, it was featured on [Reddit](https://www.reddit.com/r/InternetIsBeautiful/comments/ydfvj9/campusfm_i_made_this_site_to_listen_to_college/), [The Hustle](https://thehustle.co/%F0%9F%8C%8E-who-bought-miss-universe/), and [Hacker News](https://news.ycombinator.com/item?id=33608892), acquiring over 15,000 users in 120+ countries.
+In its first month after going live, it was featured on [Reddit](https://www.reddit.com/r/InternetIsBeautiful/comments/ydfvj9/campusfm_i_made_this_site_to_listen_to_college/), [The Hustle](https://thehustle.co/%F0%9F%8C%8E-who-bought-miss-universe/), and [Hacker News](https://news.ycombinator.com/item?id=33608892), acquiring over 15,000 users in 150+ countries.
 
 You can check out the web app [here](https://www.campus-fm.com/).
 
