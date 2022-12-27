@@ -1,4 +1,4 @@
-import { Box, Typography, Modal, Divider, List, ListItem, Link } from "@mui/material";
+import { Box, Typography, Modal, Divider, List, ListItem, Link, Fade } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ReactGA from "react-ga4";
@@ -45,8 +45,8 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
     open={faqOpen}
     onClose={handleFaqClose}
     >
-      <>
       <ThemeProvider theme={faqTheme}>
+      <Fade in={faqOpen}>
         <Box 
           sx={{
             position: "absolute",
@@ -151,7 +151,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   In order to smoothly switch between streams, Campus FM keeps a small cache of audio data available for each station. After some time has passed, the cached audio gets stale and the app requests more recent content. The station is grayed out during this loading period.
                 </Typography>
               </Typography>
-              </ListItem>
+            </ListItem>
             <Divider variant="inset" color="#b0b0b0" />
             <ListItem sx={{p: 0}}>
               <Typography sx={{
@@ -168,7 +168,27 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                  IT practices aren't consistent across all college radio stations. Sometimes they have security restrictions that prevent their audio streams from loading on certain apps and devices. And sometimes the online audio streams just go offline for a while.
+                  IT practices and programming schedules aren't always consistent at college radio stations. Sometimes the stations run into technical difficulties, and sometimes they just go offline for a while. If the station is online but not playable on Campus FM, it's likely that they have security restrictions that prevent their audio streams from loading on your device (HTTPS/CORS issues appear to be most common on Chrome for Desktop).
+                </Typography>
+              </Typography>
+            </ListItem>
+            <Divider variant="inset" color="#b0b0b0" />
+            <ListItem sx={{p: 0}}>
+              <Typography sx={{
+                width: "100%",
+                boxSizing: "border-box",
+                p: 3,
+                fontWeight: "bold",
+                color: "white",
+                fontStyle: "italic"
+              }}>
+                  Does it require a lot of data to stream so many stations at once?
+                <Typography sx={{
+                  mt: 2,
+                  color: "#e8e8e8",
+                  fontStyle: "normal"
+                }}>
+                  No, not really. The web app periodically caches data from your selected stations, and the MP3 format isn't demanding on bandwidth. If you have reliable enough data to stream a low quality video, then Campus FM should work just fine.
                 </Typography>
               </Typography>
             </ListItem>
@@ -208,14 +228,14 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
                   color: "#e8e8e8",
                   fontStyle: "normal"
                 }}>
-                    I don't have plans to monetize right now, but you can buy me a coffee <Link target="_blank" onClick={coffeeLinkEvent} href="https://www.buymeacoffee.com/ehlee">here</Link> if you're feeling generous!
+                    I don't have plans to monetize right now, but if you're feeling generous you can buy me a coffee <Link target="_blank" onClick={coffeeLinkEvent} href="https://www.buymeacoffee.com/ehlee">here</Link>!
                 </Typography>
               </Typography>
             </ListItem>
           </List>
         </Box>
+      </Fade>
       </ThemeProvider>
-      </>
     </Modal>
   )
 }
