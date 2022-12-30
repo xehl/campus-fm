@@ -119,7 +119,7 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
         mt: {xs: 1, sm: 0},
         ml: {xs: 0, xl: 5},
         mb: { xs: 1, sm: 1, md: 1, xl: 0 },
-        width: { xs: "70%", sm: 550, md: 600, xl: 700 },
+        width: { xs: "80%", sm: 550, md: 600, xl: 700 },
       }}>
         <LightTooltip disableTouchListener enterDelay={350} title="load new stations" sx={{fontFamily: "Share Tech Mono"}}>
           <DashboardCustomizeIcon onClick={handleSelectorModalOpen} sx={{ width: 50, opacity: 1, fontSize: { xs: 36, sm: 47 }, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }} />
