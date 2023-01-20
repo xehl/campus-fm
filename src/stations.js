@@ -1433,8 +1433,7 @@ const stations = [
     public_private: "Public",
     city: "Bowling Green",
     state: "OH",
-    station_image:
-      "https://bloximages.chicago2.vip.townnews.com/bgfalconmedia.com/content/tncms/assets/v3/editorial/d/9c/d9cf413e-b871-11e7-9238-3b66274f0e2b/59eebecc64bba.image.jpg",
+    station_image: "https://cdn-radiotime-logos.tunein.com/s27441d.png",
     college_image:
       "https://content.sportslogos.net/logos/30/620/full/bowling_green_falcons_logo_secondary_20043807.png",
     palette: ["#fbfbfa", "#4d2404", "#eb7b3b", "#e0b186"],
@@ -1810,6 +1809,22 @@ const stations = [
     college_image:
       "https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Carnegie_Mellon_University_seal.svg/1200px-Carnegie_Mellon_University_seal.svg.png",
     palette: ["#243647", "#e6a21a", "#fbfbf9", "#8b3142"],
+  },
+  {
+    id: 117,
+    call_sign: "WSBU",
+    broadcast_frequency: "88.3",
+    audio_url: "https://22213.live.streamtheworld.com/WSBUFMAAC.aac",
+    station_url: "https://wsbufm.com/",
+    college_name: "St. Bonaventure University",
+    public_private: "Private",
+    city: "St. Bonaventure",
+    state: "NY",
+    station_image:
+      "https://pbs.twimg.com/profile_images/1488244601135763456/-w1qGgD-_400x400.jpg",
+    college_image:
+      "https://i.pinimg.com/originals/8e/70/bf/8e70bf12074aa24e5e32688b7a4aa56c.gif",
+    palette: ["#651d0d", "#e6e1e0", "#f2d282", "#b48c8c"],
   },
   // TEMPLATE
   // {
