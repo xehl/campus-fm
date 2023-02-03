@@ -47,7 +47,7 @@ export default function App() {
         "KVRX",
         "WUCF",
         "WSUM",
-        "KUNM",
+        "KFJC",
         "WSBF",
         "WERS",
       ];
