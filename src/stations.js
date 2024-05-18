@@ -1826,6 +1826,22 @@ const stations = [
       "https://i.pinimg.com/originals/8e/70/bf/8e70bf12074aa24e5e32688b7a4aa56c.gif",
     palette: ["#651d0d", "#e6e1e0", "#f2d282", "#b48c8c"],
   },
+  {
+    id: 118,
+    call_sign: "WBOR",
+    broadcast_frequency: "91.1",
+    audio_url: "https://listen.wbor.org/stream",
+    station_url: "https://wbor.org",
+    college_name: "Bowdoin College",
+    public_private: "Private",
+    city: "Brunswick",
+    state: "ME",
+    station_image:
+      "https://cdn-profiles.tunein.com/s27559/images/logog.png?t=1",
+    college_image:
+      "https://www.usaislanders.com/sites/default/files/BowdoinLogo.png",
+    palette: ["#0E1111", "#EEEEEE", ],
+  }
   // TEMPLATE
   // {
   //   id: 104,
