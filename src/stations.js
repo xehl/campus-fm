@@ -225,7 +225,7 @@ const stations = [
     station_image:
       "https://static.mytuner.mobi/media/tvos_radios/kNFMSSg6QR.png",
     college_image:
-      "https://upload.wikimedia.org/wikipedia/en/a/a8/W%26L_Generals.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Wash-lee_logo_from_NCAA.svg/1200px-Wash-lee_logo_from_NCAA.svg.png",
     palette: ["#093698", "#e6e8ea", "#0e0e0e", "#799fc2"],
   },
   {
@@ -304,7 +304,7 @@ const stations = [
     city: "Raleigh",
     state: "NC",
     station_image:
-      "https://storage.googleapis.com/stateless-wknc-org/sites/1/2020/10/wknc881-bow.png",
+      "https://wknc.org/wp-content/uploads/2020/10/wknc881-bow.png",
     college_image:
       "https://trademarks.ncsu.edu/wp-content/uploads/2016/04/cropped-brick-s-1.png",
     palette: ["#cb262e", "#0c0c0e", "#f6f3f3", "#ec8c9c"],
@@ -514,7 +514,8 @@ const stations = [
     public_private: "Public",
     city: "Fresno",
     state: "CA",
-    station_image: "http://kfsr.org/wp-content/themes/kfsr/images/logo.png",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/f/fd/KFSR-FM_90.7_radio_logo.png",
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Fresno_State_Bulldogs_baseball_logo.svg/1118px-Fresno_State_Bulldogs_baseball_logo.svg.png",
     palette: ["#142b4b", "#c31434", "#7d1c3c", "#9d1635"],
@@ -725,7 +726,7 @@ const stations = [
     station_image:
       "https://chuo.fm/wp-content/uploads/2017/03/CHUO-Logo-web600x600-06.png",
     college_image:
-      "http://www.uottawa.ca/brand/sites/www.uottawa.ca.brand/files/uottawa_ver_black.png",
+      "https://logowik.com/content/uploads/images/university-of-ottawa5840.jpg",
     palette: ["#040404", "#080404", "#080404", "#080404"],
   },
   {
@@ -757,7 +758,7 @@ const stations = [
     station_image:
       "https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/07/c5/8a/07c58abd-ce85-0f16-e320-fe29fe92f960/source/512x512bb.jpg",
     college_image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Harvard_shield_wreath.svg/1200px-Harvard_shield_wreath.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Harvard_Crimson_logo.svg/1737px-Harvard_Crimson_logo.svg.png",
     palette: ["#151d24", "#f9f9f9", "#a6883c", "#a31c33"],
   },
   {
@@ -932,7 +933,7 @@ const stations = [
     city: "Atlanta",
     state: "GA",
     station_image:
-      "https://upload.wikimedia.org/wikipedia/en/a/ae/WRAS_Logo.png",
+      "https://upload.wikimedia.org/wikipedia/commons/a/ae/WRAS_Logo.png",
     college_image:
       "https://commkit.gsu.edu/files/2021/05/GSU-Athletics-Primary-3C-RGB.png",
     palette: ["#e7bbc8", "#043ca4", "#6484cc", "#2a59b5"],
@@ -1031,7 +1032,7 @@ const stations = [
     city: "Pittsburgh",
     state: "PA",
     station_image:
-      "https://wptsradio.org/wp-content/uploads/2015/12/WPTS-Square-Logo.png",
+      "https://i.iheart.com/v3/re/assets.streams/65aea27dbf0c3bda23d8ce93?ops=fit(240%2C240)",
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Pitt_Panthers_wordmark.svg/1200px-Pitt_Panthers_wordmark.svg.png",
     palette: ["#faba1c", "#043493", "#57626b", "#77745c"],
@@ -1050,7 +1051,7 @@ const stations = [
     station_image:
       "https://upload.wikimedia.org/wikipedia/commons/7/79/WMFO_91.5FM_Station_Logo.jpg",
     college_image:
-      "https://upload.wikimedia.org/wikipedia/en/2/22/Tufts_Jumbos_logo.png",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tufts_Jumbos_logo.svg/1200px-Tufts_Jumbos_logo.svg.png",
     palette: ["#c8c2bb", "#3c8cdb", "#89a6c7", "#66ace1"],
   },
   {
@@ -1180,7 +1181,7 @@ const stations = [
     station_image:
       "https://yt3.ggpht.com/ytc/AMLnZu9sBQKzhnyi-feCpAHK_LR8cxrkBPgA2OR3lVD3=s900-c-k-c0x00ffffff-no-rj",
     college_image:
-      "https://upload.wikimedia.org/wikipedia/en/7/72/Case_Western_Reserve_University_Spartans_logo_mascot.png",
+      "https://case.edu/brand/sites/default/files/styles/large/public/2023-05/Case-Western-Reserve-University-Seal_RGB-Blue_0.jpg?itok=-nCVOa7R",
     palette: ["#223e4e", "#939ea6", "#738493", "#687c8c"],
   },
   {
@@ -1209,7 +1210,8 @@ const stations = [
     public_private: "Public",
     city: "College Station",
     state: "TX",
-    station_image: "https://kanm.tamu.edu/_assets/img/logo/trans_med.png",
+    station_image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHFk-XFo-aNNa9dxJCbzpS3Dkdul82_oCZQpSGHhFbQw&s",
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Texas_A%26M_University_logo.svg/1246px-Texas_A%26M_University_logo.svg.png",
     palette: ["#540404", "#fbfbfb", "#a47c7c", "#a47474"],
@@ -1419,8 +1421,7 @@ const stations = [
     state: "WA",
     station_image:
       "https://images.squarespace-cdn.com/content/v1/5858568ad1758e3ed9b61481/1516832569469-9P3G8KB1TQ8QCOO1TPIO/b+12+a+reverse+btransparent.png",
-    college_image:
-      "https://www.evergreen.edu/sites/default/files/primary-logo-sample.png",
+    college_image: "https://nwccu.org/wp-content/uploads/2024/01/TESC-Logo.png",
     palette: ["#f9faf9", "#286828", "#85a485", "#7ca47c"],
   },
   {
@@ -1465,8 +1466,7 @@ const stations = [
     public_private: "Private",
     city: "Boston",
     state: "MA",
-    station_image:
-      "https://wrbbradio.org/wp-content/uploads/2013/11/wrbb_retro-1024x999.jpeg",
+    station_image: "https://wrbbradio.org/img/logo.png",
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/0/01/Northeastern_Huskies_logo.png",
     palette: ["#cb0404", "#040404", "#cfa4a5", "#5c5c5c"],
@@ -1481,8 +1481,7 @@ const stations = [
     public_private: "Private",
     city: "Rochester",
     state: "NY",
-    station_image:
-      "https://upload.wikimedia.org/wikipedia/en/2/2a/WITR_logo_2022.jpg",
+    station_image: "https://witr.rit.edu/images/shows/default.png",
     college_image:
       "https://1000logos.net/wp-content/uploads/2019/10/RIT-Tigers-Logo-1976.png",
     palette: ["#f26b1c", "#1d1a1a", "#54545c", "#f4f4f4"],
@@ -1532,7 +1531,7 @@ const stations = [
     station_image:
       "https://naccchart.com/wp-content/uploads/2019/07/wsuwlogo4.jpg",
     college_image:
-      "https://upload.wikimedia.org/wikipedia/en/a/ae/Wisconsin%E2%80%93Whitewater_Warhawks_Logo.png",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/UW%E2%80%93Whitewater_Warhawks_primary_logo.svg/1200px-UW%E2%80%93Whitewater_Warhawks_primary_logo.svg.png",
     palette: ["#3a2656", "#e7e7e8", "#aba7b6", "#a090c4"],
   },
   {
@@ -1662,7 +1661,7 @@ const stations = [
     station_image:
       "http://www.universidade.fm/wp-content/uploads/2018/10/UFM_quadrado.png",
     college_image:
-      "https://upload.wikimedia.org/wikipedia/en/f/fc/Universidade_de_Tr%C3%A1s-os-Montes_e_Alto_Douro_%28logo%29.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ20HtiBs-uHVPu6KEV7KjUhwdPnDD9QzGAbaJ-orlKnQ&s",
     palette: ["#052c82", "#8d0505", "#840404", "#7c6a8a"],
   },
   {
