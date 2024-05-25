@@ -25,7 +25,7 @@ const stations = [
     city: "Berkeley",
     state: "CA",
     station_image:
-      "https://www.kalx.berkeley.edu/sites/default/files/styles/large/public/KALX-55.png?itok=RaHLCXkA",
+      "https://www.kalx.berkeley.edu/wp-content/uploads/2023/08/kalx-logo-no-slogan.png",
     college_image: "https://wwll.com/images/logos/teams/cal-256.png",
     palette: ["#092f63", "#f2c134", "#fcf9f3", "#4e566c"],
   },
@@ -72,7 +72,7 @@ const stations = [
     city: "Columbia",
     state: "MO",
     station_image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Kcou-logo.jpg/200px-Kcou-logo.jpg",
+      "https://zeno.fm/_next/image/?url=https%3A%2F%2Fimages.zeno.fm%2FaF2s0GnLVx4-MGD1_4wNuVtc2ZGyuQOu3A3Ld6Od1Pk%2Frs%3Afit%3A240%3A240%2Fg%3Ace%3A0%3A0%2FaHR0cHM6Ly9zdHJlYW0tdG9vbHMuemVub21lZGlhLmNvbS9jb250ZW50L3N0YXRpb25zLzc2ZWM3NzU5LWM4YWUtNDkzOC1iZmI0LTc0MjU2N2FkOTZjNi9pbWFnZS8_dXBkYXRlZD0xNzEzOTA1MzYzMDAw.webp&w=3840&q=100",
     college_image:
       "https://assets-sports.thescore.com/basketball/team/684/logo.png",
     palette: ["#edc96f", "#120f07", "#9d988a", "#7c7c7c"],
@@ -627,7 +627,7 @@ const stations = [
     station_image:
       "https://wers.org/wp-content/uploads/2017/12/WERS_socialmedia_nowaves-04.png",
     college_image:
-      "https://teamcolorcodes.com/wp-content/uploads/2022/06/Emerson-College-Lions-logo-1.png",
+      "https://www.ncaa.com/sites/default/files/images/logos/schools/bgl/emerson.svg",
     palette: ["#facb37", "#252424", "#7d7553", "#846c2c"],
   },
   {
