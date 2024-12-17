@@ -609,8 +609,7 @@ const stations = [
     public_private: "Public",
     city: "Orlando",
     state: "FL",
-    station_image:
-      "https://d1qbemlbhjecig.cloudfront.net/prod/filer_public/wucf-bento-live-pbs/2020%20Logo/cb416156b9_89.9-circle-logo-black.png",
+    station_image: "https://en.wikipedia.org/wiki/WUCF-FM",
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/UCF_Knights_logo.svg/1200px-UCF_Knights_logo.svg.png",
     palette: ["#040404", "#b3a36c", "#fbfbfb", "#5c4c34"],
@@ -1147,8 +1146,7 @@ const stations = [
     city: "Newton",
     state: "MA",
     station_image: "https://upload.wikimedia.org/wikipedia/en/3/37/WZBC903.png",
-    college_image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Boston_College_Eagles_logo.svg/800px-Boston_College_Eagles_logo.svg.png",
+    college_image: "https://en.wikipedia.org/wiki/Boston_College",
     palette: ["#5e212d", "#ddceab", "#ac8c7b", "#948c8c"],
   },
   {
@@ -1245,7 +1243,7 @@ const stations = [
     station_image:
       "https://backend.xpn.org/wp-content/uploads/2022/10/Screen-Shot-2022-10-28-at-3.58.45-PM-350x350.png",
     college_image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Penn_Quakers_logo.svg/840px-Penn_Quakers_logo.svg.png",
+      "https://yt3.googleusercontent.com/ytc/AIdro_lwUUc7sdLDjt8YLefISRwHzNBtqHVsrhmkJmv2sjhoT6M=s900-c-k-c0x00ffffff-no-rj",
     palette: ["#fbfbfb", "#051d5c", "#9c0404", "#7384a4"],
   },
   {
@@ -1515,7 +1513,7 @@ const stations = [
     station_image:
       "https://www.kexp.org/media/filer_public_thumbnails/filer_public/81/10/8110b8e4-d642-468a-a992-281904e8ba38/wmse.gif__600x600_q85_crop_subsampling-2_upscale.png",
     college_image:
-      "https://www.theharlemvalleynews.net/wp-content/uploads/2021/12/milw.png",
+      "https://en.wikipedia.org/wiki/Milwaukee_School_of_Engineering",
     palette: ["#a40c04", "#a80c04", "#a80c04", "#a80c04"],
   },
   {
@@ -1677,7 +1675,7 @@ const stations = [
     station_image:
       "https://static.mytuner.mobi/media/tvos_radios/gs8fzckgerrp.png",
     college_image:
-      "https://grupoceu.pt/wp-content/uploads/2020/10/ual-logo.png",
+      "https://autonoma.pt/wp-content/uploads/2018/01/logoUAL1.png",
     palette: ["#0474a4", "#050505", "#3697b9", "#5c5c5c"],
   },
   {
