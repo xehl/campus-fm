@@ -1,0 +1,123 @@
+<!-- TO USE: 
+  1. Enter this on the console from the src directory:
+    
+    python3 -m http.server  
+  
+  2. Then on the browser, visit http://localhost:8000/linkTester.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Link Tester</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .image-item {
+            text-align: center;
+            width: 200px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        .broken {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Link Tester</h1>
+    <div class="image-container" id="imageContainer"></div>
+
+    <script type="module">
+      import stations from './stations.js';
+  
+      const imageContainer = document.getElementById('imageContainer');
+  
+      // Helper function to load an image and detect if it's broken
+      const loadImage = (imageUrl, altText, brokenMessage) => {
+          return new Promise(resolve => {
+              const wrapper = document.createElement('div');
+              wrapper.className = 'image-item';
+  
+              const img = document.createElement('img');
+              img.src = imageUrl;
+              img.alt = altText;
+              img.style.width = '100%';
+  
+              let isBroken = false;
+  
+              img.onload = () => resolve({ element: wrapper, isBroken });
+              img.onerror = () => {
+                  isBroken = true;
+                  wrapper.innerHTML = `
+                      <p class='broken'>${brokenMessage}</p>
+                      <p>${imageUrl}</p>
+                  `;
+                  resolve({ element: wrapper, isBroken });
+              };
+  
+              const caption = document.createElement('p');
+              caption.textContent = altText.toLowerCase();
+  
+              wrapper.appendChild(img);
+              wrapper.appendChild(caption);
+          });
+      };
+  
+      // Function to append sorted images
+      const appendImages = (images, sectionTitle) => {
+          const sectionHeader = document.createElement('h2');
+          sectionHeader.textContent = sectionTitle;
+          imageContainer.appendChild(sectionHeader);
+  
+          const brokenImages = images.filter(img => img.isBroken);
+          const workingImages = images.filter(img => !img.isBroken);
+  
+          [...brokenImages, ...workingImages].forEach(({ element }) =>
+              imageContainer.appendChild(element)
+          );
+      };
+  
+      // Collect station images
+      const stationImages = stations.map(station =>
+          loadImage(
+              station.station_image,
+              `[${station.call_sign}] station logo`,
+              `[${station.call_sign.toUpperCase()}] STATION LOGO BROKEN`
+          )
+      );
+  
+      // Collect college images
+      const collegeImages = stations.map(station =>
+          loadImage(
+              station.college_image,
+              `[${station.college_name}] college logo`,
+              `[${station.college_name.toUpperCase()}] COLLEGE LOGO BROKEN`
+          )
+      );
+  
+      // Process all images and append them
+      Promise.all(stationImages).then(images => {
+          appendImages(images, 'Station Images');
+  
+          // Add 100px whitespace divider
+          const divider = document.createElement('div');
+          divider.style.height = '100px';
+          divider.style.width = '100%';
+          imageContainer.appendChild(divider);
+  
+          // Process college images
+          Promise.all(collegeImages).then(collegeImages => {
+              appendImages(collegeImages, 'College Images');
+          });
+      });
+  </script>
+</body>
+</html>
