@@ -3,7 +3,7 @@
     
     python3 -m http.server  
   
-  2. Then on the browser, visit http://localhost:8000/linkTester.html
+  2. Then on the browser, visit http://localhost:8000/imageLinkTester.html
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +40,20 @@
   
       const imageContainer = document.getElementById('imageContainer');
   
+      // Create a container for the list of broken links
+      const brokenLinksContainer = document.createElement('div');
+      const brokenLinksTitle = document.createElement('h2');
+      brokenLinksTitle.textContent = 'Broken Links';
+      brokenLinksContainer.appendChild(brokenLinksTitle);
+  
+      const brokenLinksList = document.createElement('ul');
+      brokenLinksContainer.appendChild(brokenLinksList);
+  
+      // Add the broken links container to the top of the body
+      document.body.insertBefore(brokenLinksContainer, imageContainer);
+  
+      let hasBrokenLinks = false; // Flag to check for broken images
+  
       // Helper function to load an image and detect if it's broken
       const loadImage = (imageUrl, altText, brokenMessage) => {
           return new Promise(resolve => {
@@ -56,10 +70,17 @@
               img.onload = () => resolve({ element: wrapper, isBroken });
               img.onerror = () => {
                   isBroken = true;
+                  hasBrokenLinks = true; // Mark that there are broken images
                   wrapper.innerHTML = `
                       <p class='broken'>${brokenMessage}</p>
                       <p>${imageUrl}</p>
                   `;
+  
+                  // Add to broken links list
+                  const listItem = document.createElement('li');
+                  listItem.textContent = altText + ' broken';
+                  brokenLinksList.appendChild(listItem);
+  
                   resolve({ element: wrapper, isBroken });
               };
   
@@ -116,8 +137,13 @@
           // Process college images
           Promise.all(collegeImages).then(collegeImages => {
               appendImages(collegeImages, 'College Images');
+  
+              // Check for broken images
+              if (!hasBrokenLinks) {
+                  brokenLinksList.innerHTML = `<p>All images are healthy! Check them out below :)</p>`;
+              }
           });
       });
-  </script>
+  </script>  
 </body>
 </html>

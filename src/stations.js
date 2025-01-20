@@ -416,8 +416,7 @@ const stations = [
     public_private: "Private",
     city: "Troy",
     state: "NY",
-    station_image:
-      "http://images.radio.orange.com/radios/large_wrpi_915_fm_troy_ny.png",
+    station_image: "https://cdn-radiotime-logos.tunein.com/s22546g.png",
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/RPI_Engineers.svg/1200px-RPI_Engineers.svg.png",
     palette: ["#e3241c", "#242424", "#70241d", "#96241c"],
@@ -608,7 +607,8 @@ const stations = [
     public_private: "Public",
     city: "Orlando",
     state: "FL",
-    station_image: "https://en.wikipedia.org/wiki/WUCF-FM",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/commons/1/17/WUCF_FM_%282019%29.svg",
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/UCF_Knights_logo.svg/1200px-UCF_Knights_logo.svg.png",
     palette: ["#040404", "#b3a36c", "#fbfbfb", "#5c4c34"],
@@ -1659,7 +1659,7 @@ const stations = [
     city: "Vila Real",
     state: "Portugal",
     station_image:
-      "http://www.universidade.fm/wp-content/uploads/2018/10/UFM_quadrado.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8t5ilOWOBPQTdvD9iw1s5MvuFTXLwf3wVEA&s",
     college_image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ20HtiBs-uHVPu6KEV7KjUhwdPnDD9QzGAbaJ-orlKnQ&s",
     palette: ["#052c82", "#8d0505", "#840404", "#7c6a8a"],
