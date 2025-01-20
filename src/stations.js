@@ -25,7 +25,7 @@ const stations = [
     city: "Berkeley",
     state: "CA",
     station_image:
-      "https://www.kalx.berkeley.edu/wp-content/uploads/2023/08/kalx-logo-no-slogan.png",
+      "https://kalx.berkeley.edu/wp-content/uploads/2024/04/2024-kalx-hoodie-297x300.png",
     college_image: "https://wwll.com/images/logos/teams/cal-256.png",
     palette: ["#092f63", "#f2c134", "#fcf9f3", "#4e566c"],
   },
@@ -296,8 +296,7 @@ const stations = [
     id: 12,
     call_sign: "WKNC",
     broadcast_frequency: "88.1",
-    audio_url:
-      "https://cors-proxy.elfsight.com/http://173.193.205.96:7430/stream",
+    audio_url: "https://das-edge14-live365-dal02.cdnstream.com/a45877",
     station_url: "https://wknc.org/",
     college_name: "North Carolina State University",
     public_private: "Public",
@@ -563,7 +562,7 @@ const stations = [
     station_image:
       "https://d3wo5wojvuv7l.cloudfront.net/t_twitter_card/images.spreaker.com/original/96ede5aff67a67e3dac827c52c7bd2f6.jpg",
     college_image:
-      "https://www.volleyballbc.org/wp-content/uploads/2018/08/ubc-logo-png-transparent.png",
+      "https://cdn.freebiesupply.com/logos/large/2x/ubc-logo-png-transparent.png",
     palette: ["#d4b42c", "#24246c", "#acb84c", "#50704c"],
   },
   {
@@ -643,7 +642,8 @@ const stations = [
     state: "PA",
     station_image:
       "https://www.radio.net/images/broadcasts/10/84/28658/c300.png",
-    college_image: "https://gopsusports.com/images/logos/site/site.png",
+    college_image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjJoR3uzS2GS_KVfRbu6xI4yrvqto2iivTNQ&s",
     palette: ["#f2f3f6", "#062d64", "#7c8cb2", "#7182ac"],
   },
   {
@@ -741,7 +741,7 @@ const stations = [
     station_image:
       "https://pbs.twimg.com/profile_images/999195818480488449/zT5K6ZFh_400x400.jpg",
     college_image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/SiegelUniK%C3%B6ln.svg/1200px-SiegelUniK%C3%B6ln.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Siegel_Uni_K%C3%B6ln_%28grau%29.svg/1200px-Siegel_Uni_K%C3%B6ln_%28grau%29.svg.png",
     palette: ["#447ca4", "#f6f8f9", "#85a7c5", "#9cbccc"],
   },
   {
@@ -1145,8 +1145,10 @@ const stations = [
     public_private: "Private",
     city: "Newton",
     state: "MA",
-    station_image: "https://upload.wikimedia.org/wikipedia/en/3/37/WZBC903.png",
-    college_image: "https://en.wikipedia.org/wiki/Boston_College",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/commons/3/37/WZBC903.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Boston_College_Eagles_logo.svg/1200px-Boston_College_Eagles_logo.svg.png",
     palette: ["#5e212d", "#ddceab", "#ac8c7b", "#948c8c"],
   },
   {
@@ -1241,7 +1243,7 @@ const stations = [
     city: "Philadelphia",
     state: "PA",
     station_image:
-      "https://backend.xpn.org/wp-content/uploads/2022/10/Screen-Shot-2022-10-28-at-3.58.45-PM-350x350.png",
+      "https://pbs.twimg.com/profile_images/1337777242215165952/9OqjjiJI_400x400.jpg",
     college_image:
       "https://yt3.googleusercontent.com/ytc/AIdro_lwUUc7sdLDjt8YLefISRwHzNBtqHVsrhmkJmv2sjhoT6M=s900-c-k-c0x00ffffff-no-rj",
     palette: ["#fbfbfb", "#051d5c", "#9c0404", "#7384a4"],
@@ -1513,7 +1515,7 @@ const stations = [
     station_image:
       "https://www.kexp.org/media/filer_public_thumbnails/filer_public/81/10/8110b8e4-d642-468a-a992-281904e8ba38/wmse.gif__600x600_q85_crop_subsampling-2_upscale.png",
     college_image:
-      "https://en.wikipedia.org/wiki/Milwaukee_School_of_Engineering",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Milwaukee_School_of_Engineering_logo.svg/1200px-Milwaukee_School_of_Engineering_logo.svg.png",
     palette: ["#a40c04", "#a80c04", "#a80c04", "#a80c04"],
   },
   {
@@ -1770,7 +1772,7 @@ const stations = [
     station_image:
       "https://cdn-profiles.tunein.com/s153013/images/logod.jpg?t=161642",
     college_image:
-      "https://oeh-fhcw.at/wp-content/uploads/2021/12/cropped-oeh-fh-campus-wien.png",
+      "https://upload.wikimedia.org/wikipedia/commons/9/9a/FH_Technikum_Wien_logo.svg",
     palette: ["#d6d5cf", "#040404", "#f48cb4", "#40807c"],
   },
   {
