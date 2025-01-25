@@ -1881,7 +1881,7 @@ const stations = [
     station_image:
       "https://upload.wikimedia.org/wikipedia/en/1/18/WRVU_logo.png",
     college_image:
-      "https://commons.wikimedia.org/wiki/File:Vanderbilt_University_logo_transparent.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Vanderbilt_Commodores_logo.svg/640px-Vanderbilt_Commodores_logo.svg.png",
   },
   // TEMPLATE
   // {
