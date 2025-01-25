@@ -1825,6 +1825,50 @@ const stations = [
       "https://i.pinimg.com/originals/8e/70/bf/8e70bf12074aa24e5e32688b7a4aa56c.gif",
     palette: ["#651d0d", "#e6e1e0", "#f2d282", "#b48c8c"],
   },
+  {
+    id: 118,
+    call_sign: "KNTU",
+    broadcast_frequency: "88.1",
+    audio_url: "https://ice41.securenetsystems.net/KNTU",
+    station_url: "https://kntu.com/",
+    college_name: "University of North Texas",
+    public_private: "Public",
+    city: "Denton",
+    state: "TX",
+    station_image: "https://cdn-radiotime-logos.tunein.com/s34379g.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/North_Texas_Mean_Green_logo.svg/1200px-North_Texas_Mean_Green_logo.svg.png",
+  },
+  {
+    id: 119,
+    call_sign: "KSJS",
+    broadcast_frequency: "90.5 FM",
+    audio_url: "https://streaming.ksjs.sjsu.edu/",
+    station_url: "https://ksjs.org/",
+    college_name: "San Jose State University",
+    public_private: "Public",
+    city: "San Jose",
+    state: "CA",
+    station_image:
+      "https://spinitron.com/images/Station/13/1338-img_logo.225x225.jpg?v=1687376816",
+    college_image:
+      "https://content.sportslogos.net/logos/34/828/full/san_jose_state_spartans_logo_primary_2018_sportslogosnet-7512.png",
+  },
+  {
+    id: 120,
+    call_sign: "KCSN",
+    broadcast_frequency: "88.5 FM",
+    audio_url: "https://stream1.thesocalsound.org/1",
+    station_url: "https://www.thesocalsound.org/",
+    college_name: "California State University, Northridge",
+    public_private: "Public",
+    city: "Northridge",
+    state: "CA",
+    station_image:
+      "https://static.wikia.nocookie.net/logopedia/images/7/78/Kcsn-fm_0_1354729550.png/revision/latest?cb=20130325072216",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/CSUNS.svg/1200px-CSUNS.svg.png",
+  },
   // TEMPLATE
   // {
   //   id: 104,
