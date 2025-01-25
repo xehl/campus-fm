@@ -859,7 +859,7 @@ const stations = [
     id: 57,
     call_sign: "WMUC",
     broadcast_frequency: "90.5",
-    audio_url: "http://wmuc.umd.edu:8000/wmuc-hq",
+    audio_url: "https://wmuc.umd.edu:8443/wmuc2-high",
     station_url: "http://www.wmuc.umd.edu/",
     college_name: "University of Maryland",
     public_private: "Public",
@@ -1138,8 +1138,7 @@ const stations = [
     id: 75,
     call_sign: "WZBC",
     broadcast_frequency: "90.3",
-    audio_url:
-      "https://cors-proxy.elfsight.com/http://amber.streamguys.com:4860/;stream/1",
+    audio_url: "https://stream.wzbc.org/wzbc",
     station_url: "https://www.wzbc.org/",
     college_name: "Boston College",
     public_private: "Private",
@@ -1868,6 +1867,21 @@ const stations = [
       "https://static.wikia.nocookie.net/logopedia/images/7/78/Kcsn-fm_0_1354729550.png/revision/latest?cb=20130325072216",
     college_image:
       "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/CSUNS.svg/1200px-CSUNS.svg.png",
+  },
+  {
+    id: 121,
+    call_sign: "WRVU",
+    broadcast_frequency: "90.3 FM HD-3",
+    audio_url: "https://streaming.wrvu.org/live",
+    station_url: "https://wrvu.org/",
+    college_name: "Vanderbilt University",
+    public_private: "Private",
+    city: "Nashville",
+    state: "TN",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/1/18/WRVU_logo.png",
+    college_image:
+      "https://commons.wikimedia.org/wiki/File:Vanderbilt_University_logo_transparent.svg",
   },
   // TEMPLATE
   // {
