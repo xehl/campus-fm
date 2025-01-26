@@ -57,7 +57,7 @@ export default function App() {
       setSelectedStations(defaultStations);
     }
 
-    // check and try to load 525/404 error stations every 5s (handleStall should catch stations that are loaded but stalled)
+    // check and try to load 525/404 error stations every 8s (handleStall should catch stations that are loaded but stalled)
     setInterval(() => {
       const loadedStations = document.getElementsByClassName("audio-element");
       for (let station of loadedStations) {
@@ -72,6 +72,8 @@ export default function App() {
           //   altered = "https://cors-proxy.elfsight.com/" + url;
           // }
 
+          altered = url;
+
           station.setAttribute("src", "");
           setTimeout(function () {
             station.load(); // This stops the stream from downloading; basically forces it to load an empty file
@@ -84,7 +86,7 @@ export default function App() {
           // );
         }
       }
-    }, 5000);
+    }, 8000);
   }, []);
 
   // stores which station is currently playing
