@@ -65,12 +65,12 @@ export default function App() {
           const url = station.getAttribute("src");
           let altered = "";
 
-          // add/remove cors proxy and try again
-          if (url.startsWith("https://cors-proxy.elfsight.com/")) {
-            altered = url.substring(32);
-          } else {
-            altered = "https://cors-proxy.elfsight.com/" + url;
-          }
+          // // add/remove cors proxy and try again
+          // if (url.startsWith("https://cors-proxy.elfsight.com/")) {
+          //   altered = url.substring(32);
+          // } else {
+          //   altered = "https://cors-proxy.elfsight.com/" + url;
+          // }
 
           station.setAttribute("src", "");
           setTimeout(function () {
