@@ -859,7 +859,7 @@ const stations = [
     id: 57,
     call_sign: "WMUC",
     broadcast_frequency: "90.5",
-    audio_url: "https://wmuc.umd.edu:8443/wmuc2-high",
+    audio_url: "https://wmuc.umd.edu:8443/wmuc-hq",
     station_url: "http://www.wmuc.umd.edu/",
     college_name: "University of Maryland",
     public_private: "Public",
@@ -1841,7 +1841,7 @@ const stations = [
   {
     id: 119,
     call_sign: "KSJS",
-    broadcast_frequency: "90.5 FM",
+    broadcast_frequency: "90.5",
     audio_url: "https://streaming.ksjs.sjsu.edu/",
     station_url: "https://ksjs.org/",
     college_name: "San Jose State University",
@@ -1856,7 +1856,7 @@ const stations = [
   {
     id: 120,
     call_sign: "KCSN",
-    broadcast_frequency: "88.5 FM",
+    broadcast_frequency: "88.5",
     audio_url: "https://stream1.thesocalsound.org/1",
     station_url: "https://www.thesocalsound.org/",
     college_name: "California State University, Northridge",
@@ -1871,7 +1871,7 @@ const stations = [
   {
     id: 121,
     call_sign: "WRVU",
-    broadcast_frequency: "90.3 FM HD-3",
+    broadcast_frequency: "90.3",
     audio_url: "https://streaming.wrvu.org/live",
     station_url: "https://wrvu.org/",
     college_name: "Vanderbilt University",
