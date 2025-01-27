@@ -273,7 +273,7 @@ const stations = [
     id: 5,
     call_sign: "WUTK",
     broadcast_frequency: "90.3",
-    audio_url: "http://streamer.cci.utk.edu:8000/wutk",
+    audio_url: "https://15233.live.streamtheworld.com/WUTKFM.mp3",
     station_url: "https://wutkradio.com/",
     college_name: "University of Tennessee, Knoxville",
     public_private: "Public",
@@ -820,6 +820,21 @@ const stations = [
     palette: ["#120d0e", "#ec163c", "#869c9f", "#747474"],
   },
   {
+    id: 54,
+    call_sign: "WXDU",
+    broadcast_frequency: "88.7",
+    audio_url: "http://weeping.wxdu.duke.edu:8000/wxdu128.mp3",
+    station_url: "https://www.wxdu.org/",
+    college_name: "Duke University",
+    public_private: "Private",
+    city: "Durham",
+    state: "NC",
+    station_image:
+      "https://pbs.twimg.com/profile_images/633378260416643072/lKReF_R3_400x400.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Duke_Athletics_logo.svg/1200px-Duke_Athletics_logo.svg.png",
+  },
+  {
     id: 55,
     call_sign: "KCSU",
     broadcast_frequency: "90.5",
@@ -834,6 +849,21 @@ const stations = [
     college_image:
       "https://brand.colostate.edu/wp-content/uploads/sites/47/2019/01/CSU-Ram-357.png",
     palette: ["#1c4c2c", "#fbfbfb", "#8ca494", "#9cb4a4"],
+  },
+  {
+    id: 56,
+    call_sign: "WVPH",
+    broadcast_frequency: "90.3",
+    audio_url: "http://rsc417c1.rutgers.edu:8000/WRSU-FM",
+    station_url: "https://www.thecore.fm/",
+    college_name: "Rutgers University",
+    public_private: "Public",
+    city: "New Brunswick",
+    state: "NJ",
+    station_image:
+      "https://cdn-profiles.tunein.com/s23615/images/logog.jpg?t=1",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1153px-Rutgers_Scarlet_Knights_logo.svg.png",
   },
   {
     id: 57,
@@ -902,7 +932,7 @@ const stations = [
     id: 61,
     call_sign: "WRAS",
     broadcast_frequency: "88.5",
-    audio_url: "http://22113.live.streamtheworld.com/WRASFM_SC",
+    audio_url: "https://15233.live.streamtheworld.com/WRASFM.mp3",
     station_url: "https://wras.org/",
     college_name: "Georgia State University",
     public_private: "Public",
@@ -1221,7 +1251,7 @@ const stations = [
     id: 82,
     call_sign: "WIUX",
     broadcast_frequency: "99.1",
-    audio_url: "https://bl-vi-143.uits.indiana.edu:8444/wiuxhigh",
+    audio_url: "https://ice25.securenetsystems.net/WIUXLP",
     station_url: "https://www.wiux.org/",
     college_name: "Indiana University",
     public_private: "Public",
@@ -1300,7 +1330,7 @@ const stations = [
     id: 87,
     call_sign: "WSTB",
     broadcast_frequency: "88.9",
-    audio_url: "http://peridot.streamguys.com:5550/live",
+    audio_url: "https://us2.maindigitalstream.com/ssl/WSTB",
     station_url: "https://www.rock889.com/",
     college_name: "Streetsboro City School District",
     public_private: "Public",
@@ -1742,7 +1772,7 @@ const stations = [
     id: 115,
     call_sign: "WRCP",
     broadcast_frequency: "93.9",
-    audio_url: "http://www.radiocampusparis.org:8000/stream_rcp",
+    audio_url: "https://www.radiocampusparis.org/stream/",
     station_url: "https://www.radiocampusparis.org/",
     college_name: "University of Paris",
     public_private: "Public",
@@ -1774,7 +1804,7 @@ const stations = [
     id: 117,
     call_sign: "WSBU",
     broadcast_frequency: "88.3",
-    audio_url: "https://22213.live.streamtheworld.com/WSBUFMAAC.aac",
+    audio_url: "https://19293.live.streamtheworld.com/WSBUFMAAC.aac",
     station_url: "https://wsbufm.com/",
     college_name: "St. Bonaventure University",
     public_private: "Private",
@@ -1845,6 +1875,81 @@ const stations = [
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Vanderbilt_Commodores_logo.svg/640px-Vanderbilt_Commodores_logo.svg.png",
   },
+  {
+    id: 122,
+    call_sign: "KUCI",
+    broadcast_frequency: "88.9",
+    audio_url: "https://streamer.kuci.org:8088/high",
+    station_url: "https://kuci.org/wp/",
+    college_name: "University of California, Irvine",
+    public_private: "Public",
+    city: "Irvine",
+    state: "CA",
+    station_image:
+      "https://kuci.org/wp/wp-content/uploads/2018/06/KUCIheaderlogo2.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/UC_Irvine_Anteaters_logo.svg/1200px-UC_Irvine_Anteaters_logo.svg.png",
+  },
+  {
+    id: 123,
+    call_sign: "WKSU",
+    broadcast_frequency: "89.7",
+    audio_url: "https://live.ideastream.org/wksu1.128.mp3",
+    station_url: "https://www.wksu.org/",
+    college_name: "Kent State University",
+    public_private: "Public",
+    city: "Kent",
+    state: "Ohio",
+    station_image:
+      "https://cdn-profiles.tunein.com/s30407/images/logog.png?t=1679481797000",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/f/f3/Kent_State_K_logo.png",
+  },
+  {
+    id: 124,
+    call_sign: "KVCU",
+    broadcast_frequency: "1190",
+    audio_url: "https://kvcu.streamguys1.com/live",
+    station_url: "https://1190.radio/",
+    college_name: "University of Colorado at Boulder",
+    public_private: "Public",
+    city: "Boulder",
+    state: "CO",
+    station_image:
+      "https://1190.radio/wp-content/uploads/2023/05/1190-logo-black.png",
+    college_image: "https://www.cu.edu/sites/default/files/cu-standalone.png",
+  },
+  {
+    id: 125,
+    call_sign: "WEGL",
+    broadcast_frequency: "91.1",
+    audio_url: "https://ais-sa1.streamon.fm/7116_32k.aac",
+    station_url: "https://www.weglfm.com/",
+    college_name: "Auburn University",
+    public_private: "Public",
+    city: "Auburn",
+    state: "AL",
+    station_image:
+      "https://se-images.campuslabs.com/clink/images/5c4ffc55-182e-4719-aa77-c3f18201d731e6239f76-3592-4397-80cb-bf6e158b52f7.png?preset=med-sq",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Auburn_Tigers_logo.svg/1200px-Auburn_Tigers_logo.svg.png",
+  },
+  {
+    id: 126,
+    call_sign: "KCSB",
+    broadcast_frequency: "91.9",
+    audio_url: "http://live.kcsb.org/KCSB_128",
+    station_url: "https://www.kcsb.org/",
+    college_name: "University of California, Santa Barbara",
+    public_private: "Public",
+    city: "Santa Barbara",
+    state: "CA",
+    station_image:
+      "https://www.kcsb.org/wp-content/themes/kcsb2019/images/KCSB--logo.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/UC_Santa_Barbara_Gauchos_logo.svg/1200px-UC_Santa_Barbara_Gauchos_logo.svg.png",
+  },
+
   // TEMPLATE
   // {
   //   id: 104,
@@ -1879,41 +1984,6 @@ const stations = [
   //     "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Baldwin_Wallace_Yellow_Jackets_logo.svg/800px-Baldwin_Wallace_Yellow_Jackets_logo.svg.png",
   // },
   // NOTE: KJHK doesn't seem to have a livestream link; the ones I found redirect you to an elevator music stream: http://streaming.radionomy.com/JamendoLounge
-  // Stability issues with cors-anywhere, fix later
-  // {
-  //   id: 54,
-  //   call_sign: "WXDU",
-  //   broadcast_frequency: "88.7",
-  //   audio_url:
-  //     "http://weeping.wxdu.duke.edu:8000/wxdu128.mp3",
-  //   station_url: "https://www.wxdu.org/",
-  //   college_name: "Duke University",
-  //   public_private: "Private",
-  //   city: "Durham",
-  //   state: "NC",
-  //   station_image:
-  //     "https://pbs.twimg.com/profile_images/633378260416643072/lKReF_R3_400x400.png",
-  //   college_image:
-  //     "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Duke_Athletics_logo.svg/1200px-Duke_Athletics_logo.svg.png",
-  // },
-  // Won't load on mobile or desktop (fix later)
-  // {
-  //   id: 56,
-  //   call_sign: "WVPH",
-  //   broadcast_frequency: "90.3",
-  //   audio_url:
-  //     "http://rsc417c1.rutgers.edu:8000/WRSU-FM",
-  //   station_url: "https://www.thecore.fm/",
-  //   college_name: "Rutgers University",
-  //   public_private: "Public",
-  //   city: "New Brunswick",
-  //   state: "NJ",
-  //   station_image:
-  //     "https://cdn-profiles.tunein.com/s23615/images/logog.jpg?t=1",
-  //   college_image:
-  //     "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1153px-Rutgers_Scarlet_Knights_logo.svg.png",
-  //   palette: [],
-  //  },
   //  found IHeartRadio links on fmstream, but they don't load on desktop and they're shaky on mobile
   //  {
   //   id: 108,
