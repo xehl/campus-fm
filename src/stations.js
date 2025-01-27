@@ -2060,14 +2060,14 @@ const stations = [
     broadcast_frequency: "88.9",
     audio_url: "https://streamer.radio.co/s9751a0c22/listen",
     station_url: "https://wsnd.nd.edu/",
-    college_name: "Notre Dame College",
+    college_name: "University of Notre Dame",
     public_private: "Private",
-    city: "South Euclid",
-    state: "OH",
+    city: "Notre Dame",
+    state: "IN",
     station_image:
       "https://upload.wikimedia.org/wikipedia/commons/9/9a/09wsndlogo.jpg",
     college_image:
-      "https://www.ncaa.com/sites/default/files/images/logos/schools/bgd/notre-dame-oh.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Notre_Dame_Fighting_Irish_logo.svg/2276px-Notre_Dame_Fighting_Irish_logo.svg.png",
   },
   {
     id: 135,
@@ -2325,6 +2325,319 @@ const stations = [
       "https://studentmedia.ecu.edu/wp-content/pv-uploads/sites/166/2019/06/WZMB_NewLogo_BlackBackground.png",
     college_image:
       "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/East_Carolina_Pirates_logo.svg/1200px-East_Carolina_Pirates_logo.svg.png",
+  },
+  {
+    id: 152,
+    call_sign: "KTEP",
+    broadcast_frequency: "88.5",
+    audio_url: "https://25023.live.streamtheworld.com/KTEPFM_ADP.aac",
+    station_url: "https://www.ktep.org/",
+    college_name: "University of Texas at El Paso",
+    public_private: "Public",
+    city: "El Paso",
+    state: "TX",
+    station_image:
+      "https://www.theprospectordaily.com/wp-content/uploads/2020/11/110220_KTEP-900x493.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/UTEP_Miners_logo.svg/1200px-UTEP_Miners_logo.svg.png",
+  },
+  {
+    id: 153,
+    call_sign: "WEMU",
+    broadcast_frequency: "89.1",
+    audio_url: "https://26273.live.streamtheworld.com/WEMUFMAAC.aac",
+    station_url: "https://www.wemu.org/",
+    college_name: "Eastern Michigan University",
+    public_private: "Public",
+    city: "Ypsilanti",
+    state: "MI",
+    station_image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRapZ2PiX6TOzzfwppHCZshUGj2-T2Nc2BRmQ&s",
+    college_image:
+      "https://1000logos.net/wp-content/uploads/2019/12/Eastern-Michigan-Eagles-Logo-2003.png",
+  },
+  {
+    id: 154,
+    call_sign: "WMSV",
+    broadcast_frequency: "91.1",
+    audio_url: "https://stream.wmsv.msstate.edu:8000/wmsv",
+    station_url: "https://www.wmsv.msstate.edu/",
+    college_name: "Mississippi State University",
+    public_private: "Public",
+    city: "Mississippi State",
+    state: "MS",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/commons/b/b3/WMSV_Logo.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Mississippi_State_Bulldogs_logo.svg/1280px-Mississippi_State_Bulldogs_logo.svg.png",
+  },
+  {
+    id: 155,
+    call_sign: "KUCR",
+    broadcast_frequency: "88.3",
+    audio_url: "http://138.23.75.92:8001/",
+    station_url: "https://kucr.org/",
+    college_name: "University of California, Riverside",
+    public_private: "Public",
+    city: "Riverside",
+    state: "CA",
+    station_image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrR87gi-z7kcEQ4415lDh0FnNgYHNB71aouw&s",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/2/21/UC_Riverside_Highlanders_logo.svg",
+  },
+  {
+    id: 156,
+    call_sign: "WZIP",
+    broadcast_frequency: "88.1 FM",
+    audio_url: "https://www.streamvortex.com:8444/s/11300",
+    station_url: "https://wzip.uakron.edu/",
+    college_name: "University of Akron",
+    public_private: "Public",
+    city: "Akron",
+    state: "OH",
+    station_image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS_cjl2PFlq_i_URlyTRLtczLoVdSBmsxUkg&s",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Akron_Zips_logo_2022.svg/1200px-Akron_Zips_logo_2022.svg.png",
+  },
+  {
+    id: 157,
+    call_sign: "KUNV",
+    broadcast_frequency: "91.5",
+    audio_url: "http://kunv.oit.unlv.edu:8000/stream/4/",
+    station_url: "https://www.unlv.edu/kunv",
+    college_name: "University of Nevada, Las Vegas",
+    public_private: "Public",
+    city: "Las Vegas",
+    state: "NV",
+    station_image:
+      "https://www.unlv.edu/sites/default/files/styles/1140_width/public/media/image/2023-05/Public-Radio-KUNV-Main-Transparent.png?itok=zMA5syH5",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/UNLV_Rebels_wordmark.svg/1200px-UNLV_Rebels_wordmark.svg.png",
+  },
+  {
+    id: 158,
+    call_sign: "WZND",
+    broadcast_frequency: "103.3",
+    audio_url: "https://26353.live.streamtheworld.com/WZNDFM.mp3",
+    station_url: "https://wznd.com/",
+    college_name: "Illinois State University",
+    public_private: "Public",
+    city: "Normal",
+    state: "IL",
+    station_image:
+      "https://wznd.com/wp-content/uploads/2018/12/Wznd-Logo-2.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Illinois_State_Athletics_logo.svg/1200px-Illinois_State_Athletics_logo.svg.png",
+  },
+  {
+    id: 159,
+    call_sign: "WFDD",
+    broadcast_frequency: "88.5",
+    audio_url: "http://152.17.49.84:8000/wakeradio",
+    station_url: "https://wakeradio.groups.wfu.edu/",
+    college_name: "Wake Forest University",
+    public_private: "Private",
+    city: "Winston-Salem",
+    state: "NC",
+    station_image:
+      "https://images.squarespace-cdn.com/content/v1/5bc0ef807d0c9158b1ea3f68/1540518126677-O34UXS4U8A4126A87P0I/logo.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Wake_Forest_University_Athletic_logo.svg/2560px-Wake_Forest_University_Athletic_logo.svg.png",
+  },
+  {
+    id: 160,
+    call_sign: "KWBU",
+    broadcast_frequency: "103.3",
+    audio_url: "https://radio.clevr.me/kwbu",
+    station_url: "https://www.kwbu.org/",
+    college_name: "Baylor University",
+    public_private: "Private",
+    city: "Waco",
+    state: "TX",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/9/96/KWBU_logo.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/b/b0/2018_Baylor_Athletics_Logo.png",
+  },
+  {
+    id: 161,
+    call_sign: "KSDB",
+    broadcast_frequency: "91.9",
+    audio_url: "https://s.radiowave.io/ksdb.mp3",
+    station_url: "https://wildcat919.com/",
+    college_name: "Kansas State University",
+    public_private: "Public",
+    city: "Manhattan",
+    state: "KS",
+    station_image:
+      "https://static.wixstatic.com/media/76919c_f4b20d9622e94c12b90ef59cc2705620~mv2.png/v1/fit/w_2500,h_1330,al_c/76919c_f4b20d9622e94c12b90ef59cc2705620~mv2.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/Kansas_State_Wildcats_logo.svg/1200px-Kansas_State_Wildcats_logo.svg.png",
+  },
+  {
+    id: 162,
+    call_sign: "WYXR",
+    broadcast_frequency: "91.7",
+    audio_url: "https://crosstown.streamguys1.com/live-website-aac",
+    station_url: "https://wyxr.org/",
+    college_name: "University of Memphis",
+    public_private: "Public",
+    city: "Memphis",
+    state: "TN",
+    station_image:
+      "https://spinitron.com/images/Station/19/1911-img_logo.225x225.png?v=1599495201",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/4/45/Memphis_Tigers_logo.svg/1200px-Memphis_Tigers_logo.svg.png",
+  },
+  {
+    id: 163,
+    call_sign: "KASU",
+    broadcast_frequency: "91.9",
+    audio_url: "https://kasu.streamguys1.com/live.mp3",
+    station_url: "https://www.kasu.org/",
+    college_name: "Arkansas State University",
+    public_private: "Public",
+    city: "Jonesboro",
+    state: "AR",
+    station_image:
+      "https://npr.brightspotcdn.com/dims4/default/6956741/2147483647/strip/true/crop/900x413+0+0/resize/880x404!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fd7%2F4a%2Ff54801fc4a918c3314582d4e2c62%2Fkasu-logo.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Arkansas_State_Red_Wolves_wordmark.svg/1200px-Arkansas_State_Red_Wolves_wordmark.svg.png",
+  },
+  {
+    id: 164,
+    call_sign: "KWUR",
+    broadcast_frequency: "90.3",
+    audio_url: "https://listen.mixlr.com/25e83e0436e36c0e95b3db8f8826c1af",
+    station_url: "http://kwur.wustl.edu/",
+    college_name: "Washington University in St. Louis",
+    public_private: "Private",
+    city: "St. Louis",
+    state: "MO",
+    station_image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4rqUpn0F9VVLMm7ChzcpwPab4YK5mwfHjIQ&s",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/a/ae/Washington_University_Bears_primary_athletic_logo.png",
+  },
+  {
+    id: 165,
+    call_sign: "WHBC",
+    broadcast_frequency: "96.3",
+    audio_url: "https://ais-sa1.streamon.fm/7165_48k.aac",
+    station_url: "https://www.whbc963hd3.com/",
+    college_name: "Howard University",
+    public_private: "Private",
+    city: "Washington",
+    state: "DC",
+    station_image: "https://logo.clearbit.com/www.whbc963hd3.com",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Howard_Bison_logo.svg/1200px-Howard_Bison_logo.svg.png",
+  },
+  {
+    id: 166,
+    call_sign: "KUWR",
+    broadcast_frequency: "91.9",
+    audio_url: "https://wyoming-public-ice.streamguys1.com/WPR128MP3",
+    station_url: "https://www.wyomingpublicmedia.org/",
+    college_name: "University of Wyoming",
+    public_private: "Public",
+    city: "Laramie",
+    state: "WY",
+    station_image:
+      "https://cdn-profiles.tunein.com/s35981/images/logog.png?t=1",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Wyoming_Athletics_logo.svg/1200px-Wyoming_Athletics_logo.svg.png",
+  },
+  {
+    id: 167,
+    call_sign: "WUDR",
+    broadcast_frequency: "99.5",
+    audio_url: "https://ais-sa1.streamon.fm/7041_48k.aac",
+    station_url:
+      "https://udayton.edu/studev/leadership/involvement/student-life/org-radio.php",
+    college_name: "University of Dayton",
+    public_private: "Private",
+    city: "Dayton",
+    state: "OH",
+    station_image: "https://upload.wikimedia.org/wikipedia/en/6/60/Side.gif",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Dayton_Flyers_logo.svg/1200px-Dayton_Flyers_logo.svg.png",
+  },
+  {
+    id: 168,
+    call_sign: "WXVU",
+    broadcast_frequency: "89.1",
+    audio_url: "https://securestream.casthost.net:8159/stream",
+    station_url: "https://wxvu.org/",
+    college_name: "Villanova University",
+    public_private: "Private",
+    city: "Villanova",
+    state: "PA",
+    station_image:
+      "https://wxvu.org/wp-content/uploads/2022/01/WXVU-The-Roar-RadioFX.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Villanova_Wildcats_logo.svg/1200px-Villanova_Wildcats_logo.svg.png",
+  },
+  {
+    id: 169,
+    call_sign: "KULT",
+    broadcast_frequency: "94.5",
+    audio_url: "https://streamer.radio.co/s39286623b/low",
+    station_url: "https://kult.uni.edu/",
+    college_name: "University of Northern Iowa",
+    public_private: "Public",
+    city: "Cedar Falls",
+    state: "IA",
+    station_image:
+      "https://pbs.twimg.com/profile_images/658050317292974080/MTwiAo6H_400x400.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/8/86/Northern_Iowa_Panters_logo.svg/1200px-Northern_Iowa_Panters_logo.svg.png",
+  },
+  {
+    id: 170,
+    call_sign: "WWNO",
+    broadcast_frequency: "89.9",
+    audio_url: "https://newscast.talklouisiana.org/newscast/newscast.mp3",
+    station_url: "https://www.wwno.org/",
+    college_name: "University of New Orleans",
+    public_private: "Public",
+    city: "New Orleans",
+    state: "LA",
+    station_image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxio6d3SQ4LHe9g2XMYU-dNqvFtSCOCAN8iQ&su",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/2/27/New_Orleans_Privateers_logo.svg/1200px-New_Orleans_Privateers_logo.svg.png",
+  },
+  {
+    id: 171,
+    call_sign: "WIIT",
+    broadcast_frequency: "88.9",
+    audio_url: "https://icecast.iit.edu/WIITstream",
+    station_url: "https://radio.iit.edu/",
+    college_name: "Illinois Institute of Technology",
+    public_private: "Private",
+    city: "Chicago",
+    state: "IL",
+    station_image:
+      "https://radio.iit.edu/wp-content/uploads/2019/06/wiit_logo.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/9/96/Illinois_Institute_of_Technology_%28seal%29.svg",
+  },
+  {
+    id: 172,
+    call_sign: "WOBC",
+    broadcast_frequency: "91.5",
+    audio_url: "https://wobc.stream/main",
+    station_url: "https://wobc-fm.org/",
+    college_name: "Oberlin College",
+    public_private: "Private",
+    city: "Oberlin",
+    state: "OH",
+    station_image: "https://wobc-fm.org/Header.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/e/e0/Oberlin_logo_from_NCAA.svg",
   },
   // TEMPLATE
   // {
