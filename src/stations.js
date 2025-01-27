@@ -2109,9 +2109,10 @@ const stations = [
     public_private: "Public",
     city: "Canyon",
     state: "TX",
-    station_image: "https://logo.clearbit.com/www.wtamu.edu",
-    college_image:
+    station_image:
       "https://upload.wikimedia.org/wikipedia/en/5/5f/Kwts-fm-logo.png",
+    college_image:
+      "https://www.wtamu.edu/webres/Image/Site%20Pictures/News/graphic_standards_2015fall/SpiritWT_7421.png",
   },
   {
     id: 138,
