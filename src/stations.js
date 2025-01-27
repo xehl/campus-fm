@@ -58,7 +58,7 @@ const stations = [
     station_image:
       "https://www.radio.net/images/broadcasts/ec/fb/11375/c300.png",
     college_image:
-      "https://www.badgerselect.com/assets/images/FAVIcon/android-chrome-256x256.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Wisconsin_Badgers_logo.svg/814px-Wisconsin_Badgers_logo.svg.png",
     palette: ["#a30505", "#f9f7f7", "#0c0707", "#b17c7c"],
   },
   {
@@ -1964,6 +1964,367 @@ const stations = [
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Northwestern_Wildcats_logo.svg/1330px-Northwestern_Wildcats_logo.svg.png",
   },
+  {
+    id: 128,
+    call_sign: "WHPK",
+    broadcast_frequency: "88.5",
+    audio_url: "http://205.208.30.113:8000/stream",
+    station_url: "https://whpk.org/",
+    college_name: "University of Chicago",
+    public_private: "Private",
+    city: "Chicago",
+    state: "IL",
+    station_image:
+      "https://cdn-profiles.tunein.com/s29405/images/logog.jpg?t=1",
+    college_image:
+      "https://i0.wp.com/biocars.uchicago.edu/wp-content/uploads/2019/05/logo.png?resize=1200%2C1200&ssl=1&w=640",
+  },
+  {
+    id: 129,
+    call_sign: "WHRW",
+    broadcast_frequency: "90.5",
+    audio_url: "https://securestreams4.autopo.st:1794/hi",
+    station_url: "https://whrw.fm/",
+    college_name: "State University of New York at Binghamton",
+    public_private: "Public",
+    city: "Binghamton",
+    state: "NY",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/0/02/WHRW_logo.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/Binghamton_Bearcats_logo.svg/1200px-Binghamton_Bearcats_logo.svg.png",
+  },
+  {
+    id: 130,
+    call_sign: "WUAG",
+    broadcast_frequency: "103.1",
+    audio_url: "https://das-edge09-live365-dal03.cdnstream.com/a43900",
+    station_url: "https://wuag.uncg.edu/",
+    college_name: "University of North Carolina at Greensboro",
+    public_private: "Public",
+    city: "Greensboro",
+    state: "NC",
+    station_image:
+      "https://pbs.twimg.com/profile_images/1545153062/Wuag_Logo_on_Square_400x400.jpg",
+    college_image:
+      "https://150832185.v2.pressablecdn.com/wp-content/uploads/2023/03/uncg_emblem_3-color-e1680293422193.png",
+  },
+  {
+    id: 131,
+    call_sign: "WIDR",
+    broadcast_frequency: "89.1",
+    audio_url: "http://widrfm.net/stream",
+    station_url: "https://www.widrfm.org/",
+    college_name: "Western Michigan University",
+    public_private: "Public",
+    city: "Kalamazoo",
+    state: "MI",
+    station_image:
+      "https://cdn-profiles.tunein.com/s29530/images/logog.png?t=1723711379000",
+    college_image:
+      "https://wmich.edu/sites/default/files/attachments/u171/2020/WMU%20stacked-digital.png",
+  },
+  {
+    id: 132,
+    call_sign: "WLUW",
+    broadcast_frequency: "88.7 FM",
+    audio_url: "https://wluw.streamguys1.com/stream.mp3",
+    station_url: "https://wluw.org/",
+    college_name: "Loyola University of Chicago",
+    public_private: "Private",
+    city: "Chicago",
+    state: "IL",
+    station_image:
+      "https://dqa4a6x5zonsi.cloudfront.net/img/stations/wluw/icons/android-chrome-384x384.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Loyola_Ramblers_logo.svg/1200px-Loyola_Ramblers_logo.svg.png",
+  },
+  {
+    id: 133,
+    call_sign: "KGLT",
+    broadcast_frequency: "91.9",
+    audio_url: "https://live.kgltradio.com/256",
+    station_url: "https://kglt.net/",
+    college_name: "Montana State University",
+    public_private: "Public",
+    city: "Bozeman",
+    state: "MT",
+    station_image:
+      "https://kglt.net/wp-content/themes/kglt-2020/images/kglt-retro-trans-sq-240.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Montana_State_Bobcats_logo.svg/1200px-Montana_State_Bobcats_logo.svg.png",
+  },
+  {
+    id: 134,
+    call_sign: "WSND",
+    broadcast_frequency: "88.9",
+    audio_url: "https://streamer.radio.co/s9751a0c22/listen",
+    station_url: "https://wsnd.nd.edu/",
+    college_name: "Notre Dame College",
+    public_private: "Private",
+    city: "South Euclid",
+    state: "OH",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/commons/9/9a/09wsndlogo.jpg",
+    college_image:
+      "https://www.ncaa.com/sites/default/files/images/logos/schools/bgd/notre-dame-oh.svg",
+  },
+  {
+    id: 135,
+    call_sign: "WCSB",
+    broadcast_frequency: "89.3",
+    audio_url: "https://or.mysonicserver.com/8030/stream",
+    station_url: "https://www.wcsb.org/",
+    college_name: "Cleveland State University",
+    public_private: "Public",
+    city: "Cleveland",
+    state: "OH",
+    station_image:
+      "https://s3-media0.fl.yelpcdn.com/bphoto/Gp7Xg6_aRyUE9AwTIc5SmA/l.jpg",
+    college_image:
+      "https://dbukjj6eu5tsf.cloudfront.net/sidearm.sites/clevelandst.sidearmsports.com/images/responsive_2024/logo_main.png",
+  },
+  {
+    id: 136,
+    call_sign: "KUOI",
+    broadcast_frequency: "89.3 FM",
+    audio_url: "https://s2.radio.co/sedf30688d/listen",
+    station_url: "https://www.kuoi.org/",
+    college_name: "University of Idaho",
+    public_private: "Public",
+    city: "Moscow",
+    state: "ID",
+    station_image: "https://www.kuoi.org/header.svg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Idaho_Vandals_logo.svg/1200px-Idaho_Vandals_logo.svg.png",
+  },
+  {
+    id: 137,
+    call_sign: "KWTS",
+    broadcast_frequency: "91.1",
+    audio_url: "https://ice41.securenetsystems.net/KWTS",
+    station_url:
+      "https://www.wtamu.edu/academics/college-fine-arts-humanities/department-communication/get-involved/kwts.html",
+    college_name: "West Texas A&M University",
+    public_private: "Public",
+    city: "Canyon",
+    state: "TX",
+    station_image: "https://logo.clearbit.com/www.wtamu.edu",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/5/5f/Kwts-fm-logo.png",
+  },
+  {
+    id: 138,
+    call_sign: "WSOU",
+    broadcast_frequency: "89.5",
+    audio_url: "https://d3byg0ij92yqk6.cloudfront.net/streamWSOU1653065491.aac",
+    station_url: "https://www.wsou.net/",
+    college_name: "Seton Hall University",
+    public_private: "Private",
+    city: "South Orange",
+    state: "NJ",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/commons/5/52/WSOU_New_Decal_Design.jpg",
+    college_image:
+      "https://content.sportslogos.net/logos/34/831/full/seton_hall_pirates_logo_secondary_19983416.png",
+    palette: ["#0464ac", "#f9fafa", "#acb4b4", "#7fb0d3"],
+  },
+  {
+    id: 139,
+    call_sign: "WNCU",
+    broadcast_frequency: "90.7",
+    audio_url: "https://wncu.streamguys1.com/live",
+    station_url: "https://www.wncu.org/",
+    college_name: "North Carolina Central University",
+    public_private: "Public",
+    city: "Durham",
+    state: "NC",
+    station_image:
+      "https://player.streamguys.com/wncu/sgplayer/include/assets/img/wncu_logo.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/1/13/NCCU_Eagles_head_mark_logo.svg/1200px-NCCU_Eagles_head_mark_logo.svg.png",
+  },
+  {
+    id: 140,
+    call_sign: "WIXQ",
+    broadcast_frequency: "91.7",
+    audio_url: "http://wixq.millersville.edu:8000/live.nsv",
+    station_url: "https://www.917theville.com/",
+    college_name: "Millersville University of Pennsylvania",
+    public_private: "Public",
+    city: "Millersville",
+    state: "PA",
+    station_image:
+      "https://static.wixstatic.com/media/23bab1_de7bc9bb6d7a49c8b631e5e29e151a98.png/v1/fill/w_352,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/WIXQOFFICIALLOGO2015.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/6/61/Millersville_Marauders_logo.svg",
+  },
+  {
+    id: 141,
+    call_sign: "WCWM",
+    broadcast_frequency: "90.9",
+    audio_url: "https://wcwm.broadcasttool.stream/wcwm-onair",
+    station_url: "https://wcwm.wm.edu/",
+    college_name: "College of William and Mary",
+    public_private: "Public",
+    city: "Williamsburg",
+    state: "VA",
+    station_image:
+      "https://wcwm.wm.edu/wp-content/uploads/2023/12/WCWM_SOCIAL_MAIN.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/William_%26_Mary_Athletics_logo.svg/1200px-William_%26_Mary_Athletics_logo.svg.png",
+  },
+  {
+    id: 142,
+    call_sign: "KTRM",
+    broadcast_frequency: "88.7",
+    audio_url: "https://securestream.truman.edu/ktrm",
+    station_url: "https://tmn.truman.edu/",
+    college_name: "Truman State University",
+    public_private: "Public",
+    city: "Kirksville",
+    state: "MO",
+    station_image:
+      "https://tmn.truman.edu/wp-content/uploads/2024/10/KTRM-Logo-Final_2024.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Truman_Bulldogs_logo.svg/1200px-Truman_Bulldogs_logo.svg.png",
+  },
+  {
+    id: 143,
+    call_sign: "WVUA",
+    broadcast_frequency: "90.7",
+    audio_url: "https://das-edge17-live365-dal02.cdnstream.com/a83139",
+    station_url: "http://wvuafm.ua.edu/",
+    college_name: "University of Alabama",
+    public_private: "Public",
+    city: "Tuscaloosa",
+    state: "AL",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/WVUA_logo.png/640px-WVUA_logo.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Alabama_Athletics_logo.svg/1200px-Alabama_Athletics_logo.svg.png",
+  },
+  {
+    id: 144,
+    call_sign: "KTXT",
+    broadcast_frequency: "88.1",
+    audio_url: "https://ice7.securenetsystems.net/KTXTFM",
+    station_url: "https://www.ktxtfm.org/raider/",
+    college_name: "Texas Tech University",
+    public_private: "Public",
+    city: "Lubbock",
+    state: "Texas",
+    station_image:
+      "https://www.ktxtfm.org/raider/wp-content/uploads/2024/11/Triangle-Logo-v2.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Texas_Tech_Athletics_logo.svg/1200px-Texas_Tech_Athletics_logo.svg.png",
+  },
+  {
+    id: 145,
+    call_sign: "WUSC",
+    broadcast_frequency: "90.5",
+    audio_url: "https://stream.wusc.fm/listen.mp3",
+    station_url: "https://www.wusc.fm/",
+    college_name: "University of South Carolina",
+    public_private: "Public",
+    city: "Columbia",
+    state: "SC",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/d/d4/WUSC_90.5FM_logo.png",
+    college_image:
+      "https://sc.edu/about/offices_and_divisions/communications/images/toolbox/logos/grid_athletics_logo.png",
+  },
+  {
+    id: 146,
+    call_sign: "WMUA",
+    broadcast_frequency: "91.1",
+    audio_url: "https://usa5.fastcast4u.com/proxy/qernhlca?mp=/1",
+    station_url: "https://www.umass.edu/wmua/",
+    college_name: "University of Massachusetts at Amherst",
+    public_private: "Public",
+    city: "Amherst",
+    state: "MA",
+    station_image:
+      "https://www.massbroadcasters.org/wp-content/uploads/2013/05/WMUA.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/UMass_Amherst_athletics_logo.svg/1200px-UMass_Amherst_athletics_logo.svg.png",
+  },
+
+  {
+    id: 147,
+    call_sign: "KGOU",
+    broadcast_frequency: "106.3",
+    audio_url: "https://18123.live.streamtheworld.com/KGOUFM_64.mp3",
+    station_url: "https://www.kgou.org/",
+    college_name: "University of Oklahoma",
+    public_private: "Public",
+    city: "Norman",
+    state: "OK",
+    station_image:
+      "https://npr.brightspotcdn.com/dims4/default/9274310/2147483647/strip/true/crop/1905x777+0+0/resize/880x359!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F03%2Fc1%2F27c0d13b4f648f157b84c51bb2a4%2Fbluelogo-closecrop.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Oklahoma_Sooners_logo.svg/1589px-Oklahoma_Sooners_logo.svg.png",
+  },
+  {
+    id: 148,
+    call_sign: "KBLU",
+    broadcast_frequency: "92.3",
+    audio_url: "https://aggieradio.creek.stream/stream",
+    station_url: "https://www.usu.edu/student-media/aggie-radio/",
+    college_name: "Utah State University",
+    public_private: "Public",
+    city: "Logan",
+    state: "UT",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/6/62/92.3_KBLU-LP_Logan.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Utah_State_Aggies_logo.svg/1200px-Utah_State_Aggies_logo.svg.png",
+  },
+  {
+    id: 149,
+    call_sign: "KJACK",
+    broadcast_frequency: "107.1",
+    audio_url: "https://stream.ec.nau.edu:8443/kjack",
+    station_url: "https://www.kjackradio.com/",
+    college_name: "Northern Arizona University",
+    public_private: "Public",
+    city: "Flagstaff",
+    state: "AZ",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/commons/e/ed/KJACK.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Northern_Arizona_Athletics_logo.svg/1200px-Northern_Arizona_Athletics_logo.svg.png",
+  },
+  {
+    id: 150,
+    call_sign: "WUMS",
+    broadcast_frequency: "92.1",
+    audio_url: "http://130.74.34.21:8000/listen",
+    station_url: "https://myrebelradio.com/",
+    college_name: "University of Mississippi",
+    public_private: "Public",
+    city: "University",
+    state: "MS",
+    station_image:
+      "https://myrebelradio.com/wp-content/uploads/2023/01/Rebel-Radio-Redo-headphones-spotify.jpg",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/7/7c/Ole-miss_logo_from_NCAA.svg",
+  },
+  {
+    id: 151,
+    call_sign: "WZMB",
+    broadcast_frequency: "91.3",
+    audio_url: "https://ice41.securenetsystems.net/WZMB",
+    station_url: "https://www.piratemedia1.com/wzmb913fm/",
+    college_name: "East Carolina University",
+    public_private: "Public",
+    city: "Greenville",
+    state: "NC",
+    station_image:
+      "https://studentmedia.ecu.edu/wp-content/pv-uploads/sites/166/2019/06/WZMB_NewLogo_BlackBackground.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/East_Carolina_Pirates_logo.svg/1200px-East_Carolina_Pirates_logo.svg.png",
+  },
   // TEMPLATE
   // {
   //   id: 104,
@@ -2013,22 +2374,6 @@ const stations = [
   //   college_image:
   //     "https://upload.wikimedia.org/wikipedia/en/thumb/7/78/Siena_Saints_logo.svg/1200px-Siena_Saints_logo.svg.png",
   //   palette: ["#f7eacb", "#1e2015", "#809f72", "#7b7c7c"],
-  // },
-  // {
-  //   id: 110,
-  //   call_sign: "WSOU",
-  //   broadcast_frequency: "89.5",
-  //   audio_url: "http://stream.revma.ihrhls.com/zc5252/hls.m3u8",
-  //   station_url: "https://www.wsou.net/",
-  //   college_name: "Seton Hall University",
-  //   public_private: "Private",
-  //   city: "South Orange",
-  //   state: "NJ",
-  //   station_image:
-  //     "https://advancement.shu.edu/image/support/ElectricGuitar_WSOU_Logo.jpg",
-  //   college_image:
-  //     "https://content.sportslogos.net/logos/34/831/full/seton_hall_pirates_logo_secondary_19983416.png",
-  //   palette: ["#0464ac", "#f9fafa", "#acb4b4", "#7fb0d3"],
   // },
 ];
 
