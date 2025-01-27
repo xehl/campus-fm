@@ -1856,7 +1856,7 @@ const stations = [
     city: "Northridge",
     state: "CA",
     station_image:
-      "https://static.wikia.nocookie.net/logopedia/images/7/78/Kcsn-fm_0_1354729550.png/revision/latest?cb=20130325072216",
+      "https://radioink.com/wp-content/uploads/2022/08/KCSN-SoCal-Sound-2022.png",
     college_image:
       "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/CSUNS.svg/1200px-CSUNS.svg.png",
   },
@@ -1949,7 +1949,21 @@ const stations = [
     college_image:
       "https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/UC_Santa_Barbara_Gauchos_logo.svg/1200px-UC_Santa_Barbara_Gauchos_logo.svg.png",
   },
-
+  {
+    id: 127,
+    call_sign: "WNUR",
+    broadcast_frequency: "89.3",
+    audio_url: "https://n15.rcs.revma.com/w4pmmfkdx4zuv",
+    station_url: "https://wnur.northwestern.edu/",
+    college_name: "Northwestern University",
+    public_private: "Private",
+    city: "Evanston",
+    state: "IL",
+    station_image:
+      "https://res.cloudinary.com/scalefunder/image/upload/c_crop,h_3600,w_6360,x_820,y_450/c_scale,h_343,w_606/f_auto,fl_lossy,q_auto/v1/Northwestern_University/enzxjboi4yuungagc4v5",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Northwestern_Wildcats_logo.svg/1330px-Northwestern_Wildcats_logo.svg.png",
+  },
   // TEMPLATE
   // {
   //   id: 104,
