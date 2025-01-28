@@ -46,9 +46,9 @@ export default function App() {
         "KALX",
         "KVRX",
         "WUCF",
-        "WSOU",
         "WSUM",
         "WSBF",
+        "WXTJ",
       ];
       let defaultStations = [];
       defaultStations = stations.filter((station) =>

@@ -319,7 +319,7 @@ const stations = [
     id: 15,
     call_sign: "KWVA",
     broadcast_frequency: "88.1",
-    audio_url: "http://kwvaradio.uoregon.edu:8000/stream/2/",
+    audio_url: "http://kwvaradio.uoregon.edu:8000/stream/1/",
     station_url: "https://kwva.uoregon.edu/",
     college_name: "University of Oregon",
     public_private: "Public",
@@ -838,7 +838,7 @@ const stations = [
     id: 55,
     call_sign: "KCSU",
     broadcast_frequency: "90.5",
-    audio_url: "https://listen.creek.org/kcsu",
+    audio_url: "https://listen.kcsufm.com/stream",
     station_url: "https://kcsufm.com/",
     college_name: "Colorado State University",
     public_private: "Public",
@@ -2114,22 +2114,24 @@ const stations = [
     college_image:
       "https://www.wtamu.edu/webres/Image/Site%20Pictures/News/graphic_standards_2015fall/SpiritWT_7421.png",
   },
-  {
-    id: 138,
-    call_sign: "WSOU",
-    broadcast_frequency: "89.5",
-    audio_url: "https://d3byg0ij92yqk6.cloudfront.net/streamWSOU1653065491.aac",
-    station_url: "https://www.wsou.net/",
-    college_name: "Seton Hall University",
-    public_private: "Private",
-    city: "South Orange",
-    state: "NJ",
-    station_image:
-      "https://upload.wikimedia.org/wikipedia/commons/5/52/WSOU_New_Decal_Design.jpg",
-    college_image:
-      "https://content.sportslogos.net/logos/34/831/full/seton_hall_pirates_logo_secondary_19983416.png",
-    palette: ["#0464ac", "#f9fafa", "#acb4b4", "#7fb0d3"],
-  },
+  // Seton Hall has a special setup where encode snippets of the stream in XML requests instead a continuous streaming link
+  // I think I could make it work but it would require writing a special player
+  // {
+  //   id: 138,
+  //   call_sign: "WSOU",
+  //   broadcast_frequency: "89.5",
+  //   audio_url: "https://d3byg0ij92yqk6.cloudfront.net/streamWSOU1653065491.aac",
+  //   station_url: "https://www.wsou.net/",
+  //   college_name: "Seton Hall University",
+  //   public_private: "Private",
+  //   city: "South Orange",
+  //   state: "NJ",
+  //   station_image:
+  //     "https://upload.wikimedia.org/wikipedia/commons/5/52/WSOU_New_Decal_Design.jpg",
+  //   college_image:
+  //     "https://content.sportslogos.net/logos/34/831/full/seton_hall_pirates_logo_secondary_19983416.png",
+  //   palette: ["#0464ac", "#f9fafa", "#acb4b4", "#7fb0d3"],
+  // },
   {
     id: 139,
     call_sign: "WNCU",
