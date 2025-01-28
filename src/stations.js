@@ -2641,6 +2641,20 @@ const stations = [
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/e/e0/Oberlin_logo_from_NCAA.svg",
   },
+  {
+    id: 173,
+    call_sign: "WRDL",
+    broadcast_frequency: "88.9",
+    audio_url: "https://das-edge12-live365-dal02.cdnstream.com/a12400_2",
+    station_url: "https://wrdlfm.com/",
+    college_name: "Ashland University",
+    public_private: "Private",
+    city: "Ashland",
+    state: "OH",
+    station_image: "https://logo.clearbit.com/wrdlfm.com",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/9/92/Ashland_Eagles_logo.svg/1200px-Ashland_Eagles_logo.svg.png",
+  },
   // TEMPLATE
   // {
   //   id: 104,
