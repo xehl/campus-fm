@@ -2655,6 +2655,21 @@ const stations = [
     college_image:
       "https://upload.wikimedia.org/wikipedia/en/thumb/9/92/Ashland_Eagles_logo.svg/1200px-Ashland_Eagles_logo.svg.png",
   },
+  {
+    id: 174,
+    call_sign: "WDCR",
+    broadcast_frequency: "1340",
+    audio_url: "https://18703.live.streamtheworld.com/DC_RADIOAAC.aac",
+    station_url: "https://webdcr.com/",
+    college_name: "Dartmouth College",
+    public_private: "Private",
+    city: "Hanover",
+    state: "NH",
+    station_image:
+      "https://upload.wikimedia.org/wikipedia/en/6/64/WDCR_logo.png",
+    college_image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Dartmouth_College_Big_Green_logo.svg/1200px-Dartmouth_College_Big_Green_logo.svg.png",
+  },
   // TEMPLATE
   // {
   //   id: 104,
