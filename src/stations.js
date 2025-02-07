@@ -1203,7 +1203,7 @@ const stations = [
     id: 79,
     call_sign: "KANM",
     broadcast_frequency: "88.1",
-    audio_url: "https://kanm.tamu.edu/listen",
+    audio_url: "https://icecast.kanm.org/listen",
     station_url: "https://kanm.tamu.edu/#/",
     college_name: "Texas A&M University",
     public_private: "Public",
