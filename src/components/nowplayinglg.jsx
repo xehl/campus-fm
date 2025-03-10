@@ -11,14 +11,28 @@ export default function NowPlayingLarge({ playing }) {
     });
   }
 
+  function recordBmacEvent() {
+    ReactGA.event({
+      category: "External Link",
+      action: "User clicked BMAC link in footer",
+    });
+  }
+
   return (
-    <Box sx={{ width: {md: "95vw", lg: "50vw", xl:"45vw"}, margin: "auto" }}>
+    <Box sx={{ width: {md: "95vw", lg: "50vw", xl:"45vw"}, margin: "auto", position: "relative" }}>
       <Box sx={{
         display: { xs: "none", sm: "flex" },
         alignItems: "center",
         justifyContent: "center",
-        height: { xs: 80, xl: 80 }
+        height: { xs: 80, xl: 80 },
+        pr: 0
       }}>
+        <Box sx={{ 
+          display: "flex", 
+          alignItems: "center", 
+          justifyContent: "center",
+          width: "100%"
+        }}>
         <Box sx={{ mr: 4, borderRadius: "10px" }}>
           {playing &&
             <CardMedia
@@ -33,8 +47,26 @@ export default function NowPlayingLarge({ playing }) {
           {playing ? <>Now playing: {playing.call_sign} {playing.broadcast_frequency}</> : <>Choose a station to start listening!</>}
         </Typography>
         {playing ? <Link target="_blank" href={playing.station_url} sx={{ display: { xs: "none", sm: "block" } }} >
-          <OpenInNewIcon onClick={recordEvent} sx={{ ml: 2, mr: 3, height: 30, width: 30, color: "#212121" }} />
+          <OpenInNewIcon onClick={recordEvent} sx={{ ml: 2, mr: 1.5, height: 30, width: 30, color: "#212121" }} />
         </Link> : ""}
+        <Link 
+          href="https://buymeacoffee.com/ehlee" 
+          target="_blank" 
+          onClick={recordBmacEvent}
+          sx={{ 
+            display: "flex", 
+            alignItems: "center",
+            ml: .8
+          }}
+        >
+          <CardMedia
+            component="img"
+            sx={{ height: 32, objectFit: "contain" }}
+            image="/images/bmc_logo.png"
+            alt="Buy Me a Coffee"
+          />
+        </Link>
+        </Box>
       </Box>
     </Box>
   )

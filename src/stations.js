@@ -178,7 +178,7 @@ const stations = [
     id: 28,
     call_sign: "WUOG",
     broadcast_frequency: "90.5",
-    audio_url: "http://stream.wuog.org:8000/stream",
+    audio_url: "https://stream.wuog.org/stream",
     station_url: "http://wuog.org/",
     college_name: "University of Georgia",
     public_private: "Public",
