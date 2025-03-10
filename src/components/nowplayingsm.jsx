@@ -49,23 +49,25 @@ export default function NowPlayingSmall({ playing }) {
         <Typography fontFamily={"Share Tech Mono"} textAlign="center" fontSize={"1.2rem"} sx={{ color: "#212121", ml: 2 }}>
           {playing ? <>Playing: {playing.call_sign} {playing.broadcast_frequency}</> : <>Choose a station to start listening!</>}
         </Typography>
-        <Link 
-          href="https://buymeacoffee.com/ehlee" 
-          target="_blank" 
-          onClick={recordBmacEvent}
-          sx={{ 
-            display: "flex", 
-            alignItems: "center",
-            ml: 1.5
-          }}
-        >
-          <CardMedia
-            component="img"
-            sx={{ height: 25, objectFit: "contain" }}
-            image="/images/bmc_logo.png"
-            alt="Buy Me a Coffee"
-          />
-        </Link>
+        {playing && (
+          <Link 
+            href="https://buymeacoffee.com/ehlee" 
+            target="_blank" 
+            onClick={recordBmacEvent}
+            sx={{ 
+              display: "flex", 
+              alignItems: "center",
+              ml: 1.5
+            }}
+          >
+            <CardMedia
+              component="img"
+              sx={{ height: 25, objectFit: "contain" }}
+              image="/images/bmc_logo.png"
+              alt="Buy Me a Coffee"
+            />
+          </Link>
+        )}
         </Box>
       </Box>
     </Box>

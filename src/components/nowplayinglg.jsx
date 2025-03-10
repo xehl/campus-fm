@@ -66,25 +66,27 @@ export default function NowPlayingLarge({ playing }) {
             <OpenInNewIcon onClick={recordEvent} sx={{ ml: 2, mr: 1.5, height: 30, width: 30, color: "#212121" }} />
           </Link>
         </DarkTooltip> : ""}
-        <DarkTooltip title="support campus fm" placement="top">
-          <Link 
-            href="https://buymeacoffee.com/ehlee" 
-            target="_blank" 
-            onClick={recordBmacEvent}
-            sx={{ 
-              display: "flex", 
-              alignItems: "center",
-              ml: 1
-            }}
-          >
-            <CardMedia
-              component="img"
-              sx={{ height: 32, objectFit: "contain" }}
-              image="/images/bmc_logo.png"
-              alt="Buy Me a Coffee"
-            />
-          </Link>
-        </DarkTooltip>
+        {playing && (
+          <DarkTooltip title="support campus fm" placement="top">
+            <Link 
+              href="https://buymeacoffee.com/ehlee" 
+              target="_blank" 
+              onClick={recordBmacEvent}
+              sx={{ 
+                display: "flex", 
+                alignItems: "center",
+                ml: 1
+              }}
+            >
+              <CardMedia
+                component="img"
+                sx={{ height: 32, objectFit: "contain" }}
+                image="/images/bmc_logo.png"
+                alt="Buy Me a Coffee"
+              />
+            </Link>
+          </DarkTooltip>
+        )}
         </Box>
       </Box>
     </Box>
