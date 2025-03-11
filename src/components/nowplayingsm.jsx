@@ -56,7 +56,7 @@ export default function NowPlayingSmall({ playing }) {
             fontSize={"1.3rem"} 
           sx={{ 
             color: "#212121",
-            whiteSpace: "nowrap",
+            whiteSpace: "wrap",
             overflow: "hidden",
             textOverflow: "ellipsis",
             textAlign: "center",
