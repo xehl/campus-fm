@@ -10,13 +10,6 @@ export default function NowPlayingSmall({ playing }) {
     });
   }
 
-  function recordBmacEvent() {
-    ReactGA.event({
-      category: "External Link",
-      action: "User clicked BMAC link in footer",
-    });
-  }
-
   return (
     <Box sx={{ width: { xs: "100%", md: 580, xl: 660 } }} >
       <Box sx={{ 
@@ -63,27 +56,8 @@ export default function NowPlayingSmall({ playing }) {
             ml: 0.5
           }}
         >
-          {playing ? <>{playing.call_sign} {playing.broadcast_frequency}</> : <>Choose a station to start listening!</>}
+          {playing ? <>Playing: {playing.call_sign} {playing.broadcast_frequency}</> : <>Choose a station to start listening!</>}
         </Typography>
-        {playing && (
-          <Link 
-            href="https://buymeacoffee.com/ehlee" 
-            target="_blank" 
-            onClick={recordBmacEvent}
-            sx={{ 
-              display: "flex", 
-              alignItems: "center",
-              minWidth: "fit-content",
-            }}
-          >
-            <CardMedia
-              component="img"
-              sx={{ height: 25, objectFit: "contain" }}
-              image="/images/bmc_logo.png"
-              alt="Buy Me a Coffee"
-            />
-          </Link>
-        )}
         </Box>
       </Box>
     </Box>
