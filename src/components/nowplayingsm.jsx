@@ -28,26 +28,42 @@ export default function NowPlayingSmall({ playing }) {
         borderRadius: '12px', 
         height: 80, 
         position: "relative",
-        px: 2
+        px: 1
       }}>
         <Box sx={{ 
           display: "flex", 
           alignItems: "center", 
           justifyContent: "center",
-          width: "100%"
+          width: "100%",
+          gap: 1
         }}>
         {playing &&
           <Link target="_blank" href={playing.station_url} onClick={recordEvent}>
             <CardMedia
             component="img"
-            sx={{ width: 50, borderRadius: "4px", objectFit: "contain" }}
+            sx={{ 
+              width: 40, 
+              height: 40,
+              borderRadius: "4px", 
+              objectFit: "contain" 
+            }}
             image={playing.station_image}
             alt={playing.call_sign}
-            margin="auto"
             />
           </Link>}
-        <Typography fontFamily={"Share Tech Mono"} textAlign="center" fontSize={"1.2rem"} sx={{ color: "#212121", ml: 2 }}>
-          {playing ? <>Playing: {playing.call_sign} {playing.broadcast_frequency}</> : <>Choose a station to start listening!</>}
+        <Typography 
+          fontFamily={"Share Tech Mono"} 
+            fontSize={"1.3rem"} 
+          sx={{ 
+            color: "#212121",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            textAlign: "center",
+            ml: 0.5
+          }}
+        >
+          {playing ? <>{playing.call_sign} {playing.broadcast_frequency}</> : <>Choose a station to start listening!</>}
         </Typography>
         {playing && (
           <Link 
@@ -57,7 +73,8 @@ export default function NowPlayingSmall({ playing }) {
             sx={{ 
               display: "flex", 
               alignItems: "center",
-              ml: 1.5
+              minWidth: "fit-content",
+              ml: 0.5
             }}
           >
             <CardMedia
