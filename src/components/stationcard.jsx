@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {Box, Card, CardContent, CardMedia, Typography, Divider, ButtonBase} from '@mui/material/';
+import StarIcon from '@mui/icons-material/Star';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import ReactGA from "react-ga4"
@@ -46,8 +47,13 @@ export default function StationCard({callsign, frequency, college, audioURL, col
   const undimIfLoaded = () => {
     return loaded? 1: 0.15;
   }
-  const greenIfPlaying = () => {
-    return (playing?.call_sign === callsign) ? "#cefac8" : "";
+  const getStyles = () => {
+    return playing?.call_sign === callsign ? { background: "#cefac8" } : {};
+  }
+
+  const isUrlStation = () => {
+    const urlStation = window.location.pathname.replace(/^\/|\/$/g, '').trim().toUpperCase();
+    return urlStation === callsign;
   }
 
   function handleStall() {
@@ -112,7 +118,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
         selectedStation.play();
         selectedStation.volume = volume / 100
         setPlaying(stationObject);
-        setUserPause(false)
+        setUserPause(false);
         ReactGA.event({
           category: 'Play',
           action: 'User played ' + selectedStation.getAttribute("name"),
@@ -124,6 +130,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
 
   return (
     <ThemeProvider theme={cardtheme}>
+
       <Card
         className={callsign}
         onClick={(e) => playPause(e)}
@@ -136,7 +143,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           borderRadius: 2,
           transition: "0.2s",
           opacity: undimIfLoaded(),
-          background: greenIfPlaying()
+          ...getStyles()
         }}>
         <ButtonBase sx={{height: "100%", width: "100%"}}>
         <Box sx={{
@@ -168,8 +175,9 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           mr: 1.5 
         }}> 
           <CardContent className={callsign} sx={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end"}}>
-            <Typography className={callsign} component="div" textAlign="right" variant="h4" fontFamily={"Share Tech Mono"}>
+            <Typography className={callsign} component="div" textAlign="right" variant="h4" fontFamily={"Share Tech Mono"} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 1 }}>
               {callsign} {frequency}
+              {isUrlStation() && <StarIcon sx={{ color: '#FFD700', fontSize: 'inherit', stroke: 'black', strokeWidth: 1 }} />}
             </Typography>
             <Typography className={callsign} variant="subtitle1" textAlign="right" color="text.secondary" component="div" fontFamily={"Share Tech Mono"}>
               {college}

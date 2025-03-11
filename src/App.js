@@ -13,6 +13,21 @@ import FaqModal from "./components/faqmodal";
 import StickyBar from "./components/stickybar";
 import ReactGA from "react-ga4";
 
+// Returns uppercase station call sign or null
+const parseStationFromUrl = () => {
+  const path = window.location.pathname;
+  if (path === '/') return null;
+  const station = path.replace(/^\/|\/$/g, '').trim();
+  return station.toUpperCase();
+};
+
+// Returns station object or null
+const findStationInStations = (callSign) => {
+  return stations.find(
+    station => station.call_sign.toUpperCase() === callSign
+  ) || null;
+};
+
 export default function App() {
   // MUI theme breakpoints
   const theme = createTheme({
@@ -36,26 +51,28 @@ export default function App() {
       },
     });
 
-    // load cached stations for returning users
-    let cache = JSON.parse(localStorage.getItem("recentStations"));
-    if (cache) setSelectedStations(cache);
-    else {
-      // otherwise, load default stations
-      let defaultCallsigns = [
-        "WXYC",
-        "KALX",
-        "KVRX",
-        "WUCF",
-        "WSUM",
-        "WSBF",
-        "WXTJ",
-      ];
-      let defaultStations = [];
-      defaultStations = stations.filter((station) =>
-        defaultCallsigns.includes(station.call_sign)
-      );
-      setSelectedStations(defaultStations);
+    // Check for station in URL
+    const urlStation = parseStationFromUrl();
+    const stationFromUrl = urlStation ? findStationInStations(urlStation) : null;
+
+    // Load stations from localStorage or use defaults
+    const cache = JSON.parse(localStorage.getItem("recentStations"));
+    let initialStations = cache || stations.filter((station) =>
+      ["WXYC", "KALX", "KVRX", "WUCF", "WSUM", "WSBF", "WXTJ"].includes(station.call_sign)
+    );
+
+    // If URL has a station, handle it
+    if (stationFromUrl) {
+      if (initialStations.some(s => s.call_sign === stationFromUrl.call_sign)) {
+        // If station exists in list, move it to front
+        initialStations = [stationFromUrl, ...initialStations.filter(s => s.call_sign !== stationFromUrl.call_sign)];
+      } else {
+        // If station isn't in list, prepend it (temporarily dropping last station if at limit)
+        initialStations = [stationFromUrl, ...initialStations.slice(0, 9)];
+      }
     }
+
+    setSelectedStations(initialStations);
 
     // check and try to load 525/404 error stations every 8s (handleStall should catch stations that are loaded but stalled)
     setInterval(() => {
@@ -94,6 +111,7 @@ export default function App() {
   const [volume, setVolume] = useState(100);
   const [userPause, setUserPause] = useState(false);
   const [selectedStations, setSelectedStations] = useState([]);
+
 
   // selector modal controls
   const [selectorOpen, setSelectorOpen] = useState(false);
