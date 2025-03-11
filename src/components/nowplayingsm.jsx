@@ -74,7 +74,6 @@ export default function NowPlayingSmall({ playing }) {
               display: "flex", 
               alignItems: "center",
               minWidth: "fit-content",
-              ml: 0.5
             }}
           >
             <CardMedia
