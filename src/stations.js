@@ -1668,7 +1668,7 @@ const stations = [
     city: "Lisbon",
     state: "Portugal",
     station_image:
-      "https://static.mytuner.mobi/media/tvos_radios/gs8fzckgerrp.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR47-9fQAsFJut7nUexgmcaopEJ-IoJA63xuA&s",
     college_image:
       "https://autonoma.pt/wp-content/uploads/2018/01/logoUAL1.png",
     palette: ["#0474a4", "#050505", "#3697b9", "#5c5c5c"],
@@ -1683,8 +1683,7 @@ const stations = [
     public_private: "Private",
     city: "Williamstown",
     state: "MA",
-    station_image:
-      "https://static.mytuner.mobi/media/tvos_radios/X7VgKdWDCV.png",
+    station_image: "https://cdn-radiotime-logos.tunein.com/s27821g.png",
     college_image: "https://ephsports.williams.edu/images/logos/site/site.png",
     palette: ["#f7bf30", "#560782", "#b76e39", "#9464b4"],
   },
