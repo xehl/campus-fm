@@ -153,6 +153,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     <ThemeProvider theme={cardtheme}>
 
       <Card
+        className={callsign}
         onClick={(e) => playPause(e)}
         sx={{
           cursor: "pointer",
@@ -176,6 +177,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           justifyContent: "center"
         }}>
         <CardMedia
+          className={callsign}
           component="img"
           sx={{
             objectFit: "contain",
@@ -187,24 +189,24 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           />
         </Box>
         <Divider orientation="vertical" variant="middle" flexItem />
-        <Box sx={{
+        <Box className={callsign} sx={{
           display: 'flex',
           flexDirection: 'column',
           width: "100%",
           mr: 1.5 
         }}> 
-          <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end"}}>
-            <Typography component="div" textAlign="right" variant="h4" fontFamily={"Share Tech Mono"} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 1 }}>
+          <CardContent className={callsign} sx={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end"}}>
+            <Typography className={callsign} component="div" textAlign="right" variant="h4" fontFamily={"Share Tech Mono"} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 1 }}>
               {callsign} {frequency}
               {isUrlStation() && <StarIcon sx={{ color: '#FFD700', fontSize: 'inherit', stroke: 'black', strokeWidth: 1 }} />}
             </Typography>
-            <Typography variant="subtitle1" textAlign="right" color="text.secondary" component="div" fontFamily={"Share Tech Mono"}>
+            <Typography className={callsign} variant="subtitle1" textAlign="right" color="text.secondary" component="div" fontFamily={"Share Tech Mono"}>
               {college}
             </Typography>
           </CardContent>
         </Box>
         </ButtonBase>
-        <audio onLoadStart={() => setLoaded(false)} onCanPlay={() => setLoaded(true)} onStalled={handleStall} name={callsign} src={audioURL} type="audio/mp3" />
+        <audio className="audio-element" onLoadStart={() => setLoaded(false)} onCanPlay={() => setLoaded(true)} onStalled={handleStall} name={callsign} src={audioURL} type="audio/mp3" />
         </Card>
     </ThemeProvider>
   );

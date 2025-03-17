@@ -12,8 +12,6 @@ import SelectorModal from "./components/selectormodal";
 import FaqModal from "./components/faqmodal";
 import StickyBar from "./components/stickybar";
 import ReactGA from "react-ga4";
-import { HelmetProvider } from 'react-helmet-async';
-import SEO from "./components/seo";
 
 // Returns uppercase station call sign or null
 const parseStationFromUrl = () => {
@@ -186,148 +184,145 @@ export default function App() {
   }, [playStatic]);
 
   return (
-    <HelmetProvider>
-      <div className="App">
-        <SEO station={playing} />
-        {/* INVISIBLE SPACER BOX KEEPS FOOTER ON BOTTOM, EVEN ON XL SCREENS,
+    <div className="App">
+      {/* INVISIBLE SPACER BOX KEEPS FOOTER ON BOTTOM, EVEN ON XL SCREENS,
           OR WHEN NOT ENOUGH CONTENT TO VERTICALLY FILL THE VIEWPORT */}
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <Box
+          sx={{
+            minHeight: "calc(100vh - 90px)",
+            height: "100%",
+            zIndex: 10,
+          }}
+        >
           <Box
             sx={{
-              minHeight: "calc(100vh - 90px)",
-              height: "100%",
-              zIndex: 10,
+              display: { xs: "none", lg: "flex" },
+              width: "100vw",
+              flexDirection: { xs: "column", lg: "row" },
+              alignItems: "center",
+              justifyContent: "space-around",
+              position: "sticky",
+              top: 0,
+              zIndex: 12,
+              boxShadow: 4,
+              backgroundColor: "rgba(46,46,46,0.9)",
+              backdropFilter: "blur(2px)",
             }}
           >
-            <Box
-              sx={{
-                display: { xs: "none", lg: "flex" },
-                width: "100vw",
-                flexDirection: { xs: "column", lg: "row" },
-                alignItems: "center",
-                justifyContent: "space-around",
-                position: "sticky",
-                top: 0,
-                zIndex: 12,
-                boxShadow: 4,
-                backgroundColor: "rgba(46,46,46,0.9)",
-                backdropFilter: "blur(2px)",
-              }}
-            >
-              <Logo />
-              <Toolbar
-                playing={playing}
-                setPlaying={setPlaying}
-                displayedStations={selectedStations}
-                volume={volume}
-                setVolume={setVolume}
-                userPause={userPause}
-                setUserPause={setUserPause}
-                handleSelectorModalOpen={handleSelectorModalOpen}
-                handleFaqModalOpen={handleFaqModalOpen}
-                setPlayStatic={setPlayStatic}
-                darkMode={darkMode}
-                setDarkMode={setDarkMode}
-              />
-            </Box>
-            <Box
-              sx={{
-                width: { xs: "100vw", lg: "auto" },
-                display: { xs: "flex", lg: "none" },
-                justifyContent: "center",
-                backgroundColor: "rgba(46,46,46,0.9)",
-              }}
-            >
-              <Logo />
-            </Box>
-            <Box
-              sx={{
-                display: { xs: "flex", lg: "none" },
-                position: "sticky",
-                top: 0,
-                borderTop: 1,
-                borderColor: "#404040",
-                zIndex: 12,
-                boxShadow: 4,
-                backgroundColor: "rgba(46,46,46,0.9)",
-                backdropFilter: "blur(3px)",
-              }}
-            >
-              <Toolbar
-                playing={playing}
-                setPlaying={setPlaying}
-                displayedStations={selectedStations}
-                volume={volume}
-                setVolume={setVolume}
-                userPause={userPause}
-                setUserPause={setUserPause}
-                handleSelectorModalOpen={handleSelectorModalOpen}
-                handleFaqModalOpen={handleFaqModalOpen}
-                setPlayStatic={setPlayStatic}
-                darkMode={darkMode}
-                setDarkMode={setDarkMode}
-              />
-            </Box>
-            <Box
-              sx={{
-                height: 15,
-              }}
-            />
-            <SelectorModal
-              selectorOpen={selectorOpen}
-              handleSelectorClose={handleSelectorClose}
-              selectedStations={selectedStations}
-              setSelectedStations={setSelectedStations}
+            <Logo />
+            <Toolbar
+              playing={playing}
               setPlaying={setPlaying}
-            />
-            <FaqModal faqOpen={faqOpen} handleFaqClose={handleFaqClose} />
-            <Container sx={{ width: "100%" }}>
-              <Grid
-                container
-                justifyContent="space-between"
-                rowSpacing={2}
-                columnSpacing={{ lg: 4, md: 3 }}
-              >
-                {selectedStations.map((station) => {
-                  return (
-                    <Grid
-                      item
-                      md={12}
-                      lg={6}
-                      sx={{ width: "100%" }}
-                      key={station.id}
-                    >
-                      <StationCard
-                        callsign={station.call_sign}
-                        frequency={station.broadcast_frequency}
-                        college={station.college_name}
-                        audioURL={station.audio_url}
-                        collegeimage={station.college_image}
-                        stationObject={station}
-                        setPlaying={setPlaying}
-                        playing={playing}
-                        volume={volume}
-                        setPlayStatic={setPlayStatic}
-                        userPause={userPause}
-                        setUserPause={setUserPause}
-                        darkMode={darkMode}
-                      />
-                    </Grid>
-                  );
-                })}
-              </Grid>
-            </Container>
-            <Footer handleSelectorModalOpen={handleSelectorModalOpen} />
-            <audio
-              className="staticAudio"
-              preload="auto"
-              loop
-              src="https://www.soundjay.com/mechanical/sounds/tv-static-05.mp3"
+              displayedStations={selectedStations}
+              volume={volume}
+              setVolume={setVolume}
+              userPause={userPause}
+              setUserPause={setUserPause}
+              handleSelectorModalOpen={handleSelectorModalOpen}
+              handleFaqModalOpen={handleFaqModalOpen}
+              setPlayStatic={setPlayStatic}
+              darkMode={darkMode}
+              setDarkMode={setDarkMode}
             />
           </Box>
-          <StickyBar playing={playing} />
-        </ThemeProvider>
-      </div>
-    </HelmetProvider>
+          <Box
+            sx={{
+              width: { xs: "100vw", lg: "auto" },
+              display: { xs: "flex", lg: "none" },
+              justifyContent: "center",
+              backgroundColor: "rgba(46,46,46,0.9)",
+            }}
+          >
+            <Logo />
+          </Box>
+          <Box
+            sx={{
+              display: { xs: "flex", lg: "none" },
+              position: "sticky",
+              top: 0,
+              borderTop: 1,
+              borderColor: "#404040",
+              zIndex: 12,
+              boxShadow: 4,
+              backgroundColor: "rgba(46,46,46,0.9)",
+              backdropFilter: "blur(3px)",
+            }}
+          >
+            <Toolbar
+              playing={playing}
+              setPlaying={setPlaying}
+              displayedStations={selectedStations}
+              volume={volume}
+              setVolume={setVolume}
+              userPause={userPause}
+              setUserPause={setUserPause}
+              handleSelectorModalOpen={handleSelectorModalOpen}
+              handleFaqModalOpen={handleFaqModalOpen}
+              setPlayStatic={setPlayStatic}
+              darkMode={darkMode}
+              setDarkMode={setDarkMode}
+            />
+          </Box>
+          <Box
+            sx={{
+              height: 15,
+            }}
+          />
+          <SelectorModal
+            selectorOpen={selectorOpen}
+            handleSelectorClose={handleSelectorClose}
+            selectedStations={selectedStations}
+            setSelectedStations={setSelectedStations}
+            setPlaying={setPlaying}
+          />
+          <FaqModal faqOpen={faqOpen} handleFaqClose={handleFaqClose} />
+          <Container sx={{ width: "100%" }}>
+            <Grid
+              container
+              justifyContent="space-between"
+              rowSpacing={2}
+              columnSpacing={{ lg: 4, md: 3 }}
+            >
+              {selectedStations.map((station) => {
+                return (
+                  <Grid
+                    item
+                    md={12}
+                    lg={6}
+                    sx={{ width: "100%" }}
+                    key={station.id}
+                  >
+                    <StationCard
+                      callsign={station.call_sign}
+                      frequency={station.broadcast_frequency}
+                      college={station.college_name}
+                      audioURL={station.audio_url}
+                      collegeimage={station.college_image}
+                      stationObject={station}
+                      setPlaying={setPlaying}
+                      playing={playing}
+                      volume={volume}
+                      setPlayStatic={setPlayStatic}
+                      userPause={userPause}
+                      setUserPause={setUserPause}
+                      darkMode={darkMode}
+                    />
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </Container>
+          <Footer handleSelectorModalOpen={handleSelectorModalOpen} />
+          <audio
+            className="staticAudio"
+            preload="auto"
+            loop
+            src="https://www.soundjay.com/mechanical/sounds/tv-static-05.mp3"
+          />
+        </Box>
+        <StickyBar playing={playing} />
+      </ThemeProvider>
+    </div>
   );
 }
