@@ -1,1 +1,5 @@
-https://campus-fm.netlify.app/* https://www.campus-fm.com/ 301!
+# Redirect domain aliases to primary domain
+https://campus-fm.netlify.app/* https://www.campus-fm.com/:splat 301!
+
+# Handle client-side routing
+/* /index.html 200
