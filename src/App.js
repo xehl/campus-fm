@@ -16,21 +16,35 @@ import ReactGA from "react-ga4";
 // Returns uppercase station call sign or null
 const parseStationFromUrl = () => {
   const path = window.location.pathname;
-  if (path === '/') return null;
-  const station = path.replace(/^\/|\/$/g, '').trim();
+  if (path === "/") return null;
+  const station = path.replace(/^\/|\/$/g, "").trim();
   return station.toUpperCase();
 };
 
 // Returns station object or null
 const findStationInStations = (callSign) => {
-  return stations.find(
-    station => station.call_sign.toUpperCase() === callSign
-  ) || null;
+  return (
+    stations.find((station) => station.call_sign.toUpperCase() === callSign) ||
+    null
+  );
 };
 
 export default function App() {
   // MUI theme breakpoints
+  const [darkMode, setDarkMode] = useState(false);
+
   const theme = createTheme({
+    palette: {
+      mode: darkMode ? 'dark' : 'light',
+      background: {
+        default: darkMode ? '#121212' : '#ffffff',
+        paper: darkMode ? '#1e1e1e' : '#ffffff',
+      },
+      text: {
+        primary: darkMode ? '#ffffff' : '#212121',
+        secondary: darkMode ? '#b3b3b3' : '#757575',
+      }
+    },
     breakpoints: {
       values: {
         xs: 0,
@@ -41,6 +55,19 @@ export default function App() {
       },
     },
   });
+
+  // Load dark mode preference from localStorage
+  useEffect(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    if (savedMode !== null) {
+      setDarkMode(JSON.parse(savedMode));
+    }
+  }, []);
+
+  // Save dark mode preference
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+  }, [darkMode]);
 
   // fire on initial page load
   useEffect(() => {
@@ -53,19 +80,32 @@ export default function App() {
 
     // Check for station in URL
     const urlStation = parseStationFromUrl();
-    const stationFromUrl = urlStation ? findStationInStations(urlStation) : null;
+    const stationFromUrl = urlStation
+      ? findStationInStations(urlStation)
+      : null;
 
     // Load stations from localStorage or use defaults
     const cache = JSON.parse(localStorage.getItem("recentStations"));
-    let initialStations = cache || stations.filter((station) =>
-      ["WXYC", "KALX", "KVRX", "WUCF", "WSUM", "WSBF", "WXTJ"].includes(station.call_sign)
-    );
+    let initialStations =
+      cache ||
+      stations.filter((station) =>
+        ["WXYC", "KALX", "KVRX", "WUCF", "WSUM", "WSBF", "WXTJ"].includes(
+          station.call_sign
+        )
+      );
 
     // If URL has a station, handle it
     if (stationFromUrl) {
-      if (initialStations.some(s => s.call_sign === stationFromUrl.call_sign)) {
+      if (
+        initialStations.some((s) => s.call_sign === stationFromUrl.call_sign)
+      ) {
         // If station exists in list, move it to front
-        initialStations = [stationFromUrl, ...initialStations.filter(s => s.call_sign !== stationFromUrl.call_sign)];
+        initialStations = [
+          stationFromUrl,
+          ...initialStations.filter(
+            (s) => s.call_sign !== stationFromUrl.call_sign
+          ),
+        ];
       } else {
         // If station isn't in list, prepend it (temporarily dropping last station if at limit)
         initialStations = [stationFromUrl, ...initialStations.slice(0, 9)];
@@ -111,7 +151,6 @@ export default function App() {
   const [volume, setVolume] = useState(100);
   const [userPause, setUserPause] = useState(false);
   const [selectedStations, setSelectedStations] = useState([]);
-
 
   // selector modal controls
   const [selectorOpen, setSelectorOpen] = useState(false);
@@ -183,6 +222,8 @@ export default function App() {
               handleSelectorModalOpen={handleSelectorModalOpen}
               handleFaqModalOpen={handleFaqModalOpen}
               setPlayStatic={setPlayStatic}
+              darkMode={darkMode}
+              setDarkMode={setDarkMode}
             />
           </Box>
           <Box
@@ -219,6 +260,8 @@ export default function App() {
               handleSelectorModalOpen={handleSelectorModalOpen}
               handleFaqModalOpen={handleFaqModalOpen}
               setPlayStatic={setPlayStatic}
+              darkMode={darkMode}
+              setDarkMode={setDarkMode}
             />
           </Box>
           <Box
@@ -256,13 +299,14 @@ export default function App() {
                       college={station.college_name}
                       audioURL={station.audio_url}
                       collegeimage={station.college_image}
-                      setPlaying={setPlaying}
                       stationObject={station}
+                      setPlaying={setPlaying}
                       playing={playing}
                       volume={volume}
                       setPlayStatic={setPlayStatic}
                       userPause={userPause}
                       setUserPause={setUserPause}
+                      darkMode={darkMode}
                     />
                   </Grid>
                 );

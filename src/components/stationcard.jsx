@@ -5,7 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import ReactGA from "react-ga4"
 
-export default function StationCard({callsign, frequency, college, audioURL, collegeimage, setPlaying, stationObject, playing, volume, setPlayStatic, userPause, setUserPause}) {
+export default function StationCard({callsign, frequency, college, audioURL, collegeimage, setPlaying, stationObject, playing, volume, setPlayStatic, userPause, setUserPause, darkMode}) {
 
   const cardtheme = createTheme({
     breakpoints: {
@@ -48,7 +48,28 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     return loaded? 1: 0.15;
   }
   const getStyles = () => {
-    return playing?.call_sign === callsign ? { background: "#cefac8" } : {};
+    const isPlaying = playing?.call_sign === callsign;
+    const playingColor = "#2e7d32";  // Material-UI's green[800]
+    
+    return {
+      backgroundColor: isPlaying ? playingColor : (darkMode ? '#1e1e1e' : '#ffffff'),
+      color: darkMode ? '#ffffff' : '#212121',
+      transition: "all 0.2s ease-in-out",
+      boxShadow: darkMode ? 
+        '0px 2px 4px rgba(0,0,0,0.4)' : 
+        '0px 2px 4px rgba(0,0,0,0.1)',
+      '&:hover': {
+        backgroundColor: isPlaying ? 
+          playingColor : 
+          (darkMode ? '#2a2a2a' : '#f5f5f5')
+      },
+      '& .MuiTypography-root': {
+        color: isPlaying ? '#ffffff' : (darkMode ? '#ffffff' : '#212121'),
+      },
+      '& .MuiTypography-colorTextSecondary': {
+        color: isPlaying ? '#e0e0e0' : (darkMode ? '#b3b3b3' : '#757575'),
+      }
+    };
   }
 
   const isUrlStation = () => {

@@ -7,6 +7,8 @@ import ShuffleSharpIcon from '@mui/icons-material/ShuffleSharp';
 import HelpIcon from '@mui/icons-material/Help';
 import VolumeDown from '@mui/icons-material/VolumeDown';
 import VolumeUp from '@mui/icons-material/VolumeUp';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
 import ReactGA from "react-ga4"
@@ -23,7 +25,7 @@ const LightTooltip = styled(({ className, ...props }) => (
   },
 }));
 
-export default function Toolbar({ playing, setPlaying, displayedStations, volume, setVolume, userPause, setUserPause, handleSelectorModalOpen, handleFaqModalOpen, setPlayStatic }) {
+export default function Toolbar({ playing, setPlaying, displayedStations, volume, setVolume, userPause, setUserPause, handleSelectorModalOpen, handleFaqModalOpen, setPlayStatic, darkMode, setDarkMode }) {
 
   let stationElements = document.getElementsByClassName("audio-element")
 
@@ -100,6 +102,14 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
     });
   }
 
+  function toggleDarkMode() {
+    setDarkMode(!darkMode);
+    ReactGA.event({
+      category: "Theme",
+      action: !darkMode ? "User enabled dark mode" : "User disabled dark mode",
+    });
+  }
+
 // if userPause is true (user has clicked pause), display play button, otherwise display the pause button
 
   return (
@@ -121,21 +131,36 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
         mb: { xs: 1, sm: 1, md: 1, xl: 0 },
         width: { xs: "80%", sm: 550, md: 600, xl: 700 },
       }}>
-        <LightTooltip disableTouchListener enterDelay={350} title="load new stations" sx={{fontFamily: "Share Tech Mono"}}>
-          <DashboardCustomizeIcon onClick={handleSelectorModalOpen} sx={{ width: 50, opacity: 1, fontSize: { xs: 36, sm: 47 }, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }} />
+        <LightTooltip disableTouchListener enterDelay={350} title="load new stations">
+          <DashboardCustomizeIcon onClick={handleSelectorModalOpen} sx={{ width: 45, opacity: 1, fontSize: { xs: 32, sm: 42 }, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }} />
         </LightTooltip>
         <LightTooltip disableTouchListener enterDelay={350} title="play random station">
-          <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { xs: 38, sm: 50 }, width: 50, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }} />
-      </LightTooltip>
-        <LightTooltip disableTouchListener enterDelay={350} title="faq">
-          <HelpIcon onClick={handleFaqModalOpen} sx={{ fontSize: { xs: 38, sm: 43 }, ml:{xs: 0, lg: 1}, width: 50, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }} />
+          <ShuffleSharpIcon onClick={playRandom} sx={{ fontSize: { xs: 34, sm: 45 }, width: 45, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }} />
         </LightTooltip>
-        <PlayArrowIcon onClick={playMusic} sx={{ display: showPlay(), fontSize: { xs: 53, md: 68 }, width: 50, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }}/>
-        <PauseIcon onClick={pauseMusic} sx={{ display: showPause(), fontSize: { xs: 46, sm: 57 }, width: 50, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }}/>
+        <LightTooltip disableTouchListener enterDelay={350} title="faq">
+          <HelpIcon onClick={handleFaqModalOpen} sx={{ fontSize: { xs: 34, sm: 39 }, ml:{xs: 0, lg: 1}, width: 45, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }} />
+        </LightTooltip>
+        <LightTooltip disableTouchListener enterDelay={350} title={darkMode ? "light mode" : "dark mode"}>
+          <Box onClick={toggleDarkMode} sx={{ 
+            display: { xs: "none", lg: "flex" },
+            fontSize: { xs: 34, sm: 39 }, 
+            width: 45, 
+            color: "white", 
+            cursor: "pointer", 
+            transition: "0.3s", 
+            "&:hover": { color: "rgb(143, 143, 143)" },
+            alignItems: "center",
+            justifyContent: "center"
+          }}>
+            {darkMode ? <LightModeIcon sx={{ fontSize: "inherit" }}/> : <DarkModeIcon sx={{ fontSize: "inherit" }}/>}
+          </Box>
+        </LightTooltip>
+        <PlayArrowIcon onClick={playMusic} sx={{ display: showPlay(), fontSize: { xs: 48, md: 61 }, width: 45, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }}/>
+        <PauseIcon onClick={pauseMusic} sx={{ display: showPause(), fontSize: { xs: 41, sm: 51 }, width: 45, color: "white", cursor: "pointer", transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }}/>
         <Stack spacing={2} direction="row" alignItems="center" sx={{ ml:{xs: 0, lg: 2}, display: { xs: "none", lg: "flex" }, cursor: "pointer" }}>
-          <VolumeDown onClick={() => {setVolume(0)}} sx={{ color: "white", fontSize: 55, transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }}/>
+          <VolumeDown onClick={() => {setVolume(0)}} sx={{ color: "white", fontSize: 50, transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }}/>
           <Slider sx={{ width: 150 }} aria-label="Volume" value={volume} onChange={handleVolumeChange} />
-          <VolumeUp onClick={() => {setVolume(100)}} sx={{ color: "white", fontSize: 50, transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }}/>
+          <VolumeUp onClick={() => {setVolume(100)}} sx={{ color: "white", fontSize: 45, transition: "0.3s", "&:hover": { color: "rgb(143, 143, 143)" } }}/>
         </Stack>
       </Box>
     </Box>
