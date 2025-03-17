@@ -88,7 +88,7 @@ const stations = [
     city: "Tucson",
     state: "AZ",
     station_image:
-      "https://static.mytuner.mobi/media/tvos_radios/uzkpp2kqse7c.jpg",
+      "https://www.radio.net/300/kamp-student-radio.jpeg?version=e3ff22a017a45300035cb18ded68e52f",
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arizona_Wildcats_logo.svg/200px-Arizona_Wildcats_logo.svg.png",
     palette: ["#05255d", "#faf9fa", "#bd0f3e", "#dc7c94"],
@@ -217,7 +217,7 @@ const stations = [
     city: "Lexington",
     state: "VA",
     station_image:
-      "https://static.mytuner.mobi/media/tvos_radios/kNFMSSg6QR.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkfc-Q2tl8cJ1nHa1OXdfU-fo5-1L714vSWw&s",
     college_image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Wash-lee_logo_from_NCAA.svg/1200px-Wash-lee_logo_from_NCAA.svg.png",
     palette: ["#093698", "#e6e8ea", "#0e0e0e", "#799fc2"],
@@ -359,7 +359,7 @@ const stations = [
     state: "VA",
     station_image: "https://cdn-radiotime-logos.tunein.com/s23449g.png",
     college_image:
-      "https://play-lh.googleusercontent.com/NUZcBH8TGuqTuP_zsaEzXC747k8IXyTUQ83nkP0voWgCFbVBItRuv0XwymzHuGZakZM",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Virginia_Tech_Hokies_logo.svg/1200px-Virginia_Tech_Hokies_logo.svg.png",
     palette: ["#a2392c", "#fbfafa", "#ad8790", "#b4949c"],
   },
   {
@@ -469,7 +469,7 @@ const stations = [
     station_image:
       "https://kzsc.org/wp-content/uploads/2022/04/sticker-richarddjames.png",
     college_image:
-      "https://upload.wikimedia.org/wikipedia/commons/d/d8/SDS_UCSantaCruz_RedwoodSlug_WhiteGround.png",
+      "https://upload.wikimedia.org/wikipedia/en/d/dd/Banana_slugs_logo.png",
     palette: ["#fbcc07", "#04143c", "#7c6444", "#6e7084"],
   },
   {
@@ -641,7 +641,7 @@ const stations = [
     city: "Stanford",
     state: "CA",
     station_image:
-      "https://static.mytuner.mobi/media/tvos_radios/JvbcgbfZAj.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Kzsuheartlogo.svg/1200px-Kzsuheartlogo.svg.png",
     college_image:
       "http://identity.stanford.edu/wp-content/uploads/sites/3/2020/07/block-s-right.png",
     palette: ["#8d1616", "#e9e4e4", "#057464", "#c4848c"],
@@ -1244,7 +1244,7 @@ const stations = [
     station_image:
       "https://pbs.twimg.com/profile_images/1337777242215165952/9OqjjiJI_400x400.jpg",
     college_image:
-      "https://yt3.googleusercontent.com/ytc/AIdro_lwUUc7sdLDjt8YLefISRwHzNBtqHVsrhmkJmv2sjhoT6M=s900-c-k-c0x00ffffff-no-rj",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Penn_Quakers_logo.svg/1200px-Penn_Quakers_logo.svg.png",
     palette: ["#fbfbfb", "#051d5c", "#9c0404", "#7384a4"],
   },
   {
@@ -1288,8 +1288,7 @@ const stations = [
     public_private: "Public",
     city: "Windham",
     state: "CT",
-    station_image:
-      "https://static.mytuner.mobi/media/tvos_radios/2pgzAUzUzC.png",
+    station_image: "https://d371i8ihhgym7w.cloudfront.net/108590177.png",
     college_image:
       "https://teamlocker.s3.amazonaws.com/uploads/4da1a5cc9c5e530393e4e0e00051e8d325c0d2edSLD24_EasternCT_HAG52_allgear.png",
     palette: ["#d2d2d9", "#08234e", "#830d2c", "#8c6776"],
