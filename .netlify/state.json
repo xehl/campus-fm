@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "San Francisco",
+			"country": {
+				"code": "US",
+				"name": "United States"
+			},
+			"subdivision": {
+				"code": "CA",
+				"name": "California"
+			},
+			"timezone": "America/Los_Angeles",
+			"latitude": 37.7797,
+			"longitude": -122.4159,
+			"postalCode": "94102"
+		},
+		"timestamp": 1759967891501
+	}
+}
