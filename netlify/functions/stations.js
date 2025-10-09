@@ -1,5 +1,5 @@
 // Import the stations data
-const stations = require('../../src/stations.js');
+const stations = require('./stations-data.js');
 
 exports.handler = async (event, context) => {
   // Set CORS headers
