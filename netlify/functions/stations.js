@@ -1,3 +1,4 @@
+// Import the stations data
 const stations = require('../../src/stations.js');
 
 exports.handler = async (event, context) => {
@@ -28,7 +29,7 @@ exports.handler = async (event, context) => {
   }
 
   try {
-    // Get the stations data
+    // Get the stations data - handle both default export and direct export
     const stationsData = stations.default || stations;
     
     return {

@@ -3,7 +3,8 @@
   functions = "netlify/functions"
   publish = "build"
 
+# Redirect API calls to Netlify functions
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
+  from = "/api/stations"
+  to = "/.netlify/functions/stations"
   status = 200
