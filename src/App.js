@@ -198,8 +198,7 @@ export default function App() {
           <Box
             sx={{
               display: { xs: "none", lg: "flex" },
-              width: "100vw",
-              flexDirection: { xs: "column", lg: "row" },
+              flexDirection: "row",
               alignItems: "center",
               justifyContent: "space-around",
               position: "sticky",
@@ -228,7 +227,6 @@ export default function App() {
           </Box>
           <Box
             sx={{
-              width: { xs: "100vw", lg: "auto" },
               display: { xs: "flex", lg: "none" },
               justifyContent: "center",
               backgroundColor: "rgba(46,46,46,0.9)",
