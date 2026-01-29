@@ -56,9 +56,9 @@ const stations = [
       city: "Madison",
       state: "WI",
       station_image:
-        "https://www.radio.net/images/broadcasts/ec/fb/11375/c300.png",
+        "https://cdn.onlineradiobox.com/img/l/3/9933.v4.png",
       college_image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Wisconsin_Badgers_logo.svg/814px-Wisconsin_Badgers_logo.svg.png",
+        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/275.png",
       palette: ["#a30505", "#f9f7f7", "#0c0707", "#b17c7c"],
     },
     {
@@ -326,9 +326,9 @@ const stations = [
       city: "Eugene",
       state: "OR",
       station_image:
-        "https://i3.radionomy.com/radios/400/c9d7f1d5-24ed-45e7-b0dd-8fbdd20528e0.jpg",
+        "https://programming.weru.org/images/Station/13/1380-img_logo.225x225.jpg",
       college_image:
-        "https://assets-sports.thescore.com/football/team/514/logo.png",
+        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2483.png",
       palette: ["#f2eb1c", "#176a42", "#7da434", "#97b62e"],
     },
     {
@@ -389,9 +389,9 @@ const stations = [
       city: "Rolla",
       state: "MO",
       station_image:
-        "https://www.radio.net/images/broadcasts/a5/7b/31601/c300.png",
+        "https://cdn.onlineradiobox.com/img/l/1/12161.v7.png",
       college_image:
-        "https://www.pinclipart.com/picdir/big/76-766936_mascot-marks-missouri-s-t-athletics-logo-clipart.png",
+        "https://brand.mst.edu/media/universityadvancement/brand/logos/athletics/primaryidentitymarks/S&T_PRIMARY_BANNER_FC_DIGITAL.png",
       palette: ["#eae1cf", "#055535", "#8aa274", "#7cac9c"],
     },
     {
@@ -576,9 +576,9 @@ const stations = [
       city: "Davis",
       state: "CA",
       station_image:
-        "https://www.radio.net/images/broadcasts/e0/ec/29376/c175.png",
+        "https://images.prismic.io/kdvs/Z66SOpbqstJ9-m0Y_logo.png",
       college_image:
-        "https://content.sportslogos.net/logos/30/1831/full/california_davis_aggies_logo_primary_1959_sportslogosnet-8865.png",
+        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/302.png",
       palette: ["#042c53", "#cb9304", "#9c7c14", "#6c6628"],
     },
     {
@@ -592,9 +592,9 @@ const stations = [
       city: "Orlando",
       state: "FL",
       station_image:
-        "https://upload.wikimedia.org/wikipedia/commons/1/17/WUCF_FM_%282019%29.svg",
+        "https://s3.amazonaws.com/production.mediajoint.prx.org/public/account_images/11214/89.9-circle-logo-black-RGB_medium.png",
       college_image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/UCF_Knights_logo.svg/1200px-UCF_Knights_logo.svg.png",
+        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2116.png",
       palette: ["#040404", "#b3a36c", "#fbfbfb", "#5c4c34"],
     },
     {
@@ -625,9 +625,9 @@ const stations = [
       city: "State College",
       state: "PA",
       station_image:
-        "https://www.radio.net/images/broadcasts/10/84/28658/c300.png",
+        "https://www.thelion.fm/wp-content/uploads/2017/08/s30346q.png",
       college_image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjJoR3uzS2GS_KVfRbu6xI4yrvqto2iivTNQ&s",
+        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/213.png",
       palette: ["#f2f3f6", "#062d64", "#7c8cb2", "#7182ac"],
     },
     {
@@ -673,9 +673,9 @@ const stations = [
       city: "Fort Worth",
       state: "TX",
       station_image:
-        "https://www.radio.net/images/broadcasts/5e/db/17703/2/c300.png",
+        "https://cdn.onlineradiobox.com/img/l/5/18575.v9.png",
       college_image:
-        "https://sportslogohistory.com/wp-content/uploads/2021/07/tcu_horned_frogs_1994-1997.png",
+        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2628.png",
       palette: ["#542c6c", "#582c6c", "#582c6c", "#582c6c"],
     },
     {
@@ -705,9 +705,9 @@ const stations = [
       city: "Ottawa",
       state: "ON",
       station_image:
-        "https://chuo.fm/wp-content/uploads/2017/03/CHUO-Logo-web600x600-06.png",
+        "https://chuo.fm/wp-content/uploads/2025/02/cropped-chuologo_colour-1024x1024-1-removebg-preview.png",
       college_image:
-        "https://logowik.com/content/uploads/images/university-of-ottawa5840.jpg",
+        "https://upload.wikimedia.org/wikipedia/en/2/2a/Ottawa_Gee-Gees_logo.svg",
       palette: ["#040404", "#080404", "#080404", "#080404"],
     },
     {
@@ -1019,9 +1019,9 @@ const stations = [
       city: "Minneapolis",
       state: "MN",
       station_image:
-        "https://play-lh.googleusercontent.com/um-Go6BcxvbWvnMsZGe5ygqBDugKu1Dl8iqPywY2cqC3ywRmF0eVRJuxbvDl8Rmdp2M",
+        "https://radiok.org/sites/radiok.org/themes/custom/radiok_folwell/assets/images/radiok-logo.svg",
       college_image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/University_of_Minnesota_Logo.svg/2560px-University_of_Minnesota_Logo.svg.png",
+        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/135.png",
       palette: ["#fbcb33", "#7c041c", "#a84a24", "#bc5d24"],
     },
     {
@@ -1162,9 +1162,9 @@ const stations = [
       city: "Indiana",
       state: "PA",
       station_image:
-        "https://www.radio.net/images/broadcasts/81/e2/28619/c300.png",
+        "https://cdn.onlineradiobox.com/img/l/9/20059.v4.png",
       college_image:
-        "https://www.iup.edu/_assets/images/footer/iup-artmark-crimson.png",
+        "https://upload.wikimedia.org/wikipedia/en/6/6f/IUP_Crimson_Hawks_logo.svg",
       palette: ["#9c1c34", "#a01c34", "#a01c34", "#a01c34"],
     },
     {
@@ -1178,9 +1178,9 @@ const stations = [
       city: "Cleveland",
       state: "OH",
       station_image:
-        "https://yt3.ggpht.com/ytc/AMLnZu9sBQKzhnyi-feCpAHK_LR8cxrkBPgA2OR3lVD3=s900-c-k-c0x00ffffff-no-rj",
+        "https://cdn.onlineradiobox.com/img/l/2/23362.v5.png",
       college_image:
-        "https://case.edu/brand/sites/default/files/styles/large/public/2023-05/Case-Western-Reserve-University-Seal_RGB-Blue_0.jpg?itok=-nCVOa7R",
+        "https://upload.wikimedia.org/wikipedia/en/b/bb/Case_Western_Reserve_Spartans_primary_logo.svg",
       palette: ["#223e4e", "#939ea6", "#738493", "#687c8c"],
     },
     {
@@ -1461,9 +1461,9 @@ const stations = [
       public_private: "Private",
       city: "Boston",
       state: "MA",
-      station_image: "https://wrbbradio.org/img/logo.png",
+      station_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNXTmMHXIE_y3xh3RzbI6NNRPcm0js95z08A&s",
       college_image:
-        "https://upload.wikimedia.org/wikipedia/commons/0/01/Northeastern_Huskies_logo.png",
+        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/111.png",
       palette: ["#cb0404", "#040404", "#cfa4a5", "#5c5c5c"],
     },
     {
@@ -1713,9 +1713,9 @@ const stations = [
       city: "Cambridge",
       state: "United Kingdom",
       station_image:
-        "https://www.radio.net/images/broadcasts/a4/9f/16997/c300.png",
+        "https://upload.wikimedia.org/wikipedia/commons/d/d7/Cam_FM_logo%2C_in_use_from_August_2020.svg",
       college_image:
-        "https://callforcurators.com/wp-content/uploads/2022/01/university-of-cambridge-logo-3.png",
+        "https://www.cam.ac.uk/sites/default/files/secondary-logo-stacked.png",
       palette: ["#17150c", "#e8671f", "#fbfbfb", "#8c8c8c"],
     },
     {
@@ -1777,9 +1777,9 @@ const stations = [
       city: "Paris",
       state: "France",
       station_image:
-        "https://www.radio.net/images/broadcasts/08/e2/29192/c175.png",
+        "https://oetpai.fra1.digitaloceanspaces.com/new_images/radioapp_uapk_osr259816.png",
       college_image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Coat_of_arms_of_the_University_of_Paris.svg/640px-Coat_of_arms_of_the_University_of_Paris.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Coat_of_arms_of_the_University_of_Paris.svg/200px-Coat_of_arms_of_the_University_of_Paris.svg.png",
       palette: ["#f3d09e", "#436ce8", "#2b2925", "#acaca0"],
     },
     {
@@ -2531,9 +2531,9 @@ const stations = [
       public_private: "Private",
       city: "Washington",
       state: "DC",
-      station_image: "https://logo.clearbit.com/www.whbc963hd3.com",
+      station_image: "https://cdn.onlineradiobox.com/img/l/0/70280.v3.png",
       college_image:
-        "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Howard_Bison_logo.svg/1200px-Howard_Bison_logo.svg.png",
+        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/47.png",
     },
     {
       id: 166,
