@@ -155,7 +155,7 @@ const stations = [
       station_image:
         "https://kfjc.org/static/images/logos/classic.color.gifs/classic.color.600x470.gif",
       college_image:
-        "https://www.wemakescholars.com/admin/uploads/providers/fiG-Xq69emSoKM8DaEpfSu42f90Mo11c.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Foothill_College_logo.svg/1280px-Foothill_College_logo.svg.png",
       palette: ["#ac1c2c", "#8e1c24", "#b4202c", "#b02028"],
     },
     {
@@ -297,7 +297,7 @@ const stations = [
       station_image:
         "https://wknc.org/wp-content/uploads/2020/10/wknc881-bow.png",
       college_image:
-        "https://trademarks.ncsu.edu/wp-content/uploads/2016/04/cropped-brick-s-1.png",
+        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/152.png",
       palette: ["#cb262e", "#0c0c0e", "#f6f3f3", "#ec8c9c"],
     },
     {
@@ -691,7 +691,7 @@ const stations = [
       station_image:
         "https://i1.sndcdn.com/avatars-000445307787-562tuu-t500x500.jpg",
       college_image:
-        "https://apply.educationplannerbc.ca/assets/institutions/uvic/logo/UVIC_logo.png",
+        "https://upload.wikimedia.org/wikipedia/commons/4/40/Univ_of_victoria_logo.png",
       palette: ["#f5dcd3", "#292129", "#8aa6d0", "#2371b1"],
     },
     {
@@ -1005,7 +1005,7 @@ const stations = [
       station_image:
         "https://upload.wikimedia.org/wikipedia/en/8/87/KRUI-FM_logo.jpg",
       college_image:
-        "https://1000logos.net/wp-content/uploads/2021/06/Iowa-Hawkeyes-logo.png",
+        "https://upload.wikimedia.org/wikipedia/en/7/7b/Iowa_Hawkeyes_logo.svg",
       palette: ["#fad40a", "#040404", "#04040c", "#7c6404"],
     },
     {
@@ -1338,7 +1338,7 @@ const stations = [
       station_image:
         "https://upload.wikimedia.org/wikipedia/commons/c/c5/88.9_The_AlterNation_logo.png",
       college_image:
-        "https://www.scsrockets.org/wp-content/uploads/2020/09/cropped-SCS-Rockets-Logo-2020.png",
+        "https://cmsv2-assets.apptegy.net/uploads/27637/logo/30450/SCS_Logo.png",
       palette: ["#fbd304", "#044c94", "#044c8c", "#04448c"],
     },
     {
@@ -1447,7 +1447,7 @@ const stations = [
       station_image:
         "https://pbs.twimg.com/profile_images/827684532/WMBR_round_400x400.png",
       college_image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/2560px-MIT_logo.svg.png",
+        "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/MIT_Seal.svg/800px-MIT_Seal.svg.png",
       palette: ["#8c8c8c", "#a41c34", "#987490", "#983864"],
     },
     {
@@ -1606,7 +1606,7 @@ const stations = [
       station_image:
         "https://cdn-profiles.tunein.com/s23126/images/logod.png?t=156139WT",
       college_image:
-        "https://hope.edu/offices/public-affairs-marketing/resources/logos/athletics/block-h-spirit/HOPE_Block-H_Spirit-Mark_OrangeBlue.png",
+        "https://hope.edu/offices/public-affairs-marketing/resources/logos/athletics/anchor-hope-stack/HOPE_Anchor_Stack.png",
       palette: ["#f37b24", "#042c5c", "#a86345", "#685254"],
     },
     {
@@ -2354,7 +2354,7 @@ const stations = [
       station_image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRapZ2PiX6TOzzfwppHCZshUGj2-T2Nc2BRmQ&s",
       college_image:
-        "https://1000logos.net/wp-content/uploads/2019/12/Eastern-Michigan-Eagles-Logo-2003.png",
+        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2199.png",
     },
     {
       id: 154,
@@ -2649,7 +2649,7 @@ const stations = [
       public_private: "Private",
       city: "Ashland",
       state: "OH",
-      station_image: "https://logo.clearbit.com/wrdlfm.com",
+      station_image: "https://wrdlfm.com/wp-content/uploads/2021/08/cropped-WRDL-Logo-Web-Player-copy-scaled-1.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/9/92/Ashland_Eagles_logo.svg/1200px-Ashland_Eagles_logo.svg.png",
     },
