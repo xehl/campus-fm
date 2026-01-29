@@ -1377,7 +1377,7 @@ const stations = [
       call_sign: "WVBR",
       broadcast_frequency: "93.5",
       audio_url: "https://ais-edge51-live365-dal02.cdnstream.com/a52371",
-      station_url: "https://www.cornellradio.com/",
+      station_url: "https://www.cornellradio.net/",
       college_name: "Cornell University",
       public_private: "Private",
       city: "Ithaca",
