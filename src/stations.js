@@ -12,7 +12,6 @@ const stations = [
       station_image: "https://radiostationusa.fm/assets/image/radio/180/WXYC.jpg",
       college_image:
         "https://assets-sports.thescore.com/basketball/team/756/logo.png",
-      palette: ["#a4c0e4", "#263663", "#5e6687", "#6c7491"],
     },
     {
       id: 2,
@@ -27,7 +26,6 @@ const stations = [
       station_image:
         "https://kalx.berkeley.edu/wp-content/uploads/2024/04/2024-kalx-hoodie-297x300.png",
       college_image: "https://wwll.com/images/logos/teams/cal-256.png",
-      palette: ["#092f63", "#f2c134", "#fcf9f3", "#4e566c"],
     },
     {
       id: 3,
@@ -43,7 +41,6 @@ const stations = [
         "https://pbs.twimg.com/profile_images/1021906128332980224/tgMrKr7O_400x400.jpg",
       college_image:
         "https://assets-sports.thescore.com/basketball/team/1069/logo.png",
-      palette: ["#d46c2c", "#d86c2c", "#d86c2c", "#d86c2c"],
     },
     {
       id: 6,
@@ -59,7 +56,6 @@ const stations = [
         "https://cdn.onlineradiobox.com/img/l/3/9933.v4.png",
       college_image:
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/275.png",
-      palette: ["#a30505", "#f9f7f7", "#0c0707", "#b17c7c"],
     },
     {
       id: 7,
@@ -75,7 +71,6 @@ const stations = [
         "https://zeno.fm/_next/image/?url=https%3A%2F%2Fimages.zeno.fm%2FaF2s0GnLVx4-MGD1_4wNuVtc2ZGyuQOu3A3Ld6Od1Pk%2Frs%3Afit%3A240%3A240%2Fg%3Ace%3A0%3A0%2FaHR0cHM6Ly9zdHJlYW0tdG9vbHMuemVub21lZGlhLmNvbS9jb250ZW50L3N0YXRpb25zLzc2ZWM3NzU5LWM4YWUtNDkzOC1iZmI0LTc0MjU2N2FkOTZjNi9pbWFnZS8_dXBkYXRlZD0xNzEzOTA1MzYzMDAw.webp&w=3840&q=100",
       college_image:
         "https://assets-sports.thescore.com/basketball/team/684/logo.png",
-      palette: ["#edc96f", "#120f07", "#9d988a", "#7c7c7c"],
     },
     {
       id: 17,
@@ -91,7 +86,6 @@ const stations = [
         "https://www.radio.net/300/kamp-student-radio.jpeg?version=e3ff22a017a45300035cb18ded68e52f",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arizona_Wildcats_logo.svg/200px-Arizona_Wildcats_logo.svg.png",
-      palette: ["#05255d", "#faf9fa", "#bd0f3e", "#dc7c94"],
     },
     {
       id: 19,
@@ -107,7 +101,6 @@ const stations = [
         "https://impact89fm.org/wp-content/uploads/2015/03/MainLogo-300x3001.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Michigan_State_Athletics_logo.svg/1200px-Michigan_State_Athletics_logo.svg.png",
-      palette: ["#1c443c", "#14443c", "#20443c", "#20443c"],
     },
     {
       id: 14,
@@ -123,7 +116,6 @@ const stations = [
         "https://media-exp1.licdn.com/dms/image/C4E0BAQGlh_vDeKpWIQ/company-logo_200_200/0/1521359015698?e=2147483647&v=beta&t=NDMNDJlDJXyrHEYyzJsVvSkGbmbveL-WBukDv-NqGx8",
       college_image:
         "https://b.fssta.com/uploads/application/college/team-logos/Illinois.png",
-      palette: ["#eb4b24", "#142c4c", "#65383f", "#342c44"],
     },
     {
       id: 16,
@@ -140,7 +132,6 @@ const stations = [
         "https://cdn-profiles.tunein.com/s23884/images/logog.png?t=159614",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/West_Virginia_Mountaineers_logo.svg/175px-West_Virginia_Mountaineers_logo.svg.png",
-      palette: ["#042c54", "#042454", "#082c54", "#082c54"],
     },
     {
       id: 18,
@@ -156,7 +147,6 @@ const stations = [
         "https://kfjc.org/static/images/logos/classic.color.gifs/classic.color.600x470.gif",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Foothill_College_logo.svg/1280px-Foothill_College_logo.svg.png",
-      palette: ["#ac1c2c", "#8e1c24", "#b4202c", "#b02028"],
     },
     {
       id: 26,
@@ -172,7 +162,6 @@ const stations = [
         "https://naccchart.com/wp-content/uploads/2022/03/wvfs-hi-res_350.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/Florida_State_Seminoles_logo.svg/1200px-Florida_State_Seminoles_logo.svg.png",
-      palette: ["#452d34", "#ede8db", "#b0a79a", "#b9929c"],
     },
     {
       id: 28,
@@ -188,7 +177,6 @@ const stations = [
         "https://bloximages.newyork1.vip.townnews.com/redandblack.com/content/tncms/assets/v3/editorial/6/23/623c3abe-acc1-11e4-ace3-3f1d40ac2f84/54d2a4c19933a.image.jpg?resize=400%2C400",
       college_image:
         "https://content.sportslogos.net/logos/31/687/full/georgia_bulldogs_logo_secondary_2015_sportslogosnet-7979.png",
-      palette: ["#040404", "#fafafa", "#af1531", "#848484"],
     },
     {
       id: 8,
@@ -204,7 +192,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/en/5/50/WXTJ-LP_2015.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Virginia_Cavaliers_logo.svg/800px-Virginia_Cavaliers_logo.svg.png",
-      palette: ["#fb5714", "#0f3057", "#6a3b37", "#4a353c"],
     },
     {
       id: 9,
@@ -220,7 +207,6 @@ const stations = [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkfc-Q2tl8cJ1nHa1OXdfU-fo5-1L714vSWw&s",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Wash-lee_logo_from_NCAA.svg/1200px-Wash-lee_logo_from_NCAA.svg.png",
-      palette: ["#093698", "#e6e8ea", "#0e0e0e", "#799fc2"],
     },
     {
       id: 10,
@@ -236,7 +222,6 @@ const stations = [
         "https://i1.sndcdn.com/avatars-000070779841-52d5la-t500x500.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Boston_University_Terriers_logo.svg/800px-Boston_University_Terriers_logo.svg.png",
-      palette: ["#ba0613", "#070606", "#f1eff0", "#857c7c"],
     },
     {
       id: 11,
@@ -252,7 +237,6 @@ const stations = [
         "https://static.tuneyou.com/images/logos/500_500/81/10581/WKDUFM91.7.png",
       college_image:
         "https://drexel.edu/~/media/Images/identity/pageLogos/Drexel_Vertical-stacked_gold.ashx?la=en",
-      palette: ["#fcc404", "#ffc404", "#ffc404", "#ffc404"],
     },
     {
       id: 4,
@@ -267,7 +251,6 @@ const stations = [
       station_image:
         "https://pbs.twimg.com/profile_images/1362092476375310338/ApUeoD54_400x400.jpg",
       college_image: "https://cdn.d1baseball.com/logos/teams/256/michigan.png",
-      palette: ["#fcd304", "#fcdc04", "#fcd414", "#f4cc04"],
     },
     {
       id: 5,
@@ -282,7 +265,6 @@ const stations = [
       station_image: "https://cdn-radiotime-logos.tunein.com/s23442g.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Tennessee_Volunteers_logo.svg/1200px-Tennessee_Volunteers_logo.svg.png",
-      palette: ["#fc8404", "#ff8404", "#ff8404", "#ff8404"],
     },
     {
       id: 12,
@@ -298,7 +280,6 @@ const stations = [
         "https://wknc.org/wp-content/uploads/2020/10/wknc881-bow.png",
       college_image:
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/152.png",
-      palette: ["#cb262e", "#0c0c0e", "#f6f3f3", "#ec8c9c"],
     },
     {
       id: 13,
@@ -313,7 +294,6 @@ const stations = [
       station_image: "https://cdn-radiotime-logos.tunein.com/s22632g.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/3/34/Vermont_Catamounts_logo.svg/1200px-Vermont_Catamounts_logo.svg.png",
-      palette: ["#053c0f", "#9d5e0f", "#f7d15c", "#7b8c0c"],
     },
     {
       id: 15,
@@ -329,7 +309,6 @@ const stations = [
         "https://programming.weru.org/images/Station/13/1380-img_logo.225x225.jpg",
       college_image:
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2483.png",
-      palette: ["#f2eb1c", "#176a42", "#7da434", "#97b62e"],
     },
     {
       id: 27,
@@ -345,7 +324,6 @@ const stations = [
         "https://dbs.radioline.fr/pictures/radio_f9e336e70016db25b63ef34b980b8f59/logo200.jpg?size=200",
       college_image:
         "https://coursera-university-assets.s3.amazonaws.com/8b/80ffc01f5011e5bac7a71557814a9f/UNM_Logo_Vert_Coursera.png",
-      palette: ["#7b7980", "#cc1344", "#f8f7f7", "#bab4bc"],
     },
     {
       id: 20,
@@ -360,7 +338,6 @@ const stations = [
       station_image: "https://cdn-radiotime-logos.tunein.com/s23449g.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Virginia_Tech_Hokies_logo.svg/1200px-Virginia_Tech_Hokies_logo.svg.png",
-      palette: ["#a2392c", "#fbfafa", "#ad8790", "#b4949c"],
     },
     {
       id: 21,
@@ -376,7 +353,6 @@ const stations = [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHP4z0afknHEtpmHaK5x7mjIm8QNwPSXOo0v1uOfZ0PxX-ex5TBEqGBGP3byvnvwhEUKM&usqp=CAU",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Connecticut_Huskies_logo.svg/1200px-Connecticut_Huskies_logo.svg.png",
-      palette: ["#040c2c", "#eceded", "#e2042c", "#7793ac"],
     },
     {
       id: 22,
@@ -392,7 +368,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/en/7/77/Snapman.svg",
       college_image:
         "https://brand.mst.edu/media/universityadvancement/brand/logos/athletics/primaryidentitymarks/S&T_PRIMARY_BANNER_FC_DIGITAL.png",
-      palette: ["#eae1cf", "#055535", "#8aa274", "#7cac9c"],
     },
     {
       id: 23,
@@ -407,7 +382,6 @@ const stations = [
       station_image: "https://cdn-radiotime-logos.tunein.com/s22546g.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/RPI_Engineers.svg/1200px-RPI_Engineers.svg.png",
-      palette: ["#e3241c", "#242424", "#70241d", "#96241c"],
     },
     {
       id: 24,
@@ -423,7 +397,6 @@ const stations = [
         "https://kzuuorg.files.wordpress.com/2019/03/cropped-full-logo-final-2018.png?w=300",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Washington_State_Cougars_logo.svg/800px-Washington_State_Cougars_logo.svg.png",
-      palette: ["#fbfafa", "#9c1c34", "#bf727f", "#cc8c9c"],
     },
     {
       id: 25,
@@ -438,7 +411,6 @@ const stations = [
       station_image: "https://kspc.org/wp-content/uploads/2019/10/brand-2.jpg",
       college_image:
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/17.png",
-      palette: ["#f5c20d", "#850904", "#f4df7a", "#bc5c1c"],
     },
     {
       id: 29,
@@ -454,7 +426,6 @@ const stations = [
         "https://spinitron.com/images/Station/13/1389-img_logo.225x225.jpg?v=1568071394",
       college_image:
         "http://sportslogohistory.com/wp-content/uploads/2018/09/arkansas_razorbacks_2014-pres.png",
-      palette: ["#9d2233", "#13090b", "#c7c7c7", "#8c8c8c"],
     },
     {
       id: 30,
@@ -470,7 +441,6 @@ const stations = [
         "https://kzsc.org/wp-content/uploads/2022/04/sticker-richarddjames.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/d/dd/Banana_slugs_logo.png",
-      palette: ["#fbcc07", "#04143c", "#7c6444", "#6e7084"],
     },
     {
       id: 31,
@@ -486,7 +456,6 @@ const stations = [
         "https://images.squarespace-cdn.com/content/v1/5a822acff09ca44ad247aaea/1531168670297-OSO6W5VE5M51YU4E3X07/static1.squarespace.png",
       college_image:
         "https://a5e8126a499f8a963166-f72e9078d72b8c998606fd6e0319b679.ssl.cf5.rackcdn.com/images/sports-leagues/ncaa-acc-miami-logo.png",
-      palette: ["#f35b04", "#045333", "#f8f6f3", "#689484"],
     },
     {
       id: 32,
@@ -502,7 +471,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/en/f/fd/KFSR-FM_90.7_radio_logo.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Fresno_State_Bulldogs_baseball_logo.svg/1118px-Fresno_State_Bulldogs_baseball_logo.svg.png",
-      palette: ["#142b4b", "#c31434", "#7d1c3c", "#9d1635"],
     },
     {
       id: 33,
@@ -517,7 +485,6 @@ const stations = [
       station_image: "https://wsbf.net/images/wsbflady_250.png",
       college_image:
         "https://sportslogohistory.com/wp-content/uploads/2018/01/clemson_tigers_1977-pres_s.png",
-      palette: ["#f36b2c", "#532780", "#6f4d9b", "#fcbfa5"],
     },
     {
       id: 34,
@@ -531,7 +498,6 @@ const stations = [
       state: "GA",
       station_image: "https://avatars3.githubusercontent.com/u/2118908?s=280&v=4",
       college_image: "https://content.sportslogos.net/logos/31/690/full/2491.gif",
-      palette: ["#251d1d", "#e8b12c", "#f6f6f6", "#6c6c6c"],
     },
     {
       id: 36,
@@ -547,7 +513,6 @@ const stations = [
         "https://d3wo5wojvuv7l.cloudfront.net/t_twitter_card/images.spreaker.com/original/96ede5aff67a67e3dac827c52c7bd2f6.jpg",
       college_image:
         "https://cdn.freebiesupply.com/logos/large/2x/ubc-logo-png-transparent.png",
-      palette: ["#d4b42c", "#24246c", "#acb84c", "#50704c"],
     },
     {
       id: 37,
@@ -563,7 +528,6 @@ const stations = [
         "https://i1.sndcdn.com/avatars-000107068841-z5wmaw-t500x500.jpg",
       college_image:
         "https://content.sportslogos.net/logos/34/877/full/tulane_green_wave_logo_primary_1986_sportslogosnet-7875.png",
-      palette: ["#fbfbfb", "#04644c", "#43c3e3", "#74ac9c"],
     },
     {
       id: 38,
@@ -579,7 +543,6 @@ const stations = [
         "https://images.prismic.io/kdvs/Z66SOpbqstJ9-m0Y_logo.png",
       college_image:
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/302.png",
-      palette: ["#042c53", "#cb9304", "#9c7c14", "#6c6628"],
     },
     {
       id: 39,
@@ -595,7 +558,6 @@ const stations = [
         "https://s3.amazonaws.com/production.mediajoint.prx.org/public/account_images/11214/89.9-circle-logo-black-RGB_medium.png",
       college_image:
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2116.png",
-      palette: ["#040404", "#b3a36c", "#fbfbfb", "#5c4c34"],
     },
     {
       id: 40,
@@ -611,7 +573,6 @@ const stations = [
         "https://wers.org/wp-content/uploads/2017/12/WERS_socialmedia_nowaves-04.png",
       college_image:
         "https://www.ncaa.com/sites/default/files/images/logos/schools/bgl/emerson.svg",
-      palette: ["#facb37", "#252424", "#7d7553", "#846c2c"],
     },
     {
       id: 41,
@@ -628,7 +589,6 @@ const stations = [
         "https://www.thelion.fm/wp-content/uploads/2017/08/s30346q.png",
       college_image:
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/213.png",
-      palette: ["#f2f3f6", "#062d64", "#7c8cb2", "#7182ac"],
     },
     {
       id: 42,
@@ -644,7 +604,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Kzsuheartlogo.svg/1200px-Kzsuheartlogo.svg.png",
       college_image:
         "http://identity.stanford.edu/wp-content/uploads/sites/3/2020/07/block-s-right.png",
-      palette: ["#8d1616", "#e9e4e4", "#057464", "#c4848c"],
     },
     {
       id: 43,
@@ -660,7 +619,6 @@ const stations = [
         "https://playlists.wprb.com/images/Station/18/1895-img_logo.225x225.png?v=1621258861",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Princeton_Tigers_logo.svg/895px-Princeton_Tigers_logo.svg.png",
-      palette: ["#040404", "#fb6304", "#fbfafa", "#999898"],
     },
     {
       id: 44,
@@ -676,7 +634,6 @@ const stations = [
         "https://cdn.onlineradiobox.com/img/l/5/18575.v9.png",
       college_image:
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2628.png",
-      palette: ["#542c6c", "#582c6c", "#582c6c", "#582c6c"],
     },
     {
       id: 45,
@@ -692,7 +649,6 @@ const stations = [
         "https://i1.sndcdn.com/avatars-000445307787-562tuu-t500x500.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/4/40/Univ_of_victoria_logo.png",
-      palette: ["#f5dcd3", "#292129", "#8aa6d0", "#2371b1"],
     },
     //   {
     // NOTE: CHUO commented out - station ceased live broadcasting Dec 15, 2025
@@ -710,7 +666,6 @@ const stations = [
     //     "https://chuo.fm/wp-content/uploads/2025/02/cropped-chuologo_colour-1024x1024-1-removebg-preview.png",
     //   college_image:
     //     "https://upload.wikimedia.org/wikipedia/en/2/2a/Ottawa_Gee-Gees_logo.svg",
-    //   palette: ["#040404", "#080404", "#080404", "#080404"],
     // },
     {
       id: 47,
@@ -726,7 +681,6 @@ const stations = [
         "https://pbs.twimg.com/profile_images/999195818480488449/zT5K6ZFh_400x400.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Siegel_Uni_K%C3%B6ln_%28grau%29.svg/1200px-Siegel_Uni_K%C3%B6ln_%28grau%29.svg.png",
-      palette: ["#447ca4", "#f6f8f9", "#85a7c5", "#9cbccc"],
     },
     {
       id: 48,
@@ -742,7 +696,6 @@ const stations = [
         "https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/07/c5/8a/07c58abd-ce85-0f16-e320-fe29fe92f960/source/512x512bb.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Harvard_Crimson_logo.svg/1737px-Harvard_Crimson_logo.svg.png",
-      palette: ["#151d24", "#f9f9f9", "#a6883c", "#a31c33"],
     },
     {
       id: 49,
@@ -758,7 +711,6 @@ const stations = [
         "https://images.squarespace-cdn.com/content/v1/5d755b2788fb8857b5fb99af/94762cdb-a49f-4324-9817-f46094bb10da/Covid+WUML+Logo+with+shadow.png",
       college_image:
         "https://goriverhawks.com/images/2021/8/20/PrimaryLogo_NoStroke.png",
-      palette: ["#056bb3", "#d32434", "#f9fafb", "#74acd4"],
     },
     {
       id: 50,
@@ -772,7 +724,6 @@ const stations = [
       state: "HI",
       station_image: "https://www.pritchettcartoons.com/logos/ktuh.jpg",
       college_image: "https://hawaiiathletics.com/images/logos/v13.png",
-      palette: ["#d7d8db", "#194634", "#86ac9c", "#8cb4a4"],
     },
     {
       id: 51,
@@ -787,7 +738,6 @@ const stations = [
       station_image: "https://cdn-radiotime-logos.tunein.com/s257013g.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Rice_Owls_logo.svg/1200px-Rice_Owls_logo.svg.png",
-      palette: ["#04245c", "#041c5c", "#08245c", "#08245c"],
     },
     {
       id: 52,
@@ -803,7 +753,6 @@ const stations = [
         "https://i1.sndcdn.com/avatars-000131375076-3zgb62-t500x500.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Iowa_State_Cyclones_logo.svg/640px-Iowa_State_Cyclones_logo.svg.png",
-      palette: ["#8e2334", "#fbd03f", "#cd7332", "#bc844c"],
     },
     {
       id: 53,
@@ -819,7 +768,6 @@ const stations = [
         "https://static.wixstatic.com/media/6ed5e9_8981c37b2ed84fed82e0692f6b08a37c~mv2.png/v1/crop/x_81,y_70,w_624,h_472/fill/w_560,h_424,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/The%20BASH%20Logo.png",
       college_image:
         "https://gomcpanthers.com/images/logos/wabash_valley_logo.png?width=200&height=200",
-      palette: ["#120d0e", "#ec163c", "#869c9f", "#747474"],
     },
     {
       id: 54,
@@ -850,7 +798,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/commons/3/37/KCSU_logo-Multi_SP2022_%281%29.png",
       college_image:
         "https://brand.colostate.edu/wp-content/uploads/sites/47/2019/01/CSU-Ram-357.png",
-      palette: ["#1c4c2c", "#fbfbfb", "#8ca494", "#9cb4a4"],
     },
     {
       id: 56,
@@ -881,7 +828,6 @@ const stations = [
         "https://pbs.twimg.com/profile_images/910138549835530240/wBQGp9Nt_400x400.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Maryland_Terrapins_logo.svg/1200px-Maryland_Terrapins_logo.svg.png",
-      palette: ["#e31c33", "#040404", "#fbd617", "#bc8c94"],
     },
     {
       id: 58,
@@ -897,7 +843,6 @@ const stations = [
         "https://alexullrich.files.wordpress.com/2013/05/kcpr_logo_matthew_schwartz_bw.jpg?w=640",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/2/29/Calpolylogosports.png",
-      palette: ["#063d34", "#eacf83", "#fafaf8", "#89784d"],
     },
     {
       id: 59,
@@ -912,7 +857,6 @@ const stations = [
       station_image: "https://www.wvud.org/files/2017/04/cropped-WVUD600600.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/0/0a/University_of_Delaware_Wordmark.png",
-      palette: ["#096ead", "#fbdc05", "#f2f6f5", "#78a05c"],
     },
     {
       id: 60,
@@ -928,7 +872,6 @@ const stations = [
         "http://cdn-profiles.tunein.com/s21544/images/logod.png?t=637800282700000000",
       college_image:
         "https://content.sportslogos.net/logos/33/774/full/norfolk_state_spartans_logo_secondary_19991057.png",
-      palette: ["#047c54", "#fbfbfa", "#f3a405", "#74b49c"],
     },
     {
       id: 61,
@@ -944,7 +887,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/commons/a/ae/WRAS_Logo.png",
       college_image:
         "https://commkit.gsu.edu/files/2021/05/GSU-Athletics-Primary-3C-RGB.png",
-      palette: ["#e7bbc8", "#043ca4", "#6484cc", "#2a59b5"],
     },
     {
       id: 62,
@@ -960,7 +902,6 @@ const stations = [
         "http://cdn-profiles.tunein.com/s26509/images/logod.jpg?t=637919750680000000",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Loyola_Marymount_Lions_logo.svg/1200px-Loyola_Marymount_Lions_logo.svg.png",
-      palette: ["#042c54", "#7c041c", "#b1b0b8", "#3f5a77"],
     },
     {
       id: 63,
@@ -976,7 +917,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/KTSW_89.9.jpeg/220px-KTSW_89.9.jpeg",
       college_image:
         "https://www.txstate.edu/cache5775023272c6b91d422e57ec36e9f40a/imagehandler/scaler/gato-docs.its.txstate.edu/jcr:c11449cd-1dbd-494e-a0c3-f04efc16a480/Secondary_RGB_MRN-GLD.png?mode=fit&width=750",
-      palette: ["#ab9353", "#541c1c", "#724531", "#84543c"],
     },
     {
       id: 64,
@@ -992,7 +932,6 @@ const stations = [
         "https://cdn-profiles.tunein.com/s12240/images/logog.png?t=154158",
       college_image:
         "https://workforceplanningboard.org/wp-content/uploads/2020/03/Conestoga_College_logo.svg_-300x179-1.png",
-      palette: ["#ba9a63", "#040404", "#6c5c3c", "#2c5434"],
     },
     {
       id: 66,
@@ -1008,7 +947,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/en/8/87/KRUI-FM_logo.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/7/7b/Iowa_Hawkeyes_logo.svg",
-      palette: ["#fad40a", "#040404", "#04040c", "#7c6404"],
     },
     // NOTE: KUOM (Radio K) commented out - Cloudflare protection blocks direct stream access (429 errors)
     // {
@@ -1025,7 +963,6 @@ const stations = [
     //     "https://radiok.org/sites/radiok.org/themes/custom/radiok_folwell/assets/images/radiok-logo.svg",
     //   college_image:
     //     "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/135.png",
-    //   palette: ["#fbcb33", "#7c041c", "#a84a24", "#bc5d24"],
     // },
     {
       id: 68,
@@ -1041,7 +978,6 @@ const stations = [
         "https://i.iheart.com/v3/re/assets.streams/65aea27dbf0c3bda23d8ce93?ops=fit(240%2C240)",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Pitt_Panthers_wordmark.svg/1200px-Pitt_Panthers_wordmark.svg.png",
-      palette: ["#faba1c", "#043493", "#57626b", "#77745c"],
     },
     {
       id: 69,
@@ -1057,7 +993,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/commons/7/79/WMFO_91.5FM_Station_Logo.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tufts_Jumbos_logo.svg/1200px-Tufts_Jumbos_logo.svg.png",
-      palette: ["#c8c2bb", "#3c8cdb", "#89a6c7", "#66ace1"],
     },
     {
       id: 70,
@@ -1073,7 +1008,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/en/6/62/KRLXLogo.png",
       college_image:
         "https://athletics.carleton.edu/images/logos/Carleton-College.png",
-      palette: ["#f2c848", "#10437f", "#8c9ca8", "#847c44"],
     },
     {
       id: 71,
@@ -1088,7 +1022,6 @@ const stations = [
       station_image: "https://cdn-radiotime-logos.tunein.com/s24763g.png",
       college_image:
         "https://first-studyabroad.com/wp-content/uploads/2021/06/1550776205468.png",
-      palette: ["#f9f9f9", "#090a0a", "#e43c3c", "#ec7c74"],
     },
     {
       id: 72,
@@ -1104,7 +1037,6 @@ const stations = [
         "https://pbs.twimg.com/media/EmGqlP1XEAI7mjr?format=jpg&name=large",
       college_image:
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/160.png",
-      palette: ["#06265d", "#dcddde", "#647494", "#687c94"],
     },
     {
       id: 73,
@@ -1120,7 +1052,6 @@ const stations = [
         "https://se-images.campuslabs.com/clink/images/82dc7d8f-f40b-4487-b193-dec9779b3ecf95317a62-63ab-4d9b-8cc1-f2dadecf2b46.png?preset=med-sq",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Miami_Redhawks_logo.svg/1200px-Miami_Redhawks_logo.svg.png",
-      palette: ["#040404", "#b31c2b", "#520d15", "#841422"],
     },
     {
       id: 74,
@@ -1136,7 +1067,6 @@ const stations = [
         "https://freight.cargo.site/t/original/i/b86d671e692615bd0c7e33aeb217c4409de58622161d8f48523c5a4da7a9710b/logo-png.png",
       college_image:
         "https://rihebc.com/wp-content/uploads/2022/04/Brown_University.png",
-      palette: ["#0a0909", "#e9e9e9", "#dc2128", "#747474"],
     },
     {
       id: 75,
@@ -1152,7 +1082,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/commons/3/37/WZBC903.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Boston_College_Eagles_logo.svg/1200px-Boston_College_Eagles_logo.svg.png",
-      palette: ["#5e212d", "#ddceab", "#ac8c7b", "#948c8c"],
     },
     {
       id: 76,
@@ -1168,7 +1097,6 @@ const stations = [
         "https://cdn.onlineradiobox.com/img/l/9/20059.v4.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/6/6f/IUP_Crimson_Hawks_logo.svg",
-      palette: ["#9c1c34", "#a01c34", "#a01c34", "#a01c34"],
     },
     {
       id: 77,
@@ -1184,7 +1112,6 @@ const stations = [
         "https://cdn.onlineradiobox.com/img/l/2/23362.v5.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/b/bb/Case_Western_Reserve_Spartans_primary_logo.svg",
-      palette: ["#223e4e", "#939ea6", "#738493", "#687c8c"],
     },
     {
       id: 78,
@@ -1200,7 +1127,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/commons/0/0a/CFRC_Primary_Station_Logo.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Queen%27s_Golden_Gaels_Logo.svg/1200px-Queen%27s_Golden_Gaels_Logo.svg.png",
-      palette: ["#fbbb14", "#09345a", "#bb1434", "#fcfbf8"],
     },
     {
       id: 79,
@@ -1216,7 +1142,6 @@ const stations = [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHFk-XFo-aNNa9dxJCbzpS3Dkdul82_oCZQpSGHhFbQw&s",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Texas_A%26M_University_logo.svg/1246px-Texas_A%26M_University_logo.svg.png",
-      palette: ["#540404", "#fbfbfb", "#a47c7c", "#a47474"],
     },
     {
       id: 80,
@@ -1232,7 +1157,6 @@ const stations = [
         "https://wrfl.fm/wp-content/uploads/2022/05/wrfl-website-logo.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/b/b6/Kentucky_Wildcats_logo.svg",
-      palette: ["#f8f9fa", "#0434a4", "#738ccc", "#5276c0"],
     },
     {
       id: 81,
@@ -1248,7 +1172,6 @@ const stations = [
         "https://pbs.twimg.com/profile_images/1337777242215165952/9OqjjiJI_400x400.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Penn_Quakers_logo.svg/1200px-Penn_Quakers_logo.svg.png",
-      palette: ["#fbfbfb", "#051d5c", "#9c0404", "#7384a4"],
     },
     {
       id: 82,
@@ -1264,7 +1187,6 @@ const stations = [
         "https://pbs.twimg.com/profile_images/1313677178811416578/x3DEBHHZ_400x400.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Indiana_Hoosiers_logo.svg/1280px-Indiana_Hoosiers_logo.svg.png",
-      palette: ["#9c0404", "#a00404", "#a00404", "#a00404"],
     },
     {
       id: 83,
@@ -1279,7 +1201,6 @@ const stations = [
       station_image: "https://wfuv.org/themes/custom/wfuv/logo.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Fordham_Rams_logo.svg/1200px-Fordham_Rams_logo.svg.png",
-      palette: ["#e8e7e7", "#050505", "#83053c", "#717171"],
     },
     {
       id: 84,
@@ -1294,7 +1215,6 @@ const stations = [
       station_image: "https://d371i8ihhgym7w.cloudfront.net/108590177.png",
       college_image:
         "https://teamlocker.s3.amazonaws.com/uploads/4da1a5cc9c5e530393e4e0e00051e8d325c0d2edSLD24_EasternCT_HAG52_allgear.png",
-      palette: ["#d2d2d9", "#08234e", "#830d2c", "#8c6776"],
     },
     {
       id: 85,
@@ -1310,7 +1230,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/en/1/1e/Kvsc_official_logo_2009.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/St._Cloud_State_Huskies_logo.svg/1200px-St._Cloud_State_Huskies_logo.svg.png",
-      palette: ["#fafafa", "#040404", "#a3050d", "#cc7c84"],
     },
     {
       id: 86,
@@ -1326,7 +1245,6 @@ const stations = [
         "https://www.brandtatorship.com/wp-content/uploads/2020/05/WBER-Logo-300x300-1.png",
       college_image:
         "https://www.monroe.edu/cms/lib/NY02216770/Centricity/Shared/Logos/monroe_symbol_fullcolor.png",
-      palette: ["#f8faf9", "#335f78", "#84c757", "#7c8490"],
     },
     {
       id: 87,
@@ -1342,7 +1260,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/commons/c/c5/88.9_The_AlterNation_logo.png",
       college_image:
         "https://cmsv2-assets.apptegy.net/uploads/27637/logo/30450/SCS_Logo.png",
-      palette: ["#fbd304", "#044c94", "#044c8c", "#04448c"],
     },
     {
       id: 88,
@@ -1358,13 +1275,12 @@ const stations = [
         "https://i1.sndcdn.com/avatars-000339989542-iypqtj-t500x500.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Purdue_Boilermakers_logo.svg/1200px-Purdue_Boilermakers_logo.svg.png",
-      palette: ["#040404", "#c0b293", "#6b6564", "#645c5c"],
     },
     {
       id: 89,
       call_sign: "WYBC",
       broadcast_frequency: "94.3",
-      audio_url: "https://wybc.creek.fm/listen",
+      audio_url: "https://s3.radio.co/s2af1cfe0c/listen",
       station_url: "https://wybc.com/",
       college_name: "Yale University",
       public_private: "Private",
@@ -1373,7 +1289,6 @@ const stations = [
       station_image: "https://cdn-radiotime-logos.tunein.com/s24122g.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Yale_Bulldogs_script.svg/1200px-Yale_Bulldogs_script.svg.png",
-      palette: ["#0c2444", "#f9f9f9", "#7f8c9c", "#8494a4"],
     },
     {
       id: 90,
@@ -1389,7 +1304,6 @@ const stations = [
         "https://chambermaster.blob.core.windows.net/images/customers/1313/members/12961/photos/GALLERY_MAIN/WVBR_record_6.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Cornell_Big_Red_logo.svg/1200px-Cornell_Big_Red_logo.svg.png",
-      palette: ["#923523", "#040404", "#fbfafa", "#d89b9b"],
     },
     {
       id: 91,
@@ -1405,7 +1319,6 @@ const stations = [
         "https://cdn-profiles.tunein.com/s30119/images/logog.jpg?t=1",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Columbia_Lions_logo.svg/1200px-Columbia_Lions_logo.svg.png",
-      palette: ["#a1ceec", "#1c3c64", "#82b1d2", "#6c95b9"],
     },
     {
       id: 92,
@@ -1420,7 +1333,6 @@ const stations = [
       station_image:
         "https://images.squarespace-cdn.com/content/v1/5858568ad1758e3ed9b61481/1516832569469-9P3G8KB1TQ8QCOO1TPIO/b+12+a+reverse+btransparent.png",
       college_image: "https://nwccu.org/wp-content/uploads/2024/01/TESC-Logo.png",
-      palette: ["#f9faf9", "#286828", "#85a485", "#7ca47c"],
     },
     {
       id: 93,
@@ -1435,7 +1347,6 @@ const stations = [
       station_image: "https://cdn-radiotime-logos.tunein.com/s27441d.png",
       college_image:
         "https://content.sportslogos.net/logos/30/620/full/bowling_green_falcons_logo_secondary_20043807.png",
-      palette: ["#fbfbfa", "#4d2404", "#eb7b3b", "#e0b186"],
     },
     {
       id: 94,
@@ -1451,7 +1362,6 @@ const stations = [
         "https://pbs.twimg.com/profile_images/827684532/WMBR_round_400x400.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/MIT_Seal.svg/800px-MIT_Seal.svg.png",
-      palette: ["#8c8c8c", "#a41c34", "#987490", "#983864"],
     },
     {
       id: 95,
@@ -1467,7 +1377,6 @@ const stations = [
       station_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNXTmMHXIE_y3xh3RzbI6NNRPcm0js95z08A&s",
       college_image:
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/111.png",
-      palette: ["#cb0404", "#040404", "#cfa4a5", "#5c5c5c"],
     },
     {
       id: 96,
@@ -1482,7 +1391,6 @@ const stations = [
       station_image: "https://witr.rit.edu/images/shows/default.png",
       college_image:
         "https://1000logos.net/wp-content/uploads/2019/10/RIT-Tigers-Logo-1976.png",
-      palette: ["#f26b1c", "#1d1a1a", "#54545c", "#f4f4f4"],
     },
     {
       id: 97,
@@ -1498,7 +1406,6 @@ const stations = [
         "https://cdn-profiles.tunein.com/s28808/images/logod.jpg?t=1",
       college_image:
         "https://iconape.com/wp-content/files/kg/193341/png/193341.png",
-      palette: ["#566b9c", "#d7e9de", "#9eb8c4", "#809dcd"],
     },
     {
       id: 98,
@@ -1514,7 +1421,6 @@ const stations = [
         "https://www.kexp.org/media/filer_public_thumbnails/filer_public/81/10/8110b8e4-d642-468a-a992-281904e8ba38/wmse.gif__600x600_q85_crop_subsampling-2_upscale.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Milwaukee_School_of_Engineering_logo.svg/1200px-Milwaukee_School_of_Engineering_logo.svg.png",
-      palette: ["#a40c04", "#a80c04", "#a80c04", "#a80c04"],
     },
     {
       id: 99,
@@ -1530,7 +1436,6 @@ const stations = [
         "https://naccchart.com/wp-content/uploads/2019/07/wsuwlogo4.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/UW%E2%80%93Whitewater_Warhawks_primary_logo.svg/1200px-UW%E2%80%93Whitewater_Warhawks_primary_logo.svg.png",
-      palette: ["#3a2656", "#e7e7e8", "#aba7b6", "#a090c4"],
     },
     {
       id: 100,
@@ -1546,7 +1451,6 @@ const stations = [
         "https://alumniandfriends.stonybrook.edu/images/content/pagebuilder/WUSB-resized.jpg",
       college_image:
         "https://www.stonybrook.edu/far-beyond/img/branding/logo/sbu/primary/72/stony-brook-university-logo-vertical.png",
-      palette: ["#9c0505", "#040404", "#f4e6e6", "#c47474"],
     },
     {
       id: 35,
@@ -1562,7 +1466,6 @@ const stations = [
         "https://i0.wp.com/kjhk.org/web/wp-content/uploads/2020/10/cropped-BestLogoM04.png?fit=512%2C512&ssl=1",
       college_image:
         "https://content.sportslogos.net/logos/32/718/full/kansas_jayhawks_logo_primary_20059568.png",
-      palette: ["#ea9012", "#053ca3", "#f4f6f9", "#5c746c"],
     },
     {
       id: 101,
@@ -1578,7 +1481,6 @@ const stations = [
         "https://i1.sndcdn.com/avatars-000304478075-sbtthp-t500x500.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/McMaster_University_logo.svg/1200px-McMaster_University_logo.svg.png",
-      palette: ["#4c4055", "#fbc559", "#c87a38", "#9ea4ac"],
     },
     {
       id: 102,
@@ -1594,7 +1496,6 @@ const stations = [
         "https://www.kdur.org/Portals/12/skins/kdur/FileUploads/12/kdur-radio-logo-2_3.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Fort_Lewis_Skyhawks_logo.svg/1200px-Fort_Lewis_Skyhawks_logo.svg.png",
-      palette: ["#054c8b", "#fabb34", "#fafafb", "#047cc4"],
     },
     {
       id: 103,
@@ -1610,7 +1511,6 @@ const stations = [
         "https://cdn-profiles.tunein.com/s23126/images/logod.png?t=156139WT",
       college_image:
         "https://hope.edu/offices/public-affairs-marketing/resources/logos/athletics/anchor-hope-stack/HOPE_Anchor_Stack.png",
-      palette: ["#f37b24", "#042c5c", "#a86345", "#685254"],
     },
     {
       id: 104,
@@ -1626,7 +1526,6 @@ const stations = [
         "https://i0.wp.com/uwsradio.co.uk/wp-content/uploads/2021/09/UWS-pink-scaled.jpg?fit=370%2C370",
       college_image:
         "https://www.studyabroad.pk/images/companyLogo/UWS%20logo.png",
-      palette: ["#f24f38", "#fbe8e5", "#f4a49c", "#80291f"],
     },
     {
       id: 105,
@@ -1642,7 +1541,6 @@ const stations = [
         "https://rua.pt/wp-content/uploads/2021/10/cropped-favicon.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/b/bd/Uoalogo.png",
-      palette: ["#0794e2", "#1e1e16", "#aacddc", "#7e7c79"],
     },
     {
       id: 106,
@@ -1658,7 +1556,6 @@ const stations = [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8t5ilOWOBPQTdvD9iw1s5MvuFTXLwf3wVEA&s",
       college_image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ20HtiBs-uHVPu6KEV7KjUhwdPnDD9QzGAbaJ-orlKnQ&s",
-      palette: ["#052c82", "#8d0505", "#840404", "#7c6a8a"],
     },
     {
       id: 107,
@@ -1674,7 +1571,6 @@ const stations = [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR47-9fQAsFJut7nUexgmcaopEJ-IoJA63xuA&s",
       college_image:
         "https://autonoma.pt/wp-content/uploads/2018/01/logoUAL1.png",
-      palette: ["#0474a4", "#050505", "#3697b9", "#5c5c5c"],
     },
     {
       id: 109,
@@ -1688,7 +1584,6 @@ const stations = [
       state: "MA",
       station_image: "https://cdn-radiotime-logos.tunein.com/s27821g.png",
       college_image: "https://ephsports.williams.edu/images/logos/site/site.png",
-      palette: ["#f7bf30", "#560782", "#b76e39", "#9464b4"],
     },
     {
       id: 110,
@@ -1703,7 +1598,6 @@ const stations = [
       station_image: "https://cdn-radiotime-logos.tunein.com/s24539d.png",
       college_image:
         "http://www.sorbonne-universite.fr/sites/default/files/styles/345xauto/public/media/2021-03/UNAM-logo-272x300.png?itok=YafUZxky",
-      palette: ["#eaae0d", "#36380c", "#0581d9", "#4ba60e"],
     },
     {
       id: 111,
@@ -1719,7 +1613,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/commons/d/d7/Cam_FM_logo%2C_in_use_from_August_2020.svg",
       college_image:
         "https://www.cam.ac.uk/sites/default/files/secondary-logo-stacked.png",
-      palette: ["#17150c", "#e8671f", "#fbfbfb", "#8c8c8c"],
     },
     {
       id: 112,
@@ -1735,7 +1628,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Oxide_2005_logo.jpg/220px-Oxide_2005_logo.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Oxford-University-Circlet.svg/1636px-Oxford-University-Circlet.svg.png",
-      palette: ["#0c223f", "#dab574", "#8494a4", "#848ca4"],
     },
     {
       id: 113,
@@ -1751,7 +1643,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/commons/d/d9/Logo_Radio_Universidad.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/UNLP_Logo_%28cropped%29.svg/1200px-UNLP_Logo_%28cropped%29.svg.png",
-      palette: ["#f9f9f9", "#1d1515", "#757474", "#7d7c7c"],
     },
     {
       id: 114,
@@ -1767,7 +1658,6 @@ const stations = [
         "https://cdn-profiles.tunein.com/s153013/images/logod.jpg?t=161642",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/9/9a/FH_Technikum_Wien_logo.svg",
-      palette: ["#d6d5cf", "#040404", "#f48cb4", "#40807c"],
     },
     {
       id: 115,
@@ -1783,7 +1673,6 @@ const stations = [
         "https://oetpai.fra1.digitaloceanspaces.com/new_images/radioapp_uapk_osr259816.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Coat_of_arms_of_the_University_of_Paris.svg/200px-Coat_of_arms_of_the_University_of_Paris.svg.png",
-      palette: ["#f3d09e", "#436ce8", "#2b2925", "#acaca0"],
     },
     {
       id: 116,
@@ -1799,7 +1688,6 @@ const stations = [
         "https://upload.wikimedia.org/wikipedia/commons/4/4f/WRCT_88.3_Logo.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Carnegie_Mellon_University_seal.svg/1200px-Carnegie_Mellon_University_seal.svg.png",
-      palette: ["#243647", "#e6a21a", "#fbfbf9", "#8b3142"],
     },
     {
       id: 117,
@@ -1815,7 +1703,6 @@ const stations = [
         "https://pbs.twimg.com/profile_images/1488244601135763456/-w1qGgD-_400x400.jpg",
       college_image:
         "https://i.pinimg.com/originals/8e/70/bf/8e70bf12074aa24e5e32688b7a4aa56c.gif",
-      palette: ["#651d0d", "#e6e1e0", "#f2d282", "#b48c8c"],
     },
     {
       id: 118,
@@ -2131,7 +2018,6 @@ const stations = [
     //     "https://upload.wikimedia.org/wikipedia/commons/5/52/WSOU_New_Decal_Design.jpg",
     //   college_image:
     //     "https://content.sportslogos.net/logos/34/831/full/seton_hall_pirates_logo_secondary_19983416.png",
-    //   palette: ["#0464ac", "#f9fafa", "#acb4b4", "#7fb0d3"],
     // },
     {
       id: 139,
@@ -2687,7 +2573,6 @@ const stations = [
     //     "",
     //   college_image:
     //     "",
-    //   palette: [],
     // },
     // Stability problem, won't load on mobile or desktop with cors-anywhere (fix later)
     // {
@@ -2720,7 +2605,6 @@ const stations = [
     //   station_image: "https://cdn-radiotime-logos.tunein.com/s23485g.png",
     //   college_image:
     //     "https://upload.wikimedia.org/wikipedia/en/thumb/7/78/Siena_Saints_logo.svg/1200px-Siena_Saints_logo.svg.png",
-    //   palette: ["#f7eacb", "#1e2015", "#809f72", "#7b7c7c"],
     // },
   ];
   

@@ -4,6 +4,7 @@ import StarIcon from '@mui/icons-material/Star';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import ReactGA from "react-ga4"
+import { getProxiedUrl } from '../utils/proxyHelper';
 
 export default function StationCard({callsign, frequency, college, audioURL, collegeimage, setPlaying, stationObject, playing, volume, setPlayStatic, userPause, setUserPause, darkMode}) {
 
@@ -87,7 +88,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     setTimeout(function () { 
         thisStation.load() // This stops the stream from downloading; basically forces it to load an empty file
     }, 100)
-    thisStation.setAttribute("src", audioURL)
+    thisStation.setAttribute("src", getProxiedUrl(audioURL))
     thisStation.load()
     // if the currently playing station is stalled
     if (playing?.call_sign === callsign) {
@@ -206,7 +207,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           </CardContent>
         </Box>
         </ButtonBase>
-        <audio className="audio-element" onLoadStart={() => setLoaded(false)} onCanPlay={() => setLoaded(true)} onStalled={handleStall} name={callsign} src={audioURL} type="audio/mp3" />
+        <audio className="audio-element" onLoadStart={() => setLoaded(false)} onCanPlay={() => setLoaded(true)} onStalled={handleStall} name={callsign} src={getProxiedUrl(audioURL)} type="audio/mp3" />
         </Card>
     </ThemeProvider>
   );

@@ -41,11 +41,11 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
   }
 
   return (
+    <ThemeProvider theme={faqTheme}>
     <Modal
     open={faqOpen}
     onClose={handleFaqClose}
     >
-      <ThemeProvider theme={faqTheme}>
       <Fade in={faqOpen}>
         <Box 
           sx={{
@@ -235,7 +235,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
           </List>
         </Box>
       </Fade>
-      </ThemeProvider>
     </Modal>
+    </ThemeProvider>
   )
 }

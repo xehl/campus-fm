@@ -114,33 +114,56 @@ export default function App() {
 
     setSelectedStations(initialStations);
 
-    // check and try to load 525/404 error stations every 8s (handleStall should catch stations that are loaded but stalled)
+    // Retry logic with exponential backoff to avoid hammering broken streams
+    // Tracks retry attempts per station to limit retries
+    const retryState = {}; // { stationName: { attempts: number, nextRetry: timestamp } }
+    const MAX_RETRIES = 5;
+    const BASE_DELAY = 8000; // 8 seconds initial
+    const MAX_DELAY = 300000; // 5 minutes max
+
     setInterval(() => {
       const loadedStations = document.getElementsByClassName("audio-element");
+      const now = Date.now();
+
       for (let station of loadedStations) {
+        const stationName = station.getAttribute("name");
+        
         if (station.readyState === 0) {
+          // Initialize retry state for this station
+          if (!retryState[stationName]) {
+            retryState[stationName] = { attempts: 0, nextRetry: 0 };
+          }
+
+          const state = retryState[stationName];
+
+          // Check if we've exceeded max retries
+          if (state.attempts >= MAX_RETRIES) {
+            // console.log(`${stationName}: max retries reached, giving up`);
+            continue;
+          }
+
+          // Check if it's time to retry (exponential backoff)
+          if (now < state.nextRetry) {
+            continue;
+          }
+
+          // Attempt retry
+          state.attempts++;
+          const backoffDelay = Math.min(BASE_DELAY * Math.pow(2, state.attempts - 1), MAX_DELAY);
+          state.nextRetry = now + backoffDelay;
+
+          // console.log(`${stationName}: retry #${state.attempts}, next in ${backoffDelay/1000}s`);
+
           const url = station.getAttribute("src");
-          let altered = "";
-
-          // // add/remove cors proxy and try again
-          // if (url.startsWith("https://cors-proxy.elfsight.com/")) {
-          //   altered = url.substring(32);
-          // } else {
-          //   altered = "https://cors-proxy.elfsight.com/" + url;
-          // }
-
-          altered = url;
-
           station.setAttribute("src", "");
           setTimeout(function () {
-            station.load(); // This stops the stream from downloading; basically forces it to load an empty file
+            station.load();
           }, 100);
-          station.setAttribute("src", altered);
+          station.setAttribute("src", url);
           station.load();
-          // console.log(station.getAttribute("src"));
-          // console.log(
-          //   "loading " + station.getAttribute("name") + station.readyState
-          // );
+        } else if (station.readyState >= 1 && retryState[stationName]) {
+          // Station loaded successfully, reset retry state
+          delete retryState[stationName];
         }
       }
     }, 8000);
