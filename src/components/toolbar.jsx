@@ -115,7 +115,7 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
   return (
     <Box sx={{
       width: {
-        xs: "100vw",
+        xs: "100%",
         lg: "auto"
       },
       display: "flex",
