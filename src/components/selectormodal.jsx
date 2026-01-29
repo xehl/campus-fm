@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import { Box, Typography, Modal, Grid, TextField, AppBar, Fade, Button, Stack, Slide, Alert } from "@mui/material";
+import { Box, Typography, Modal, Grid, TextField, AppBar, Fade, Button, Stack, Slide, Alert, useMediaQuery } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
 import stations from "../stations";
@@ -20,10 +21,13 @@ const LightTooltip = styled(({ className, ...props }) => (
 }));
 
 export default function SelectorModal({ selectorOpen, handleSelectorClose, selectedStations, setSelectedStations, setPlaying }) {
+  const theme = useTheme()
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
 
   // on first render, pass the current array of stations into queue
   const [stationQueue, setStationQueue] = useState([])
   const [searchDisplayed, setSearchDisplayed] = useState(stations)
+  const [searchTerm, setSearchTerm] = useState("")
   const [alertOpen, setAlertOpen] = useState(false)
 
   useEffect(() => {
@@ -63,7 +67,9 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
       value: stationQueue.length
     });
 
-    // close modal
+    // reset search and close modal
+    setSearchTerm("")
+    setSearchDisplayed(stations)
     handleSelectorClose()
   }
 
@@ -129,17 +135,20 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
 
   function handleSearch(e) {
     let searchStr = e.target.value
+    setSearchTerm(searchStr)
     setSearchDisplayed(stations.filter(station => {
       return (
         station.call_sign.includes(searchStr.toUpperCase()) ||
-        station.broadcast_frequency.toString().includes(searchStr)) ||
+        station.broadcast_frequency.toString().includes(searchStr) ||
         station.city.toLowerCase().includes(searchStr.toLowerCase()) || 
         station.state.toLowerCase().includes(searchStr.toLowerCase()) ||
         station.college_name.toLowerCase().includes(searchStr.toLowerCase())
+      )
     }))
   }
 
   function handleClose() {
+    setSearchTerm("")
     setSearchDisplayed(stations)
     setStationQueue(selectedStations)
     handleSelectorClose()
@@ -162,9 +171,9 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
             width: "85vw",
             bgcolor: "#2e2e2e",
             border: "1px solid #2e2e2e",
+            borderRadius: 3,
             boxShadow: 2,
             outline: 0,
-            // transition: "0.3s",
             overflowX: 'hidden',
             overflowY: "auto",
             display: "flex",
@@ -174,18 +183,19 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
           }}
         >
           <AppBar
-            position="absolute"
+            position="sticky"
             sx={{
+              top: 0,
               display: "flex",
               flexDirection: {xs: "column", md: "row"},
               alignItems: "center",
               textAlign: "center",
-              position: "sticky",
               width: "100%",
               height: "auto",
               justifyContent: "space-between",
               backgroundColor: "rgba(46,46,46,0.9)",
               backdropFilter: "blur(2px)",
+              borderRadius: "8px 8px 0 0",
               p: 1.5,
             }}
           >
@@ -209,35 +219,20 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
                 <b>{stationQueue.length}</b>
               </Typography>
             </Stack>
-            {/* can't figure out how to make size prop conditional; just gonna display/hide two textfields */}
             <TextField
-              id="outlined-basic"
+              id="station-search"
               variant="outlined"
               placeholder="search"
               autoComplete="off"
+              size={isSmallScreen ? "small" : "medium"}
+              value={searchTerm}
               onChange={e => handleSearch(e)}
-              InputProps={{ style: { fontSize: 15, fontFamily: "Share Tech Mono", background: "white", } }}
+              InputProps={{ style: { fontSize: 15, fontFamily: "Share Tech Mono", background: "white" } }}
               fullWidth
               sx={{
-                display: {xs: "none", sm: "block"}, 
-                width: {xs: "70vw", sm:"70vw", md: 350},
+                width: { xs: "70vw", md: 350 },
                 borderRadius: 1,
-                mb: 1,
-                mt: 1,
-              }} />
-            <TextField
-              id="outlined-basic"
-              variant="outlined"
-              placeholder="search"
-              autoComplete="off"
-              size= "small"
-              onChange={e => handleSearch(e)}
-              fullWidth
-              InputProps={{ style: { fontSize: 15, fontFamily:"Share Tech Mono", background: "white"} }}
-              sx={{
-                display: {xs: "block", sm: "none"}, 
-                width: {xs: "70vw", md: 350},
-                mb: .5,
+                mb: { xs: 0.5, sm: 1 },
                 mt: 1,
               }} />
               <Stack direction={{ xs: "column", md: "row" }} sx={{ ml: {md: 2, xl: 3}, m: 0.5, width: { xs: "70vw", sm: "auto" }, height: {xs: "auto", lg: 54}}} spacing={1}>
@@ -286,20 +281,34 @@ export default function SelectorModal({ selectorOpen, handleSelectorClose, selec
               backgroundColor: "#2e2e2e",
             }}
             >
-          {searchDisplayed.map((station) => {
-            return (
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                lg={3}
-                key={station.id}
+          {searchDisplayed.length === 0 ? (
+            <Grid item xs={12}>
+              <Typography 
+                fontFamily="Share Tech Mono" 
+                fontSize={18} 
+                color="white" 
+                textAlign="center"
+                sx={{ mt: 4 }}
               >
-                <ModalCard station={station} stationQueue={stationQueue} setStationQueue={setStationQueue} setAlertMessage={setAlertMessage} setAlertOpen={setAlertOpen}/>
-              </Grid>
-            );
-          })}
+                No stations found for "{searchTerm}"
+              </Typography>
+            </Grid>
+          ) : (
+            searchDisplayed.map((station) => {
+              return (
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={3}
+                  key={station.id}
+                >
+                  <ModalCard station={station} stationQueue={stationQueue} setStationQueue={setStationQueue} setAlertMessage={setAlertMessage} setAlertOpen={setAlertOpen}/>
+                </Grid>
+              );
+            })
+          )}
           </Grid>
         </Box>
       </Fade>
