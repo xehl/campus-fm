@@ -5,11 +5,8 @@
  * to avoid mixed content issues on HTTPS sites.
  */
 
-// Set this to your Cloudflare Worker URL after deployment
-// Example: 'https://campus-fm-proxy.yourname.workers.dev'
-// 
-// TODO: Replace this with your actual Cloudflare Worker URL
-const PROXY_BASE_URL = 'https://campus-fm-proxy.eric95lee.workers.dev/';
+// Proxy URL — custom domain so network requests don’t expose your Cloudflare account.
+const PROXY_BASE_URL = 'https://proxy.campus-fm.com/';
 
 // Set to true to enable proxying, false to disable
 const PROXY_ENABLED = true;

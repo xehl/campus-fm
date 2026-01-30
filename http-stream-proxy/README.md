@@ -38,6 +38,13 @@ Set in `src/utils/proxyHelper.js`:
 const PROXY_BASE_URL = 'https://campus-fm-proxy.example.workers.dev';
 ```
 
+**Using a custom domain (recommended):** The default `*.yourname.workers.dev` URL exposes your Cloudflare account subdomain in network requests. To hide it:
+
+1. In Cloudflare: **Workers & Pages** → your proxy worker → **Settings** → **Domains & Routes**
+2. Click **Add** under Custom Domains and enter a subdomain (e.g. `proxy.campus-fm.com`). The zone (e.g. `campus-fm.com`) must already be on Cloudflare.
+3. Update `PROXY_BASE_URL` in `src/utils/proxyHelper.js` to `https://proxy.campus-fm.com/`
+4. Optionally: disable the `workers.dev` route for this worker so it’s only reachable via the custom domain
+
 ### Allowed Hosts
 
 HTTP station hostnames must be whitelisted in `worker.js`:

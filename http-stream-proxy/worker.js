@@ -63,9 +63,8 @@ const ALLOWED_ORIGINS = [
   'http://localhost:3000',      // Create React App default
   'http://localhost:5173',      // Vite default
   'http://127.0.0.1:3000',
-  // Add your production domain(s) below:
-  // 'https://your-app.vercel.app',
-  // 'https://campus-fm.com',
+  'https://campus-fm.com',
+  'https://www.campus-fm.com',
 ];
 
 export default {
