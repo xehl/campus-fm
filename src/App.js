@@ -2,6 +2,7 @@ import "./App.css";
 import { Box, Grid, Container } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import StationCard from "./components/stationcard";
 import Footer from "./components/footer";
 import Logo from "./components/logo";
@@ -13,6 +14,8 @@ import FaqModal from "./components/faqmodal";
 import StickyBar from "./components/stickybar";
 import ReactGA from "react-ga4";
 import { PROXY_BASE_URL } from "./utils/proxyHelper";
+
+const SITE_URL = "https://campus-fm.com";
 
 // Returns uppercase station call sign or null
 const parseStationFromUrl = () => {
@@ -218,8 +221,50 @@ export default function App() {
     if (playStatic === false) staticSound.pause();
   }, [playStatic]);
 
+  // For SEO: current station from URL (used for title, description, JSON-LD)
+  const urlStation = parseStationFromUrl();
+  const stationFromUrl = urlStation ? findStationInStations(urlStation) : null;
+
+  const pageTitle = stationFromUrl
+    ? `${stationFromUrl.call_sign} ${stationFromUrl.broadcast_frequency} - ${stationFromUrl.college_name} | Campus FM`
+    : "Campus FM - stream college radio";
+  const pageDescription = stationFromUrl
+    ? `Listen to ${stationFromUrl.call_sign} ${stationFromUrl.broadcast_frequency} FM - ${stationFromUrl.college_name} college radio live on Campus FM.`
+    : "Live stream college radio stations from universities across North America. Listen to student radio online free.";
+  const canonicalUrl = stationFromUrl ? `${SITE_URL}/${stationFromUrl.call_sign}` : SITE_URL + "/";
+
+  const jsonLd = stationFromUrl
+    ? {
+        "@context": "https://schema.org",
+        "@type": "RadioStation",
+        name: `${stationFromUrl.call_sign} ${stationFromUrl.broadcast_frequency} FM`,
+        description: pageDescription,
+        url: canonicalUrl,
+        broadcastDisplayName: stationFromUrl.college_name,
+        parentOrganization: { "@type": "Organization", name: stationFromUrl.college_name },
+      }
+    : {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Campus FM",
+        description: pageDescription,
+        url: SITE_URL,
+        potentialAction: { "@type": "ListenAction", target: SITE_URL },
+      };
+
   return (
     <div className="App">
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      </Helmet>
       {/* INVISIBLE SPACER BOX KEEPS FOOTER ON BOTTOM, EVEN ON XL SCREENS,
           OR WHEN NOT ENOUGH CONTENT TO VERTICALLY FILL THE VIEWPORT */}
       <ThemeProvider theme={theme}>
@@ -346,7 +391,7 @@ export default function App() {
               })}
             </Grid>
           </Container>
-          <Footer handleSelectorModalOpen={handleSelectorModalOpen} />
+          <Footer handleSelectorModalOpen={handleSelectorModalOpen} darkMode={darkMode} />
           <audio
             className="staticAudio"
             preload="auto"
