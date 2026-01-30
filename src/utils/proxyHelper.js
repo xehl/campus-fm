@@ -6,7 +6,7 @@
  */
 
 // Proxy URL — custom domain so network requests don’t expose your Cloudflare account.
-const PROXY_BASE_URL = 'https://proxy.campus-fm.com/';
+export const PROXY_BASE_URL = 'https://proxy.campus-fm.com/';
 
 // Set to true to enable proxying, false to disable
 const PROXY_ENABLED = true;

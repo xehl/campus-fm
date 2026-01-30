@@ -135,6 +135,13 @@ node utils/test-streams.js --all --json
 
 # Show only broken stations
 node utils/test-streams.js --all --broken-only
+
+# Test all HTTP stations through the proxy (identify broken proxied streams)
+node utils/test-streams.js --via-proxy
+
+# Test a single proxied stream (by station or URL)
+node utils/test-streams.js --via-proxy --station WBER
+node utils/test-streams.js --via-proxy --url "http://wber-ice-encoder.monroe.edu/wber-high.mp3"
 ```
 
 ### Output Statuses
@@ -195,8 +202,8 @@ node utils/test-streams.js --all --broken-only
 The app has built-in retry logic in `App.js`:
 
 - Checks for failed stations every 8 seconds
-- Uses exponential backoff (8s → 16s → 32s → 64s → 128s)
-- Max 5 retries per station, then gives up
+- Direct (non-proxied) streams: 8s base delay, max 5 retries
+- Proxied streams: 20s base delay, max 3 retries (reduces hammering the Worker when a station is broken)
 - Resets if station successfully loads
 
 This prevents hammering broken streams while allowing recovery from temporary failures.

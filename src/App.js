@@ -12,6 +12,7 @@ import SelectorModal from "./components/selectormodal";
 import FaqModal from "./components/faqmodal";
 import StickyBar from "./components/stickybar";
 import ReactGA from "react-ga4";
+import { PROXY_BASE_URL } from "./utils/proxyHelper";
 
 // Returns uppercase station call sign or null
 const parseStationFromUrl = () => {
@@ -84,15 +85,23 @@ export default function App() {
       ? findStationInStations(urlStation)
       : null;
 
-    // Load stations from localStorage or use defaults
+    // Load stations from localStorage or use defaults.
+    // Resolve cached stations to current data from stations.js so updated audio_url (and other fields) apply.
+    const defaults = stations.filter((station) =>
+      ["WXYC", "KALX", "KVRX", "WUCF", "WSUM", "WSBF", "WXTJ"].includes(
+        station.call_sign
+      )
+    );
     const cache = JSON.parse(localStorage.getItem("recentStations"));
-    let initialStations =
-      cache ||
-      stations.filter((station) =>
-        ["WXYC", "KALX", "KVRX", "WUCF", "WSUM", "WSBF", "WXTJ"].includes(
-          station.call_sign
-        )
-      );
+    let initialStations;
+    if (cache && Array.isArray(cache) && cache.length > 0) {
+      initialStations = cache
+        .map((cached) => stations.find((s) => s.call_sign === cached.call_sign))
+        .filter(Boolean);
+      if (initialStations.length === 0) initialStations = defaults;
+    } else {
+      initialStations = defaults;
+    }
 
     // If URL has a station, handle it
     if (stationFromUrl) {
@@ -114,12 +123,14 @@ export default function App() {
 
     setSelectedStations(initialStations);
 
-    // Retry logic with exponential backoff to avoid hammering broken streams
-    // Tracks retry attempts per station to limit retries
+    // Retry logic with exponential backoff. Proxied streams use gentler retries to avoid
+    // hammering the Cloudflare Worker when a station is broken.
     const retryState = {}; // { stationName: { attempts: number, nextRetry: timestamp } }
-    const MAX_RETRIES = 5;
-    const BASE_DELAY = 8000; // 8 seconds initial
-    const MAX_DELAY = 300000; // 5 minutes max
+    const MAX_RETRIES_DIRECT = 5;
+    const MAX_RETRIES_PROXY = 3;
+    const BASE_DELAY_DIRECT = 8000;  // 8 seconds
+    const BASE_DELAY_PROXY = 20000;  // 20 seconds for proxied streams
+    const MAX_DELAY = 300000;        // 5 minutes max
 
     setInterval(() => {
       const loadedStations = document.getElementsByClassName("audio-element");
@@ -127,7 +138,11 @@ export default function App() {
 
       for (let station of loadedStations) {
         const stationName = station.getAttribute("name");
-        
+        const src = station.getAttribute("src") || "";
+        const isProxied = src.startsWith(PROXY_BASE_URL);
+        const maxRetries = isProxied ? MAX_RETRIES_PROXY : MAX_RETRIES_DIRECT;
+        const baseDelay = isProxied ? BASE_DELAY_PROXY : BASE_DELAY_DIRECT;
+
         if (station.readyState === 0) {
           // Initialize retry state for this station
           if (!retryState[stationName]) {
@@ -137,8 +152,7 @@ export default function App() {
           const state = retryState[stationName];
 
           // Check if we've exceeded max retries
-          if (state.attempts >= MAX_RETRIES) {
-            // console.log(`${stationName}: max retries reached, giving up`);
+          if (state.attempts >= maxRetries) {
             continue;
           }
 
@@ -149,10 +163,8 @@ export default function App() {
 
           // Attempt retry
           state.attempts++;
-          const backoffDelay = Math.min(BASE_DELAY * Math.pow(2, state.attempts - 1), MAX_DELAY);
+          const backoffDelay = Math.min(baseDelay * Math.pow(2, state.attempts - 1), MAX_DELAY);
           state.nextRetry = now + backoffDelay;
-
-          // console.log(`${stationName}: retry #${state.attempts}, next in ${backoffDelay/1000}s`);
 
           const url = station.getAttribute("src");
           station.setAttribute("src", "");

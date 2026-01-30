@@ -56,6 +56,7 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
             height: "70vh",
             width: "85vw",
             border: "1px solid #b0b0b0",
+            borderRadius: 3,
             boxShadow: 2,
             outline: 0,
             overflowX: 'hidden',
@@ -78,7 +79,8 @@ export default function FaqModal({ faqOpen, handleFaqClose }) {
             top: 0,
             zIndex: 20,
             borderBottom: 1,
-            borderColor: "#b0b0b0"
+            borderColor: "#b0b0b0",
+            borderRadius: "8px 8px 0 0"
           }}>
             <Typography sx={{
               pl: 3,

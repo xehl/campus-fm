@@ -57,12 +57,8 @@ const ALLOWED_STREAM_HOSTS = [
   '152.17.49.84',
 ];
 
-// Origins allowed to use this proxy
-// TODO: Add your production domain here!
+// Origins allowed to use this proxy (no localhost = no open use by others)
 const ALLOWED_ORIGINS = [
-  'http://localhost:3000',      // Create React App default
-  'http://localhost:5173',      // Vite default
-  'http://127.0.0.1:3000',
   'https://campus-fm.com',
   'https://www.campus-fm.com',
 ];
