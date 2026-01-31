@@ -55,6 +55,8 @@ const ALLOWED_STREAM_HOSTS = [
   '138.23.75.92',
   'kunv.oit.unlv.edu',
   '152.17.49.84',
+  'wmeb-stream.maine.edu',
+  'wnyu.org',
 ];
 
 // Origins allowed to use this proxy (no localhost = no open use by others)
