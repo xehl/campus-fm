@@ -27,7 +27,7 @@
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "generate-sitemap": "node utils/generate-sitemap.js",
     "prebuild": "npm run generate-sitemap",
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -24,3 +24,6 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+# Working scripts and CRD data (station-add workflow, scraped data, reports)
+/scripts

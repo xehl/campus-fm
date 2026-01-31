@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Generates public/sitemap.xml from station call signs in src/stations.js.
- * Run before deploy: npm run build (prebuild runs this) or node scripts/generate-sitemap.js
+ * Run before deploy: npm run build (prebuild runs this) or node utils/generate-sitemap.js
  */
 
 const fs = require('fs');
