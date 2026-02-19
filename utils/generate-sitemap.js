@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const BASE_URL = 'https://campus-fm.com';
+const BASE_URL = 'https://www.campus-fm.com';
 const stationsPath = path.join(__dirname, '../src/stations.js');
 const outPath = path.join(__dirname, '../public/sitemap.xml');
 

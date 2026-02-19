@@ -15,7 +15,7 @@ import StickyBar from "./components/stickybar";
 import ReactGA from "react-ga4";
 import { PROXY_BASE_URL } from "./utils/proxyHelper";
 
-const SITE_URL = "https://campus-fm.com";
+const SITE_URL = "https://www.campus-fm.com";
 
 // Returns uppercase station call sign or null
 const parseStationFromUrl = () => {
