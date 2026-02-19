@@ -126,8 +126,8 @@ export default function App() {
 
     setSelectedStations(initialStations);
 
-    // Retry logic with exponential backoff. Proxied streams use gentler retries to avoid
-    // hammering the Cloudflare Worker when a station is broken.
+    // Background retry for non-playing stations that failed to buffer on initial load.
+    // The active-playing station's recovery is handled by stationcard's handleStall/handleError/handleEnded.
     const retryState = {}; // { stationName: { attempts: number, nextRetry: timestamp } }
     const MAX_RETRIES_DIRECT = 5;
     const MAX_RETRIES_PROXY = 3;
@@ -141,43 +141,41 @@ export default function App() {
 
       for (let station of loadedStations) {
         const stationName = station.getAttribute("name");
+
+        // Skip stations that are currently playing or paused mid-stream;
+        // their recovery is handled at the component level.
+        if (!station.paused) continue;
+
         const src = station.getAttribute("src") || "";
         const isProxied = src.startsWith(PROXY_BASE_URL);
         const maxRetries = isProxied ? MAX_RETRIES_PROXY : MAX_RETRIES_DIRECT;
         const baseDelay = isProxied ? BASE_DELAY_PROXY : BASE_DELAY_DIRECT;
 
         if (station.readyState === 0) {
-          // Initialize retry state for this station
           if (!retryState[stationName]) {
             retryState[stationName] = { attempts: 0, nextRetry: 0 };
           }
 
           const state = retryState[stationName];
 
-          // Check if we've exceeded max retries
           if (state.attempts >= maxRetries) {
             continue;
           }
 
-          // Check if it's time to retry (exponential backoff)
           if (now < state.nextRetry) {
             continue;
           }
 
-          // Attempt retry
           state.attempts++;
           const backoffDelay = Math.min(baseDelay * Math.pow(2, state.attempts - 1), MAX_DELAY);
           state.nextRetry = now + backoffDelay;
 
           const url = station.getAttribute("src");
           station.setAttribute("src", "");
-          setTimeout(function () {
-            station.load();
-          }, 100);
+          station.load();
           station.setAttribute("src", url);
           station.load();
         } else if (station.readyState >= 1 && retryState[stationName]) {
-          // Station loaded successfully, reset retry state
           delete retryState[stationName];
         }
       }

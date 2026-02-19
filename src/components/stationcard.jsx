@@ -2,9 +2,21 @@ import * as React from 'react';
 import {Box, Card, CardContent, CardMedia, Typography, Divider, ButtonBase} from '@mui/material/';
 import StarIcon from '@mui/icons-material/Star';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import ReactGA from "react-ga4"
 import { getProxiedUrl } from '../utils/proxyHelper';
+
+const MAX_STALL_RETRIES = 5;
+const STALL_RETRY_INTERVAL_MS = 1000;
+const MAX_ERROR_RETRIES = 4;
+const ERROR_BASE_DELAY_MS = 2000;
+
+function pauseAllStations() {
+  const allStations = document.getElementsByClassName("audio-element");
+  for (let stream of allStations) {
+    stream.pause();
+  }
+}
 
 export default function StationCard({callsign, frequency, college, audioURL, collegeimage, setPlaying, stationObject, playing, volume, setPlayStatic, userPause, setUserPause, darkMode}) {
 
@@ -44,6 +56,38 @@ export default function StationCard({callsign, frequency, college, audioURL, col
   }
   const [loaded, setLoaded] = useState(false)
 
+  // Refs to avoid stale closures in intervals/timeouts
+  const retryIntervalRef = useRef(null);
+  const retryCountRef = useRef(0);
+  const errorRetryCountRef = useRef(0);
+  const errorRetryTimeoutRef = useRef(null);
+  const playingRef = useRef(playing);
+  const volumeRef = useRef(volume);
+  const userPauseRef = useRef(userPause);
+
+  useEffect(() => { playingRef.current = playing; }, [playing]);
+  useEffect(() => { volumeRef.current = volume; }, [volume]);
+  useEffect(() => { userPauseRef.current = userPause; }, [userPause]);
+
+  const clearRetryInterval = useCallback(() => {
+    if (retryIntervalRef.current !== null) {
+      clearInterval(retryIntervalRef.current);
+      retryIntervalRef.current = null;
+    }
+  }, []);
+
+  const clearErrorRetryTimeout = useCallback(() => {
+    if (errorRetryTimeoutRef.current !== null) {
+      clearTimeout(errorRetryTimeoutRef.current);
+      errorRetryTimeoutRef.current = null;
+    }
+  }, []);
+
+  // Clean up on unmount
+  useEffect(() => {
+    return () => { clearRetryInterval(); clearErrorRetryTimeout(); };
+  }, [clearRetryInterval, clearErrorRetryTimeout]);
+
   // opacity is 1 if loaded, 0.15 if still buffering
   const undimIfLoaded = () => {
     return loaded? 1: 0.15;
@@ -78,40 +122,138 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     return urlStation === callsign;
   }
 
-  function handleStall() {
-
-    // remove and reload stalled station audio stream
-    setLoaded(false)
-    const thisStation = document.getElementsByClassName("audio-element").namedItem(callsign)
-    console.log(callsign + " stalled, status: " + thisStation.readyState + ". retrying")
-    thisStation.setAttribute("src", "")
-    setTimeout(function () { 
-        thisStation.load() // This stops the stream from downloading; basically forces it to load an empty file
-    }, 100)
-    thisStation.setAttribute("src", getProxiedUrl(audioURL))
-    thisStation.load()
-    // if the currently playing station is stalled
-    if (playing?.call_sign === callsign) {
-      // unload the station if user has paused manually
-      if (userPause) {
-        setPlaying(null)
-        setUserPause(false)
-        return
-      }
-      // play static and retry the station every second until it reloads
-      setPlayStatic(true)
-      let retry = setInterval(() => {
-        if (thisStation.readyState >= 3) {
-          thisStation.play()
-          thisStation.volume = volume / 100
-          setPlayStatic(false)
-          clearInterval(retry)
-        }
-      }, 1000);
-    }
+  function reloadStream() {
+    const el = document.getElementsByClassName("audio-element").namedItem(callsign);
+    if (!el) return;
+    const src = getProxiedUrl(audioURL);
+    el.setAttribute("src", "");
+    el.load();
+    el.setAttribute("src", src);
+    el.load();
   }
+
+  function handleStall() {
+    clearRetryInterval();
+    setLoaded(false);
+
+    const thisStation = document.getElementsByClassName("audio-element").namedItem(callsign);
+    if (!thisStation) return;
+
+    console.log(callsign + " stalled, status: " + thisStation.readyState + ". retrying");
+    reloadStream();
+
+    if (playingRef.current?.call_sign !== callsign) return;
+
+    if (userPauseRef.current) {
+      setPlaying(null);
+      setUserPause(false);
+      return;
+    }
+
+    setPlayStatic(true);
+    retryCountRef.current = 0;
+
+    retryIntervalRef.current = setInterval(() => {
+      // If user switched away from this station while we were retrying, stop.
+      if (playingRef.current?.call_sign !== callsign) {
+        clearRetryInterval();
+        setPlayStatic(false);
+        return;
+      }
+
+      retryCountRef.current++;
+
+      if (thisStation.readyState >= 3) {
+        pauseAllStations();
+        thisStation.play();
+        thisStation.volume = volumeRef.current / 100;
+        setPlayStatic(false);
+        retryCountRef.current = 0;
+        clearRetryInterval();
+        return;
+      }
+
+      if (retryCountRef.current >= MAX_STALL_RETRIES) {
+        console.log(callsign + " giving up after " + MAX_STALL_RETRIES + " stall retries");
+        clearRetryInterval();
+        setPlayStatic(false);
+        setPlaying(null);
+        retryCountRef.current = 0;
+      }
+    }, STALL_RETRY_INTERVAL_MS);
+  }
+
+  function handleError() {
+    const thisStation = document.getElementsByClassName("audio-element").namedItem(callsign);
+    const err = thisStation?.error;
+
+    clearRetryInterval();
+    clearErrorRetryTimeout();
+    setLoaded(false);
+
+    if (playingRef.current?.call_sign === callsign) {
+      setPlaying(null);
+      setPlayStatic(false);
+    }
+
+    errorRetryCountRef.current++;
+
+    if (errorRetryCountRef.current > MAX_ERROR_RETRIES) {
+      console.log(callsign + " error: " + (err ? err.code + " " + err.message : "unknown") + " — gave up after " + MAX_ERROR_RETRIES + " retries");
+      return;
+    }
+
+    const delay = ERROR_BASE_DELAY_MS * Math.pow(2, errorRetryCountRef.current - 1);
+    console.log(callsign + " error: " + (err ? err.code + " " + err.message : "unknown") + " — retry " + errorRetryCountRef.current + "/" + MAX_ERROR_RETRIES + " in " + (delay / 1000) + "s");
+
+    errorRetryTimeoutRef.current = setTimeout(() => {
+      reloadStream();
+    }, delay);
+  }
+
+  function handleEnded() {
+    console.log(callsign + " stream ended, attempting reconnect");
+    clearRetryInterval();
+    setLoaded(false);
+
+    reloadStream();
+
+    if (playingRef.current?.call_sign !== callsign) return;
+
+    setPlayStatic(true);
+    retryCountRef.current = 0;
+
+    retryIntervalRef.current = setInterval(() => {
+      if (playingRef.current?.call_sign !== callsign) {
+        clearRetryInterval();
+        setPlayStatic(false);
+        return;
+      }
+
+      retryCountRef.current++;
+      const thisStation = document.getElementsByClassName("audio-element").namedItem(callsign);
+
+      if (thisStation && thisStation.readyState >= 3) {
+        pauseAllStations();
+        thisStation.play();
+        thisStation.volume = volumeRef.current / 100;
+        setPlayStatic(false);
+        retryCountRef.current = 0;
+        clearRetryInterval();
+        return;
+      }
+
+      if (retryCountRef.current >= MAX_STALL_RETRIES) {
+        console.log(callsign + " giving up reconnect after " + MAX_STALL_RETRIES + " retries");
+        clearRetryInterval();
+        setPlayStatic(false);
+        setPlaying(null);
+        retryCountRef.current = 0;
+      }
+    }, STALL_RETRY_INTERVAL_MS);
+  }
+
   const playPause = (e) => {
-    // select all audio stream elements + selected stream
     const allStations = document.getElementsByClassName("audio-element")
     const selectedStation = allStations.namedItem(callsign)
 
@@ -120,9 +262,11 @@ export default function StationCard({callsign, frequency, college, audioURL, col
 
     // if clicked on current station, eject the station from the player
     if (playing?.call_sign === callsign) {
+      clearRetryInterval();
       selectedStation.pause()
       setPlaying(null);
       setUserPause(false);
+      setPlayStatic(false);
       ReactGA.event({
         category: 'Play',
         action: 'User paused playback by unloading a station',
@@ -133,9 +277,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
     else {      
       // execute if the new station is ready to play
       if (selectedStation.readyState >= 3) {
-        for (let stream of allStations) {
-          stream.pause();
-        }
+        pauseAllStations();
         setPlayStatic(false)
         selectedStation.play();
         selectedStation.volume = volume / 100
@@ -207,7 +349,17 @@ export default function StationCard({callsign, frequency, college, audioURL, col
           </CardContent>
         </Box>
         </ButtonBase>
-        <audio className="audio-element" onLoadStart={() => setLoaded(false)} onCanPlay={() => setLoaded(true)} onStalled={handleStall} name={callsign} src={getProxiedUrl(audioURL)} type="audio/mp3" />
+        <audio
+          className="audio-element"
+          onLoadStart={() => setLoaded(false)}
+          onCanPlay={() => { errorRetryCountRef.current = 0; setLoaded(true); }}
+          onStalled={handleStall}
+          onError={handleError}
+          onEnded={handleEnded}
+          name={callsign}
+          src={getProxiedUrl(audioURL)}
+          type="audio/mp3"
+        />
         </Card>
     </ThemeProvider>
   );

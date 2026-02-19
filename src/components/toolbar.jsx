@@ -46,7 +46,11 @@ export default function Toolbar({ playing, setPlaying, displayedStations, volume
 
   function playMusic() {
     for (let station of stationElements) {
-      if(station.getAttribute("name") === playing?.call_sign) station.play()
+      if (station.getAttribute("name") === playing?.call_sign) {
+        station.play();
+      } else {
+        station.pause();
+      }
     }
     setUserPause(false)
     ReactGA.event({
