@@ -58,6 +58,10 @@ const ALLOWED_STREAM_HOSTS = [
   '152.17.49.84',
   'wmeb-stream.maine.edu',
   'wnyu.org',
+  'listen.kxua.com',
+  'aggieradio.creek.stream',
+  'stream.ktuh.org',
+  'spaudio.servers.pt',
 ];
 
 // Origins allowed to use this proxy (no localhost = no open use by others)
