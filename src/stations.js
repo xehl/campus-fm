@@ -176,7 +176,7 @@ const stations = [
       station_image:
         "https://bloximages.newyork1.vip.townnews.com/redandblack.com/content/tncms/assets/v3/editorial/6/23/623c3abe-acc1-11e4-ace3-3f1d40ac2f84/54d2a4c19933a.image.jpg?resize=400%2C400",
       college_image:
-        "https://content.sportslogos.net/logos/31/687/full/georgia_bulldogs_logo_secondary_2015_sportslogosnet-7979.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Georgia_Athletics_logo.svg/250px-Georgia_Athletics_logo.svg.png",
     },
     {
       id: 8,
@@ -497,7 +497,8 @@ const stations = [
       city: "Atlanta",
       state: "GA",
       station_image: "https://avatars3.githubusercontent.com/u/2118908?s=280&v=4",
-      college_image: "https://content.sportslogos.net/logos/31/690/full/2491.gif",
+      college_image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Georgia_Tech_Yellow_Jackets_logo.svg/300px-Georgia_Tech_Yellow_Jackets_logo.svg.png",
     },
     {
       id: 36,
@@ -527,7 +528,7 @@ const stations = [
       station_image:
         "https://i1.sndcdn.com/avatars-000107068841-z5wmaw-t500x500.jpg",
       college_image:
-        "https://content.sportslogos.net/logos/34/877/full/tulane_green_wave_logo_primary_1986_sportslogosnet-7875.png",
+        "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Tulane_Green_Wave_logo.svg/300px-Tulane_Green_Wave_logo.svg.png",
     },
     {
       id: 38,
@@ -871,7 +872,7 @@ const stations = [
       station_image:
         "http://cdn-profiles.tunein.com/s21544/images/logod.png?t=637800282700000000",
       college_image:
-        "https://content.sportslogos.net/logos/33/774/full/norfolk_state_spartans_logo_secondary_19991057.png",
+        "https://upload.wikimedia.org/wikipedia/en/thumb/7/78/Norfork_State_Spartans_logo.svg/300px-Norfork_State_Spartans_logo.svg.png",
     },
     {
       id: 61,
@@ -1346,7 +1347,7 @@ const stations = [
       state: "OH",
       station_image: "https://cdn-radiotime-logos.tunein.com/s27441d.png",
       college_image:
-        "https://content.sportslogos.net/logos/30/620/full/bowling_green_falcons_logo_secondary_20043807.png",
+        "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Bowling_Green_Falcons_logo.svg/300px-Bowling_Green_Falcons_logo.svg.png",
     },
     {
       id: 94,
@@ -1465,7 +1466,7 @@ const stations = [
       station_image:
         "https://i0.wp.com/kjhk.org/web/wp-content/uploads/2020/10/cropped-BestLogoM04.png?fit=512%2C512&ssl=1",
       college_image:
-        "https://content.sportslogos.net/logos/32/718/full/kansas_jayhawks_logo_primary_20059568.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Kansas_Jayhawks_1946_logo.svg/300px-Kansas_Jayhawks_1946_logo.svg.png",
     },
     {
       id: 101,
@@ -1731,7 +1732,7 @@ const stations = [
       station_image:
         "https://spinitron.com/images/Station/13/1338-img_logo.225x225.jpg?v=1687376816",
       college_image:
-        "https://content.sportslogos.net/logos/34/828/full/san_jose_state_spartans_logo_primary_2018_sportslogosnet-7512.png",
+        "https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/San_Jose_State_Spartans_logo.svg/300px-San_Jose_State_Spartans_logo.svg.png",
     },
     {
       id: 120,
@@ -2584,7 +2585,7 @@ const stations = [
       state: "CA",
       station_image: "https://upload.wikimedia.org/wikipedia/en/9/96/KSDT_radio_station_logo.png",
       college_image:
-        "https://static.wikia.nocookie.net/ncaa-athletics/images/d/db/UC_San_Diego_Tritons.png/revision/latest?cb=20180328100543",
+        "https://a.espncdn.com/i/teamlogos/ncaa/500/28.png",
     },
     {
       id: 177,
