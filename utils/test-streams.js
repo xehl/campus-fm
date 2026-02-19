@@ -403,6 +403,9 @@ function formatHumanReadable(results) {
     results.filter(r => r.status === 'NEEDS_PROXY').forEach(r => {
       lines.push(`  ${r.call_sign} (${r.college_name})`);
       lines.push(`    URL: ${r.audio_url}`);
+      if (r.viaProxyOk !== undefined) {
+        lines.push(`    Via proxy: ${r.viaProxyOk ? '✅ OK' : `❌ BROKEN${r.viaProxyError ? ` (${r.viaProxyError})` : ''}`}`);
+      }
       lines.push('');
     });
   }
@@ -429,8 +432,9 @@ Options:
   --stations <LIST>     Test multiple stations (comma-separated, e.g., KWVA,WXYC,KALX)
   --url <URL>           Test a single stream URL directly (e.g., https://example.com/stream.mp3)
   --via-proxy           Test HTTP stations through the proxy (use with --url or --station for one)
-  --proxy-url <URL>     Proxy base URL for --via-proxy (default: https://proxy.campus-fm.com/)
-  --origin <ORIGIN>     Origin header for --via-proxy (default: https://campus-fm.com)
+  --test-proxy          With --all: also test each NEEDS_PROXY station via proxy (OK/BROKEN)
+  --proxy-url <URL>     Proxy base URL for --via-proxy / --test-proxy (default: https://proxy.campus-fm.com/)
+  --origin <ORIGIN>     Origin header for --via-proxy / --test-proxy (default: https://campus-fm.com)
   --http-only           Test only HTTP stations (proxy candidates)
   --https-only          Test only HTTPS stations
   --broken-only         Only show broken stations in output
@@ -447,6 +451,7 @@ Examples:
   node utils/test-streams.js --via-proxy --json
   node utils/test-streams.js --http-only --json
   node utils/test-streams.js --all --broken-only
+  node utils/test-streams.js --all --test-proxy   # also test HTTP streams via proxy
 `);
 }
 
@@ -618,6 +623,34 @@ async function main() {
         'UNKNOWN': '❓'
       }[analysis.status] || '?';
       console.log(`${statusIcon} ${analysis.status}`);
+    }
+  }
+
+  // Optionally test NEEDS_PROXY stations via proxy (same path the app uses)
+  if (args.includes('--test-proxy')) {
+    const needProxy = results.filter(r => r.status === 'NEEDS_PROXY');
+    if (needProxy.length > 0) {
+      const proxyIdx = args.indexOf('--proxy-url');
+      const originIdx = args.indexOf('--origin');
+      const proxyBase = (proxyIdx !== -1 && args[proxyIdx + 1]) ? args[proxyIdx + 1] : DEFAULT_PROXY_BASE;
+      const origin = (originIdx !== -1 && args[originIdx + 1]) ? args[originIdx + 1] : DEFAULT_ORIGIN;
+      if (!outputJson && !quietMode) {
+        console.log(`\nTesting ${needProxy.length} HTTP station(s) via proxy...`);
+      }
+      for (let i = 0; i < results.length; i++) {
+        if (results[i].status !== 'NEEDS_PROXY') continue;
+        const station = stations[i];
+        if (!outputJson && !quietMode) {
+          process.stdout.write(`  ${station.call_sign} via proxy... `);
+        }
+        const proxyResult = await testStreamViaProxy(proxyBase, origin, station.audio_url);
+        const ok = proxyResult.reachable && (proxyResult.isAudio || (proxyResult.statusCode >= 200 && proxyResult.statusCode < 300));
+        results[i].viaProxyOk = ok;
+        results[i].viaProxyError = proxyResult.error || (proxyResult.statusCode >= 400 ? `HTTP ${proxyResult.statusCode}` : null);
+        if (!outputJson && !quietMode) {
+          console.log(ok ? '✅ OK' : `❌ BROKEN (${results[i].viaProxyError || proxyResult.statusCode})`);
+        }
+      }
     }
   }
   

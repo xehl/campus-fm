@@ -25,5 +25,8 @@ yarn-error.log*
 # Local Netlify folder
 .netlify
 
+# Generated sitemap (rebuilt on prebuild)
+public/sitemap.xml
+
 # Working scripts and CRD data (station-add workflow, scraped data, reports)
 /scripts

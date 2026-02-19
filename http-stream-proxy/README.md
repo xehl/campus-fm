@@ -64,7 +64,7 @@ Domains that can use the proxy, also in `worker.js`:
 ```javascript
 const ALLOWED_ORIGINS = [
   'https://campus-fm.com',
-  'http://localhost:3000',
+  'https://www.campus-fm.com',
 ];
 ```
 
@@ -77,6 +77,21 @@ The worker is deployed to Cloudflare Workers (free tier: 100k requests/day).
 3. Paste the contents of `worker.js`
 4. Deploy and note the worker URL
 5. Update `PROXY_BASE_URL` in the app
+
+## Testing HTTP Streams (CLI)
+
+The test tool can verify HTTP streams through the proxy (same path the app uses). No worker changes are needed: the CLI sends `Origin: https://campus-fm.com`, which is already in `ALLOWED_ORIGINS`.
+
+- **Test all HTTP stations via proxy:**  
+  `node utils/test-streams.js --via-proxy`
+- **Full test plus proxy check for HTTP-only stations:**  
+  `node utils/test-streams.js --all --test-proxy`  
+  This runs the normal test, then for each station that needs the proxy, tests it through the proxy and reports OK/BROKEN.
+- **Single station or URL via proxy:**  
+  `node utils/test-streams.js --via-proxy --station WMEB`  
+  `node utils/test-streams.js --via-proxy --url "http://example.com/stream"`
+
+Use `--proxy-url <URL>` and `--origin <ORIGIN>` if your proxy or allowed origin differ from the defaults.
 
 ## Adding New HTTP Stations
 

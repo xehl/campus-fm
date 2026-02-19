@@ -47,6 +47,7 @@ const ALLOWED_STREAM_HOSTS = [
   'kdurradio.fortlewis.edu',
   'icecast.commedia.org.uk',
   '137.165.206.193',
+  'wcfm-streaming.williams.edu',
   'stream.wrct.org',
   '205.208.30.113',
   'widrfm.net',
