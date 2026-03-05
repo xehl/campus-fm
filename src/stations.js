@@ -191,7 +191,7 @@ const stations = [
       station_image:
         "https://upload.wikimedia.org/wikipedia/en/5/50/WXTJ-LP_2015.png",
       college_image:
-        "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Virginia_Cavaliers_logo.svg/800px-Virginia_Cavaliers_logo.svg.png",
+        "https://upload.wikimedia.org/wikipedia/en/1/1e/Virginia_Cavaliers_logo.svg",
     },
     {
       id: 9,
