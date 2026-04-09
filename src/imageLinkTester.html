@@ -39,6 +39,7 @@
 
     <script type="module">
       import stations from './stations.js';
+      import { normalizeWikimediaThumbUrl } from './utils/wikimediaHelper.js';
   
       const imageContainer = document.getElementById('imageContainer');
   
@@ -111,7 +112,7 @@
       // Collect station images
       const stationImages = stations.map(station =>
           loadImage(
-              station.station_image,
+              normalizeWikimediaThumbUrl(station.station_image),
               `[${station.call_sign}] station logo`,
               `[${station.call_sign.toUpperCase()}] STATION LOGO BROKEN`
           )
@@ -120,7 +121,7 @@
       // Collect college images
       const collegeImages = stations.map(station =>
           loadImage(
-              station.college_image,
+              normalizeWikimediaThumbUrl(station.college_image),
               `[${station.college_name}] college logo`,
               `[${station.college_name.toUpperCase()}] COLLEGE LOGO BROKEN`
           )

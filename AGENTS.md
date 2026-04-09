@@ -115,6 +115,18 @@ Browser → proxyHelper.js (detects HTTP URL on HTTPS site)
 
 ## Testing Tools
 
+### Image Link Tester (Browser)
+
+To test station and college logo images, open `src/imageLinkTester.html` in a browser:
+
+```bash
+# From the src/ directory:
+cd src && python3 -m http.server
+# Then visit http://localhost:8000/imageLinkTester.html
+```
+
+It loads every `station_image` and `college_image` from `stations.js`, renders them, and lists any broken links at the top. Hard-refresh (Cmd+Shift+R) if fixed links still show as broken.
+
 ### Stream Tester CLI
 
 ```bash
@@ -218,6 +230,7 @@ This prevents hammering broken streams while allowing recovery from temporary fa
 | `src/utils/proxyHelper.js` | Routes HTTP streams through proxy |
 | `http-stream-proxy/worker.js` | Cloudflare Worker code for proxy |
 | `utils/test-streams.js` | CLI for testing stream URLs |
+| `src/imageLinkTester.html` | Browser tool to test station/college logo images |
 
 ## Debugging Checklist
 

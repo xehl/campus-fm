@@ -1,5 +1,6 @@
 import { Box, Card, CardMedia, Typography, ButtonBase } from '@mui/material/';
 import ReactGA from "react-ga4"
+import { normalizeWikimediaThumbUrl } from '../utils/wikimediaHelper';
 
 export default function ModalCard({ station, stationQueue, setStationQueue, setAlertMessage, setAlertOpen }) {
   
@@ -69,7 +70,7 @@ export default function ModalCard({ station, stationQueue, setStationQueue, setA
               backgroundColor: "white",
               objectFit: "contain"
             }}
-            image={station.station_image}
+            image={normalizeWikimediaThumbUrl(station.station_image)}
             alt={station.callsign}
             margin="auto"
         />

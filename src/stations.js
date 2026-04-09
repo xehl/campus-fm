@@ -113,7 +113,7 @@ const stations = [
       city: "Champaign",
       state: "IL",
       station_image:
-        "https://media-exp1.licdn.com/dms/image/C4E0BAQGlh_vDeKpWIQ/company-logo_200_200/0/1521359015698?e=2147483647&v=beta&t=NDMNDJlDJXyrHEYyzJsVvSkGbmbveL-WBukDv-NqGx8",
+        "https://cdn-profiles.tunein.com/s21934/images/logog.png?t=156405",
       college_image:
         "https://b.fssta.com/uploads/application/college/team-logos/Illinois.png",
     },
@@ -131,7 +131,7 @@ const stations = [
       station_image:
         "https://cdn-profiles.tunein.com/s23884/images/logog.png?t=159614",
       college_image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/West_Virginia_Mountaineers_logo.svg/175px-West_Virginia_Mountaineers_logo.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/20150608194834%21West_Virginia_Mountaineers_logo.svg/500px-20150608194834%21West_Virginia_Mountaineers_logo.svg.png",
     },
     {
       id: 18,
@@ -212,7 +212,7 @@ const stations = [
       id: 10,
       call_sign: "WTBU",
       broadcast_frequency: "89.3",
-      audio_url: "http://wtbu.bu.edu:1800/",
+      audio_url: "https://headphones.bu.edu:8443/listen",
       station_url: "https://sites.bu.edu/wtbu/",
       college_name: "Boston University",
       public_private: "private",
@@ -343,7 +343,7 @@ const stations = [
       id: 21,
       call_sign: "WHUS",
       broadcast_frequency: "91.7",
-      audio_url: "http://stream.whus.org:8000/whusfm",
+      audio_url: "https://live.whus.org/fm",
       station_url: "https://whus.org/",
       college_name: "University of Connecticut",
       public_private: "Public",
@@ -416,7 +416,7 @@ const stations = [
       id: 29,
       call_sign: "KXUA",
       broadcast_frequency: "88.3",
-      audio_url: "http://listen.kxua.com/stream",
+      audio_url: "https://listen.kxua.com/stream",
       station_url: "https://kxua.uark.edu/",
       college_name: "University of Arkansas",
       public_private: "Public",
@@ -636,21 +636,22 @@ const stations = [
       college_image:
         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2628.png",
     },
-    {
-      id: 45,
-      call_sign: "CFUV",
-      broadcast_frequency: "101.9",
-      audio_url: "https://ais-sa1.streamon.fm/7132_64k.aac",
-      station_url: "http://cfuv.uvic.ca/cms/",
-      college_name: "University of Victoria",
-      public_private: "Public",
-      city: "Victoria",
-      state: "BC",
-      station_image:
-        "https://i1.sndcdn.com/avatars-000445307787-562tuu-t500x500.jpg",
-      college_image:
-        "https://upload.wikimedia.org/wikipedia/commons/4/40/Univ_of_victoria_logo.png",
-    },
+    // NOTE: CFUV commented out - streamon.fm stream URL consistently times out (Apr 2026)
+    // {
+    //   id: 45,
+    //   call_sign: "CFUV",
+    //   broadcast_frequency: "101.9",
+    //   audio_url: "https://ais-sa1.streamon.fm/7132_64k.aac",
+    //   station_url: "http://cfuv.uvic.ca/cms/",
+    //   college_name: "University of Victoria",
+    //   public_private: "Public",
+    //   city: "Victoria",
+    //   state: "BC",
+    //   station_image:
+    //     "https://i1.sndcdn.com/avatars-000445307787-562tuu-t500x500.jpg",
+    //   college_image:
+    //     "https://upload.wikimedia.org/wikipedia/commons/4/40/Univ_of_victoria_logo.png",
+    // },
     //   {
     // NOTE: CHUO commented out - station ceased live broadcasting Dec 15, 2025
     // {
@@ -849,7 +850,7 @@ const stations = [
       id: 59,
       call_sign: "WVUD",
       broadcast_frequency: "91.3",
-      audio_url: "http://128.175.76.123:8000/stream/1/",
+      audio_url: "https://streaming.radio.co/s1bc6bf517/listen",
       station_url: "https://www.wvud.org/",
       college_name: "University of Delaware",
       public_private: "Public",
@@ -1084,21 +1085,22 @@ const stations = [
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Boston_College_Eagles_logo.svg/1200px-Boston_College_Eagles_logo.svg.png",
     },
-    {
-      id: 76,
-      call_sign: "WIUP",
-      broadcast_frequency: "90.1",
-      audio_url: "http://144.80.16.164:8000/xstream",
-      station_url: "http://www.wiupfm.org/",
-      college_name: "Indiana University of Pennsylvania",
-      public_private: "Public",
-      city: "Indiana",
-      state: "PA",
-      station_image:
-        "https://cdn.onlineradiobox.com/img/l/9/20059.v4.png",
-      college_image:
-        "https://upload.wikimedia.org/wikipedia/en/6/6f/IUP_Crimson_Hawks_logo.svg",
-    },
+    // NOTE: WIUP commented out - IP-based stream URL dead, no replacement found (Apr 2026)
+    // {
+    //   id: 76,
+    //   call_sign: "WIUP",
+    //   broadcast_frequency: "90.1",
+    //   audio_url: "http://144.80.16.164:8000/xstream",
+    //   station_url: "http://www.wiupfm.org/",
+    //   college_name: "Indiana University of Pennsylvania",
+    //   public_private: "Public",
+    //   city: "Indiana",
+    //   state: "PA",
+    //   station_image:
+    //     "https://cdn.onlineradiobox.com/img/l/9/20059.v4.png",
+    //   college_image:
+    //     "https://upload.wikimedia.org/wikipedia/en/6/6f/IUP_Crimson_Hawks_logo.svg",
+    // },
     {
       id: 77,
       call_sign: "WRUW",
@@ -1335,20 +1337,21 @@ const stations = [
         "https://images.squarespace-cdn.com/content/v1/5858568ad1758e3ed9b61481/1516832569469-9P3G8KB1TQ8QCOO1TPIO/b+12+a+reverse+btransparent.png",
       college_image: "https://nwccu.org/wp-content/uploads/2024/01/TESC-Logo.png",
     },
-    {
-      id: 93,
-      call_sign: "WBGU",
-      broadcast_frequency: "88.1",
-      audio_url: "https://dvstream2.bgsu.edu/wbgu",
-      station_url: "https://www.bgfalconmedia.com/wbgu-fm/",
-      college_name: "Bowling Green State University",
-      public_private: "Public",
-      city: "Bowling Green",
-      state: "OH",
-      station_image: "https://cdn-radiotime-logos.tunein.com/s27441d.png",
-      college_image:
-        "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Bowling_Green_Falcons_logo.svg/300px-Bowling_Green_Falcons_logo.svg.png",
-    },
+    // NOTE: WBGU commented out - dvstream2.bgsu.edu returns invalid HTTP response (Apr 2026)
+    // {
+    //   id: 93,
+    //   call_sign: "WBGU",
+    //   broadcast_frequency: "88.1",
+    //   audio_url: "https://dvstream2.bgsu.edu/wbgu",
+    //   station_url: "https://www.bgfalconmedia.com/wbgu-fm/",
+    //   college_name: "Bowling Green State University",
+    //   public_private: "Public",
+    //   city: "Bowling Green",
+    //   state: "OH",
+    //   station_image: "https://cdn-radiotime-logos.tunein.com/s27441d.png",
+    //   college_image:
+    //     "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Bowling_Green_Falcons_logo.svg/300px-Bowling_Green_Falcons_logo.svg.png",
+    // },
     {
       id: 94,
       call_sign: "WMBR",
@@ -1449,7 +1452,7 @@ const stations = [
       city: "Stony Brook",
       state: "NY",
       station_image:
-        "https://alumniandfriends.stonybrook.edu/images/content/pagebuilder/WUSB-resized.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/3/3c/WUSB_radio_logo_May_2020.png",
       college_image:
         "https://www.stonybrook.edu/far-beyond/img/branding/logo/sbu/primary/72/stony-brook-university-logo-vertical.png",
     },
@@ -1857,7 +1860,7 @@ const stations = [
       id: 128,
       call_sign: "WHPK",
       broadcast_frequency: "88.5",
-      audio_url: "http://205.208.30.113:8000/stream",
+      audio_url: "https://whpk-stream.uchicago.edu/stream",
       station_url: "https://whpk.org/",
       college_name: "University of Chicago",
       public_private: "Private",
@@ -1913,21 +1916,22 @@ const stations = [
       college_image:
         "https://wmich.edu/sites/default/files/attachments/u171/2020/WMU%20stacked-digital.png",
     },
-    {
-      id: 132,
-      call_sign: "WLUW",
-      broadcast_frequency: "88.7 FM",
-      audio_url: "https://wluw.streamguys1.com/stream.mp3",
-      station_url: "https://wluw.org/",
-      college_name: "Loyola University of Chicago",
-      public_private: "Private",
-      city: "Chicago",
-      state: "IL",
-      station_image:
-        "https://dqa4a6x5zonsi.cloudfront.net/img/stations/wluw/icons/android-chrome-384x384.png",
-      college_image:
-        "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Loyola_Ramblers_logo.svg/1200px-Loyola_Ramblers_logo.svg.png",
-    },
+    // NOTE: WLUW commented out - streamguys1.com stream consistently times out (Apr 2026)
+    // {
+    //   id: 132,
+    //   call_sign: "WLUW",
+    //   broadcast_frequency: "88.7 FM",
+    //   audio_url: "https://wluw.streamguys1.com/stream.mp3",
+    //   station_url: "https://wluw.org/",
+    //   college_name: "Loyola University of Chicago",
+    //   public_private: "Private",
+    //   city: "Chicago",
+    //   state: "IL",
+    //   station_image:
+    //     "https://dqa4a6x5zonsi.cloudfront.net/img/stations/wluw/icons/android-chrome-384x384.png",
+    //   college_image:
+    //     "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Loyola_Ramblers_logo.svg/1200px-Loyola_Ramblers_logo.svg.png",
+    // },
     {
       id: 133,
       call_sign: "KGLT",
@@ -2111,21 +2115,22 @@ const stations = [
     //   college_image:
     //     "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Texas_Tech_Athletics_logo.svg/1200px-Texas_Tech_Athletics_logo.svg.png",
     // },
-    {
-      id: 145,
-      call_sign: "WUSC",
-      broadcast_frequency: "90.5",
-      audio_url: "https://stream.wusc.fm/listen.mp3",
-      station_url: "https://www.wusc.fm/",
-      college_name: "University of South Carolina",
-      public_private: "Public",
-      city: "Columbia",
-      state: "SC",
-      station_image:
-        "https://upload.wikimedia.org/wikipedia/en/d/d4/WUSC_90.5FM_logo.png",
-      college_image:
-        "https://sc.edu/about/offices_and_divisions/communications/images/toolbox/logos/grid_athletics_logo.png",
-    },
+    // NOTE: WUSC commented out - stream.wusc.fm consistently times out (Apr 2026)
+    // {
+    //   id: 145,
+    //   call_sign: "WUSC",
+    //   broadcast_frequency: "90.5",
+    //   audio_url: "https://stream.wusc.fm/listen.mp3",
+    //   station_url: "https://www.wusc.fm/",
+    //   college_name: "University of South Carolina",
+    //   public_private: "Public",
+    //   city: "Columbia",
+    //   state: "SC",
+    //   station_image:
+    //     "https://upload.wikimedia.org/wikipedia/en/d/d4/WUSC_90.5FM_logo.png",
+    //   college_image:
+    //     "https://sc.edu/about/offices_and_divisions/communications/images/toolbox/logos/grid_athletics_logo.png",
+    // },
     {
       id: 146,
       call_sign: "WMUA",
@@ -2161,7 +2166,7 @@ const stations = [
       id: 148,
       call_sign: "KBLU",
       broadcast_frequency: "92.3",
-      audio_url: "http://aggieradio.creek.stream/stream",
+      audio_url: "https://aggieradio.creek.stream/stream",
       station_url: "https://www.usu.edu/student-media/aggie-radio/",
       college_name: "Utah State University",
       public_private: "Public",
@@ -2187,21 +2192,22 @@ const stations = [
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Northern_Arizona_Athletics_logo.svg/1200px-Northern_Arizona_Athletics_logo.svg.png",
     },
-    {
-      id: 150,
-      call_sign: "WUMS",
-      broadcast_frequency: "92.1",
-      audio_url: "http://130.74.34.21:8000/stream",
-      station_url: "https://myrebelradio.com/",
-      college_name: "University of Mississippi",
-      public_private: "Public",
-      city: "University",
-      state: "MS",
-      station_image:
-        "https://myrebelradio.com/wp-content/uploads/2023/01/Rebel-Radio-Redo-headphones-spotify.jpg",
-      college_image:
-        "https://upload.wikimedia.org/wikipedia/commons/7/7c/Ole-miss_logo_from_NCAA.svg",
-    },
+    // NOTE: WUMS commented out - HTTP-only IP stream, university blocks Cloudflare proxy (Apr 2026)
+    // {
+    //   id: 150,
+    //   call_sign: "WUMS",
+    //   broadcast_frequency: "92.1",
+    //   audio_url: "http://130.74.34.21:8000/stream",
+    //   station_url: "https://myrebelradio.com/",
+    //   college_name: "University of Mississippi",
+    //   public_private: "Public",
+    //   city: "University",
+    //   state: "MS",
+    //   station_image:
+    //     "https://myrebelradio.com/wp-content/uploads/2023/01/Rebel-Radio-Redo-headphones-spotify.jpg",
+    //   college_image:
+    //     "https://upload.wikimedia.org/wikipedia/commons/7/7c/Ole-miss_logo_from_NCAA.svg",
+    // },
     {
       id: 151,
       call_sign: "WZMB",
@@ -2262,21 +2268,22 @@ const stations = [
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Mississippi_State_Bulldogs_logo.svg/1280px-Mississippi_State_Bulldogs_logo.svg.png",
     },
-    {
-      id: 155,
-      call_sign: "KUCR",
-      broadcast_frequency: "88.3",
-      audio_url: "http://138.23.75.92:8001/",
-      station_url: "https://kucr.org/",
-      college_name: "University of California, Riverside",
-      public_private: "Public",
-      city: "Riverside",
-      state: "CA",
-      station_image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrR87gi-z7kcEQ4415lDh0FnNgYHNB71aouw&s",
-      college_image:
-        "https://upload.wikimedia.org/wikipedia/commons/2/21/UC_Riverside_Highlanders_logo.svg",
-    },
+    // NOTE: KUCR commented out - HTTP-only IP stream, university blocks Cloudflare proxy (Apr 2026)
+    // {
+    //   id: 155,
+    //   call_sign: "KUCR",
+    //   broadcast_frequency: "88.3",
+    //   audio_url: "http://138.23.75.92:8001/",
+    //   station_url: "https://kucr.org/",
+    //   college_name: "University of California, Riverside",
+    //   public_private: "Public",
+    //   city: "Riverside",
+    //   state: "CA",
+    //   station_image:
+    //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrR87gi-z7kcEQ4415lDh0FnNgYHNB71aouw&s",
+    //   college_image:
+    //     "https://upload.wikimedia.org/wikipedia/commons/2/21/UC_Riverside_Highlanders_logo.svg",
+    // },
     {
       id: 156,
       call_sign: "WZIP",
@@ -2401,7 +2408,7 @@ const stations = [
       id: 164,
       call_sign: "KWUR",
       broadcast_frequency: "90.3",
-      audio_url: "https://listen.mixlr.com/f960b41261cd3f8f56fad5cf4d8b3c57",
+      audio_url: "https://listen.mixlr.com/e4b4123ab26c8dbf724e13279fe5f3ef",
       station_url: "http://kwur.wustl.edu/",
       college_name: "Washington University in St. Louis",
       public_private: "Private",

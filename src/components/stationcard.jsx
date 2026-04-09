@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import ReactGA from "react-ga4"
 import { getProxiedUrl } from '../utils/proxyHelper';
+import { normalizeWikimediaThumbUrl } from '../utils/wikimediaHelper';
 
 const MAX_STALL_RETRIES = 5;
 const STALL_RETRY_INTERVAL_MS = 1000;
@@ -326,7 +327,7 @@ export default function StationCard({callsign, frequency, college, audioURL, col
             objectFit: "contain",
             height: "85%"
           }}
-          image={collegeimage}
+          image={normalizeWikimediaThumbUrl(collegeimage)}
           alt={callsign}
           margin="auto"
           />
