@@ -803,16 +803,16 @@ const stations = [
     },
     {
       id: 56,
-      call_sign: "WVPH",
-      broadcast_frequency: "90.3",
-      audio_url: "http://rsc417c1.rutgers.edu:8000/WRSU-FM",
+      call_sign: "WRSU",
+      broadcast_frequency: "88.7",
+      audio_url: "https://wrsu-libstrm.radioca.st/stream",
       station_url: "https://www.thecore.fm/",
       college_name: "Rutgers University",
       public_private: "Public",
       city: "New Brunswick",
       state: "NJ",
       station_image:
-        "https://cdn-profiles.tunein.com/s23615/images/logog.jpg?t=1",
+        "https://en.wikipedia.org/wiki/WRSU-FM#/media/File:WRSU-FM_88.7_logo.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rutgers_Scarlet_Knights_logo.svg/1153px-Rutgers_Scarlet_Knights_logo.svg.png",
     },
