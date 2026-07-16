@@ -62,6 +62,9 @@ const ALLOWED_STREAM_HOSTS = [
   'aggieradio.creek.stream',
   'stream.ktuh.org',
   'spaudio.servers.pt',
+  'floyd.wcbn.org',
+  'whpk-stream.uchicago.edu',
+  '165.230.36.189',
 ];
 
 // Origins allowed to use this proxy (no localhost = no open use by others)
