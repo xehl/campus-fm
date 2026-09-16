@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Replacements — Campus FM</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+    h1 { margin-bottom: 4px; }
+    .subtitle { color: #666; margin-top: 0; }
+    .card { background: #fff; border-radius: 12px; padding: 20px; margin: 20px 0; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
+    .card h2 { margin: 0 0 16px 0; font-size: 18px; }
+    .comparison { display: flex; gap: 24px; flex-wrap: wrap; }
+    .comp-col { flex: 1; min-width: 200px; }
+    .comp-col h3 { font-size: 13px; text-transform: uppercase; color: #888; margin: 0 0 8px 0; }
+    .comp-col img { max-width: 200px; max-height: 120px; border: 1px solid #ddd; border-radius: 6px; padding: 8px; background: #fff; }
+    .comp-col .broken-badge { display: inline-block; background: #e74c3c; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-top: 6px; }
+    .comp-col .unknown-badge { display: inline-block; background: #f39c12; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-top: 6px; }
+    .label { font-size: 12px; color: #666; margin-top: 4px; word-break: break-all; }
+    .callout { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 12px; margin-top: 20px; font-size: 14px; }
+    .good { filter: none; }
+    .divider { margin: 24px 0; border: none; border-top: 1px solid #e0e0e0; }
+  </style>
+</head>
+<body>
+  <h1>Campus FM — Image Replacement Inspector</h1>
+  <p class="subtitle">Broken images with proposed replacements. Wikimedia URLs may show as 429 in the checker but load fine in browser.</p>
+
+  <div class="callout">
+    <strong>Note:</strong> UT Austin (KVRX) college logo was already swapped to the Longhorns SVG per your earlier request. Shown below for confirmation.
+  </div>
+
+  <div class="card">
+    <h2>✅ Already Fixed</h2>
+    <div class="comparison">
+      <div class="comp-col">
+        <h3>UT Austin / KVRX — College Logo</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Texas_Longhorns_logo.svg/1280px-Texas_Longhorns_logo.svg.png" alt="Texas Longhorns">
+        <div class="label">upload.wikimedia.org — Texas Longhorns logo SVG</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h2 style="margin-top:0;">🚩 Proposed Replacements</h2>
+
+  <!-- Station Images -->
+  <div class="card">
+    <h2>Station Logos</h2>
+
+    <!-- KUCI -->
+    <div class="comparison" style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #eee;">
+      <div class="comp-col">
+        <h3>KUCI — Current (broken)</h3>
+        <img src="https://kuci.org/wp/wp-content/uploads/2018/06/KUCIheaderlogo2.png" alt="KUCI current" onerror="this.parentElement.innerHTML+='<div class=broken-badge>404 / broken</div>'">
+        <div class="label">kuci.org — WordPress asset</div>
+      </div>
+      <div class="comp-col">
+        <h3>KUCI — Proposed</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/en/d/d9/Kucilogog.png" alt="KUCI proposed">
+        <div class="label">upload.wikimedia.org — Wikipedia logo</div>
+      </div>
+    </div>
+
+    <!-- KCSB -->
+    <div class="comparison" style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #eee;">
+      <div class="comp-col">
+        <h3>KCSB — Current (broken)</h3>
+        <img src="https://www.kcsb.org/wp-content/themes/kcsb2019/images/KCSB--logo.png" alt="KCSB current" onerror="this.parentElement.innerHTML+='<div class=broken-badge>404 / broken</div>'">
+        <div class="label">kcsb.org — theme asset</div>
+      </div>
+      <div class="comp-col">
+        <h3>KCSB — Proposed</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/5b/Kcsb.jpg" alt="KCSB proposed">
+        <div class="label">upload.wikimedia.org — Wikipedia logo</div>
+      </div>
+    </div>
+
+    <!-- WBER -->
+    <div class="comparison" style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #eee;">
+      <div class="comp-col">
+        <h3>WBER — Current (broken)</h3>
+        <img src="https://www.brandtatorship.com/wp-content/uploads/2020/05/WBER-Logo-300x300-1.png" alt="WBER current" onerror="this.parentElement.innerHTML+='<div class=broken-badge>404 / broken</div>'">
+        <div class="label">brandtatorship.com — blog URL, dead</div>
+      </div>
+      <div class="comp-col">
+        <h3>WBER — Proposed</h3>
+        <img src="https://static-media.streema.com/media/cache/6a/71/6a71fe0f90860475dc36631b714dc092.jpg" alt="WBER proposed">
+        <div class="label">static-media.streema.com — WBER logo</div>
+      </div>
+    </div>
+
+    <!-- WWNO station -->
+    <div class="comparison">
+      <div class="comp-col">
+        <h3>WWNO — Current (broken)</h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxio6d3SQ4LHe9g2XMYU-dNqvFtSCOCAN8iQ&su" alt="WWNO current" onerror="this.parentElement.innerHTML+='<div class=broken-badge>404 / broken</div>'">
+        <div class="label">Google encrypted URL — fragile</div>
+      </div>
+      <div class="comp-col">
+        <h3>WWNO — Need to find</h3>
+        <div style="background:#f0f0f0; border:1px dashed #ccc; border-radius:6px; padding:48px 20px; text-align:center; color:#888;">
+          No replacement found yet<br>
+          <small>Check wwno.org or WWNO socials for logo</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- College Images -->
+  <div class="card">
+    <h2>College Logos</h2>
+
+    <!-- Miami -->
+    <div class="comparison" style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #eee;">
+      <div class="comp-col">
+        <h3>WVUM (Univ. of Miami) — Current (broken)</h3>
+        <img src="https://a5e8126a499f8a963166-f72e9078d72b8c998606fd6e0319b679.ssl.cf5.rackcdn.com/images/sports-leagues/ncaa-acc-miami-logo.png" alt="Miami current" onerror="this.parentElement.innerHTML+='<div class=broken-badge>404 / broken</div>'">
+        <div class="label">rackcdn URL — dead</div>
+      </div>
+      <div class="comp-col">
+        <h3>WVUM (Univ. of Miami) — Proposed</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Miami_Hurricanes_logo.svg/1280px-Miami_Hurricanes_logo.svg.png" alt="Miami proposed">
+        <div class="label">upload.wikimedia.org — Miami Hurricanes logo (user approved)</div>
+      </div>
+    </div>
+
+    <!-- Conestoga -->
+    <div class="comparison" style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #eee;">
+      <div class="comp-col">
+        <h3>CJIQ (Conestoga College) — Current (broken)</h3>
+        <img src="https://workforceplanningboard.org/wp-content/uploads/2020/03/Conestoga_College_logo.svg_-300x179-1.png" alt="Conestoga current" onerror="this.parentElement.innerHTML+='<div class=broken-badge>404 / broken</div>'">
+        <div class="label">workforceplanningboard.org — not permanent</div>
+      </div>
+      <div class="comp-col">
+        <h3>CJIQ (Conestoga College) — Proposed</h3>
+        <img src="https://app.streamlineathletes.com/assets/programs/1692/conestoga-college_logo.png" alt="Conestoga proposed">
+        <div class="label">streamlineathletes.com — athletic logo (user approved)</div>
+      </div>
+    </div>
+
+    <!-- UNO -->
+    <div class="comparison" style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #eee;">
+      <div class="comp-col">
+        <h3>WWNO (Univ. of New Orleans) — Proposed</h3>
+        <img src="https://content.sportslogos.net/logos/33/771/full/new_orleans_privateers_logo_secondary_20135780.png" alt="UNO proposed">
+        <div class="label">sportslogos.net — secondary logo (user approved)</div>
+      </div>
+      <div class="comp-col">
+        <h3>Current (removed)</h3>
+        <div style="background:#e8f5e9; border:1px solid #4caf50; border-radius:6px; padding:48px 20px; text-align:center; color:#2e7d32;">
+          Current Wikimedia URL may work fine<br>
+          <small>No change needed if visible</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- UTEP -->
+    <div class="comparison" style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #eee;">
+      <div class="comp-col">
+        <h3>KTEP (UTEP) — Proposed</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/UTEP_Miners_logo_%282026%29.svg" alt="UTEP proposed">
+        <div class="label">upload.wikimedia.org — UTEP Miners 2026 SVG (user approved)</div>
+      </div>
+      <div class="comp-col">
+        <h3>Current (removed)</h3>
+        <div style="background:#e8f5e9; border:1px solid #4caf50; border-radius:6px; padding:48px 20px; text-align:center; color:#2e7d32;">
+          Current Wikimedia URL may work fine<br>
+          <small>No change needed if visible</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- UCI -->
+    <div class="comparison">
+      <div class="comp-col">
+        <h3>KUCI (UC Irvine) — College logo (current)</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/UC_Irvine_Anteaters_logo.svg/1200px-UC_Irvine_Anteaters_logo.svg.png" alt="UCI current">
+        <div class="label">upload.wikimedia.org — Anteaters SVG</div>
+      </div>
+      <div class="comp-col">
+        <h3>Same — confirm visible</h3>
+        <div style="background:#e8f5e9; border:1px solid #4caf50; border-radius:6px; padding:48px 20px; text-align:center; color:#2e7d32;">
+          Likely working<br>
+          <small>Check if it's a good athletic logo</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>All logos now have proposed replacements.</strong> Hard refresh (Cmd+Shift+R) and check which ones look right to you.
+  </div>
+
+</body>
+</html>

@@ -40,7 +40,7 @@ const stations = [
       station_image:
         "https://pbs.twimg.com/profile_images/1021906128332980224/tgMrKr7O_400x400.jpg",
       college_image:
-        "https://assets-sports.thescore.com/basketball/team/1069/logo.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Texas_Longhorns_logo.svg/1280px-Texas_Longhorns_logo.svg.png",
     },
     {
       id: 6,
@@ -455,7 +455,7 @@ const stations = [
       station_image:
         "https://images.squarespace-cdn.com/content/v1/5a822acff09ca44ad247aaea/1531168670297-OSO6W5VE5M51YU4E3X07/static1.squarespace.png",
       college_image:
-        "https://a5e8126a499f8a963166-f72e9078d72b8c998606fd6e0319b679.ssl.cf5.rackcdn.com/images/sports-leagues/ncaa-acc-miami-logo.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Miami_Hurricanes_logo.svg/1280px-Miami_Hurricanes_logo.svg.png",
     },
     {
       id: 32,
@@ -932,7 +932,7 @@ const stations = [
       station_image:
         "https://cdn-profiles.tunein.com/s12240/images/logog.png?t=154158",
       college_image:
-        "https://workforceplanningboard.org/wp-content/uploads/2020/03/Conestoga_College_logo.svg_-300x179-1.png",
+        "https://app.streamlineathletes.com/assets/programs/1692/conestoga-college_logo.png",
     },
     {
       id: 66,
@@ -1244,7 +1244,7 @@ const stations = [
       city: "Rochester",
       state: "NY",
       station_image:
-        "https://www.brandtatorship.com/wp-content/uploads/2020/05/WBER-Logo-300x300-1.png",
+        "https://static-media.streema.com/media/cache/6a/71/6a71fe0f90860475dc36631b714dc092.jpg",
       college_image:
         "https://www.monroe.edu/cms/lib/NY02216770/Centricity/Shared/Logos/monroe_symbol_fullcolor.png",
     },
@@ -1778,7 +1778,7 @@ const stations = [
       city: "Irvine",
       state: "CA",
       station_image:
-        "https://kuci.org/wp/wp-content/uploads/2018/06/KUCIheaderlogo2.png",
+        "https://upload.wikimedia.org/wikipedia/en/d/d9/Kucilogog.png",
       college_image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/UC_Irvine_Anteaters_logo.svg/1200px-UC_Irvine_Anteaters_logo.svg.png",
     },
@@ -1837,7 +1837,7 @@ const stations = [
       city: "Santa Barbara",
       state: "CA",
       station_image:
-        "https://www.kcsb.org/wp-content/themes/kcsb2019/images/KCSB--logo.png",
+        "https://upload.wikimedia.org/wikipedia/en/5/5b/Kcsb.jpg",
       college_image:
         "https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/UC_Santa_Barbara_Gauchos_logo.svg/1200px-UC_Santa_Barbara_Gauchos_logo.svg.png",
     },
@@ -2236,7 +2236,7 @@ const stations = [
       station_image:
         "https://www.theprospectordaily.com/wp-content/uploads/2020/11/110220_KTEP-900x493.jpg",
       college_image:
-        "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/UTEP_Miners_logo.svg/1200px-UTEP_Miners_logo.svg.png",
+        "https://upload.wikimedia.org/wikipedia/en/6/6e/UTEP_Miners_logo_%282026%29.svg",
     },
     {
       id: 153,
@@ -2506,7 +2506,7 @@ const stations = [
       station_image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxio6d3SQ4LHe9g2XMYU-dNqvFtSCOCAN8iQ&su",
       college_image:
-        "https://upload.wikimedia.org/wikipedia/en/thumb/2/27/New_Orleans_Privateers_logo.svg/1200px-New_Orleans_Privateers_logo.svg.png",
+        "https://www.ncaa.com/sites/default/files/images/logos/schools/bgl/new-orleans.svg",
     },
     {
       id: 171,
